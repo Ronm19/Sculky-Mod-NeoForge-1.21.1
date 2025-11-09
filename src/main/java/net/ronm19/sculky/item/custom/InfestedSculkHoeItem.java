@@ -2,12 +2,14 @@ package net.ronm19.sculky.item.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import net.ronm19.sculky.api.interfaces.InfestedSculkTool;
 import org.jetbrains.annotations.NotNull;
 
@@ -31,5 +33,10 @@ public class InfestedSculkHoeItem extends HoeItem implements InfestedSculkTool {
         }
 
         return super.useOn(context);
+    }
+
+    @Override
+    public boolean mineBlock( ItemStack stack, Level level, BlockState state, BlockPos pos, Player player ) {
+        return false;
     }
 }
