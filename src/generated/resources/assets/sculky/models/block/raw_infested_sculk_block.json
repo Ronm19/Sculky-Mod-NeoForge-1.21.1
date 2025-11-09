@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "sculky:block/raw_infested_sculk_block"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "sculk_shard",
+  "key": {
+    "#": {
+      "item": "sculky:sculk_shard"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "sculky:infested_sculk_stairs"
+  }
+}

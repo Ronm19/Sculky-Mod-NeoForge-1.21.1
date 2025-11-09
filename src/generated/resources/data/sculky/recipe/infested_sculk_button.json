@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "sculk_shard",
+  "ingredients": [
+    {
+      "item": "sculky:sculk_shard"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "sculky:infested_sculk_button"
+  }
+}

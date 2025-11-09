@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "sculky:infested_sculk_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "sculky:sculk_shard"
+  }
+}

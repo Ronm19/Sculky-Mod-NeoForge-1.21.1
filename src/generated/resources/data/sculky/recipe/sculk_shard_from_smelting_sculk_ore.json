@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.25,
+  "group": "sculk_shard",
+  "ingredient": {
+    "item": "sculky:sculk_ore"
+  },
+  "result": {
+    "count": 1,
+    "id": "sculky:sculk_shard"
+  }
+}

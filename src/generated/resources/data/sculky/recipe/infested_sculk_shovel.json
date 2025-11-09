@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "S": {
+      "item": "sculky:sculk_shard"
+    },
+    "T": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " S ",
+    " T ",
+    " T "
+  ],
+  "result": {
+    "count": 1,
+    "id": "sculky:infested_sculk_shovel"
+  }
+}

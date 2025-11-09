@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "sculky:block/infested_sculk_block"
+    }
+  }
+}
