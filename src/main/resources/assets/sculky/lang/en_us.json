@@ -1,0 +1,40 @@
+{
+
+  "item.sculky.sculk_shard": "Sculk Shard",
+  "item.sculky.sculk_core": "Sculk Core",
+  "item.sculky.raw_sculk_shard": "Raw Sculk Shard",
+
+  "item.sculky.sculk_heartfruit": "Sculk Heartfruit",
+  "item.sculky.tomato_sculk": "Tomato Sculk",
+  "item.sculky.echo_jelly": "Echo Jelly",
+  "item.sculky.sculk_pastry": "Sculk Pastry",
+  "item.sculky.soulbite_cookie": "Soulbite Cookie",
+
+  "item.sculky.infested_sculk_sword": "Infested Sculk Sword",
+  "item.sculky.infested_sculk_pickaxe": "Infested Sculk Pickaxe",
+  "item.sculky.infested_sculk_axe": "Infested Sculk Axe",
+  "item.sculky.infested_sculk_shovel": "Infested Sculk Shovel",
+  "item.sculky.infested_sculk_hoe": "Infested Sculk Hoe",
+
+  "block.sculky.infested_sculk_block": "Infested Sculk Block",
+  "block.sculky.raw_infested_sculk_block": "Raw Infested Sculk Block",
+  "block.sculky.sculk_ore": "Sculk Ore",
+  "block.sculky.deepslate_sculk_ore": "Deepslate Sculk Ore",
+
+  "block.sculky.infested_sculk_stairs": "Infested Sculk Stairs",
+  "block.sculky.infested_sculk_slab": "Infested Sculk Slab",
+  "block.sculky.infested_sculk_pressure_plate": "Infested Sculk Pressure Plate",
+  "block.sculky.infested_sculk_button": "Infested Sculk Button",
+  "block.sculky.infested_sculk_fence": "Infested Sculk Fence",
+  "block.sculky.infested_sculk_fence_gate": "Infested Sculk Fence Gate",
+  "block.sculky.infested_sculk_wall": "Infested Sculk Wall",
+  "block.sculky.infested_sculk_door": "Infested Sculk Door",
+  "block.sculky.infested_sculk_trapdoor": "Infested Sculk Trapdoor",
+
+
+
+
+  "itemGroup.sculky.sculky_items_tab": "Sculky Items Tab",
+  "itemGroup.sculky.sculky_blocks_tab": "Sculky Blocks Tab"
+
+}
