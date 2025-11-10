@@ -49,6 +49,10 @@ public class ModItems {
             () -> new InfestedSculkHoeItem(ModToolTiers.INFESTED_SCULK,
                     new Item.Properties().attributes(HoeItem.createAttributes(ModToolTiers.INFESTED_SCULK, 0, -3.0f))));
 
+    public static final DeferredItem<Item> INFESTED_SCULK_HAMMER = ITEMS.register("infested_sculk_hammer",
+            () -> new InfestedSculkHammerItem(ModToolTiers.INFESTED_SCULK,
+                    new Item.Properties().attributes(PickaxeItem.createAttributes(ModToolTiers.INFESTED_SCULK, 21, -3.3f))));
+
 
 
     public static void register(IEventBus eventBus) {

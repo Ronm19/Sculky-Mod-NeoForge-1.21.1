@@ -33,6 +33,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.INFESTED_SCULK_SHOVEL);
         handheldItem(ModItems.INFESTED_SCULK_AXE);
         handheldItem(ModItems.INFESTED_SCULK_HOE);
+        handheldItem(ModItems.INFESTED_SCULK_HAMMER);
 
 
         buttonItem(ModBlocks.INFESTED_SCULK_BUTTON, ModBlocks.INFESTED_SCULK_BLOCK);

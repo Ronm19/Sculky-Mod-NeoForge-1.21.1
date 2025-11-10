@@ -1,8 +1,9 @@
-// 1.21.1	2025-11-09T23:35:46.6931973	Recipes
+// 1.21.1	2025-11-10T06:50:06.6055548	Recipes
 1a4aab17de2384670fe6db392c2ac34fe9272696 data/sculky/advancement/recipes/building_blocks/infested_sculk_slab.json
 708a7bbded4330598130d771983d7951ad77fde5 data/sculky/advancement/recipes/building_blocks/infested_sculk_stairs.json
 74b77de3e5ef808588b6a6734360d5f7714bcc5f data/sculky/advancement/recipes/building_blocks/infested_sculk_wall.json
 58e1663c1ef78f6518fbf64c085b760b9784e8b0 data/sculky/advancement/recipes/combat/infested_sculk_axe.json
+dc65edc7a3cc1b85b5bdebdc07a842f5ec1b7f42 data/sculky/advancement/recipes/combat/infested_sculk_hammer.json
 6a848f1f1c9abc8f7941592ccf95cb67ddff9e88 data/sculky/advancement/recipes/combat/infested_sculk_hoe.json
 97016e2d4c1f57867ad77061d38ad58ae979236b data/sculky/advancement/recipes/combat/infested_sculk_pickaxe.json
 a080ef489a84ec3c9f5c40b94d079de886a14764 data/sculky/advancement/recipes/combat/infested_sculk_shovel.json
@@ -28,6 +29,7 @@ c546efd510469d699690ba44e119585cec2eaceb data/sculky/recipe/infested_sculk_butto
 f71f44039601b868c8d9ed6d8f7f0c8d513acd53 data/sculky/recipe/infested_sculk_door.json
 c0c6738be3f77d2aa870a6d82f3dbcf54036baf0 data/sculky/recipe/infested_sculk_fence.json
 5ba740227db6e090f8019b28055998db62dd9d5e data/sculky/recipe/infested_sculk_fence_gate.json
+a3d38f6facef03484d10631cd36f968c9332eed8 data/sculky/recipe/infested_sculk_hammer.json
 4a005e590bc1a67e4be6871cb6ee57b29d35d743 data/sculky/recipe/infested_sculk_hoe.json
 364f8dfc01127dfdfae10f522cbdd32dc10eef24 data/sculky/recipe/infested_sculk_pickaxe.json
 c34bb13971370d9c71934d6ba3b5b7819a204412 data/sculky/recipe/infested_sculk_pressure_plate.json
