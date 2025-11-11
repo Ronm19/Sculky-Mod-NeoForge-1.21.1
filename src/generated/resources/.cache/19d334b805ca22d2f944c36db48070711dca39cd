@@ -1,4 +1,4 @@
-// 1.21.1	2025-11-09T22:10:34.9891734	Block States: sculky
+// 1.21.1	2025-11-11T23:50:05.8104302	Block States: sculky
 e320ea38181175adfe9a347d9cf864329405aaf4 assets/sculky/blockstates/deepslate_sculk_ore.json
 a7e372452cb228725c35ace703970c4cf1341f77 assets/sculky/blockstates/infested_sculk_block.json
 5470a5d5d6ab70e209263f8e7873b6f7f7bff648 assets/sculky/blockstates/infested_sculk_button.json
@@ -12,6 +12,7 @@ d75158a1d362b3dc701610b416354ba159207540 assets/sculky/blockstates/infested_scul
 52980ab94fbae932b07f35004422f20e28d1adaa assets/sculky/blockstates/infested_sculk_wall.json
 c3d56d8009c2ed7d3893b53527572abf53774c86 assets/sculky/blockstates/raw_infested_sculk_block.json
 f1ad931bf68ec76abc0cd7ebf59d45489d98089b assets/sculky/blockstates/sculk_ore.json
+7bfe8a7e0eec347d11f9da587d193b91716869a8 assets/sculky/blockstates/tomato_sculk_crop.json
 9ad3991bcba6e89e4abed9f0f6d8c9c428cdeb70 assets/sculky/models/block/deepslate_sculk_ore.json
 530b6e28bc74db57cce542f4f2e6f21331f8c665 assets/sculky/models/block/infested_sculk_block.json
 6615ec4317ff36ea8cf7dca12862ae73aa9f0007 assets/sculky/models/block/infested_sculk_button.json
@@ -45,6 +46,12 @@ ac368719854df5a8503fc9601e25cb936979903f assets/sculky/models/block/infested_scu
 0e3b56d8bd26de2bcfe9094c6773a9c4ca09a575 assets/sculky/models/block/infested_sculk_wall_side_tall.json
 b040e5f5201e4a03c4b87d459d039710b8e58257 assets/sculky/models/block/raw_infested_sculk_block.json
 c014a8ab7de42ec2dc4729cb041faa0a020ccfec assets/sculky/models/block/sculk_ore.json
+5178871b10149d2c6065f9fbb7834801dd0f8cf8 assets/sculky/models/block/tomato_sculk_crop_stage0.json
+c80f6dd102a1a0e93059d0a090214541f0a4217a assets/sculky/models/block/tomato_sculk_crop_stage1.json
+085098be421cad0b35a0855ed961d99f1d4071d1 assets/sculky/models/block/tomato_sculk_crop_stage2.json
+84b909af4b62222187422f9cc246c8e640a85a11 assets/sculky/models/block/tomato_sculk_crop_stage3.json
+8ff269e1bcd673c5793eae37b7c253945d26c7c0 assets/sculky/models/block/tomato_sculk_crop_stage4.json
+8bdb002cef742ecf1a4a06f94fc3948650fd2276 assets/sculky/models/block/tomato_sculk_crop_stage5.json
 a67df5bc1faa88854b34463a61d2db18c79b0086 assets/sculky/models/item/deepslate_sculk_ore.json
 fba03bea54cebe7fb9b6d46fbeae8a564a40eefd assets/sculky/models/item/infested_sculk_block.json
 33be3669ed78323f6af8431cd69384051d33c855 assets/sculky/models/item/infested_sculk_fence_gate.json

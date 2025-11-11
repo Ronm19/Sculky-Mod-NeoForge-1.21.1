@@ -94,6 +94,33 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
 
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.INFESTED_SCULK_HELMET.get())
+                .pattern("SSS")
+                .pattern("S S")
+                .pattern("   ")
+                .define('S', ModItems.SCULK_SHARD.get())
+                .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get())).save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.INFESTED_SCULK_CHESTPLATE.get())
+                .pattern("S S")
+                .pattern("SSS")
+                .pattern("SSS")
+                .define('S', ModItems.SCULK_SHARD.get())
+                .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get())).save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.INFESTED_SCULK_LEGGINGS.get())
+                .pattern("SSS")
+                .pattern("S S")
+                .pattern("S S")
+                .define('S', ModItems.SCULK_SHARD.get())
+                .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get())).save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.INFESTED_SCULK_BOOTS.get())
+                .pattern("   ")
+                .pattern("S S")
+                .pattern("S S")
+                .define('S', ModItems.SCULK_SHARD.get())
+                .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get())).save(pRecipeOutput);
 
 
         // ------------------------------ SHAPELESS RECIPES ------------------------------- //

@@ -3,6 +3,7 @@ package net.ronm19.sculky;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.ronm19.sculky.block.ModBlocks;
+import net.ronm19.sculky.item.ModArmorMaterials;
 import net.ronm19.sculky.item.ModCreativeModeTabs;
 import net.ronm19.sculky.item.ModItems;
 import net.ronm19.sculky.util.ModTags;
@@ -39,6 +40,7 @@ public class SculkyMod {
         ModItems.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModArmorMaterials.register(modEventBus);
 
 
         NeoForge.EVENT_BUS.register(this);

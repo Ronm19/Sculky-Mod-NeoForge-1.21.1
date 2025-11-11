@@ -29,12 +29,20 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.SCULK_PASTRY);
                         pOutput.accept(ModItems.SOULBITE_COOKIE);
 
+                        pOutput.accept(ModItems.TOMATO_SCULK_SEEDS);
+
                         pOutput.accept(ModItems.INFESTED_SCULK_SWORD);
                         pOutput.accept(ModItems.INFESTED_SCULK_PICKAXE);
                         pOutput.accept(ModItems.INFESTED_SCULK_AXE);
                         pOutput.accept(ModItems.INFESTED_SCULK_SHOVEL);
                         pOutput.accept(ModItems.INFESTED_SCULK_HOE);
                         pOutput.accept(ModItems.INFESTED_SCULK_HAMMER);
+
+                        pOutput.accept(ModItems.INFESTED_SCULK_HELMET);
+                        pOutput.accept(ModItems.INFESTED_SCULK_CHESTPLATE);
+                        pOutput.accept(ModItems.INFESTED_SCULK_LEGGINGS);
+                        pOutput.accept(ModItems.INFESTED_SCULK_BOOTS);
+                        pOutput.accept(ModItems.INFESTED_SCULK_HORSE_ARMOR);
 
 
                     }).build());

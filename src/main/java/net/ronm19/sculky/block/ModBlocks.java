@@ -15,6 +15,7 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.ronm19.sculky.SculkyMod;
 import net.ronm19.sculky.block.custom.InfestedCakeBlock;
+import net.ronm19.sculky.block.custom.TomatoSculkCropBlock;
 import net.ronm19.sculky.item.ModItems;
 
 import java.util.function.Supplier;
@@ -55,6 +56,9 @@ public class ModBlocks {
             () -> new DoorBlock(BlockSetType.CRIMSON, BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SCULK).noOcclusion()));
     public static final DeferredBlock<Block> INFESTED_SCULK_TRAPDOOR = registerBlock("infested_sculk_trapdoor",
             () -> new TrapDoorBlock(BlockSetType.CRIMSON, BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SCULK).noOcclusion()));
+
+    public static final DeferredBlock<Block> TOMATO_SCULK_CROP = BLOCKS.register("tomato_sculk_crop",
+            () -> new TomatoSculkCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

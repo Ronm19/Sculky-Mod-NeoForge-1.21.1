@@ -6,6 +6,8 @@
 
   "item.sculky.sculk_heartfruit": "Sculk Heartfruit",
   "item.sculky.tomato_sculk": "Tomato Sculk",
+  "item.sculky.tomato_sculk_seeds": "Tomato Sculk Seeds",
+
   "item.sculky.echo_jelly": "Echo Jelly",
   "item.sculky.sculk_pastry": "Sculk Pastry",
   "item.sculky.soulbite_cookie": "Soulbite Cookie",
@@ -16,6 +18,14 @@
   "item.sculky.infested_sculk_shovel": "Infested Sculk Shovel",
   "item.sculky.infested_sculk_hoe": "Infested Sculk Hoe",
   "item.sculky.infested_sculk_hammer": "Infested Sculk Hammer",
+
+  "item.sculky.infested_sculk_helmet": "Infested Sculk Helmet",
+  "item.sculky.infested_sculk_chestplate": "Infested Sculk Chestplate",
+  "item.sculky.infested_sculk_leggings": "Infested Sculk Leggings",
+  "item.sculky.infested_sculk_boots": "Infested Sculk Boots",
+
+  "item.sculky.infested_sculk_horse_armor": "Infested Sculk Horse Armor",
+
 
   "block.sculky.infested_sculk_block": "Infested Sculk Block",
   "block.sculky.raw_infested_sculk_block": "Raw Infested Sculk Block",
@@ -31,6 +41,8 @@
   "block.sculky.infested_sculk_wall": "Infested Sculk Wall",
   "block.sculky.infested_sculk_door": "Infested Sculk Door",
   "block.sculky.infested_sculk_trapdoor": "Infested Sculk Trapdoor",
+
+  "block.sculky.tomato_sculk_crop": "Tomato Sculk Crop",
 
 
 

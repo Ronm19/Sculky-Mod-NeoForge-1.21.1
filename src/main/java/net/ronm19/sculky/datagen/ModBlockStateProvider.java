@@ -1,7 +1,9 @@
 package net.ronm19.sculky.datagen;
 
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
@@ -9,6 +11,9 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.ronm19.sculky.SculkyMod;
 import net.ronm19.sculky.block.ModBlocks;
+import net.ronm19.sculky.block.custom.TomatoSculkCropBlock;
+
+import java.util.function.Function;
 
 public class ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -42,6 +47,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.INFESTED_SCULK_FENCE_GATE);
 
         blockItem(ModBlocks.INFESTED_SCULK_TRAPDOOR, "_bottom");
+
+        makeCrop(((TomatoSculkCropBlock) ModBlocks.TOMATO_SCULK_CROP.get()), "tomato_sculk_crop_stage","tomato_sculk_crop_stage");
+
     }
 
     private void blockWithItem(DeferredBlock<Block> deferredBlock) {
@@ -54,5 +62,26 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     private void blockItem(DeferredBlock<Block> deferredBlock, String appendix) {
         simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile("sculky:block/" + deferredBlock.getId().getPath() + appendix));
+    }
+
+    private void leavesBlock(DeferredBlock<Block> deferredBlock) {
+        simpleBlockWithItem(deferredBlock.get(),
+                models().singleTexture(deferredBlock.getId().getPath(), ResourceLocation.parse("minecraft:block/leaves"),
+                        "all", blockTexture(deferredBlock.get())).renderType("cutout"));
+    }
+
+    public void makeCrop(CropBlock block, String modelName, String textureName) {
+        Function<BlockState, ConfiguredModel[]> function = state -> states(state, block, modelName, textureName);
+
+        getVariantBuilder(block).forAllStates(function);
+    }
+
+    private ConfiguredModel[] states(BlockState state, CropBlock block, String modelName, String textureName) {
+        ConfiguredModel[] models = new ConfiguredModel[1];
+        models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((TomatoSculkCropBlock) block).getAgeProperty()),
+                ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "block/" + textureName +
+                        state.getValue(((TomatoSculkCropBlock) block).getAgeProperty()))).renderType("cutout"));
+
+        return models;
     }
 }
