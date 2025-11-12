@@ -36,6 +36,10 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.SCULK_ORE.get())
                 .add(ModBlocks.DEEPSLATE_SCULK_ORE.get());
 
+        this.tag(BlockTags.FLOWERS)
+                        .add(ModBlocks.SCULKBLOOM.get())
+                        .add(ModBlocks.POTTED_SCULKBLOOM.get());
+
 
         tag(BlockTags.FENCES).add(ModBlocks.INFESTED_SCULK_FENCE.get());
         tag(BlockTags.FENCE_GATES).add(ModBlocks.INFESTED_SCULK_FENCE_GATE.get());

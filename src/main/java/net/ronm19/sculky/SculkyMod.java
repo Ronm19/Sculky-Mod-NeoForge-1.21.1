@@ -2,10 +2,13 @@ package net.ronm19.sculky;
 
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.ronm19.sculky.block.ModBlocks;
 import net.ronm19.sculky.item.ModArmorMaterials;
 import net.ronm19.sculky.item.ModCreativeModeTabs;
 import net.ronm19.sculky.item.ModItems;
+import net.ronm19.sculky.sounds.ModSounds;
 import net.ronm19.sculky.util.ModTags;
 import org.slf4j.Logger;
 
@@ -41,6 +44,7 @@ public class SculkyMod {
         ModCreativeModeTabs.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModArmorMaterials.register(modEventBus);
+        ModSounds.register(modEventBus);
 
 
         NeoForge.EVENT_BUS.register(this);
@@ -51,8 +55,13 @@ public class SculkyMod {
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
-    private void commonSetup(FMLCommonSetupEvent event) {
+    private void commonSetup(final FMLCommonSetupEvent event) {
+        event.enqueueWork(() -> {
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.SCULKBLOOM.getId(), ModBlocks.POTTED_SCULKBLOOM);
+        });
     }
+
+
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {

@@ -50,6 +50,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         makeCrop(((TomatoSculkCropBlock) ModBlocks.TOMATO_SCULK_CROP.get()), "tomato_sculk_crop_stage","tomato_sculk_crop_stage");
 
+        simpleBlock(ModBlocks.SCULKBLOOM.get(),
+                models().cross(blockTexture(ModBlocks.SCULKBLOOM.get()).getPath(), blockTexture(ModBlocks.SCULKBLOOM.get())).renderType("cutout"));
+
+        simpleBlock(ModBlocks.POTTED_SCULKBLOOM.get(), models().singleTexture("potted_sculkbloom", ResourceLocation.parse("flower_pot_cross"), "plant",
+                blockTexture(ModBlocks.SCULKBLOOM.get())).renderType("cutout"));
+
     }
 
     private void blockWithItem(DeferredBlock<Block> deferredBlock) {

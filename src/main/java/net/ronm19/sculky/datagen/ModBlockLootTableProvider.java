@@ -59,6 +59,9 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.add(ModBlocks.TOMATO_SCULK_CROP.get(), this.createCropDrops(ModBlocks.TOMATO_SCULK_CROP.get(),
                 ModItems.TOMATO_SCULK.get(), ModItems.TOMATO_SCULK_SEEDS.asItem(), lootItemConditionBuilder));
 
+        this.dropSelf(ModBlocks.SCULKBLOOM.get());
+        this.add(ModBlocks.POTTED_SCULKBLOOM.get(), createPotFlowerItemTable(ModBlocks.SCULKBLOOM));
+
     }
 
     protected LootTable.Builder createMultipleOreDrops( Block pBlock, Item item, float minDrops, float maxDrops) {

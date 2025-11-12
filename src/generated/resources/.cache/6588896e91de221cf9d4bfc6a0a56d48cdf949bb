@@ -1,4 +1,4 @@
-// 1.21.1	2025-11-11T22:20:17.8128118	Item Models: sculky
+// 1.21.1	2025-11-12T00:31:15.877505	Item Models: sculky
 f5ac69197066ddb7af9820347580fddc1f335c0c assets/sculky/models/item/echo_jelly.json
 e00db0e98202fbd27bd6b9f7d6786bb4aae6e765 assets/sculky/models/item/infested_sculk_axe.json
 d8dddece2cb173816aadbafd67d8a31a9b7d30ac assets/sculky/models/item/infested_sculk_boots.json
@@ -56,8 +56,10 @@ e7086de3449746926c766f6b08a53fb7665ba2b4 assets/sculky/models/item/infested_scul
 c274abfb0e4a13184c962a831102d02cacf86462 assets/sculky/models/item/infested_sculk_sword.json
 e76be376d41d0429e192a7b97fa7286174b3ce13 assets/sculky/models/item/infested_sculk_wall.json
 e52d4d3ad5fd594c1e5f09293b1ada92fc86f507 assets/sculky/models/item/raw_sculk_shard.json
+321f1602ca9003cc3712040715e663c78fad058f assets/sculky/models/item/sculkbloom.json
 f464738a4f677f6db95bee334b255d6a9502307a assets/sculky/models/item/sculk_heartfruit.json
 b41ac6d9289690bcfe9add53f1a1d69f2387d1a7 assets/sculky/models/item/sculk_pastry.json
 68f30216fcce08a30aa7e42d8243993182bcdd99 assets/sculky/models/item/sculk_shard.json
 d4428945045f0a08b871f08e757dc98533ed5699 assets/sculky/models/item/soulbite_cookie.json
 907c367bc024286e212c987976474676e859c6e5 assets/sculky/models/item/tomato_sculk.json
+11d989b0b18447a9551e4feb0051b04234048c9e assets/sculky/models/item/tomato_sculk_seeds.json

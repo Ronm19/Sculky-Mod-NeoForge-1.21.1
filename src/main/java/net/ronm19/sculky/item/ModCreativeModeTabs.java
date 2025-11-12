@@ -63,6 +63,8 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.INFESTED_SCULK_STAIRS);
                         pOutput.accept(ModBlocks.INFESTED_SCULK_SLAB);
 
+                        pOutput.accept(ModBlocks.SCULKBLOOM);
+
                         pOutput.accept(ModBlocks.INFESTED_SCULK_PRESSURE_PLATE);
                         pOutput.accept(ModBlocks.INFESTED_SCULK_BUTTON);
 

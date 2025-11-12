@@ -21,6 +21,7 @@ public class InfestedSculkSwordItem extends SwordItem {
         if (!attacker.level().isClientSide()) {
             target.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 100, 0)); // 5 seconds
             target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 60, 1)); // brief slow
+            target.addEffect(new MobEffectInstance(MobEffects.WITHER, 30, 1)); // brief slow
         }
 
         return super.hurtEnemy(stack, target, attacker);

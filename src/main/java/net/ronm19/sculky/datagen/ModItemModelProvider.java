@@ -60,6 +60,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.INFESTED_SCULK_HAMMER);
 
 
+        basicItem(ModItems.TOMATO_SCULK_SEEDS.get());
+
+        flowerItem(ModBlocks.SCULKBLOOM);
+
+
         buttonItem(ModBlocks.INFESTED_SCULK_BUTTON, ModBlocks.INFESTED_SCULK_BLOCK);
         fenceItem(ModBlocks.INFESTED_SCULK_FENCE, ModBlocks.INFESTED_SCULK_BLOCK);
         wallItem(ModBlocks.INFESTED_SCULK_WALL, ModBlocks.INFESTED_SCULK_BLOCK);
@@ -70,8 +75,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         trimmedArmorItem(ModItems.INFESTED_SCULK_BOOTS);
 
         basicItem(ModItems.INFESTED_SCULK_HORSE_ARMOR.get());
-
-
+        
         basicItem(ModBlocks.INFESTED_SCULK_DOOR.asItem());
 
     }

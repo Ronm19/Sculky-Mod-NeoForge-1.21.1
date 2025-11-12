@@ -1,0 +1,10 @@
+{
+  "values": {
+    "sculky:tomato_sculk": {
+      "chance": 0.45
+    },
+    "sculky:tomato_sculk_seeds": {
+      "chance": 0.2
+    }
+  }
+}

@@ -1,4 +1,4 @@
-// 1.21.1	2025-11-11T23:50:05.8162626	Loot Tables
+// 1.21.1	2025-11-12T00:25:26.8996192	Loot Tables
 48952f5c8e28b717cf5f872a8ea3889e1aa5d4da data/sculky/loot_table/blocks/deepslate_sculk_ore.json
 90d20ca4e2b7b4bb2f9a3e3a67880ad9cfb2d6fc data/sculky/loot_table/blocks/infested_sculk_block.json
 6c964ca4eb91b8128430e7a2bdd8481edf39e386 data/sculky/loot_table/blocks/infested_sculk_button.json
@@ -10,6 +10,8 @@ a6cb8f1234761afc57210c3ba165b48a994741d5 data/sculky/loot_table/blocks/infested_
 13ad45bf68a15624bf5baa906c431d11e1b80060 data/sculky/loot_table/blocks/infested_sculk_stairs.json
 94fc9a4fa761096e0efad898e9e01ca67815cea2 data/sculky/loot_table/blocks/infested_sculk_trapdoor.json
 9d2e291aa9f479e6bca7e3ed7aad732908909bb6 data/sculky/loot_table/blocks/infested_sculk_wall.json
+ad6c0c59c92f6a381d2d8c9ca71afef856805fea data/sculky/loot_table/blocks/potted_sculkbloom.json
 efe275c63e17d34a7865522870f2c01df99d3b3f data/sculky/loot_table/blocks/raw_infested_sculk_block.json
+4747f6d2b6626aab18e49e172d100948eaddf528 data/sculky/loot_table/blocks/sculkbloom.json
 9e60ac794d1efaa0689cfda7626b8296c992c18a data/sculky/loot_table/blocks/sculk_ore.json
 a779d7bcf7a1992b6fc7ea85acd6ab1b61a46dd0 data/sculky/loot_table/blocks/tomato_sculk_crop.json
