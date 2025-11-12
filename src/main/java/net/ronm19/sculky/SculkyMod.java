@@ -5,9 +5,11 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.ronm19.sculky.block.ModBlocks;
+import net.ronm19.sculky.effect.ModEffects;
 import net.ronm19.sculky.item.ModArmorMaterials;
 import net.ronm19.sculky.item.ModCreativeModeTabs;
 import net.ronm19.sculky.item.ModItems;
+import net.ronm19.sculky.potion.ModPotions;
 import net.ronm19.sculky.sounds.ModSounds;
 import net.ronm19.sculky.util.ModTags;
 import org.slf4j.Logger;
@@ -45,6 +47,8 @@ public class SculkyMod {
         ModBlocks.register(modEventBus);
         ModArmorMaterials.register(modEventBus);
         ModSounds.register(modEventBus);
+        ModEffects.register(modEventBus);
+        ModPotions.register(modEventBus);
 
 
         NeoForge.EVENT_BUS.register(this);

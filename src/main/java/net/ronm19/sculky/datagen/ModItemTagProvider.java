@@ -21,7 +21,8 @@ public class ModItemTagProvider extends ItemTagsProvider {
     @Override
     protected void addTags( HolderLookup.Provider provider ) {
         this.tag(ItemTags.SWORDS)
-                .add(ModItems.INFESTED_SCULK_SWORD.asItem());
+                .add(ModItems.INFESTED_SCULK_SWORD.asItem())
+                .add(ModItems.SCULK_EDGE.asItem());
 
         this.tag(ItemTags.TRIMMABLE_ARMOR)
                 .add(ModItems.INFESTED_SCULK_HELMET.get())

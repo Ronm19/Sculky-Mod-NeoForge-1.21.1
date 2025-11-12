@@ -18,6 +18,7 @@
   "item.sculky.infested_sculk_shovel": "Infested Sculk Shovel",
   "item.sculky.infested_sculk_hoe": "Infested Sculk Hoe",
   "item.sculky.infested_sculk_hammer": "Infested Sculk Hammer",
+  "item.sculky.sculk_edge": "Sculk Edge",
 
   "item.sculky.infested_sculk_helmet": "Infested Sculk Helmet",
   "item.sculky.infested_sculk_chestplate": "Infested Sculk Chestplate",
@@ -44,6 +45,16 @@
 
   "block.sculky.tomato_sculk_crop": "Tomato Sculk Crop",
   "block.sculky.sculkbloom": "Sculk Bloom",
+
+  "effect.sculky.sculk_infection": "Sculk Infection",
+
+  "item.minecraft.potion.effect.sculk_infection_potion": "Sculk Infection Potion",
+  "item.minecraft.splash_potion.effect.sculk_infection_potion": "Sculk Infection Splash Potion",
+  "item.minecraft.lingering_potion.effect.sculk_infection_potion": "Sculk Infection Lingering Potion",
+  "item.minecraft.tipped_arrow.effect.sculk_infection_potion": "Sculk Infection Arrow",
+
+
+
 
 
 

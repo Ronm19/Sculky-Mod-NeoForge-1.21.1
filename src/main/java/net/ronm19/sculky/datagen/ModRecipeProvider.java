@@ -92,6 +92,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('T', Items.STICK)
                 .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get())).save(pRecipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.INFESTED_SCULK_HAMMER.get())
+                .pattern("SSS")
+                .pattern(" S ")
+                .pattern(" T ")
+                .define('S', ModItems.SCULK_SHARD.get())
+                .define('T', Items.STICK)
+                .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get())).save(pRecipeOutput);
+
 
 
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.INFESTED_SCULK_HELMET.get())

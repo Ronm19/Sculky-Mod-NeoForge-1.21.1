@@ -37,6 +37,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.INFESTED_SCULK_SHOVEL);
                         pOutput.accept(ModItems.INFESTED_SCULK_HOE);
                         pOutput.accept(ModItems.INFESTED_SCULK_HAMMER);
+                        pOutput.accept(ModItems.SCULK_EDGE);
 
                         pOutput.accept(ModItems.INFESTED_SCULK_HELMET);
                         pOutput.accept(ModItems.INFESTED_SCULK_CHESTPLATE);
