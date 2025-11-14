@@ -39,5 +39,11 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
         tag(ItemTags.PLANKS)
                 .add(ModBlocks.INFESTED_SCULK_PLANKS.get().asItem());
+
+        tag(ItemTags.DIRT)
+                .add(ModBlocks.INFESTED_SCULK_GRASS_BLOCK.asItem())
+                .add(ModBlocks.INFESTED_SCULK_DIRT_BLOCK.asItem())
+                .add(ModBlocks.INFESTED_SCULK_ROOTED_DIRT_BLOCK.asItem())
+                .add(ModBlocks.INFESTED_SCULK_PODZOL_BLOCK.asItem());
     }
 }

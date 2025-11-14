@@ -37,6 +37,11 @@
   "block.sculky.sculk_ore": "Sculk Ore",
   "block.sculky.deepslate_sculk_ore": "Deepslate Sculk Ore",
 
+  "block.sculky.infested_sculk_grass_block": "Infested Sculk Grass Block",
+  "block.sculky.infested_sculk_dirt_block": "Infested Sculk Dirt Block",
+  "block.sculky.infested_sculk_rooted_dirt_block": "Infested Sculk Rooted Dirt Block",
+  "block.sculky.infested_sculk_podzol_block": "Infested Sculk Podzol Block",
+
   "block.sculky.infested_sculk_log": "Infested Sculk Log",
   "block.sculky.infested_sculk_planks": "Infested Sculk Planks",
   "block.sculky.infested_sculk_wood": "Infested Sculk Wood",

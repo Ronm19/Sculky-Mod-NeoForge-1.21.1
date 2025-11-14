@@ -67,6 +67,19 @@ public class ModBlocks {
     public static final DeferredBlock<Block> TOMATO_SCULK_CROP = BLOCKS.register("tomato_sculk_crop",
             () -> new TomatoSculkCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT)));
 
+    public static final DeferredBlock<Block> INFESTED_SCULK_GRASS_BLOCK = registerBlock("infested_sculk_grass_block",
+            () -> new GrassBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK).sound(SoundType.SCULK)));
+
+    public static final DeferredBlock<Block> INFESTED_SCULK_DIRT_BLOCK = registerBlock("infested_sculk_dirt_block",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.SCULK)));
+
+    public static final DeferredBlock<Block> INFESTED_SCULK_ROOTED_DIRT_BLOCK = registerBlock("infested_sculk_rooted_dirt_block",
+            () -> new RootedDirtBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.ROOTED_DIRT).sound(SoundType.SCULK)));
+
+    public static final DeferredBlock<Block> INFESTED_SCULK_PODZOL_BLOCK = registerBlock("infested_sculk_podzol_block",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.PODZOL).sound(SoundType.SCULK)));
+
+
     public static final DeferredBlock<Block> SCULKBLOOM = registerBlock("sculkbloom",
             () -> new FlowerBlock(MobEffects.DARKNESS, 12, BlockBehaviour.Properties.ofFullCopy(Blocks.WITHER_ROSE)));
     public static final DeferredBlock<Block> POTTED_SCULKBLOOM = BLOCKS.register("potted_sculkbloom",

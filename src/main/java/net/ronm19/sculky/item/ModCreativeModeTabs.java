@@ -76,6 +76,11 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.INFESTED_SCULK_DOOR);
                         pOutput.accept(ModBlocks.INFESTED_SCULK_TRAPDOOR);
 
+                        pOutput.accept(ModBlocks.INFESTED_SCULK_GRASS_BLOCK);
+                        pOutput.accept(ModBlocks.INFESTED_SCULK_DIRT_BLOCK);
+                        pOutput.accept(ModBlocks.INFESTED_SCULK_ROOTED_DIRT_BLOCK);
+                        pOutput.accept(ModBlocks.INFESTED_SCULK_PODZOL_BLOCK);
+
                         pOutput.accept(ModBlocks.INFESTED_SCULK_LOG);
                         pOutput.accept(ModBlocks.INFESTED_SCULK_WOOD);
                         pOutput.accept(ModBlocks.STRIPPED_INFESTED_SCULK_LOG);

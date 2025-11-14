@@ -5,6 +5,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
@@ -13,6 +14,7 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.ronm19.sculky.SculkyMod;
 import net.ronm19.sculky.block.ModBlocks;
 import net.ronm19.sculky.block.custom.TomatoSculkCropBlock;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Function;
 
@@ -71,8 +73,20 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         leavesBlock(ModBlocks.INFESTED_SCULK_LEAVES);
         saplingBlock(ModBlocks.INFESTED_SCULK_SAPLING);
-    }
 
+        blockWithItem(ModBlocks.INFESTED_SCULK_DIRT_BLOCK);
+        blockWithItem(ModBlocks.INFESTED_SCULK_ROOTED_DIRT_BLOCK);
+
+        simpleGrassLikeBlock(ModBlocks.INFESTED_SCULK_GRASS_BLOCK.get(),
+        modLoc("block/infested_sculk_grass_block_top"),
+                modLoc("block/infested_sculk_grass_block_side"),
+                modLoc("block/infested_sculk_grass_block_bottom"));
+
+        simpleGrassLikeBlock(ModBlocks.INFESTED_SCULK_PODZOL_BLOCK.get(),
+                modLoc("block/infested_sculk_podzol_block_top"),
+                modLoc("block/infested_sculk_podzol_block_side"),
+                modLoc("block/infested_sculk_podzol_block_bottom"));
+    }
 
 
     private void leavesBlock(DeferredBlock<Block> deferredBlock) {
@@ -80,6 +94,19 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 models().singleTexture(BuiltInRegistries.BLOCK.getKey(deferredBlock.get()).getPath(), ResourceLocation.parse("minecraft:block/leaves"),
                         "all", blockTexture(deferredBlock.get())).renderType("cutout"));
     }
+
+    private void simpleGrassLikeBlock(Block block, ResourceLocation top, ResourceLocation side, ResourceLocation bottom) {
+        // Generate the cube model using top, side, and bottom textures
+        var model = models().cubeBottomTop(blockName(block), side, bottom, top);
+
+        // Register the blockstate to use that model
+        simpleBlock(block, model);
+
+        // Also create an item model that points to the same block model
+        simpleBlockItem(block, model);
+    }
+
+
 
     private void saplingBlock(DeferredBlock<Block> deferredBlock) {
         simpleBlock(deferredBlock.get(), models().cross(BuiltInRegistries.BLOCK.getKey(deferredBlock.get()).getPath(), blockTexture(deferredBlock.get())).renderType("cutout"));
@@ -110,5 +137,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
                         state.getValue(((TomatoSculkCropBlock) block).getAgeProperty()))).renderType("cutout"));
 
         return models;
+    }
+
+    private String blockName(Block block) {
+        return BuiltInRegistries.BLOCK.getKey(block).getPath();
+    }
+
+    public @NotNull ResourceLocation blockTexture( Block block ) {
+        return modLoc("block/" + blockName(block));
     }
 }

@@ -73,6 +73,11 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.add(ModBlocks.INFESTED_SCULK_LEAVES.get(), block ->
                 createLeavesDrops(block, ModBlocks.INFESTED_SCULK_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
+        dropSelf(ModBlocks.INFESTED_SCULK_GRASS_BLOCK.get());
+        dropSelf(ModBlocks.INFESTED_SCULK_DIRT_BLOCK.get());
+        dropSelf(ModBlocks.INFESTED_SCULK_ROOTED_DIRT_BLOCK.get());
+        dropSelf(ModBlocks.INFESTED_SCULK_PODZOL_BLOCK.get());
+
     }
 
     protected LootTable.Builder createMultipleOreDrops( Block pBlock, Item item, float minDrops, float maxDrops) {
