@@ -6,12 +6,14 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.ronm19.sculky.block.ModBlocks;
 import net.ronm19.sculky.effect.ModEffects;
+import net.ronm19.sculky.enchantment.ModEnchantmentEffects;
 import net.ronm19.sculky.item.ModArmorMaterials;
 import net.ronm19.sculky.item.ModCreativeModeTabs;
 import net.ronm19.sculky.item.ModItems;
 import net.ronm19.sculky.potion.ModPotions;
 import net.ronm19.sculky.sounds.ModSounds;
 import net.ronm19.sculky.util.ModTags;
+import net.ronm19.sculky.worldgen.ore.ModPlacementModifierTypes;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -49,6 +51,9 @@ public class SculkyMod {
         ModSounds.register(modEventBus);
         ModEffects.register(modEventBus);
         ModPotions.register(modEventBus);
+        ModEnchantmentEffects.register(modEventBus);
+        ModPlacementModifierTypes.register(modEventBus);
+
 
 
         NeoForge.EVENT_BUS.register(this);
@@ -62,6 +67,7 @@ public class SculkyMod {
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.SCULKBLOOM.getId(), ModBlocks.POTTED_SCULKBLOOM);
+
         });
     }
 

@@ -25,13 +25,27 @@
   "item.sculky.infested_sculk_leggings": "Infested Sculk Leggings",
   "item.sculky.infested_sculk_boots": "Infested Sculk Boots",
 
-  "item.sculky.infested_sculk_horse_armor": "Infested Sculk Horse Armor",
+  "item.minecraft.potion.effect.sculk_infection_potion": "Sculk Infection Potion",
+  "item.minecraft.splash_potion.effect.sculk_infection_potion": "Sculk Infection Splash Potion",
+  "item.minecraft.lingering_potion.effect.sculk_infection_potion": "Sculk Infection Lingering Potion",
+  "item.minecraft.tipped_arrow.effect.sculk_infection_potion": "Sculk Infection Arrow",
 
+  "item.sculky.infested_sculk_horse_armor": "Infested Sculk Horse Armor",
 
   "block.sculky.infested_sculk_block": "Infested Sculk Block",
   "block.sculky.raw_infested_sculk_block": "Raw Infested Sculk Block",
   "block.sculky.sculk_ore": "Sculk Ore",
   "block.sculky.deepslate_sculk_ore": "Deepslate Sculk Ore",
+
+  "block.sculky.infested_sculk_log": "Infested Sculk Log",
+  "block.sculky.infested_sculk_planks": "Infested Sculk Planks",
+  "block.sculky.infested_sculk_wood": "Infested Sculk Wood",
+  "block.sculky.stripped_infested_sculk_log": "Stripped Infested Sculk Log",
+  "block.sculky.stripped_infested_sculk_wood": "Stripped Infested Sculk Wood",
+  "block.sculky.infested_sculk_leaves": "Infested Sculk Leaves",
+
+  "block.sculky.infested_sculk_sapling": "Infested Sculk Sapling",
+
 
   "block.sculky.infested_sculk_stairs": "Infested Sculk Stairs",
   "block.sculky.infested_sculk_slab": "Infested Sculk Slab",
@@ -48,15 +62,7 @@
 
   "effect.sculky.sculk_infection": "Sculk Infection",
 
-  "item.minecraft.potion.effect.sculk_infection_potion": "Sculk Infection Potion",
-  "item.minecraft.splash_potion.effect.sculk_infection_potion": "Sculk Infection Splash Potion",
-  "item.minecraft.lingering_potion.effect.sculk_infection_potion": "Sculk Infection Lingering Potion",
-  "item.minecraft.tipped_arrow.effect.sculk_infection_potion": "Sculk Infection Arrow",
-
-
-
-
-
+  "enchantment.sculky.infection": "Infection",
 
 
   "itemGroup.sculky.sculky_items_tab": "Sculky Items Tab",

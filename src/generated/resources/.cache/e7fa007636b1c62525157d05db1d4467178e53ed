@@ -1,3 +1,5 @@
-// 1.21.1	2025-11-10T23:19:53.7335072	Tags for minecraft:item mod id sculky
-90cea836face252b96fe66b88f99386f541aab08 data/minecraft/tags/item/swords.json
+// 1.21.1	2025-11-13T22:07:14.4899015	Tags for minecraft:item mod id sculky
+53dd30f7cf65e9f95f2dedc4ca715a7024e2bdbc data/minecraft/tags/item/logs_that_burn.json
+403686ecd099a4c548692066d938288b071c923f data/minecraft/tags/item/planks.json
+fc0126fd72236874226fa15d78da552f3c16c116 data/minecraft/tags/item/swords.json
 60afd04938831b2c3e4c5348f9fdba17841dd754 data/minecraft/tags/item/trimmable_armor.json

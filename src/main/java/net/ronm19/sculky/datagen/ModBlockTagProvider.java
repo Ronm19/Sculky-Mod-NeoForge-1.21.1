@@ -40,6 +40,12 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                         .add(ModBlocks.SCULKBLOOM.get())
                         .add(ModBlocks.POTTED_SCULKBLOOM.get());
 
+        this.tag(BlockTags.LOGS_THAT_BURN)
+                .add(ModBlocks.INFESTED_SCULK_LOG.get())
+                .add(ModBlocks.INFESTED_SCULK_WOOD.get())
+                .add(ModBlocks.STRIPPED_INFESTED_SCULK_LOG.get())
+                .add(ModBlocks.STRIPPED_INFESTED_SCULK_WOOD.get());
+
 
         tag(BlockTags.FENCES).add(ModBlocks.INFESTED_SCULK_FENCE.get());
         tag(BlockTags.FENCE_GATES).add(ModBlocks.INFESTED_SCULK_FENCE_GATE.get());

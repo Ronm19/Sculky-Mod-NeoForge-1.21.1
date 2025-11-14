@@ -62,6 +62,17 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.SCULKBLOOM.get());
         this.add(ModBlocks.POTTED_SCULKBLOOM.get(), createPotFlowerItemTable(ModBlocks.SCULKBLOOM));
 
+        this.dropSelf(ModBlocks.INFESTED_SCULK_LOG.get());
+        this.dropSelf(ModBlocks.INFESTED_SCULK_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_INFESTED_SCULK_LOG.get());
+        this.dropSelf(ModBlocks.STRIPPED_INFESTED_SCULK_WOOD.get());
+
+        this.dropSelf(ModBlocks.INFESTED_SCULK_PLANKS.get());
+        this.dropSelf(ModBlocks.INFESTED_SCULK_SAPLING.get());
+
+        this.add(ModBlocks.INFESTED_SCULK_LEAVES.get(), block ->
+                createLeavesDrops(block, ModBlocks.INFESTED_SCULK_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+
     }
 
     protected LootTable.Builder createMultipleOreDrops( Block pBlock, Item item, float minDrops, float maxDrops) {

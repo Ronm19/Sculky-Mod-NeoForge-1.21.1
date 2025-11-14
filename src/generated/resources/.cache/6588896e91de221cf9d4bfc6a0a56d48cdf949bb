@@ -1,4 +1,4 @@
-// 1.21.1	2025-11-12T00:31:15.877505	Item Models: sculky
+// 1.21.1	2025-11-13T22:07:14.5039318	Item Models: sculky
 f5ac69197066ddb7af9820347580fddc1f335c0c assets/sculky/models/item/echo_jelly.json
 e00db0e98202fbd27bd6b9f7d6786bb4aae6e765 assets/sculky/models/item/infested_sculk_axe.json
 d8dddece2cb173816aadbafd67d8a31a9b7d30ac assets/sculky/models/item/infested_sculk_boots.json
@@ -52,6 +52,7 @@ e7086de3449746926c766f6b08a53fb7665ba2b4 assets/sculky/models/item/infested_scul
 6c921c3b2a7c80c590e418dba5ef87195bcb2d6c assets/sculky/models/item/infested_sculk_leggings_quartz_trim.json
 8c2a23a64cdc9487f245014e7feffa30abfdaf5b assets/sculky/models/item/infested_sculk_leggings_redstone_trim.json
 432c4fb946b234a46cd5457822a75bb9b9721cb2 assets/sculky/models/item/infested_sculk_pickaxe.json
+8ad5fab9bf25987f2800c48e9f43995703ff0d7b assets/sculky/models/item/infested_sculk_sapling.json
 2a80bb755043da7409b3834b9f79e7a6522fb039 assets/sculky/models/item/infested_sculk_shovel.json
 c274abfb0e4a13184c962a831102d02cacf86462 assets/sculky/models/item/infested_sculk_sword.json
 e76be376d41d0429e192a7b97fa7286174b3ce13 assets/sculky/models/item/infested_sculk_wall.json

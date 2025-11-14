@@ -1,0 +1,28 @@
+package net.ronm19.sculky.worldgen.ore;
+
+import net.minecraft.world.level.levelgen.VerticalAnchor;
+import net.minecraft.world.level.levelgen.placement.*;
+
+import java.util.List;
+
+public class ModOrePlacements {
+    public static List<PlacementModifier> orePlacement( PlacementModifier pCountPlacement, PlacementModifier pHeightRange) {
+        return List.of(pCountPlacement, InSquarePlacement.spread(), pHeightRange, BiomeFilter.biome());
+    }
+
+    public static List<PlacementModifier> commonOrePlacement(int pCount, PlacementModifier pHeightRange) {
+        return orePlacement(CountPlacement.of(pCount), pHeightRange);
+    }
+
+    public static List<PlacementModifier> rareOrePlacement(int pChance, PlacementModifier pHeightRange) {
+        return orePlacement(RarityFilter.onAverageOnceEvery(pChance), pHeightRange);
+    }
+
+    public static PlacementModifier heightRangeUniform(int minY, int maxY) {
+        return HeightRangePlacement.uniform(VerticalAnchor.absolute(minY), VerticalAnchor.absolute(maxY));
+    }
+
+    public static PlacementModifier heightRangeTriangle(int minY, int maxY) {
+        return HeightRangePlacement.triangle(VerticalAnchor.absolute(minY), VerticalAnchor.absolute(maxY));
+    }
+}

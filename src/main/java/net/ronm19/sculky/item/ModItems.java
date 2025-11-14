@@ -58,7 +58,7 @@ public class ModItems {
 
     public static final DeferredItem<Item> SCULK_EDGE = ITEMS.register("sculk_edge",
             () -> new SculkEdgeItem(ModToolTiers.INFESTED_SCULK,
-                    new Item.Properties().attributes(SwordItem.createAttributes(ModToolTiers.INFESTED_SCULK, 20, -2.4f))));
+                    new Item.Properties().attributes(SwordItem.createAttributes(ModToolTiers.INFESTED_SCULK, 20, -2.2f))));
 
     public static final DeferredItem<Item> INFESTED_SCULK_HELMET = ITEMS.register("infested_sculk_helmet",
             () -> new ModArmorItem(ModArmorMaterials.INFESTED_SCULK, ArmorItem.Type.HELMET,

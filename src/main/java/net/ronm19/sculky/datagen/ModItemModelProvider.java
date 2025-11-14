@@ -78,6 +78,20 @@ public class ModItemModelProvider extends ItemModelProvider {
         
         basicItem(ModBlocks.INFESTED_SCULK_DOOR.asItem());
 
+        saplingItem(ModBlocks.INFESTED_SCULK_SAPLING);
+
+    }
+
+    private ItemModelBuilder saplingItem(DeferredBlock<Block> item) {
+        return withExistingParent(item.getId().getPath(),
+                ResourceLocation.parse("item/generated")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "block/" + item.getId().getPath()));
+
+    }
+
+    private ItemModelBuilder horizontalBlockItem(DeferredBlock<Block> block) {
+        return getBuilder(block.getId().getPath()).parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID,
+                "block/" + block.getId().getPath())));
     }
 
     public void buttonItem( DeferredBlock<Block> block, DeferredBlock<Block> baseBlock) {

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "sculky:infested_sculk_log"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "sculky:infested_sculk_planks"
+  }
+}

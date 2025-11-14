@@ -7,6 +7,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.ronm19.sculky.SculkyMod;
+import net.ronm19.sculky.block.ModBlocks;
 import net.ronm19.sculky.item.ModItems;
 import org.jetbrains.annotations.Nullable;
 
@@ -29,5 +30,14 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.INFESTED_SCULK_CHESTPLATE.get())
                 .add(ModItems.INFESTED_SCULK_LEGGINGS.get())
                 .add(ModItems.INFESTED_SCULK_BOOTS.get());
+
+        tag(ItemTags.LOGS_THAT_BURN)
+                .add(ModBlocks.INFESTED_SCULK_LOG.get().asItem())
+                .add(ModBlocks.INFESTED_SCULK_WOOD.get().asItem())
+                .add(ModBlocks.STRIPPED_INFESTED_SCULK_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_INFESTED_SCULK_WOOD.get().asItem());
+
+        tag(ItemTags.PLANKS)
+                .add(ModBlocks.INFESTED_SCULK_PLANKS.get().asItem());
     }
 }

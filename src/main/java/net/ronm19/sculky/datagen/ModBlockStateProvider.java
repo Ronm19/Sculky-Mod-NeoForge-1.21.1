@@ -1,5 +1,6 @@
 package net.ronm19.sculky.datagen;
 
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
@@ -56,6 +57,32 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlock(ModBlocks.POTTED_SCULKBLOOM.get(), models().singleTexture("potted_sculkbloom", ResourceLocation.parse("flower_pot_cross"), "plant",
                 blockTexture(ModBlocks.SCULKBLOOM.get())).renderType("cutout"));
 
+        logBlock(((RotatedPillarBlock) ModBlocks.INFESTED_SCULK_LOG.get()));
+        axisBlock(((RotatedPillarBlock) ModBlocks.INFESTED_SCULK_WOOD.get()), blockTexture(ModBlocks.INFESTED_SCULK_LOG.get()), blockTexture(ModBlocks.INFESTED_SCULK_LOG.get()));
+        logBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_INFESTED_SCULK_LOG.get()));
+        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_INFESTED_SCULK_WOOD.get()), blockTexture(ModBlocks.STRIPPED_INFESTED_SCULK_LOG.get()), blockTexture(ModBlocks.STRIPPED_INFESTED_SCULK_LOG.get()));
+
+        blockItem(ModBlocks.INFESTED_SCULK_LOG);
+        blockItem(ModBlocks.INFESTED_SCULK_WOOD);
+        blockItem(ModBlocks.STRIPPED_INFESTED_SCULK_LOG);
+        blockItem(ModBlocks.STRIPPED_INFESTED_SCULK_WOOD);
+
+        blockWithItem(ModBlocks.INFESTED_SCULK_PLANKS);
+
+        leavesBlock(ModBlocks.INFESTED_SCULK_LEAVES);
+        saplingBlock(ModBlocks.INFESTED_SCULK_SAPLING);
+    }
+
+
+
+    private void leavesBlock(DeferredBlock<Block> deferredBlock) {
+        simpleBlockWithItem(deferredBlock.get(),
+                models().singleTexture(BuiltInRegistries.BLOCK.getKey(deferredBlock.get()).getPath(), ResourceLocation.parse("minecraft:block/leaves"),
+                        "all", blockTexture(deferredBlock.get())).renderType("cutout"));
+    }
+
+    private void saplingBlock(DeferredBlock<Block> deferredBlock) {
+        simpleBlock(deferredBlock.get(), models().cross(BuiltInRegistries.BLOCK.getKey(deferredBlock.get()).getPath(), blockTexture(deferredBlock.get())).renderType("cutout"));
     }
 
     private void blockWithItem(DeferredBlock<Block> deferredBlock) {
@@ -68,12 +95,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     private void blockItem(DeferredBlock<Block> deferredBlock, String appendix) {
         simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile("sculky:block/" + deferredBlock.getId().getPath() + appendix));
-    }
-
-    private void leavesBlock(DeferredBlock<Block> deferredBlock) {
-        simpleBlockWithItem(deferredBlock.get(),
-                models().singleTexture(deferredBlock.getId().getPath(), ResourceLocation.parse("minecraft:block/leaves"),
-                        "all", blockTexture(deferredBlock.get())).renderType("cutout"));
     }
 
     public void makeCrop(CropBlock block, String modelName, String textureName) {

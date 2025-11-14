@@ -6,6 +6,7 @@ import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import net.ronm19.sculky.SculkyMod;
 import net.ronm19.sculky.block.ModBlocks;
@@ -16,12 +17,12 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
-    public ModRecipeProvider( PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pRegistries) {
+    public ModRecipeProvider( PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pRegistries ) {
         super(pOutput, pRegistries);
     }
 
     @Override
-    protected void buildRecipes( @NotNull RecipeOutput pRecipeOutput) {
+    protected void buildRecipes( @NotNull RecipeOutput pRecipeOutput ) {
         List<ItemLike> SCULK_SMELTABLES = List.of(ModItems.RAW_SCULK_SHARD,
                 ModBlocks.SCULK_ORE, ModBlocks.DEEPSLATE_SCULK_ORE);
 
@@ -92,16 +93,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('T', Items.STICK)
                 .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get())).save(pRecipeOutput);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.INFESTED_SCULK_HAMMER.get())
-                .pattern("SSS")
-                .pattern(" S ")
-                .pattern(" T ")
-                .define('S', ModItems.SCULK_SHARD.get())
-                .define('T', Items.STICK)
-                .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get())).save(pRecipeOutput);
-
-
-
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.INFESTED_SCULK_HELMET.get())
                 .pattern("SSS")
                 .pattern("S S")
@@ -156,6 +147,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         trapdoorBuilder(ModBlocks.INFESTED_SCULK_TRAPDOOR.get(), Ingredient.of(ModItems.SCULK_SHARD.get())).group("sculk_shard")
                 .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get())).save(pRecipeOutput);
 
+        // --- Planks from Logs tag (for both normal + stripped) ---
+        planksFromLogs(pRecipeOutput, ModBlocks.INFESTED_SCULK_PLANKS.get(), ModBlocks.INFESTED_SCULK_LOG.get());
+
+        // --- Wood from Logs ---
+        woodFromLogs(pRecipeOutput, ModBlocks.INFESTED_SCULK_WOOD.get(), ModBlocks.INFESTED_SCULK_LOG.get());
+
+        // --- Stripped Wood from Stripped Logs (optional) ---
+        woodFromLogs(pRecipeOutput, ModBlocks.STRIPPED_INFESTED_SCULK_WOOD.get(), ModBlocks.STRIPPED_INFESTED_SCULK_LOG.get());
+
 
         // ---------------------- COOKING RECIPES ------------------------------------------- //
 
@@ -169,22 +169,45 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     // ---------------------- METHODS ------------------------------------------- //
 
     protected static void oreSmelting( @NotNull RecipeOutput pRecipeOutput, List<ItemLike> pIngredients, @NotNull RecipeCategory pCategory, @NotNull ItemLike pResult,
-                                       float pExperience, int pCookingTIme, @NotNull String pGroup) {
-        oreCooking(pRecipeOutput, RecipeSerializer.SMELTING_RECIPE, SmeltingRecipe ::new, pIngredients, pCategory, pResult,
+                                       float pExperience, int pCookingTIme, @NotNull String pGroup ) {
+        oreCooking(pRecipeOutput, RecipeSerializer.SMELTING_RECIPE, SmeltingRecipe :: new, pIngredients, pCategory, pResult,
                 pExperience, pCookingTIme, pGroup, "_from_smelting");
     }
 
     protected static void oreBlasting( @NotNull RecipeOutput pRecipeOutput, List<ItemLike> pIngredients, @NotNull RecipeCategory pCategory, @NotNull ItemLike pResult,
-                                       float pExperience, int pCookingTime, @NotNull String pGroup) {
-        oreCooking(pRecipeOutput, RecipeSerializer.BLASTING_RECIPE, BlastingRecipe ::new, pIngredients, pCategory, pResult,
+                                       float pExperience, int pCookingTime, @NotNull String pGroup ) {
+        oreCooking(pRecipeOutput, RecipeSerializer.BLASTING_RECIPE, BlastingRecipe :: new, pIngredients, pCategory, pResult,
                 pExperience, pCookingTime, pGroup, "_from_blasting");
     }
 
     protected static <T extends AbstractCookingRecipe> void oreCooking( @NotNull RecipeOutput pRecipeOutput, RecipeSerializer<T> pCookingSerializer, AbstractCookingRecipe.@NotNull Factory<T> factory,
-                                                                        List<ItemLike> pIngredients, @NotNull RecipeCategory pCategory, @NotNull ItemLike pResult, float pExperience, int pCookingTime, @NotNull String pGroup, String pRecipeName) {
-        for(ItemLike itemlike : pIngredients) {
+                                                                        List<ItemLike> pIngredients, @NotNull RecipeCategory pCategory, @NotNull ItemLike pResult, float pExperience, int pCookingTime, @NotNull String pGroup, String pRecipeName ) {
+        for (ItemLike itemlike : pIngredients) {
             SimpleCookingRecipeBuilder.generic(Ingredient.of(itemlike), pCategory, pResult, pExperience, pCookingTime, pCookingSerializer, factory).group(pGroup).unlockedBy(getHasName(itemlike), has(itemlike))
                     .save(pRecipeOutput, SculkyMod.MOD_ID + ":" + getItemName(pResult) + pRecipeName + "_" + getItemName(itemlike));
         }
+    }
+
+    protected static void planksFromLog( RecipeOutput output, ItemLike planks, ItemLike log ) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, planks, 4)
+                .requires(log)
+                .unlockedBy(getHasName(log), has(log))
+                .save(output);
+    }
+
+    protected static void planksFromLogs( RecipeOutput output, ItemLike planks, Block logs ) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, planks, 4)
+                .requires(logs)
+                .unlockedBy("has_logs", has(logs))
+                .save(output);
+    }
+
+    protected static void woodFromLogs( RecipeOutput output, ItemLike wood, ItemLike log ) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, wood, 3)
+                .pattern("##")
+                .pattern("##")
+                .define('#', log)
+                .unlockedBy(getHasName(log), has(log))
+                .save(output);
     }
 }
