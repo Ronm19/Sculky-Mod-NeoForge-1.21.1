@@ -2,16 +2,26 @@ package net.ronm19.sculky.event;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.SpawnPlacementTypes;
+import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
+import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
+import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import net.ronm19.sculky.SculkyMod;
+import net.ronm19.sculky.entity.ModEntities;
+import net.ronm19.sculky.entity.client.*;
+import net.ronm19.sculky.entity.custom.*;
+import net.ronm19.sculky.entity.layer.ModModelLayers;
 import net.ronm19.sculky.item.ModItems;
 import net.ronm19.sculky.item.custom.InfestedSculkHammerItem;
 import net.ronm19.sculky.potion.ModPotions;
@@ -53,5 +63,56 @@ public class ModEvents {
         PotionBrewing.Builder builder = event.getBuilder();
 
         builder.addMix(Potions.AWKWARD, ModItems.SCULK_HEARTFRUIT.asItem(), ModPotions.SCULK_INFECTION_POTION);
+    }
+
+    @SubscribeEvent
+    public static void registerLayers( EntityRenderersEvent.RegisterLayerDefinitions event) {
+        event.registerLayerDefinition(ModModelLayers.SCULK_SENTINEL, SculkSentinelModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.SCULK_SHADE, SculkShadeModel::createBodyLayer);
+
+
+        event.registerLayerDefinition(ModModelLayers.SCULK_WOLF, SculkWolfModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.SCULK_FOX, SculkFoxModel::createBodyLayer);
+    }
+
+    @SubscribeEvent
+    public static void registerAttributes( EntityAttributeCreationEvent event) {
+        event.put(ModEntities.SCULK_PARASITE.get(), SculkParasiteEntity.createSculkParasiteAttributes().build());
+        event.put(ModEntities.SCULK_SENTINEL.get(), SculkSentinelEntity.createSculkSentinelAttributes().build());
+        event.put(ModEntities.SCULK_STALKER.get(), SculkStalkerEntity.createSculkStalkerAttributes().build());
+        event.put(ModEntities.SCULK_SHADE.get(), SculkShadeEntity.createSculkShadeAttributes().build());
+
+        event.put(ModEntities.SCULK_WOLF.get(), SculkWolfEntity.createsSculkWolfAttributes().build());
+        event.put(ModEntities.SCULK_HORSE.get(), SculkHorseEntity.createSculkHorseAttributes().build());
+        event.put(ModEntities.SCULK_FOX.get(), SculkFoxEntity.createSculkFoxAttributes().build());
+    }
+
+    @SubscribeEvent
+    public static void registerSpawnPlacements(RegisterSpawnPlacementsEvent event) {
+
+        event.register(ModEntities.SCULK_PARASITE.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMobSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(ModEntities.SCULK_SENTINEL.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMobSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(ModEntities.SCULK_STALKER.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMobSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(ModEntities.SCULK_SHADE.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMobSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(ModEntities.SCULK_DRAGON.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMobSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+
+        event.register(ModEntities.SCULK_WOLF.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal::checkMobSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(ModEntities.SCULK_HORSE.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal::checkMobSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(ModEntities.SCULK_FOX.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal::checkMobSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+
+
+
+
+
+
+
     }
 }

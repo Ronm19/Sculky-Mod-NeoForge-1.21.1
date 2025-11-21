@@ -45,5 +45,8 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModBlocks.INFESTED_SCULK_DIRT_BLOCK.asItem())
                 .add(ModBlocks.INFESTED_SCULK_ROOTED_DIRT_BLOCK.asItem())
                 .add(ModBlocks.INFESTED_SCULK_PODZOL_BLOCK.asItem());
+
+        tag(ItemTags.FOX_FOOD)
+                .add(ModItems.ECHO_JELLY.asItem());
     }
 }

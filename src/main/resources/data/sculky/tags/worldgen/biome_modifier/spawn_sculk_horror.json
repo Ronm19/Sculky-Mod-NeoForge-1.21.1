@@ -1,0 +1,13 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": [
+    "sculky:sculk_forest",
+    "minecraft:deep_dark"
+  ],
+  "spawners": {
+    "type": "sculky:sculk_horror",
+    "weight": 60,
+    "minCount": 1,
+    "maxCount": 3
+  }
+}

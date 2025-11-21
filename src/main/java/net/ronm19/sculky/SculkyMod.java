@@ -7,12 +7,15 @@ import net.minecraft.world.level.block.FlowerPotBlock;
 import net.ronm19.sculky.block.ModBlocks;
 import net.ronm19.sculky.effect.ModEffects;
 import net.ronm19.sculky.enchantment.ModEnchantmentEffects;
+import net.ronm19.sculky.entity.ModEntities;
 import net.ronm19.sculky.item.ModArmorMaterials;
 import net.ronm19.sculky.item.ModCreativeModeTabs;
 import net.ronm19.sculky.item.ModItems;
 import net.ronm19.sculky.potion.ModPotions;
 import net.ronm19.sculky.sounds.ModSounds;
 import net.ronm19.sculky.util.ModTags;
+import net.ronm19.sculky.worldgen.biome.ModBiomes;
+import net.ronm19.sculky.worldgen.biome.ModSurfaceRules;
 import net.ronm19.sculky.worldgen.ore.ModPlacementModifierTypes;
 import org.slf4j.Logger;
 
@@ -27,6 +30,7 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import terrablender.api.SurfaceRuleManager;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(SculkyMod.MOD_ID)
@@ -53,6 +57,7 @@ public class SculkyMod {
         ModPotions.register(modEventBus);
         ModEnchantmentEffects.register(modEventBus);
         ModPlacementModifierTypes.register(modEventBus);
+        ModEntities.register(modEventBus);
 
 
 
@@ -67,6 +72,10 @@ public class SculkyMod {
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.SCULKBLOOM.getId(), ModBlocks.POTTED_SCULKBLOOM);
+
+            ModBiomes.registerBiomes();
+
+            SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeSculkForestRules());
 
         });
     }

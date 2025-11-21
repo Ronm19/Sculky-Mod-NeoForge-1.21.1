@@ -7,6 +7,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import net.ronm19.sculky.SculkyMod;
 import net.ronm19.sculky.block.ModBlocks;
@@ -121,6 +122,37 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', ModItems.SCULK_SHARD.get())
                 .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get())).save(pRecipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.INFESTED_SCULK_PODZOL_BLOCK.get())
+                .pattern("SSS")
+                .pattern("SPS")
+                .pattern("SSS")
+                .define('S', ModItems.SCULK_SHARD.get())
+                .define('P', Blocks.PODZOL)
+                .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get())).save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.INFESTED_SCULK_ROOTED_DIRT_BLOCK.get())
+                .pattern("SSS")
+                .pattern("SRS")
+                .pattern("SSS")
+                .define('S', ModItems.SCULK_SHARD.get())
+                .define('R', Blocks.ROOTED_DIRT)
+                .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get())).save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.INFESTED_SCULK_DIRT_BLOCK.get())
+                .pattern("SSS")
+                .pattern("SDS")
+                .pattern("SSS")
+                .define('S', ModItems.SCULK_SHARD.get())
+                .define('D', Blocks.DIRT)
+                .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get())).save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SCULK_BONE.get())
+                .pattern("SSS")
+                .pattern("SBS")
+                .pattern("SSS")
+                .define('S', ModItems.SCULK_SHARD.get())
+                .define('B', Items.BONE)
+                .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get())).save(pRecipeOutput);
 
         // ------------------------------ SHAPELESS RECIPES ------------------------------- //
 

@@ -51,6 +51,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.ECHO_JELLY.get());
         basicItem(ModItems.SCULK_PASTRY.get());
         basicItem(ModItems.SOULBITE_COOKIE.get());
+        basicItem(ModItems.SCULK_BONE.get());
 
         handheldItem(ModItems.INFESTED_SCULK_SWORD);
         handheldItem(ModItems.INFESTED_SCULK_PICKAXE);
@@ -79,6 +80,16 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModBlocks.INFESTED_SCULK_DOOR.asItem());
 
         saplingItem(ModBlocks.INFESTED_SCULK_SAPLING);
+
+        withExistingParent(ModItems.SCULK_PARASITE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.SCULK_SENTINEL_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.SCULK_STALKER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.SCULK_SHADE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.SCULK_HORROR_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+
+        withExistingParent(ModItems.SCULK_WOLF_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.SCULK_HORSE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.SCULK_FOX_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 
     }
 

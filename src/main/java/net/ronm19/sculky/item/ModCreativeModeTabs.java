@@ -30,6 +30,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.SOULBITE_COOKIE);
 
                         pOutput.accept(ModItems.TOMATO_SCULK_SEEDS);
+                        pOutput.accept(ModItems.SCULK_BONE);
 
                         pOutput.accept(ModItems.INFESTED_SCULK_SWORD);
                         pOutput.accept(ModItems.INFESTED_SCULK_PICKAXE);
@@ -89,6 +90,25 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.INFESTED_SCULK_SAPLING);
 
                     }).build());
+
+    public static final Supplier<CreativeModeTab> SCULKY_ENTITIES_TAB =
+            CREATIVE_MODE_TABS.register("sculky_entities_tab", () -> CreativeModeTab.builder()
+                    .title(Component.translatable("itemGroup.sculky.sculky_entities_tab"))
+                    .icon(() -> new ItemStack(ModItems.SCULK_PARASITE_SPAWN_EGG.get()))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "sculky_blocks_tab"))
+                    .displayItems((pParameters, pOutput) -> {
+
+                        pOutput.accept(ModItems.SCULK_PARASITE_SPAWN_EGG);
+                        pOutput.accept(ModItems.SCULK_SENTINEL_SPAWN_EGG);
+                        pOutput.accept(ModItems.SCULK_STALKER_SPAWN_EGG);
+                        pOutput.accept(ModItems.SCULK_SHADE_SPAWN_EGG);
+
+                        pOutput.accept(ModItems.SCULK_WOLF_SPAWN_EGG);
+                        pOutput.accept(ModItems.SCULK_HORSE_SPAWN_EGG);
+                        pOutput.accept(ModItems.SCULK_FOX_SPAWN_EGG);
+
+                    }).build());
+
 
 
 

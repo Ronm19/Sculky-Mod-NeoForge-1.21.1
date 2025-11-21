@@ -8,6 +8,8 @@
   "item.sculky.tomato_sculk": "Tomato Sculk",
   "item.sculky.tomato_sculk_seeds": "Tomato Sculk Seeds",
 
+  "item.sculky.sculk_bone": "Sculk Bone",
+
   "item.sculky.echo_jelly": "Echo Jelly",
   "item.sculky.sculk_pastry": "Sculk Pastry",
   "item.sculky.soulbite_cookie": "Soulbite Cookie",
@@ -24,6 +26,16 @@
   "item.sculky.infested_sculk_chestplate": "Infested Sculk Chestplate",
   "item.sculky.infested_sculk_leggings": "Infested Sculk Leggings",
   "item.sculky.infested_sculk_boots": "Infested Sculk Boots",
+
+  "item.sculky.sculk_parasite_spawn_egg": "Sculk Parasite Spawn Egg",
+  "item.sculky.sculk_sentinel_spawn_egg": "Sculk Sentinel Spawn Egg",
+  "item.sculky.sculk_stalker_spawn_egg": "Sculk Stalker Spawn Egg",
+  "item.sculky.sculk_shade_spawn_egg": "Sculk Shade Spawn Egg",
+  "item.sculky.sculk_horror_spawn_egg": "Sculk Horror Spawn Egg",
+
+  "item.sculky.sculk_wolf_spawn_egg": "Sculk Wolf Spawn Egg",
+  "item.sculky.sculk_horse_spawn_egg": "Sculk Horse Spawn Egg",
+  "item.sculky.sculk_fox_spawn_egg": "Sculk Fox Spawn Egg",
 
   "item.minecraft.potion.effect.sculk_infection_potion": "Sculk Infection Potion",
   "item.minecraft.splash_potion.effect.sculk_infection_potion": "Sculk Infection Splash Potion",
@@ -69,8 +81,19 @@
 
   "enchantment.sculky.infection": "Infection",
 
+  "entity.sculky.sculk_parasite": "Sculk Parasite",
+  "entity.sculky.sculk_sentinel": "Sculk Sentinel",
+  "entity.sculky.sculk_stalker": "Sculk Stalker",
+  "entity.sculky.sculk_shade": "Sculk Shade",
+  "entity.sculky.sculk_horror": "Sculk Horror",
+
+  "entity.sculky.sculk_wolf": "Sculk Wolf",
+  "entity.sculky.sculk_horse": "Sculk Horse",
+  "entity.sculky.sculk_fox": "Sculk Fox",
+
 
   "itemGroup.sculky.sculky_items_tab": "Sculky Items Tab",
-  "itemGroup.sculky.sculky_blocks_tab": "Sculky Blocks Tab"
+  "itemGroup.sculky.sculky_blocks_tab": "Sculky Blocks Tab",
+  "itemGroup.sculky.sculky_entities_tab": "Sculky Entities Tab"
 
 }

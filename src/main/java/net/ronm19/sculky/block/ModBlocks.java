@@ -19,9 +19,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.ronm19.sculky.SculkyMod;
-import net.ronm19.sculky.block.custom.InfestedCakeBlock;
-import net.ronm19.sculky.block.custom.ModFlammableRotatedPillarBlock;
-import net.ronm19.sculky.block.custom.TomatoSculkCropBlock;
+import net.ronm19.sculky.block.custom.*;
 import net.ronm19.sculky.item.ModItems;
 import net.ronm19.sculky.worldgen.tree.ModTreeGrowers;
 
@@ -68,7 +66,7 @@ public class ModBlocks {
             () -> new TomatoSculkCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT)));
 
     public static final DeferredBlock<Block> INFESTED_SCULK_GRASS_BLOCK = registerBlock("infested_sculk_grass_block",
-            () -> new GrassBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK).sound(SoundType.SCULK)));
+            () -> new InfestedSculkGrassBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK).sound(SoundType.SCULK)));
 
     public static final DeferredBlock<Block> INFESTED_SCULK_DIRT_BLOCK = registerBlock("infested_sculk_dirt_block",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.SCULK)));
@@ -131,7 +129,7 @@ public class ModBlocks {
             });
 
     public static final DeferredBlock<Block> INFESTED_SCULK_SAPLING = registerBlock("infested_sculk_sapling",
-            () -> new SaplingBlock(ModTreeGrowers.INFESTED_SCULK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING).sound(SoundType.SCULK)));
+            () -> new ModSaplingBlock(ModTreeGrowers.INFESTED_SCULK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING).sound(SoundType.SCULK)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

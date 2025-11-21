@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "R": {
+      "item": "minecraft:rooted_dirt"
+    },
+    "S": {
+      "item": "sculky:sculk_shard"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SRS",
+    "SSS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "sculky:infested_sculk_rooted_dirt_block"
+  }
+}

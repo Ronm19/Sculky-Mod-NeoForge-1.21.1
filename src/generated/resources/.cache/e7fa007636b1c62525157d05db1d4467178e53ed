@@ -1,5 +1,6 @@
-// 1.21.1	2025-11-14T12:30:54.8981878	Tags for minecraft:item mod id sculky
+// 1.21.1	2025-11-21T04:27:18.98965	Tags for minecraft:item mod id sculky
 04092bcf9e29b68afeafcf254ff798bb06ca839b data/minecraft/tags/item/dirt.json
+caa22a70d5b929b41dbd3e7c1f0dea0fab9036a9 data/minecraft/tags/item/fox_food.json
 53dd30f7cf65e9f95f2dedc4ca715a7024e2bdbc data/minecraft/tags/item/logs_that_burn.json
 403686ecd099a4c548692066d938288b071c923f data/minecraft/tags/item/planks.json
 fc0126fd72236874226fa15d78da552f3c16c116 data/minecraft/tags/item/swords.json

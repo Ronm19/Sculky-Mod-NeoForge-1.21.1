@@ -4,11 +4,13 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.ronm19.sculky.SculkyMod;
 import net.ronm19.sculky.block.ModBlocks;
+import net.ronm19.sculky.entity.ModEntities;
 import net.ronm19.sculky.item.custom.*;
 
 public class ModItems {
@@ -16,6 +18,8 @@ public class ModItems {
 
     public static final DeferredItem<Item> SCULK_SHARD = ITEMS.registerSimpleItem("sculk_shard");
     public static final DeferredItem<Item> RAW_SCULK_SHARD = ITEMS.registerSimpleItem("raw_sculk_shard");
+
+    public static final DeferredItem<Item> SCULK_BONE = ITEMS.registerSimpleItem("sculk_bone");
 
     public static final DeferredItem<Item> SCULK_HEARTFRUIT =
             ITEMS.registerItem("sculk_heartfruit", Item::new, new Item.Properties().food(ModFoodProperties.SCULK_HEARTFRUIT));
@@ -78,6 +82,43 @@ public class ModItems {
 
     public static final DeferredItem<Item> INFESTED_SCULK_HORSE_ARMOR = ITEMS.register("infested_sculk_horse_armor",
             () -> new AnimalArmorItem(ModArmorMaterials.INFESTED_SCULK, AnimalArmorItem.BodyType.EQUESTRIAN, false, new Item.Properties().stacksTo(1)));
+
+
+    // ------------------------------- MONSTERs Egg Spawns --------------------------------------------- //
+
+    public static final DeferredItem<Item> SCULK_PARASITE_SPAWN_EGG = ITEMS.register("sculk_parasite_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.SCULK_PARASITE, 0x0a1019, 0x3cf0d0,
+                    new Item.Properties()));
+
+    public static final DeferredItem<Item> SCULK_SENTINEL_SPAWN_EGG = ITEMS.register("sculk_sentinel_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.SCULK_SENTINEL, 0x0a0f14, 0x3df9ff,
+                    new Item.Properties()));
+
+    public static final DeferredItem<Item> SCULK_STALKER_SPAWN_EGG = ITEMS.register("sculk_stalker_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.SCULK_STALKER, 0x0A0A0A, 0x0094FF,
+                    new Item.Properties()));
+
+    public static final DeferredItem<Item> SCULK_SHADE_SPAWN_EGG = ITEMS.register("sculk_shade_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.SCULK_SHADE,  0x04070A, 0x2BF0FF,
+                    new Item.Properties()));
+
+    public static final DeferredItem<Item> SCULK_HORROR_SPAWN_EGG = ITEMS.register("sculk_horror_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.SCULK_HORROR,  0x081A1F, 0x49F7FF,
+                    new Item.Properties()));
+
+    // ------------------------------- NEUTRAL Egg Spawns --------------------------------------------- //
+
+    public static final DeferredItem<Item> SCULK_WOLF_SPAWN_EGG = ITEMS.register("sculk_wolf_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.SCULK_WOLF, 0x0A0F12, 0x35D0E3,
+                    new Item.Properties()));
+
+    public static final DeferredItem<Item> SCULK_HORSE_SPAWN_EGG = ITEMS.register("sculk_horse_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.SCULK_HORSE, 0x081418, 0x2AF2D2,
+                    new Item.Properties()));
+
+    public static final DeferredItem<Item> SCULK_FOX_SPAWN_EGG = ITEMS.register("sculk_fox_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.SCULK_FOX, 0x0A0F12, 0x34D5E7,
+                    new Item.Properties()));
 
 
 

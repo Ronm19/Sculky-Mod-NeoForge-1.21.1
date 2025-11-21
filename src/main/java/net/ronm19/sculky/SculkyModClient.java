@@ -1,8 +1,6 @@
 package net.ronm19.sculky;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -12,6 +10,8 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
+import net.ronm19.sculky.entity.ModEntities;
+import net.ronm19.sculky.entity.client.*;
 
 // This class will not load on dedicated servers. Accessing client side code from here is safe.
 @Mod(value = SculkyMod.MOD_ID, dist = Dist.CLIENT)
@@ -28,6 +28,14 @@ public class SculkyModClient {
 
     @SubscribeEvent
     static void onClientSetup( FMLClientSetupEvent event ) {
+        EntityRenderers.register(ModEntities.SCULK_PARASITE.get(), SculkParasiteRenderer::new);
+        EntityRenderers.register(ModEntities.SCULK_SENTINEL.get(), SculkSentinelRenderer ::new);
+        EntityRenderers.register(ModEntities.SCULK_STALKER.get(), SculkStalkerRenderer::new);
+        EntityRenderers.register(ModEntities.SCULK_SHADE.get(), SculkShadeRenderer::new);
+
+        EntityRenderers.register(ModEntities.SCULK_WOLF.get(), SculkWolfRender::new);
+        EntityRenderers.register(ModEntities.SCULK_HORSE.get(), SculkHorseRenderer::new);
+        EntityRenderers.register(ModEntities.SCULK_FOX.get(), SculkFoxRenderer::new);
     }
 
     @SubscribeEvent

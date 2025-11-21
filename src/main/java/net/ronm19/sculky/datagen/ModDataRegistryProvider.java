@@ -11,6 +11,7 @@ import net.ronm19.sculky.enchantment.ModEnchantments;
 import net.ronm19.sculky.worldgen.ModBiomeModifiers;
 import net.ronm19.sculky.worldgen.ModConfiguredFeatures;
 import net.ronm19.sculky.worldgen.ModPlacedFeatures;
+import net.ronm19.sculky.worldgen.biome.ModBiomes;
 
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
@@ -20,7 +21,10 @@ public class ModDataRegistryProvider extends DatapackBuiltinEntriesProvider {
             .add(Registries.ENCHANTMENT, ModEnchantments ::bootstrap)
             .add(Registries.CONFIGURED_FEATURE, ModConfiguredFeatures ::bootstrap)
             .add(Registries.PLACED_FEATURE, ModPlacedFeatures ::bootstrap)
-            .add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, ModBiomeModifiers ::bootstrap);
+            .add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, ModBiomeModifiers ::bootstrap)
+            .add(Registries.BIOME, ModBiomes::bootstrap);
+
+
 
 
 

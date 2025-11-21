@@ -13,6 +13,7 @@ import net.neoforged.neoforge.common.world.BiomeModifier;
 import net.neoforged.neoforge.common.world.BiomeModifiers;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import net.ronm19.sculky.SculkyMod;
+import net.ronm19.sculky.worldgen.biome.ModBiomes;
 
 public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_TREE_INFESTED_SCULK = registerKey("add_tree_infested_sculk");
@@ -29,7 +30,7 @@ public class ModBiomeModifiers {
         var biomes = context.lookup(Registries.BIOME);
 
         context.register(ADD_TREE_INFESTED_SCULK, new BiomeModifiers.AddFeaturesBiomeModifier(
-                HolderSet.direct(biomes.getOrThrow(Biomes.PLAINS), biomes.getOrThrow(Biomes.BIRCH_FOREST)),
+                HolderSet.direct(biomes.getOrThrow(ModBiomes.SCULK_FOREST)),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.INFESTED_SCULK_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
@@ -45,7 +46,7 @@ public class ModBiomeModifiers {
                 GenerationStep.Decoration.UNDERGROUND_ORES));
 
         context.register(ADD_SCULKBLOOM, new BiomeModifiers.AddFeaturesBiomeModifier(
-                HolderSet.direct(biomes.getOrThrow(Biomes.PLAINS), biomes.getOrThrow(Biomes.BIRCH_FOREST)),
+                HolderSet.direct(biomes.getOrThrow(ModBiomes.SCULK_FOREST)),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.SCULKBLOOM_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
