@@ -112,6 +112,10 @@ public class ModItems {
             () -> new DeferredSpawnEggItem(ModEntities.SCULK_WOLF, 0x0A0F12, 0x35D0E3,
                     new Item.Properties()));
 
+    public static final DeferredItem<Item> SCULK_WOLF_ALPHA_SPAWN_EGG = ITEMS.register("sculk_wolf_alpha_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.SCULK_WOLF_ALPHA, 0xB1930, 0xCF1AE,
+                    new Item.Properties()));
+
     public static final DeferredItem<Item> SCULK_HORSE_SPAWN_EGG = ITEMS.register("sculk_horse_spawn_egg",
             () -> new DeferredSpawnEggItem(ModEntities.SCULK_HORSE, 0x081418, 0x2AF2D2,
                     new Item.Properties()));
@@ -119,6 +123,11 @@ public class ModItems {
     public static final DeferredItem<Item> SCULK_FOX_SPAWN_EGG = ITEMS.register("sculk_fox_spawn_egg",
             () -> new DeferredSpawnEggItem(ModEntities.SCULK_FOX, 0x0A0F12, 0x34D5E7,
                     new Item.Properties()));
+
+    public static final DeferredItem<Item> SCULK_BAT_SPAWN_EGG = ITEMS.register("sculk_bat_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.SCULK_BAT, 0x060A14, 0x0CF1AE,
+                    new Item.Properties()));
+
 
 
 

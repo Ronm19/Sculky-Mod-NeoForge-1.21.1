@@ -37,8 +37,7 @@ public class SculkWolfArmorLayer extends RenderLayer<SculkWolfEntity, SculkWolfM
         if (livingEntity.hasArmor()) {
             ItemStack itemstack = livingEntity.getBodyArmorItem();
             Item var13 = itemstack.getItem();
-            if (var13 instanceof AnimalArmorItem) {
-                AnimalArmorItem animalarmoritem = (AnimalArmorItem)var13;
+            if (var13 instanceof AnimalArmorItem animalarmoritem) {
                 if (animalarmoritem.getBodyType() == AnimalArmorItem.BodyType.CANINE) {
                     ((SculkWolfModel)this.getParentModel()).copyPropertiesTo(this.model);
                     this.model.prepareMobModel(livingEntity, limbSwing, limbSwingAmount, partialTick);

@@ -3,7 +3,10 @@ package net.ronm19.sculky.event;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.SpawnPlacementTypes;
+import net.minecraft.world.entity.TamableAnimal;
+import net.minecraft.world.entity.ambient.AmbientCreature;
 import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.animal.horse.AbstractHorse;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -66,53 +69,107 @@ public class ModEvents {
     }
 
     @SubscribeEvent
-    public static void registerLayers( EntityRenderersEvent.RegisterLayerDefinitions event) {
-        event.registerLayerDefinition(ModModelLayers.SCULK_SENTINEL, SculkSentinelModel::createBodyLayer);
-        event.registerLayerDefinition(ModModelLayers.SCULK_SHADE, SculkShadeModel::createBodyLayer);
+    public static void registerLayers( EntityRenderersEvent.RegisterLayerDefinitions event ) {
+        event.registerLayerDefinition(ModModelLayers.SCULK_SENTINEL, SculkSentinelModel :: createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.SCULK_SHADE, SculkShadeModel :: createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.SCULK_HORROR, SculkHorrorModel :: createBodyLayer);
 
 
-        event.registerLayerDefinition(ModModelLayers.SCULK_WOLF, SculkWolfModel::createBodyLayer);
-        event.registerLayerDefinition(ModModelLayers.SCULK_FOX, SculkFoxModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.SCULK_WOLF, SculkWolfModel :: createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.SCULK_FOX, SculkFoxModel :: createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.SCULK_WOLF_ALPHA, SculkWolfAlphaModel :: createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.SCULK_BAT, SculkBatModel :: createBodyLayer);
     }
 
     @SubscribeEvent
-    public static void registerAttributes( EntityAttributeCreationEvent event) {
+    public static void registerAttributes( EntityAttributeCreationEvent event ) {
         event.put(ModEntities.SCULK_PARASITE.get(), SculkParasiteEntity.createSculkParasiteAttributes().build());
         event.put(ModEntities.SCULK_SENTINEL.get(), SculkSentinelEntity.createSculkSentinelAttributes().build());
         event.put(ModEntities.SCULK_STALKER.get(), SculkStalkerEntity.createSculkStalkerAttributes().build());
         event.put(ModEntities.SCULK_SHADE.get(), SculkShadeEntity.createSculkShadeAttributes().build());
+        event.put(ModEntities.SCULK_HORROR.get(), SculkHorrorEntity.createSculkHorrorAttributes().build());
 
         event.put(ModEntities.SCULK_WOLF.get(), SculkWolfEntity.createsSculkWolfAttributes().build());
+        event.put(ModEntities.SCULK_WOLF_ALPHA.get(), SculkWolfAlphaEntity.createSculkWolfAlphaAttributes().build());
         event.put(ModEntities.SCULK_HORSE.get(), SculkHorseEntity.createSculkHorseAttributes().build());
         event.put(ModEntities.SCULK_FOX.get(), SculkFoxEntity.createSculkFoxAttributes().build());
+        event.put(ModEntities.SCULK_BAT.get(), SculkBatEntity.createSculkBatAttributes().build());
+
     }
 
     @SubscribeEvent
-    public static void registerSpawnPlacements(RegisterSpawnPlacementsEvent event) {
+    public static void registerSpawnPlacements( RegisterSpawnPlacementsEvent event ) {
 
-        event.register(ModEntities.SCULK_PARASITE.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                Monster::checkMobSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
-        event.register(ModEntities.SCULK_SENTINEL.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                Monster::checkMobSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
-        event.register(ModEntities.SCULK_STALKER.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                Monster::checkMobSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
-        event.register(ModEntities.SCULK_SHADE.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                Monster::checkMobSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
-        event.register(ModEntities.SCULK_DRAGON.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                Monster::checkMobSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        // ---------------------------------------------------------
+        //                   HOSTILE / MONSTER ENTITIES
+        // ---------------------------------------------------------
+        event.register(ModEntities.SCULK_PARASITE.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster :: checkMobSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
 
-        event.register(ModEntities.SCULK_WOLF.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                Animal::checkMobSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
-        event.register(ModEntities.SCULK_HORSE.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                Animal::checkMobSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
-        event.register(ModEntities.SCULK_FOX.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                Animal::checkMobSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(ModEntities.SCULK_SENTINEL.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster :: checkMobSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
 
+        event.register(ModEntities.SCULK_STALKER.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster :: checkMobSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
 
+        event.register(ModEntities.SCULK_SHADE.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster :: checkMobSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
 
+        event.register(ModEntities.SCULK_HORROR.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster :: checkMobSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
 
+        // ---------------------------------------------------------
+        //                NEUTRAL / TAMABLE-TYPE ENTITIES
+        // ---------------------------------------------------------
+        event.register(ModEntities.SCULK_WOLF.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                TamableAnimal :: checkMobSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
 
+        event.register(ModEntities.SCULK_WOLF_ALPHA.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                TamableAnimal :: checkMobSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
 
+        event.register(ModEntities.SCULK_FOX.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                TamableAnimal :: checkMobSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
 
+        // ---------------------------------------------------------
+        //                PASSIVE / RIDEABLE ENTITIES
+        // ---------------------------------------------------------
+        event.register(ModEntities.SCULK_HORSE.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                AbstractHorse :: checkMobSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+
+        // ---------------------------------------------------------
+        //                   AMBIENT / FLYING ENTITIES
+        // ---------------------------------------------------------
+        event.register(ModEntities.SCULK_BAT.get(),
+                SpawnPlacementTypes.NO_RESTRICTIONS, // correct for bats
+                Heightmap.Types.MOTION_BLOCKING,
+                AmbientCreature :: checkMobSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
     }
 }

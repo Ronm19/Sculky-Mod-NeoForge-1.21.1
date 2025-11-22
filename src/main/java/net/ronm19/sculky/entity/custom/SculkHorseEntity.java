@@ -57,15 +57,15 @@ public class SculkHorseEntity extends AbstractHorse {
 
         }
 
-        public void setTheItem( @NotNull ItemStack p_323895_) {
-            SculkHorseEntity.this.setBodyArmorItem(p_323895_);
+        public void setTheItem( @NotNull ItemStack itemStack) {
+            SculkHorseEntity.this.setBodyArmorItem(itemStack);
         }
 
         public void setChanged() {
         }
 
-        public boolean stillValid(Player p_324170_) {
-            return p_324170_.getVehicle() == SculkHorseEntity.this || p_324170_.canInteractWithEntity(SculkHorseEntity.this, (double)4.0F);
+        public boolean stillValid(Player player) {
+            return player.getVehicle() == SculkHorseEntity.this || player.canInteractWithEntity(SculkHorseEntity.this, (double)4.0F);
         }
     };
 

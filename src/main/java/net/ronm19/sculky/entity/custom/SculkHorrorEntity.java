@@ -105,6 +105,7 @@ public class SculkHorrorEntity extends Monster implements Enemy {
         // Targeting
         this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
+        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, TamableAnimal.class, true));
     }
 
     // ==================================================
@@ -323,5 +324,11 @@ public class SculkHorrorEntity extends Monster implements Enemy {
 
     static {
         DATA_FLAGS_ID = SynchedEntityData.defineId(SculkHorrorEntity.class, EntityDataSerializers.BYTE);
+    }
+
+    @Override
+    protected void defineSynchedData( SynchedEntityData.Builder builder ) {
+        super.defineSynchedData(builder);
+        builder.define(DATA_FLAGS_ID, (byte) 0);
     }
 }

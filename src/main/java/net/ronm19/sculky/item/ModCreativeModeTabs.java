@@ -102,10 +102,13 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.SCULK_SENTINEL_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_STALKER_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_SHADE_SPAWN_EGG);
+                        pOutput.accept(ModItems.SCULK_HORROR_SPAWN_EGG);
 
                         pOutput.accept(ModItems.SCULK_WOLF_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_HORSE_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_FOX_SPAWN_EGG);
+                        pOutput.accept(ModItems.SCULK_BAT_SPAWN_EGG);
+                        pOutput.accept(ModItems.SCULK_WOLF_ALPHA_SPAWN_EGG);
 
                     }).build());
 

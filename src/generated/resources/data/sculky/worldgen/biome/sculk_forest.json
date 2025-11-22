@@ -93,6 +93,12 @@
         "maxCount": 8,
         "minCount": 8,
         "weight": 10
+      },
+      {
+        "type": "sculky:sculk_bat",
+        "maxCount": 5,
+        "minCount": 2,
+        "weight": 60
       }
     ],
     "axolotls": [],
@@ -104,6 +110,12 @@
         "weight": 60
       },
       {
+        "type": "sculky:sculk_wolf_alpha",
+        "maxCount": 3,
+        "minCount": 1,
+        "weight": 60
+      },
+      {
         "type": "sculky:sculk_horse",
         "maxCount": 8,
         "minCount": 3,
@@ -111,8 +123,8 @@
       },
       {
         "type": "sculky:sculk_fox",
-        "maxCount": 7,
-        "minCount": 3,
+        "maxCount": 3,
+        "minCount": 1,
         "weight": 60
       }
     ],
@@ -186,6 +198,12 @@
       },
       {
         "type": "sculky:sculk_shade",
+        "maxCount": 6,
+        "minCount": 2,
+        "weight": 60
+      },
+      {
+        "type": "sculky:sculk_horror",
         "maxCount": 6,
         "minCount": 2,
         "weight": 60

@@ -32,10 +32,13 @@ public class SculkyModClient {
         EntityRenderers.register(ModEntities.SCULK_SENTINEL.get(), SculkSentinelRenderer ::new);
         EntityRenderers.register(ModEntities.SCULK_STALKER.get(), SculkStalkerRenderer::new);
         EntityRenderers.register(ModEntities.SCULK_SHADE.get(), SculkShadeRenderer::new);
+        EntityRenderers.register(ModEntities.SCULK_HORROR.get(), SculkHorrorRenderer::new);
 
         EntityRenderers.register(ModEntities.SCULK_WOLF.get(), SculkWolfRender::new);
+        EntityRenderers.register(ModEntities.SCULK_WOLF_ALPHA.get(), SculkWolfAlphaRenderer::new);
         EntityRenderers.register(ModEntities.SCULK_HORSE.get(), SculkHorseRenderer::new);
         EntityRenderers.register(ModEntities.SCULK_FOX.get(), SculkFoxRenderer::new);
+        EntityRenderers.register(ModEntities.SCULK_BAT.get(), SculkBatRenderer::new);
     }
 
     @SubscribeEvent

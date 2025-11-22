@@ -29,6 +29,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.*;
+import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.entity.animal.*;
 import net.minecraft.world.entity.animal.horse.AbstractHorse;
 import net.minecraft.world.entity.monster.AbstractSkeleton;
@@ -50,6 +51,7 @@ import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.event.EventHooks;
 import net.ronm19.sculky.entity.ModEntities;
 
+import net.ronm19.sculky.entity.ai.FollowAlphaGoal;
 import net.ronm19.sculky.item.ModItems;
 import org.jetbrains.annotations.NotNull;
 import javax.annotation.Nullable;
@@ -168,6 +170,7 @@ public class SculkWolfEntity extends TamableAnimal implements NeutralMob {
 
         // Follow owner ONLY in Follow Mode
         this.goalSelector.addGoal(5, new FollowOwnerGoal(this, 1.0D, 10.0F, 2.0F));
+        this.goalSelector.addGoal(6, new FollowAlphaGoal(this, 1.0D));
 
         // Normal wolf-like wandering & looking
         this.goalSelector.addGoal(8, new WaterAvoidingRandomStrollGoal(this, 1.0D));
@@ -231,8 +234,36 @@ public class SculkWolfEntity extends TamableAnimal implements NeutralMob {
                     this.level().addParticle(ParticleTypes.SPLASH, x, y, z, vec3.x, vec3.y, vec3.z);
                 }
             }
+
+            SculkWolfAlphaEntity alpha = this.level().getNearestEntity(
+                    SculkWolfAlphaEntity.class,
+                    TargetingConditions.forNonCombat(),
+                    this,
+                    this.getX(), this.getY(), this.getZ(),
+                    this.getBoundingBox().inflate(12)
+            );
+
+            if (alpha != null && !this.isTame()) {
+                followAlpha(alpha);
+            }
+
         }
     }
+
+    private void followAlpha(SculkWolfAlphaEntity alpha) {
+        double distance = this.distanceTo(alpha);
+
+        if (distance > 3) {
+            this.getNavigation().moveTo(alpha, 1.2D);
+        }
+
+        // Protect Alpha if he is hurt
+        LivingEntity attacker = alpha.getLastHurtByMob();
+        if (attacker != null) {
+            this.setTarget(attacker);
+        }
+    }
+
 
     private void cancelShake() {
         this.isShaking = false;

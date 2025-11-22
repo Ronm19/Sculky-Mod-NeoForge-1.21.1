@@ -36,6 +36,8 @@
   "item.sculky.sculk_wolf_spawn_egg": "Sculk Wolf Spawn Egg",
   "item.sculky.sculk_horse_spawn_egg": "Sculk Horse Spawn Egg",
   "item.sculky.sculk_fox_spawn_egg": "Sculk Fox Spawn Egg",
+  "item.sculky.sculk_bat_spawn_egg": "Sculk Bat Spawn Egg",
+  "item.sculky.sculk_wolf_alpha_spawn_egg": "Sculk Wolf Alpha Spawn Egg",
 
   "item.minecraft.potion.effect.sculk_infection_potion": "Sculk Infection Potion",
   "item.minecraft.splash_potion.effect.sculk_infection_potion": "Sculk Infection Splash Potion",
@@ -88,8 +90,10 @@
   "entity.sculky.sculk_horror": "Sculk Horror",
 
   "entity.sculky.sculk_wolf": "Sculk Wolf",
+  "entity.sculky.sculk_wolf_alpha": "Sculk Wolf Alpha",
   "entity.sculky.sculk_horse": "Sculk Horse",
   "entity.sculky.sculk_fox": "Sculk Fox",
+  "entity.sculky.sculk_bat": "Sculk Bat",
 
 
   "itemGroup.sculky.sculky_items_tab": "Sculky Items Tab",
