@@ -13,7 +13,7 @@ public class ModBiomes {
     public static final ResourceKey<Biome> SCULK_FOREST = registerBiomeKey("sculk_forest");
 
     public static void registerBiomes() {
-        Regions.register(new OverworldRegion(ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "sculky_overworld"), 40));
+        Regions.register(new OverworldRegion(ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "sculky_overworld"), 20));
     }
 
     public static void bootstrap( BootstrapContext<Biome> context) {

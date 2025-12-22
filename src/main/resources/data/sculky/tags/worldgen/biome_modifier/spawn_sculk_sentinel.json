@@ -8,6 +8,6 @@
     "type": "sculky:sculk_sentinel",
     "weight": 60,
     "minCount": 2,
-    "maxCount": 5
+    "maxCount": 3
   }
 }

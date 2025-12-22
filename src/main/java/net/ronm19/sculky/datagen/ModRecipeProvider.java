@@ -29,7 +29,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         // ------------------------------ SHAPED RECIPES ------------------------------- //
 
-
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.INFESTED_SCULK_BLOCK.get())
                 .pattern("SSS")
                 .pattern("SSS")
@@ -146,12 +145,28 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('D', Blocks.DIRT)
                 .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get())).save(pRecipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.INFESTED_SCULK_BRICKS.get())
+                .pattern("III")
+                .pattern("III")
+                .pattern("III")
+                .define('I', ModBlocks.INFESTED_SCULK_BLOCK.get())
+                .unlockedBy("has_infested_sculk_block", has(ModBlocks.INFESTED_SCULK_BLOCK.get())).save(pRecipeOutput);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SCULK_BONE.get())
                 .pattern("SSS")
                 .pattern("SBS")
                 .pattern("SSS")
                 .define('S', ModItems.SCULK_SHARD.get())
                 .define('B', Items.BONE)
+                .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get())).save(pRecipeOutput);
+
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ECHO_CONDUIT.get())
+                .pattern("  S")
+                .pattern(" S ")
+                .pattern("T  ")
+                .define('S', ModItems.SCULK_SHARD.get())
+                .define('T', Items.STICK)
                 .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get())).save(pRecipeOutput);
 
         // ------------------------------ SHAPELESS RECIPES ------------------------------- //

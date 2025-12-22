@@ -8,6 +8,6 @@
     "type": "sculky:sculk_wolf_alpha",
     "weight": 60,
     "minCount": 1,
-    "maxCount": 3
+    "maxCount": 2
   }
 }

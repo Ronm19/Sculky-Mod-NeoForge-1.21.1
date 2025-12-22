@@ -50,11 +50,11 @@ public class SculkHorrorEntity extends Monster implements Enemy {
     // -----------------------------
     public static AttributeSupplier.Builder createSculkHorrorAttributes() {
         return Monster.createMonsterAttributes()
-                .add(Attributes.MAX_HEALTH, 70D)
+                .add(Attributes.MAX_HEALTH, 20.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.28D)
                 .add(Attributes.FOLLOW_RANGE, 40D)
-                .add(Attributes.ARMOR, 6D)
-                .add(Attributes.ATTACK_DAMAGE, 10D)
+                .add(Attributes.ARMOR, 2.0D)
+                .add(Attributes.ATTACK_DAMAGE, 5.0D)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 1.0D);
     }
 

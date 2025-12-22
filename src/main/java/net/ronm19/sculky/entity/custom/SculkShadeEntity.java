@@ -35,7 +35,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.annotation.Nullable;
 import java.util.EnumSet;
 
-public class SculkShadeEntity extends Monster implements Enemy {
+public class SculkShadeEntity extends Vex implements Enemy {
 
     private int flickerTimer = 0;
     private boolean isFlickering = false;
@@ -45,7 +45,7 @@ public class SculkShadeEntity extends Monster implements Enemy {
     private static final int FLAG_IS_CHARGING = 1;
     protected static final EntityDataAccessor<Byte> DATA_FLAGS_ID;
 
-    public SculkShadeEntity( EntityType<? extends Monster> type, Level level ) {
+    public SculkShadeEntity( EntityType<? extends Vex> type, Level level ) {
         super(type, level);
         this.xpReward = 18;
         this.moveControl = new SculkShadeMoveControl(this);

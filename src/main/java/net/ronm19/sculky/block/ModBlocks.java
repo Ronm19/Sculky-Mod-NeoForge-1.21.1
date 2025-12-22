@@ -20,6 +20,7 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.ronm19.sculky.SculkyMod;
 import net.ronm19.sculky.block.custom.*;
+import net.ronm19.sculky.block.custom.SculkBlock;
 import net.ronm19.sculky.item.ModItems;
 import net.ronm19.sculky.worldgen.tree.ModTreeGrowers;
 
@@ -30,9 +31,12 @@ public class ModBlocks {
             DeferredRegister.createBlocks(SculkyMod.MOD_ID);
 
     public static final DeferredBlock<Block> INFESTED_SCULK_BLOCK = registerBlock("infested_sculk_block",
-            () -> new Block(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.SCULK)));
+            () -> new SculkBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.SCULK)));
     public static final DeferredBlock<Block> RAW_INFESTED_SCULK_BLOCK = registerBlock("raw_infested_sculk_block",
-            () -> new Block(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.SCULK)));
+            () -> new SculkBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.SCULK)));
+
+    public static final DeferredBlock<Block> INFESTED_SCULK_BRICKS = registerBlock("infested_sculk_bricks",
+            () -> new InfestedSculkBricksBlock(BlockBehaviour.Properties.of().strength(3.5f, 8.0f).requiresCorrectToolForDrops().sound(SoundType.SCULK)));
 
     public static final DeferredBlock<Block> SCULK_ORE = registerBlock("sculk_ore",
             () -> new DropExperienceBlock(UniformInt.of(1, 5), BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().sound(SoundType.SCULK)));
@@ -69,13 +73,13 @@ public class ModBlocks {
             () -> new InfestedSculkGrassBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK).sound(SoundType.SCULK)));
 
     public static final DeferredBlock<Block> INFESTED_SCULK_DIRT_BLOCK = registerBlock("infested_sculk_dirt_block",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.SCULK)));
+            () -> new SculkBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.SCULK)));
 
     public static final DeferredBlock<Block> INFESTED_SCULK_ROOTED_DIRT_BLOCK = registerBlock("infested_sculk_rooted_dirt_block",
-            () -> new RootedDirtBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.ROOTED_DIRT).sound(SoundType.SCULK)));
+            () -> new SculkBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.ROOTED_DIRT).sound(SoundType.SCULK)));
 
     public static final DeferredBlock<Block> INFESTED_SCULK_PODZOL_BLOCK = registerBlock("infested_sculk_podzol_block",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.PODZOL).sound(SoundType.SCULK)));
+            () -> new SculkBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.PODZOL).sound(SoundType.SCULK)));
 
 
     public static final DeferredBlock<Block> SCULKBLOOM = registerBlock("sculkbloom",

@@ -21,6 +21,7 @@
   "item.sculky.infested_sculk_hoe": "Infested Sculk Hoe",
   "item.sculky.infested_sculk_hammer": "Infested Sculk Hammer",
   "item.sculky.sculk_edge": "Sculk Edge",
+  "item.sculky.echo_conduit": "Echo Conduit",
 
   "item.sculky.infested_sculk_helmet": "Infested Sculk Helmet",
   "item.sculky.infested_sculk_chestplate": "Infested Sculk Chestplate",
@@ -32,6 +33,9 @@
   "item.sculky.sculk_stalker_spawn_egg": "Sculk Stalker Spawn Egg",
   "item.sculky.sculk_shade_spawn_egg": "Sculk Shade Spawn Egg",
   "item.sculky.sculk_horror_spawn_egg": "Sculk Horror Spawn Egg",
+  "item.sculky.sculk_zombie_spawn_egg": "Sculk Zombie Spawn Egg",
+  "item.sculky.sculk_skeleton_spawn_egg": "Sculk Skeleton Spawn Egg",
+  "item.sculky.sculk_creeper_spawn_egg": "Sculk Creeper Spawn Egg",
 
   "item.sculky.sculk_wolf_spawn_egg": "Sculk Wolf Spawn Egg",
   "item.sculky.sculk_horse_spawn_egg": "Sculk Horse Spawn Egg",
@@ -48,6 +52,7 @@
 
   "block.sculky.infested_sculk_block": "Infested Sculk Block",
   "block.sculky.raw_infested_sculk_block": "Raw Infested Sculk Block",
+  "block.sculky.infested_sculk_bricks": "Infested Sculk Bricks",
   "block.sculky.sculk_ore": "Sculk Ore",
   "block.sculky.deepslate_sculk_ore": "Deepslate Sculk Ore",
 
@@ -55,6 +60,7 @@
   "block.sculky.infested_sculk_dirt_block": "Infested Sculk Dirt Block",
   "block.sculky.infested_sculk_rooted_dirt_block": "Infested Sculk Rooted Dirt Block",
   "block.sculky.infested_sculk_podzol_block": "Infested Sculk Podzol Block",
+
 
   "block.sculky.infested_sculk_log": "Infested Sculk Log",
   "block.sculky.infested_sculk_planks": "Infested Sculk Planks",
@@ -88,6 +94,9 @@
   "entity.sculky.sculk_stalker": "Sculk Stalker",
   "entity.sculky.sculk_shade": "Sculk Shade",
   "entity.sculky.sculk_horror": "Sculk Horror",
+  "entity.sculky.sculk_zombie": "Sculk Zombie",
+  "entity.sculky.sculk_skeleton": "Sculk Skeleton",
+  "entity.sculky.sculk_creeper": "Sculk Creeper",
 
   "entity.sculky.sculk_wolf": "Sculk Wolf",
   "entity.sculky.sculk_wolf_alpha": "Sculk Wolf Alpha",
@@ -95,6 +104,11 @@
   "entity.sculky.sculk_fox": "Sculk Fox",
   "entity.sculky.sculk_bat": "Sculk Bat",
 
+  "key.sculky.use_ability": "Use Ability",
+  "key.categories.sculky": "Sculky Mod",
+
+  "ability.sculky.cooldown": "Ability ready in %s seconds",
+  "ability.sculky.need_momentum": "You need to move forward!",
 
   "itemGroup.sculky.sculky_items_tab": "Sculky Items Tab",
   "itemGroup.sculky.sculky_blocks_tab": "Sculky Blocks Tab",

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "sculky:infested_sculk_helmet",
+    "sculky:infested_sculk_chestplate",
+    "sculky:infested_sculk_leggings",
+    "sculky:infested_sculk_boots"
+  ]
+}

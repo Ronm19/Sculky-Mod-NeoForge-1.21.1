@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "sculky:sculk_sentinel",
+    "sculky:sculk_parasite",
+    "sculky:sculk_stalker",
+    "sculky:sculk_shade",
+    "sculky:sculk_horror",
+    "sculky:sculk_zombie",
+    "sculky:sculk_horse",
+    "sculky:sculk_wolf",
+    "sculky:sculk_fox",
+    "sculky:sculk_bat",
+    "sculky:sculk_wolf_alpha"
+  ]
+}

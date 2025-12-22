@@ -1,4 +1,5 @@
-// 1.21.1	2025-11-15T23:20:47.1338625	Recipes
+// 1.21.1	2025-12-22T19:22:45.3264158	Recipes
+418c801599be78e95301328beb50358b6ee22ff1 data/sculky/advancement/recipes/building_blocks/infested_sculk_bricks.json
 3b73363b660a61a2f260db47b91fe327daac994c data/sculky/advancement/recipes/building_blocks/infested_sculk_dirt_block.json
 e20e10439ee9d9ce493899d77bf3b68d3d90016f data/sculky/advancement/recipes/building_blocks/infested_sculk_planks.json
 86d6f618e658c029223bd078e323031f0770ca7c data/sculky/advancement/recipes/building_blocks/infested_sculk_podzol_block.json
@@ -20,6 +21,7 @@ a080ef489a84ec3c9f5c40b94d079de886a14764 data/sculky/advancement/recipes/combat/
 567914718c4ab63ef6c14c8f42073236846569df data/sculky/advancement/recipes/combat/infested_sculk_sword.json
 8222378d957ddf96d31885c326fb0bd6d81a56a0 data/sculky/advancement/recipes/decorations/infested_sculk_fence.json
 208057b5c16521d79ad4e0adbaf92c8d4b7776f1 data/sculky/advancement/recipes/food/sculk_pastry.json
+fd297986e36f6f3d8a66fccf63818b53bce61d0e data/sculky/advancement/recipes/misc/echo_conduit.json
 f562f36e5aeaceb8766555bb3ca1b90096749f4e data/sculky/advancement/recipes/misc/infested_sculk_block.json
 0f5293cbbd2afac569ecb50027213183c6278671 data/sculky/advancement/recipes/misc/sculk_bone.json
 ed70983d3d99e4c73804b1e544eb7b0a7588d0af data/sculky/advancement/recipes/misc/sculk_shard.json
@@ -34,9 +36,11 @@ b1747269ae2a0e46677e0bfaa91b2408ceae5b9e data/sculky/advancement/recipes/redston
 98718b1f20341bf816e2713fad09cf065cfa2e13 data/sculky/advancement/recipes/redstone/infested_sculk_fence_gate.json
 341dcff9f59ad8811ed990783695119bf5a16a23 data/sculky/advancement/recipes/redstone/infested_sculk_pressure_plate.json
 22bfea915cf5fce0ce519aed665829be5cf07c6e data/sculky/advancement/recipes/redstone/infested_sculk_trapdoor.json
+e8aaceb64dc5db13a95c35a0927f8e117e8563de data/sculky/recipe/echo_conduit.json
 e50ff6f91e26886e0ae48c0522f0387a7752c7eb data/sculky/recipe/infested_sculk_axe.json
 e1e2c2f20c2e57ae2436f0c840a1674ebd740bef data/sculky/recipe/infested_sculk_block.json
 7851fa319ffff5c521b071a93a063e1fa9ce3757 data/sculky/recipe/infested_sculk_boots.json
+3b3b948c62cb0e54527f0db9d56b269fefe01f7a data/sculky/recipe/infested_sculk_bricks.json
 c546efd510469d699690ba44e119585cec2eaceb data/sculky/recipe/infested_sculk_button.json
 286fc495e012a5a072b020d3220dc18bb4a6159c data/sculky/recipe/infested_sculk_chestplate.json
 03145b2d6b1de159eee5124a078b6d3667cd29e2 data/sculky/recipe/infested_sculk_dirt_block.json

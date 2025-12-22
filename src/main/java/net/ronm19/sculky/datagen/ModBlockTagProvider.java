@@ -22,6 +22,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.INFESTED_SCULK_BLOCK.get())
                 .add(ModBlocks.RAW_INFESTED_SCULK_BLOCK.get())
                 .add(ModBlocks.SCULK_ORE.get())
+                .add(ModBlocks.INFESTED_SCULK_BRICKS.get())
                 .add(ModBlocks.INFESTED_SCULK_WALL.get())
                 .add(ModBlocks.DEEPSLATE_SCULK_ORE.get());
 
@@ -29,6 +30,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.INFESTED_SCULK_BLOCK.get())
                 .add(ModBlocks.RAW_INFESTED_SCULK_BLOCK.get())
                 .add(ModBlocks.INFESTED_SCULK_WALL.get())
+                .add(ModBlocks.INFESTED_SCULK_BRICKS.get())
                 .add(ModBlocks.SCULK_ORE.get())
                 .add(ModBlocks.DEEPSLATE_SCULK_ORE.get());
 

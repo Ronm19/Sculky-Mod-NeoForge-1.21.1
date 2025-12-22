@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:sculk",
+    "sculky:infested_sculk_block",
+    "sculky:infested_sculk_grass_block"
+  ]
+}

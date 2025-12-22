@@ -27,6 +27,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         blockWithItem(ModBlocks.INFESTED_SCULK_BLOCK);
         blockWithItem(ModBlocks.RAW_INFESTED_SCULK_BLOCK);
+        blockWithItem(ModBlocks.INFESTED_SCULK_BRICKS);
 
         blockWithItem(ModBlocks.SCULK_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_SCULK_ORE);

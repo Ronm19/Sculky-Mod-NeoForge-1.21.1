@@ -5,6 +5,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.monster.WitherSkeleton;
 import net.ronm19.sculky.SculkyMod;
 import net.ronm19.sculky.entity.custom.SculkHorrorEntity;
 import net.ronm19.sculky.entity.layer.ModModelLayers;
@@ -25,5 +26,9 @@ public class SculkHorrorRenderer extends MobRenderer<SculkHorrorEntity, SculkHor
     @Override
     public void render( SculkHorrorEntity entity, float entityYaw, float partialTicks, PoseStack poseStack, MultiBufferSource buffer, int packedLight ) {
         super.render(entity, entityYaw, partialTicks, poseStack, buffer, packedLight);
+    }
+
+    protected void scale( SculkHorrorEntity livingEntity, PoseStack poseStack, float partialTickTime) {
+        poseStack.scale(1.1F, 1.1F, 1.1F);
     }
 }

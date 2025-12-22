@@ -1,4 +1,5 @@
-// 1.21.1	2025-11-22T15:29:38.8061849	Item Models: sculky
+// 1.21.1	2025-12-21T12:18:59.0249441	Item Models: sculky
+fb0446df9bc6cd6ae702e28ae2c9682758c92d2f assets/sculky/models/item/echo_conduit.json
 f5ac69197066ddb7af9820347580fddc1f335c0c assets/sculky/models/item/echo_jelly.json
 e00db0e98202fbd27bd6b9f7d6786bb4aae6e765 assets/sculky/models/item/infested_sculk_axe.json
 d8dddece2cb173816aadbafd67d8a31a9b7d30ac assets/sculky/models/item/infested_sculk_boots.json
@@ -69,9 +70,11 @@ b41ac6d9289690bcfe9add53f1a1d69f2387d1a7 assets/sculky/models/item/sculk_pastry.
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_sentinel_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_shade_spawn_egg.json
 68f30216fcce08a30aa7e42d8243993182bcdd99 assets/sculky/models/item/sculk_shard.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_skeleton_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_stalker_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_wolf_alpha_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_wolf_spawn_egg.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_zombie_spawn_egg.json
 d4428945045f0a08b871f08e757dc98533ed5699 assets/sculky/models/item/soulbite_cookie.json
 907c367bc024286e212c987976474676e859c6e5 assets/sculky/models/item/tomato_sculk.json
 11d989b0b18447a9551e4feb0051b04234048c9e assets/sculky/models/item/tomato_sculk_seeds.json

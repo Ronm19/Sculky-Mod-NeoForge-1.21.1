@@ -7,7 +7,7 @@
   "spawners": {
     "type": "sculky:sculk_fox",
     "weight": 60,
-    "minCount": 3,
-    "maxCount": 7
+    "minCount": 1,
+    "maxCount": 3
   }
 }

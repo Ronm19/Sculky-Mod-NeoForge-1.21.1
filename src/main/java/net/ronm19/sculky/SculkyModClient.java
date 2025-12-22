@@ -33,6 +33,9 @@ public class SculkyModClient {
         EntityRenderers.register(ModEntities.SCULK_STALKER.get(), SculkStalkerRenderer::new);
         EntityRenderers.register(ModEntities.SCULK_SHADE.get(), SculkShadeRenderer::new);
         EntityRenderers.register(ModEntities.SCULK_HORROR.get(), SculkHorrorRenderer::new);
+        EntityRenderers.register(ModEntities.SCULK_ZOMBIE.get(), SculkZombieRenderer::new);
+        EntityRenderers.register(ModEntities.SCULK_SKELETON.get(), SculkSkeletonRenderer::new);
+        EntityRenderers.register(ModEntities.SCULK_CREEPER.get(), SculkCreeperRenderer::new);
 
         EntityRenderers.register(ModEntities.SCULK_WOLF.get(), SculkWolfRender::new);
         EntityRenderers.register(ModEntities.SCULK_WOLF_ALPHA.get(), SculkWolfAlphaRenderer::new);

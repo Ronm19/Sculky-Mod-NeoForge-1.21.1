@@ -8,6 +8,6 @@
     "type": "sculky:sculk_shade",
     "weight": 60,
     "minCount": 2,
-    "maxCount": 6
+    "maxCount": 4
   }
 }

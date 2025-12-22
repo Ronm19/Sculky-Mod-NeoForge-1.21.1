@@ -74,7 +74,6 @@ public class ModEvents {
         event.registerLayerDefinition(ModModelLayers.SCULK_SHADE, SculkShadeModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SCULK_HORROR, SculkHorrorModel :: createBodyLayer);
 
-
         event.registerLayerDefinition(ModModelLayers.SCULK_WOLF, SculkWolfModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SCULK_FOX, SculkFoxModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SCULK_WOLF_ALPHA, SculkWolfAlphaModel :: createBodyLayer);
@@ -88,6 +87,9 @@ public class ModEvents {
         event.put(ModEntities.SCULK_STALKER.get(), SculkStalkerEntity.createSculkStalkerAttributes().build());
         event.put(ModEntities.SCULK_SHADE.get(), SculkShadeEntity.createSculkShadeAttributes().build());
         event.put(ModEntities.SCULK_HORROR.get(), SculkHorrorEntity.createSculkHorrorAttributes().build());
+        event.put(ModEntities.SCULK_ZOMBIE.get(), SculkZombieEntity.createSculkZombieAttributes().build());
+        event.put(ModEntities.SCULK_SKELETON.get(), SculkSkeletonEntity.createSculkSkeletonAttributes().build());
+        event.put(ModEntities.SCULK_CREEPER.get(), SculkCreeperEntity.createSculkCreeperAttributes().build());
 
         event.put(ModEntities.SCULK_WOLF.get(), SculkWolfEntity.createsSculkWolfAttributes().build());
         event.put(ModEntities.SCULK_WOLF_ALPHA.get(), SculkWolfAlphaEntity.createSculkWolfAlphaAttributes().build());
@@ -133,6 +135,24 @@ public class ModEvents {
                 Monster :: checkMobSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.REPLACE);
 
+        event.register(ModEntities.SCULK_ZOMBIE.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster :: checkMobSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+
+        event.register(ModEntities.SCULK_SKELETON.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster :: checkMobSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+
+        event.register(ModEntities.SCULK_CREEPER.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster :: checkMobSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+
         // ---------------------------------------------------------
         //                NEUTRAL / TAMABLE-TYPE ENTITIES
         // ---------------------------------------------------------
@@ -166,6 +186,7 @@ public class ModEvents {
         // ---------------------------------------------------------
         //                   AMBIENT / FLYING ENTITIES
         // ---------------------------------------------------------
+
         event.register(ModEntities.SCULK_BAT.get(),
                 SpawnPlacementTypes.NO_RESTRICTIONS, // correct for bats
                 Heightmap.Types.MOTION_BLOCKING,

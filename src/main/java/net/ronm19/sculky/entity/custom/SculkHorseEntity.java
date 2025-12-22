@@ -1,20 +1,23 @@
 package net.ronm19.sculky.entity.custom;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.Container;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
@@ -34,41 +37,54 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.ticks.ContainerSingleItem;
+import net.ronm19.sculky.api.interfaces.AbilityUser;
 import net.ronm19.sculky.entity.ModEntities;
 import net.ronm19.sculky.item.ModItems;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
-import java.util.Objects;
 
-public class SculkHorseEntity extends AbstractHorse {
+public class SculkHorseEntity extends AbstractHorse implements AbilityUser {
+
+    /* ============================= */
+    /*        STATE FLAGS            */
+    /* ============================= */
+
     private boolean isCharging = false;
+    private boolean pendingSlam = false;
+
+
+    /* ============================= */
+    /*        COOLDOWNS (TICKS)      */
+    /* ============================= */
+
+    private int dashCooldown = 0;
+    private int slamCooldown = 0;
     private int chargeCooldown = 0;
-    private static final int MAX_CHARGE_TIME = 40; // 2 seconds of charging
-    private static final int CHARGE_COOLDOWN_TIME = 100; // 5 seconds cooldown
+    private int chargeTicks = 0;
+
+    // Non-ability timer (echo sense heartbeat)
+    private int echoPulseTimer = 0;
+
+    /* ============================= */
+    /*        CONSTANTS              */
+    /* ============================= */
+
+    // Dash & Slam
+    private static final float DASH_FORCE = 2.2F;
+
+    private static final int SLAM_COOLDOWN_TICKS = 90; // 4.5 seconds
+    private static final int DASH_COOLDOWN_TICKS = 90; // 4.5 seconds
+
+    // Charge
+    private static final int CHARGE_DURATION_TICKS = 30;   // 1.5 seconds
+    private static final int CHARGE_COOLDOWN_TICKS = 80;   // 4 seconds
 
 
-
-    private final Container bodyArmorAccess = new ContainerSingleItem() {
-        public @NotNull ItemStack getTheItem() {
-            return SculkHorseEntity.this.getBodyArmorItem();
-
-        }
-
-        public void setTheItem( @NotNull ItemStack itemStack) {
-            SculkHorseEntity.this.setBodyArmorItem(itemStack);
-        }
-
-        public void setChanged() {
-        }
-
-        public boolean stillValid(Player player) {
-            return player.getVehicle() == SculkHorseEntity.this || player.canInteractWithEntity(SculkHorseEntity.this, (double)4.0F);
-        }
-    };
-
+    /* ============================= */
+    /*        SYNCED DATA            */
+    /* ============================= */
 
     private static final EntityDataAccessor<Boolean> TAMED =
             SynchedEntityData.defineId(SculkHorseEntity.class, EntityDataSerializers.BOOLEAN);
@@ -76,56 +92,38 @@ public class SculkHorseEntity extends AbstractHorse {
     private static final EntityDataAccessor<Boolean> ANGRY =
             SynchedEntityData.defineId(SculkHorseEntity.class, EntityDataSerializers.BOOLEAN);
 
-
     @Override
-    protected void defineSynchedData( SynchedEntityData.@NotNull Builder builder ) {
+    protected void defineSynchedData(SynchedEntityData.@NotNull Builder builder) {
         super.defineSynchedData(builder);
-
         builder.define(TAMED, false);
         builder.define(ANGRY, false);
     }
 
+    /* ============================= */
+    /*        CONSTRUCTOR            */
+    /* ============================= */
 
-    // ------------------------------
-    // COOLDOWNS
-    // ------------------------------
-    private int dashCooldown = 0;
-    private int slamCooldown = 0;
-    private int echoPulseTimer = 0;
-
-    // Charge ability settings
-
-    private static final int CHARGE_DURATION = 20; // 1 second
-    private static final int CHARGE_COOLDOWN = 80; // 4 seconds
-
-
-    // Ability settings
-    private static final float DASH_FORCE = 2.2F;     // Very strong dash
-    private static final int DASH_COOLDOWN_TICKS = 120; // 6 seconds
-    private static final int SLAM_COOLDOWN_TICKS = 160; // 8 seconds
-
-    // ------------------------------
-    // CONSTRUCTOR
-    // ------------------------------
     public SculkHorseEntity(EntityType<? extends AbstractHorse> type, Level level) {
         super(type, level);
         this.noCulling = true;
     }
 
-    // ------------------------------
-    // ATTRIBUTES
-    // ------------------------------
+    /* ============================= */
+    /*        ATTRIBUTES             */
+    /* ============================= */
+
     public static AttributeSupplier.Builder createSculkHorseAttributes() {
         return Horse.createBaseHorseAttributes()
-                .add(Attributes.MAX_HEALTH, 60.0D)         // same as a good horse
-                .add(Attributes.MOVEMENT_SPEED, 0.28D)     // normal horse speed
+                .add(Attributes.MAX_HEALTH, 60.0D)
+                .add(Attributes.MOVEMENT_SPEED, 0.28D)
                 .add(Attributes.FOLLOW_RANGE, 24.0D)
-                .add(Attributes.JUMP_STRENGTH, 0.8D);      // good jump
+                .add(Attributes.JUMP_STRENGTH, 1.0D);
     }
 
-    // ------------------------------
-    // NATURAL SPAWNING
-    // ------------------------------
+    /* ============================= */
+    /*        SPAWNING               */
+    /* ============================= */
+
     public static boolean checkSculkHorseSpawnRules(
             EntityType<SculkHorseEntity> type,
             LevelAccessor level,
@@ -138,6 +136,7 @@ public class SculkHorseEntity extends AbstractHorse {
                 && level.getMaxLocalRawBrightness(pos) < 8;
     }
 
+
     // ------------------------------
     // CONVERSION FROM LIGHTNING
     // ------------------------------
@@ -146,95 +145,84 @@ public class SculkHorseEntity extends AbstractHorse {
     public void thunderHit(ServerLevel level, LightningBolt lightning) {
         super.thunderHit(level, lightning);
 
-        // Only transform if NOT already a sculk horse
-        if (!(this instanceof SculkHorseEntity)) return;
-
         BlockPos pos = this.blockPosition();
 
-        // Must be standing on Sculk
         if (!level.getBlockState(pos.below()).is(Blocks.SCULK)) return;
 
-        // Transform
         SculkHorseEntity newHorse = ModEntities.SCULK_HORSE.get().create(level);
+        if (newHorse == null) return;
 
-        if (newHorse != null) {
-            newHorse.moveTo(this.getX(), this.getY(), this.getZ(), this.getYRot(), this.getXRot());
+        newHorse.moveTo(getX(), getY(), getZ(), getYRot(), getXRot());
 
-            if (this.isTamed()) {
-                newHorse.tame((Player) this.getOwner());
-                newHorse.setTamed(true);
-            }
-
-            // Copy health, name, attributes
-            newHorse.setHealth(this.getHealth());
-            if (this.hasCustomName()) newHorse.setCustomName(this.getCustomName());
-
-            level.addFreshEntity(newHorse);
-
-            this.discard(); // remove original horse
-
-            // Sound + particles
-            level.playSound(null, pos, SoundEvents.WARDEN_SONIC_BOOM, SoundSource.HOSTILE, 1.0F, 0.8F);
-            level.sendParticles(ParticleTypes.SCULK_SOUL,
-                    this.getX(), this.getY() + 1.0, this.getZ(),
-                    40, 0.5, 0.5, 0.5, 0.1);
+        if (this.isTamed() && this.getOwner() instanceof Player owner) {
+            newHorse.tame(owner);
         }
+
+        newHorse.setHealth(this.getHealth());
+        if (this.hasCustomName()) newHorse.setCustomName(this.getCustomName());
+
+        level.addFreshEntity(newHorse);
+        this.discard();
     }
 
+    @Override
+    public boolean fireImmune() {
+        return true;
+    }
 
     // ------------------------------
     // GOALS
     // ------------------------------
     @Override
     protected void registerGoals() {
-        this.goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 1.15D));
-        this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
+        goalSelector.addGoal(0, new FloatGoal(this));
+        goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 1.15D));
+        goalSelector.addGoal(3, new BreedGoal(this, 1.0D, SculkHorseEntity.class));
+        goalSelector.addGoal(4, new FollowParentGoal(this, 1.0D));
+        goalSelector.addGoal(6, new WaterAvoidingRandomStrollGoal(this, 0.7D));
+        goalSelector.addGoal(7, new LookAtPlayerGoal(this, Player.class, 6.0F));
+        goalSelector.addGoal(8, new RandomLookAroundGoal(this));
 
-        this.goalSelector.addGoal(2, new BreedGoal(this, (double)1.0F, SculkHorseEntity.class));
-        this.goalSelector.addGoal(4, new FollowParentGoal(this, (double)1.0F));
-        this.goalSelector.addGoal(6, new WaterAvoidingRandomStrollGoal(this, 0.7));
-        this.goalSelector.addGoal(7, new LookAtPlayerGoal(this, Player.class, 6.0F));
-        this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
         if (this.canPerformRearing()) {
-            this.goalSelector.addGoal(9, new RandomStandGoal(this));
+            goalSelector.addGoal(9, new RandomStandGoal(this));
         }
 
-        this.addBehaviourGoals();
+        goalSelector.addGoal(3,
+                new TemptGoal(this, 1.25D,
+                        stack -> stack.is(ItemTags.HORSE_TEMPT_ITEMS),
+                        false)
+        );
     }
 
-    protected void addBehaviourGoals() {
-        this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(3, new TemptGoal(this, (double)1.25F, (p_335269_) -> p_335269_.is(ItemTags.HORSE_TEMPT_ITEMS), false));
-    }
 
     // ------------------------------
     // ABILITY: SCULK DASH
     // ------------------------------
     public void tryDash() {
-        if (dashCooldown > 0 || !this.hasPassenger(Objects.requireNonNull(this.getControllingPassenger()))) return;
+        if (!(getControllingPassenger() instanceof Player)) return;
+        if (dashCooldown > 0) return;
 
         dashCooldown = DASH_COOLDOWN_TICKS;
 
-        Vec3 dir = Vec3.directionFromRotation(this.getXRot(), this.getYRot())
-                .scale(DASH_FORCE);
-
+        Vec3 dir = this.getLookAngle().scale(DASH_FORCE);
         this.setDeltaMovement(dir);
+        this.hasImpulse = true;
 
-        this.level().playSound(null, this.blockPosition(),
-                SoundEvents.WARDEN_SONIC_BOOM, SoundSource.HOSTILE, 1.2F, 1.0F);
+        level().playSound(null, blockPosition(),
+                SoundEvents.WARDEN_SONIC_BOOM,
+                SoundSource.HOSTILE, 1.2F, 1.0F);
     }
 
     // ------------------------------
     // ABILITY: GROUND SLAM
     // ------------------------------
     public void tryGroundSlam() {
-        if (slamCooldown > 0) return;
-        if (this.onGround()) return;
+        if (slamCooldown > 0 || onGround()) return;
 
         slamCooldown = SLAM_COOLDOWN_TICKS;
+        pendingSlam = true;
 
-        // fast drop
-        this.setDeltaMovement(this.getDeltaMovement().x, -2.5F, this.getDeltaMovement().z);
+        setDeltaMovement(getDeltaMovement().x, -2.5F, getDeltaMovement().z);
     }
 
     @Override
@@ -245,35 +233,44 @@ public class SculkHorseEntity extends AbstractHorse {
         if (slamCooldown > 0) slamCooldown--;
         if (chargeCooldown > 0) chargeCooldown--;
 
-        // Ground slam impact detection
-        if (slamCooldown > SLAM_COOLDOWN_TICKS - 10 && this.onGround()) {
-            this.doSlamImpact();
+        // Slam impact
+        if (pendingSlam && onGround()) {
+            pendingSlam = false;
+            doSlamImpact();
         }
 
-        // Echo sense heartbeat
-        echoPulseTimer++;
-        if (echoPulseTimer % 40 == 0) {
+        // Echo sense
+        if (++echoPulseTimer % 40 == 0) {
             detectEnemies();
         }
 
+        // Charging logic
         if (isCharging) {
-            // Push forward
-            Vec3 forward = this.getLookAngle().scale(0.5);
-            this.setDeltaMovement(forward.x, this.getDeltaMovement().y, forward.z);
+            chargeTicks++;
 
-            // Blue sculk particles
+            // light sustain instead of constant shove
+            Vec3 sustain = getLookAngle().scale(0.15);
+            setDeltaMovement(
+                    getDeltaMovement().x * 0.9 + sustain.x,
+                    getDeltaMovement().y,
+                    getDeltaMovement().z * 0.9 + sustain.z
+            );
+
+            applyChargeKnockback();
+
             if (level() instanceof ServerLevel sl) {
-                sl.sendParticles(ParticleTypes.SCULK_SOUL,
-                        this.getX(), this.getY() + 1.2, this.getZ(),
-                        4, 0.2, 0.2, 0.2, 0.01);
+                sl.sendParticles(
+                        ParticleTypes.SCULK_SOUL,
+                        getX(), getY() + 1.2, getZ(),
+                        4, 0.2, 0.2, 0.2, 0.01
+                );
             }
 
-            // End charging
-            if (this.tickCount % CHARGE_DURATION == 0) {
+            if (chargeTicks >= CHARGE_DURATION_TICKS) {
                 isCharging = false;
-                chargeCooldown = CHARGE_COOLDOWN;
+                chargeTicks = 0;
+                chargeCooldown = CHARGE_COOLDOWN_TICKS;
             }
-            if (isCharging) applyChargeKnockback();
         }
     }
 
@@ -299,51 +296,67 @@ public class SculkHorseEntity extends AbstractHorse {
     // ------------------------------
 
     @Override
-    public @NotNull InteractionResult mobInteract( Player player, @NotNull InteractionHand hand) {
+    public @NotNull InteractionResult mobInteract(@NotNull Player player, @NotNull InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
 
-        // ------------------------------------------
-        // 1. ATTEMPT TAMING
-        // ------------------------------------------
-        if (!this.isTamed() && this.isTamingItem(stack)) {
-            return this.tryTame(player, stack);
+        // CLIENT: always return SUCCESS/CONSUME so the hand animates,
+        // but never actually mount/tame on client.
+        if (level().isClientSide) {
+            // Let food/taming items still animate nicely
+            if (!isTamed() && isTamingItem(stack)) return InteractionResult.SUCCESS;
+            if (isFood(stack)) return InteractionResult.SUCCESS;
+
+            // If untamed, don't allow "mount" prediction
+            if (!isTamed()) return InteractionResult.SUCCESS;
+
+            // If tamed, allow normal predicted mounting
+            return InteractionResult.SUCCESS;
         }
 
-        // ------------------------------------------
-        // 2. FEEDING (heal food)
-        // ------------------------------------------
-        if (this.isFood(stack)) {
-            return this.fedFood(player, stack);
+        // ------------------------------
+        // 1) TAMING (server)
+        // ------------------------------
+        if (!isTamed() && isTamingItem(stack)) {
+            return tryTame(player, stack);
         }
 
-        // ------------------------------------------
-        // 3. Tamed & adult → allow mounting
-        // ------------------------------------------
-        if (this.isTamed() && !this.isBaby()) {
+        // ------------------------------
+        // 2) FEEDING (server)
+        // ------------------------------
+        if (isFood(stack)) {
+            return fedFood(player, stack);
+        }
 
-            // Shift-right-click = open inventory (if you add one later)
+        // ------------------------------
+        // 3) UNTAMED: BLOCK MOUNTING HARD
+        // ------------------------------
+        if (!isTamed()) {
+            // Optional: if they try to interact empty hand, still reject
+            // and make the horse angry so it's clear you can't ride it yet.
+            makeMad();
+
+            // Prevent any vanilla/other interaction from mounting it.
+            return InteractionResult.CONSUME;
+        }
+
+        // ------------------------------
+        // 4) TAMED: MOUNT (server)
+        // ------------------------------
+        if (!isBaby()) {
+            // Shift-right-click: reserved for inventory later
             if (player.isSecondaryUseActive()) {
                 return InteractionResult.PASS;
             }
 
-            // Not already mounted → mount it
-            if (!this.isVehicle()) {
-                player.startRiding(this);
-                return InteractionResult.sidedSuccess(this.level().isClientSide);
+            // Already has a rider -> don't allow
+            if (isVehicle()) {
+                return InteractionResult.PASS;
             }
+
+            player.startRiding(this, true);
+            return InteractionResult.CONSUME;
         }
 
-        // ------------------------------------------
-        // 4. UNTAMED & wrong item → anger it
-        // ------------------------------------------
-        if (!this.isTamed() && !stack.isEmpty()) {
-            this.makeMad();
-            return InteractionResult.sidedSuccess(this.level().isClientSide);
-        }
-
-        // ------------------------------------------
-        // 5. DEFAULT BEHAVIOR
-        // ------------------------------------------
         return super.mobInteract(player, hand);
     }
 
@@ -352,14 +365,14 @@ public class SculkHorseEntity extends AbstractHorse {
     // TAMING
     // ------------------------------
 
-    private boolean isTamingItem(ItemStack stack) {
+    private boolean isTamingItem( ItemStack stack ) {
         return stack.is(Items.ROTTEN_FLESH)
                 || stack.is(Items.ECHO_SHARD)
                 || stack.is(Items.SCULK)
                 || stack.is(Items.BONE);
     }
 
-    private InteractionResult tryTame(Player player, ItemStack stack) {
+    private InteractionResult tryTame( Player player, ItemStack stack ) {
 
         if (!this.isTamed()) {
             this.playSound(SoundEvents.HORSE_EAT, 1.0F, 1.0F);
@@ -392,7 +405,7 @@ public class SculkHorseEntity extends AbstractHorse {
         return this.entityData.get(TAMED);
     }
 
-    public void tame(Player player) {
+    public void tame( Player player ) {
         this.entityData.set(TAMED, true);
         this.setOwnerUUID(player.getUUID());
     }
@@ -402,7 +415,7 @@ public class SculkHorseEntity extends AbstractHorse {
         return this.entityData.get(ANGRY);
     }
 
-    public void setAngry(boolean angry) {
+    public void setAngry( boolean angry ) {
         this.entityData.set(ANGRY, angry);
     }
 
@@ -412,79 +425,80 @@ public class SculkHorseEntity extends AbstractHorse {
 
     @Nullable
     @Override
-    public AgeableMob getBreedOffspring( @NotNull ServerLevel pLevel, @NotNull AgeableMob pOtherParent) {
+    public AgeableMob getBreedOffspring( @NotNull ServerLevel pLevel, @NotNull AgeableMob pOtherParent ) {
         return ModEntities.SCULK_HORSE.get().create(pLevel);
     }
 
     @Override
-    public boolean isFood(ItemStack pStack) {
+    public boolean isFood( ItemStack pStack ) {
         return pStack.is(ModItems.TOMATO_SCULK.get());
     }
-
 
 
     // ------------------------------
     // ECHO SENSE
     // ------------------------------
     private void detectEnemies() {
-        boolean found = !this.level().getEntitiesOfClass(
+        if (!level().getEntitiesOfClass(
                 Monster.class,
-                this.getBoundingBox().inflate(18)
-        ).isEmpty();
-
-        if (found) {
-            this.level().playSound(null, this.blockPosition(),
-                    SoundEvents.SCULK_SENSOR_HIT, SoundSource.HOSTILE, 0.5F, 1.8F);
+                getBoundingBox().inflate(18)
+        ).isEmpty()) {
+            level().playSound(null, blockPosition(),
+                    SoundEvents.SCULK_SENSOR_HIT,
+                    SoundSource.HOSTILE, 0.5F, 1.8F);
         }
     }
+
+    // ------------------------------
+    // SOUNDS
+    // ------------------------------
+
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return SoundEvents.SKELETON_HORSE_AMBIENT;
+    }
+
+    @Override
+    protected @NotNull SoundEvent getHurtSound( DamageSource source) {
+        return SoundEvents.SCULK_BLOCK_BREAK;
+    }
+
+    @Override
+    protected @NotNull SoundEvent getDeathSound() {
+        return SoundEvents.SCULK_CATALYST_BLOOM;
+    }
+
+
 
     // ------------------------------
     // PLAYER INPUT HANDLING FROM KEYBINDS
     // ------------------------------
-    public void handleAbilityKeys(Player player, boolean dashKey, boolean slamKey) {
+    public void handleAbilityKeys( Player player, boolean dashKey, boolean slamKey ) {
         if (dashKey) tryDash();
         if (slamKey) tryGroundSlam();
     }
-    @Override
-    public void handleStartJump(int power) {
-        super.handleStartJump(power);
-
-        if (!this.isTamed() || this.level().isClientSide) return;
-
-        // Convert vanilla 0–90 range into 0.0–1.0
-        float charge = Math.min(power / 90.0F, 1.0F);
-
-        // Activate ability when fully charged jump happens
-        if (charge >= 1.0F && chargeCooldown == 0) {
-            startSculkCharge();
-        }
-    }
-
 
     private void startSculkCharge() {
-        this.isCharging = true;
-        this.chargeCooldown = CHARGE_COOLDOWN_TIME;
+        if (chargeCooldown > 0 || isCharging) return;
 
-        this.playSound(SoundEvents.WARDEN_ROAR, 1.2F, 1.0F);
+        isCharging = true;
+        chargeTicks = 0;
 
-        // initial speed burst
-        Vec3 forward = this.getLookAngle().scale(1.8);
-        this.setDeltaMovement(forward);
+        playSound(SoundEvents.WARDEN_ROAR, 1.2F, 1.0F);
 
-        // cosmetic effect
+        // STRONG initial burst
+        Vec3 boost = getLookAngle().scale(2.2);
+        setDeltaMovement(boost);
+        hasImpulse = true;
+
         if (level() instanceof ServerLevel server) {
-            for (int i = 0; i < 30; i++) {
-                server.sendParticles(ParticleTypes.SCULK_SOUL,
-                        getX(), getY() + 1, getZ(),
-                        1,
-                        (random.nextDouble() - 0.5) * 0.4,
-                        0.1,
-                        (random.nextDouble() - 0.5) * 0.4,
-                        0.2);
-            }
+            server.sendParticles(
+                    ParticleTypes.SCULK_SOUL,
+                    getX(), getY() + 1, getZ(),
+                    30, 0.4, 0.1, 0.4, 0.2
+            );
         }
-    }
-
+}
 
 
     // -----------------------------------------------------
@@ -499,12 +513,12 @@ public class SculkHorseEntity extends AbstractHorse {
     }
 
     @Override
-    protected boolean canAddPassenger( @NotNull Entity passenger) {
+    protected boolean canAddPassenger( @NotNull Entity passenger ) {
         return this.getPassengers().isEmpty() && passenger instanceof LivingEntity;
     }
 
     // Player mounts the horse (correct Mojang mappings)
-    private void setRiding(Player player) {
+    private void setRiding( Player player ) {
         player.setYRot(this.getYRot());
         player.setXRot(this.getXRot());
         player.startRiding(this);
@@ -519,21 +533,21 @@ public class SculkHorseEntity extends AbstractHorse {
     private static final double SEAT_HEIGHT = 0.40;
 
     @Override
-    public boolean canUseSlot( @NotNull EquipmentSlot slot) {
+    public boolean canUseSlot( @NotNull EquipmentSlot slot ) {
         return true;
     }
 
     @Override
-    public void createInventory(){
+    public void createInventory() {
         super.createInventory();
     }
 
 
-    public boolean isArmor(ItemStack stack) {
+    public boolean isArmor( ItemStack stack ) {
         return stack.getItem() instanceof AnimalArmorItem;
     }
 
-    public boolean isBodyArmorItem(ItemStack stack) {
+    public boolean isBodyArmorItem( ItemStack stack ) {
         Item var3 = stack.getItem();
         if (var3 instanceof AnimalArmorItem animalarmoritem) {
             if (animalarmoritem.getBodyType() == AnimalArmorItem.BodyType.EQUESTRIAN) {
@@ -545,7 +559,7 @@ public class SculkHorseEntity extends AbstractHorse {
     }
 
     @Override
-    public @NotNull Vec3 getPassengerAttachmentPoint( Entity passenger, @NotNull EntityDimensions dims, float partialTick) {
+    public @NotNull Vec3 getPassengerAttachmentPoint( Entity passenger, @NotNull EntityDimensions dims, float partialTick ) {
 
         double localX = SEAT_SIDE;
         double localY = this.getPassengersRidingOffset() + passenger.getVehicleAttachmentPoint(this).y;
@@ -568,7 +582,7 @@ public class SculkHorseEntity extends AbstractHorse {
 // -----------------------------------------------------
 
     @Override
-    protected void positionRider(Entity passenger, MoveFunction move) {
+    protected void positionRider( Entity passenger, MoveFunction move ) {
 
         Vec3 attach = passenger.getVehicleAttachmentPoint(this);
 
@@ -590,48 +604,19 @@ public class SculkHorseEntity extends AbstractHorse {
 
     @Override
     public void travel(Vec3 input) {
+        LivingEntity ctrl = getControllingPassenger();
 
-        LivingEntity ctrl = this.getControllingPassenger();
         if (ctrl instanceof Player rider) {
-
-            // ---- CHARGE ACTIVATION ----
-            if (rider.isSprinting() && !isCharging && chargeCooldown == 0) {
-                isCharging = true;
-                this.playSound(SoundEvents.WARDEN_ROAR, 1.0F, 1.2F);
-            }
-
-            if (isCharging) {
-
-                // strong forward push
-                Vec3 v = this.getLookAngle().scale(0.5);
-                this.setDeltaMovement(this.getDeltaMovement().add(v));
-
-                // knockback enemies
-                level().getEntitiesOfClass(LivingEntity.class,
-                        this.getBoundingBox().inflate(1.5),
-                        e -> e != this && e != this.getControllingPassenger()
-                ).forEach(e -> {
-                    Vec3 kb = e.position().subtract(this.position()).normalize().scale(1.3);
-                    e.push(kb.x, 0.4, kb.z);
-                });
-
-                // decay + stop charging
-                if (this.tickCount % MAX_CHARGE_TIME == 0) {
-                    isCharging = false;
-                }
-            }
-
-            // Normal movement
-            this.setYRot(rider.getYRot());
-            this.yRotO = this.getYRot();
-            this.xRotO = this.getXRot();
+            setYRot(rider.getYRot());
+            yRotO = getYRot();
+            xRotO = getXRot();
 
             float strafe = rider.xxa * 0.5F;
             float forward = rider.zza;
 
             if (forward <= 0.0F) forward *= 0.3F;
 
-            this.setSpeed((float) this.getAttributeValue(Attributes.MOVEMENT_SPEED));
+            setSpeed((float) getAttributeValue(Attributes.MOVEMENT_SPEED));
             super.travel(new Vec3(strafe, input.y, forward));
             return;
         }
@@ -640,12 +625,13 @@ public class SculkHorseEntity extends AbstractHorse {
     }
 
 
+
 // -----------------------------------------------------
 //  DISMOUNT LOGIC
 // -----------------------------------------------------
 
 
-    private Vec3 getSafeDismountPos(LivingEntity passenger) {
+    private Vec3 getSafeDismountPos( LivingEntity passenger ) {
         // Directions to test around the horse
         Vec3[] checks = new Vec3[]{
                 new Vec3(1, 0, 0),   // east
@@ -686,19 +672,19 @@ public class SculkHorseEntity extends AbstractHorse {
     }
 
     @Override
-    public @NotNull Vec3 getDismountLocationForPassenger( @NotNull LivingEntity passenger) {
+    public @NotNull Vec3 getDismountLocationForPassenger( @NotNull LivingEntity passenger ) {
         return getSafeDismountPos(passenger);
     }
 
     @Override
-    public void addAdditionalSaveData( @NotNull CompoundTag tag) {
+    public void addAdditionalSaveData( @NotNull CompoundTag tag ) {
         super.addAdditionalSaveData(tag);
         tag.putBoolean("Tamed", this.isTamed());
         tag.putBoolean("Angry", this.isAngry());
     }
 
     @Override
-    public void readAdditionalSaveData( @NotNull CompoundTag tag) {
+    public void readAdditionalSaveData( @NotNull CompoundTag tag ) {
         super.readAdditionalSaveData(tag);
         this.entityData.set(TAMED, tag.getBoolean("Tamed"));
         this.entityData.set(ANGRY, tag.getBoolean("Angry"));
@@ -709,13 +695,86 @@ public class SculkHorseEntity extends AbstractHorse {
 
         List<LivingEntity> hit = level().getEntitiesOfClass(
                 LivingEntity.class,
-                this.getBoundingBox().inflate(1.2),
+                getBoundingBox().inflate(1.6),
                 e -> e != this && e != getControllingPassenger()
         );
 
         for (LivingEntity target : hit) {
-            target.hurt(level().damageSources().mobAttack(this), 6.0F);
-            target.knockback(1.5F, this.getX() - target.getX(), this.getZ() - target.getZ());
+
+            // BIG damage (scales well vs tanky mobs)
+            float damage = 15.0F + (float) getAttributeValue(Attributes.MOVEMENT_SPEED) * 10.0F;
+
+            target.hurt(level().damageSources().mobAttack(this), damage);
+
+            // Heavy knockback
+            Vec3 kb = target.position()
+                    .subtract(position())
+                    .normalize()
+                    .scale(1.8);
+
+            target.push(kb.x, 0.5, kb.z);
+
+            // Optional: brief stun
+            target.addEffect(new MobEffectInstance(
+                    MobEffects.MOVEMENT_SLOWDOWN,
+                    20, // 1 sec
+                    3
+            ));
         }
     }
+
+    @Override
+    public void useAbility(Player player) {
+
+        // Must be riding THIS horse
+        if (getControllingPassenger() != player) return;
+
+        // Already charging → ignore
+        if (isCharging) return;
+
+        // --------------------
+        // AIR → SLAM
+        // --------------------
+        if (!onGround()) {
+            if (slamCooldown > 0) {
+                sendCooldownMessage(player, slamCooldown);
+                return;
+            }
+
+            tryGroundSlam();
+            return;
+        }
+
+        // --------------------
+        // GROUND → CHARGE
+        // REQUIRE FORWARD INPUT
+        // --------------------
+        if (player.zza <= 0.05F) {
+            player.displayClientMessage(
+                    Component.translatable("ability.sculky.need_momentum")
+                            .withStyle(ChatFormatting.GRAY),
+                    true
+            );
+            return;
+        }
+
+        if (chargeCooldown > 0) {
+            sendCooldownMessage(player, chargeCooldown);
+            return;
+        }
+
+        startSculkCharge();
+    }
+
+
+    private void sendCooldownMessage(Player player, int ticksLeft) {
+        int seconds = ticksLeft / 10;
+
+        player.displayClientMessage(
+                Component.translatable("ability.sculky.cooldown", seconds)
+                        .withStyle(ChatFormatting.DARK_AQUA),
+                true
+        );
+    }
+
 }

@@ -1,6 +1,7 @@
-// 1.21.1	2025-11-14T14:22:27.8463477	Block States: sculky
+// 1.21.1	2025-12-22T19:22:45.319884	Block States: sculky
 e320ea38181175adfe9a347d9cf864329405aaf4 assets/sculky/blockstates/deepslate_sculk_ore.json
 a7e372452cb228725c35ace703970c4cf1341f77 assets/sculky/blockstates/infested_sculk_block.json
+56c754150e8f3bb43f1eb8066558bba468618d3c assets/sculky/blockstates/infested_sculk_bricks.json
 5470a5d5d6ab70e209263f8e7873b6f7f7bff648 assets/sculky/blockstates/infested_sculk_button.json
 0a8fa3a7e404c8e98bda10d2c3e6fd071960e441 assets/sculky/blockstates/infested_sculk_dirt_block.json
 d267e7d16acaccc39590eeec2c5d524bdf72dad2 assets/sculky/blockstates/infested_sculk_door.json
@@ -28,6 +29,7 @@ bf9e9090ea0bb716c4c4ea78dca716ec803b588f assets/sculky/blockstates/stripped_infe
 7bfe8a7e0eec347d11f9da587d193b91716869a8 assets/sculky/blockstates/tomato_sculk_crop.json
 9ad3991bcba6e89e4abed9f0f6d8c9c428cdeb70 assets/sculky/models/block/deepslate_sculk_ore.json
 530b6e28bc74db57cce542f4f2e6f21331f8c665 assets/sculky/models/block/infested_sculk_block.json
+46cf52b2eb7849d95079df56cce17001028cdd59 assets/sculky/models/block/infested_sculk_bricks.json
 6615ec4317ff36ea8cf7dca12862ae73aa9f0007 assets/sculky/models/block/infested_sculk_button.json
 f08c4141edf8418ae9ad19284c4ec5f0d149ff3e assets/sculky/models/block/infested_sculk_button_pressed.json
 acb03a4a81f8c23288058e167ba647a68c8b1953 assets/sculky/models/block/infested_sculk_dirt_block.json
@@ -84,6 +86,7 @@ c80f6dd102a1a0e93059d0a090214541f0a4217a assets/sculky/models/block/tomato_sculk
 8bdb002cef742ecf1a4a06f94fc3948650fd2276 assets/sculky/models/block/tomato_sculk_crop_stage5.json
 a67df5bc1faa88854b34463a61d2db18c79b0086 assets/sculky/models/item/deepslate_sculk_ore.json
 fba03bea54cebe7fb9b6d46fbeae8a564a40eefd assets/sculky/models/item/infested_sculk_block.json
+8aabfa7e60b2fa782167d1dcc78dcd662c3e288d assets/sculky/models/item/infested_sculk_bricks.json
 1bb5c46636b9a9e7d78592bc6f012b75873f078f assets/sculky/models/item/infested_sculk_dirt_block.json
 33be3669ed78323f6af8431cd69384051d33c855 assets/sculky/models/item/infested_sculk_fence_gate.json
 c0d9ff6cf21992fbf471af167eabba4fd2498ce4 assets/sculky/models/item/infested_sculk_grass_block.json

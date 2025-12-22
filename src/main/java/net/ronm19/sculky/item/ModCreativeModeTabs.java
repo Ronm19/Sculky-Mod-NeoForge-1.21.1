@@ -39,6 +39,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.INFESTED_SCULK_HOE);
                         pOutput.accept(ModItems.INFESTED_SCULK_HAMMER);
                         pOutput.accept(ModItems.SCULK_EDGE);
+                        pOutput.accept(ModItems.ECHO_CONDUIT);
 
                         pOutput.accept(ModItems.INFESTED_SCULK_HELMET);
                         pOutput.accept(ModItems.INFESTED_SCULK_CHESTPLATE);
@@ -59,6 +60,7 @@ public class ModCreativeModeTabs {
 
                         pOutput.accept(ModBlocks.INFESTED_SCULK_BLOCK);
                         pOutput.accept(ModBlocks.RAW_INFESTED_SCULK_BLOCK);
+                        pOutput.accept(ModBlocks.INFESTED_SCULK_BRICKS);
                         pOutput.accept(ModBlocks.SCULK_ORE);
                         pOutput.accept(ModBlocks.DEEPSLATE_SCULK_ORE);
 
@@ -103,6 +105,9 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.SCULK_STALKER_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_SHADE_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_HORROR_SPAWN_EGG);
+                        pOutput.accept(ModItems.SCULK_ZOMBIE_SPAWN_EGG);
+                        pOutput.accept(ModItems.SCULK_SKELETON_SPAWN_EGG);
+                        pOutput.accept(ModItems.SCULK_CREEPER_SPAWN_EGG);
 
                         pOutput.accept(ModItems.SCULK_WOLF_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_HORSE_SPAWN_EGG);

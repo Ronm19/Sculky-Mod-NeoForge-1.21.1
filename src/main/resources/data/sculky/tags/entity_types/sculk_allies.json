@@ -5,6 +5,8 @@
     "sculky:sculk_parasite",
     "sculky:sculk_stalker",
     "sculky:sculk_shade",
-    "sculky:sculk_horror"
+    "sculky:sculk_horror",
+    "sculky:sculk_zombie",
+    "sculky:sculk_skeleton"
   ]
 }

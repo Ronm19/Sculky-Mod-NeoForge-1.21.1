@@ -65,7 +65,7 @@ public class SculkFoxEntity extends TamableAnimal {
     // -------------------------------
     public static AttributeSupplier.Builder createSculkFoxAttributes() {
         return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 44.0D)
+                .add(Attributes.MAX_HEALTH, 60.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.33D)
                 .add(Attributes.ATTACK_DAMAGE, 4.5D)
                 .add(Attributes.FOLLOW_RANGE, 40.0D)

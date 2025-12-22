@@ -24,22 +24,26 @@ public class OverworldRegion extends Region {
         VanillaParameterOverlayBuilder builder = new VanillaParameterOverlayBuilder();
 
             // 🌲 SCULK FOREST — Rarer, denser biome, more rugged inland
-            new ParameterUtils.ParameterPointListBuilder()
-                    .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.NEUTRAL, ParameterUtils.Temperature.WARM))
-                    .humidity(ParameterUtils.Humidity.span(ParameterUtils.Humidity.NEUTRAL, ParameterUtils.Humidity.HUMID))
-                    .continentalness(ParameterUtils.Continentalness.span(
-                            ParameterUtils.Continentalness.FAR_INLAND,
-                            ParameterUtils.Continentalness.FAR_INLAND))
-                    .erosion(ParameterUtils.Erosion.span(
-                            ParameterUtils.Erosion.EROSION_0,
-                            ParameterUtils.Erosion.EROSION_2))  // rougher terrain
-                    .depth(ParameterUtils.Depth.SURFACE)
-                    .weirdness(ParameterUtils.Weirdness.span(
-                            ParameterUtils.Weirdness.HIGH_SLICE_NORMAL_DESCENDING,
-                            ParameterUtils.Weirdness.HIGH_SLICE_VARIANT_DESCENDING))
-                    .build().forEach(point -> builder.add(point, ModBiomes.SCULK_FOREST));
+        new ParameterUtils.ParameterPointListBuilder()
+                .temperature(ParameterUtils.Temperature.span(
+                        ParameterUtils.Temperature.NEUTRAL,
+                        ParameterUtils.Temperature.NEUTRAL)) // VERY narrow → rare
+                .humidity(ParameterUtils.Humidity.span(
+                        ParameterUtils.Humidity.NEUTRAL,
+                        ParameterUtils.Humidity.HUMID))
+                .continentalness(ParameterUtils.Continentalness.span(
+                        ParameterUtils.Continentalness.FAR_INLAND,
+                        ParameterUtils.Continentalness.FAR_INLAND)) // ultra rare
+                .erosion(ParameterUtils.Erosion.span(
+                        ParameterUtils.Erosion.EROSION_2,
+                        ParameterUtils.Erosion.EROSION_3))
+                .depth(ParameterUtils.Depth.SURFACE)
+                .weirdness(ParameterUtils.Weirdness.span(
+                        ParameterUtils.Weirdness.LOW_SLICE_VARIANT_ASCENDING,
+                        ParameterUtils.Weirdness.LOW_SLICE_VARIANT_ASCENDING)) // CRITICAL RARITY
+                .build().forEach(point -> builder.add(point, ModBiomes.SCULK_FOREST));
 
-            // ✅ Register both to the mapper
+        // ✅ Register both to the mapper
             builder.build().forEach(mapper);
         }
     }

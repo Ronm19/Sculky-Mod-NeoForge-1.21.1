@@ -11,7 +11,9 @@ import net.ronm19.sculky.entity.ModEntities;
 import net.ronm19.sculky.item.ModArmorMaterials;
 import net.ronm19.sculky.item.ModCreativeModeTabs;
 import net.ronm19.sculky.item.ModItems;
+import net.ronm19.sculky.network.ModNetworking;
 import net.ronm19.sculky.potion.ModPotions;
+import net.ronm19.sculky.setup.ModSetup;
 import net.ronm19.sculky.sounds.ModSounds;
 import net.ronm19.sculky.util.ModTags;
 import net.ronm19.sculky.worldgen.biome.ModBiomes;
@@ -58,7 +60,7 @@ public class SculkyMod {
         ModEnchantmentEffects.register(modEventBus);
         ModPlacementModifierTypes.register(modEventBus);
         ModEntities.register(modEventBus);
-
+        ModSetup.register(modEventBus);
 
 
         NeoForge.EVENT_BUS.register(this);
