@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "sculky:block/infested_sculk_bricks"
+  }
+}

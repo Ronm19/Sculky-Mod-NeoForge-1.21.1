@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "sculky:block/infested_sculk_bricks",
+    "side": "sculky:block/infested_sculk_bricks",
+    "top": "sculky:block/infested_sculk_bricks"
+  }
+}

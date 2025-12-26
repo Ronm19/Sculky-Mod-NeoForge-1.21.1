@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "infested_sculk_bricks",
+  "ingredients": [
+    {
+      "item": "sculky:infested_sculk_bricks"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "sculky:infested_sculk_brick_button"
+  }
+}

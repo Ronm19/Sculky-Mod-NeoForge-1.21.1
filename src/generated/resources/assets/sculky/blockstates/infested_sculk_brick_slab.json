@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "sculky:block/infested_sculk_brick_slab"
+    },
+    "type=double": {
+      "model": "sculky:block/infested_sculk_bricks"
+    },
+    "type=top": {
+      "model": "sculky:block/infested_sculk_brick_slab_top"
+    }
+  }
+}

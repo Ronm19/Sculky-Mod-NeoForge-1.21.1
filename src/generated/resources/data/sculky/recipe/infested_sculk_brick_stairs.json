@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "infested_sculk_bricks",
+  "key": {
+    "#": {
+      "item": "sculky:infested_sculk_bricks"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "sculky:infested_sculk_brick_stairs"
+  }
+}
