@@ -1,4 +1,4 @@
-// 1.21.1	2025-12-21T12:18:59.0249441	Item Models: sculky
+// 1.21.1	2025-12-26T19:32:37.7954227	Item Models: sculky
 fb0446df9bc6cd6ae702e28ae2c9682758c92d2f assets/sculky/models/item/echo_conduit.json
 f5ac69197066ddb7af9820347580fddc1f335c0c assets/sculky/models/item/echo_jelly.json
 e00db0e98202fbd27bd6b9f7d6786bb4aae6e765 assets/sculky/models/item/infested_sculk_axe.json
@@ -13,6 +13,9 @@ d1b5ed5ce20bb2ac11b749fd89841ed3b77ea847 assets/sculky/models/item/infested_scul
 6af3a2936bffe29b71016db8a500789fd84d4e56 assets/sculky/models/item/infested_sculk_boots_netherite_trim.json
 7510f8f7cf28eb7fb146a4dc328e2f472dd8a900 assets/sculky/models/item/infested_sculk_boots_quartz_trim.json
 a540de0ab3564bf89512ee2e6461d7b9811b0b06 assets/sculky/models/item/infested_sculk_boots_redstone_trim.json
+504a25d9279ce4d3cabad5519b845c4198ed1e65 assets/sculky/models/item/infested_sculk_brick_button.json
+15f6670263fbf079779ed9fd6d3df48ad79bad57 assets/sculky/models/item/infested_sculk_brick_fence.json
+65b6c7953032e14d782a17e5b09b5afc7b1bc9c4 assets/sculky/models/item/infested_sculk_brick_wall.json
 caea19c67cb92595ec4f417185a96bfefb628f17 assets/sculky/models/item/infested_sculk_button.json
 473780f6097f11a260dc07cf1f79700c7c8e688b assets/sculky/models/item/infested_sculk_chestplate.json
 df0658049172b0bbc3026ef0095d0ac4d0654d13 assets/sculky/models/item/infested_sculk_chestplate_amethyst_trim.json
@@ -61,6 +64,7 @@ e52d4d3ad5fd594c1e5f09293b1ada92fc86f507 assets/sculky/models/item/raw_sculk_sha
 321f1602ca9003cc3712040715e663c78fad058f assets/sculky/models/item/sculkbloom.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_bat_spawn_egg.json
 694997df7fe0d0986a1e2a89196236f627e8ffb9 assets/sculky/models/item/sculk_bone.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_creeper_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_fox_spawn_egg.json
 f464738a4f677f6db95bee334b255d6a9502307a assets/sculky/models/item/sculk_heartfruit.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_horror_spawn_egg.json

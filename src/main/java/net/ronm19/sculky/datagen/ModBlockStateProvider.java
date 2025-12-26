@@ -42,6 +42,17 @@ public class ModBlockStateProvider extends BlockStateProvider {
         fenceGateBlock(((FenceGateBlock) ModBlocks.INFESTED_SCULK_FENCE_GATE.get()), blockTexture(ModBlocks.INFESTED_SCULK_BLOCK.get()));
         wallBlock(((WallBlock) ModBlocks.INFESTED_SCULK_WALL.get()), blockTexture(ModBlocks.INFESTED_SCULK_BLOCK.get()));
 
+
+        stairsBlock(((StairBlock) ModBlocks.INFESTED_SCULK_BRICK_STAIRS.get()), blockTexture(ModBlocks.INFESTED_SCULK_BRICKS.get()));
+        slabBlock(((SlabBlock) ModBlocks.INFESTED_SCULK_BRICK_SLAB.get()), blockTexture(ModBlocks.INFESTED_SCULK_BRICKS.get()), blockTexture(ModBlocks.INFESTED_SCULK_BRICKS.get()));
+
+        pressurePlateBlock(((PressurePlateBlock) ModBlocks.INFESTED_SCULK_BRICK_PRESSURE_PLATE.get()), blockTexture(ModBlocks.INFESTED_SCULK_BRICKS.get()));
+        buttonBlock(((ButtonBlock) ModBlocks.INFESTED_SCULK_BRICK_BUTTON.get()), blockTexture(ModBlocks.INFESTED_SCULK_BRICKS.get()));
+
+        fenceBlock(((FenceBlock) ModBlocks.INFESTED_SCULK_BRICK_FENCE.get()), blockTexture(ModBlocks.INFESTED_SCULK_BRICKS.get()));
+        fenceGateBlock(((FenceGateBlock) ModBlocks.INFESTED_SCULK_BRICK_FENCE_GATE.get()), blockTexture(ModBlocks.INFESTED_SCULK_BRICKS.get()));
+        wallBlock(((WallBlock) ModBlocks.INFESTED_SCULK_BRICK_WALL.get()), blockTexture(ModBlocks.INFESTED_SCULK_BRICKS.get()));
+
         doorBlockWithRenderType(((DoorBlock) ModBlocks.INFESTED_SCULK_DOOR.get()), modLoc("block/infested_sculk_door_bottom"), modLoc("block/infested_sculk_door_top"), "cutout");
         trapdoorBlockWithRenderType(((TrapDoorBlock) ModBlocks.INFESTED_SCULK_TRAPDOOR.get()), modLoc("block/infested_sculk_trapdoor"), true, "cutout");
 
@@ -49,6 +60,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.INFESTED_SCULK_SLAB);
         blockItem(ModBlocks.INFESTED_SCULK_PRESSURE_PLATE);
         blockItem(ModBlocks.INFESTED_SCULK_FENCE_GATE);
+
+        blockItem(ModBlocks.INFESTED_SCULK_BRICK_STAIRS);
+        blockItem(ModBlocks.INFESTED_SCULK_BRICK_SLAB);
+        blockItem(ModBlocks.INFESTED_SCULK_BRICK_PRESSURE_PLATE);
+        blockItem(ModBlocks.INFESTED_SCULK_BRICK_FENCE_GATE);
 
         blockItem(ModBlocks.INFESTED_SCULK_TRAPDOOR, "_bottom");
 

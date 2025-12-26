@@ -177,22 +177,46 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         stairBuilder(ModBlocks.INFESTED_SCULK_STAIRS.get(), Ingredient.of(ModItems.SCULK_SHARD.get())).group("sculk_shard")
                 .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get())).save(pRecipeOutput);
+
         slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.INFESTED_SCULK_SLAB.get(), ModItems.SCULK_SHARD.get());
 
         pressurePlate(pRecipeOutput, ModBlocks.INFESTED_SCULK_PRESSURE_PLATE.get(), ModItems.SCULK_SHARD.get());
+
         buttonBuilder(ModBlocks.INFESTED_SCULK_BUTTON.get(), Ingredient.of(ModItems.SCULK_SHARD.get())).group("sculk_shard")
                 .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get())).save(pRecipeOutput);
 
         fenceBuilder(ModBlocks.INFESTED_SCULK_FENCE.get(), Ingredient.of(ModItems.SCULK_SHARD.get())).group("sculk_shard")
                 .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get())).save(pRecipeOutput);
+
         fenceGateBuilder(ModBlocks.INFESTED_SCULK_FENCE_GATE.get(), Ingredient.of(ModItems.SCULK_SHARD.get())).group("sculk_shard")
                 .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get())).save(pRecipeOutput);
+
         wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.INFESTED_SCULK_WALL.get(), ModItems.SCULK_SHARD.get());
 
         doorBuilder(ModBlocks.INFESTED_SCULK_DOOR.get(), Ingredient.of(ModItems.SCULK_SHARD.get())).group("sculk_shard")
                 .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get())).save(pRecipeOutput);
+
         trapdoorBuilder(ModBlocks.INFESTED_SCULK_TRAPDOOR.get(), Ingredient.of(ModItems.SCULK_SHARD.get())).group("sculk_shard")
                 .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get())).save(pRecipeOutput);
+
+
+        stairBuilder(ModBlocks.INFESTED_SCULK_BRICK_STAIRS.get(), Ingredient.of(ModBlocks.INFESTED_SCULK_BRICKS.get())).group("infested_sculk_bricks")
+                .unlockedBy("has_infested_sculk_bricks", has(ModBlocks.INFESTED_SCULK_BRICKS.get())).save(pRecipeOutput);
+
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.INFESTED_SCULK_BRICK_SLAB.get(), ModBlocks.INFESTED_SCULK_BRICKS.get());
+
+        pressurePlate(pRecipeOutput, ModBlocks.INFESTED_SCULK_BRICK_PRESSURE_PLATE.get(), ModBlocks.INFESTED_SCULK_BRICKS.get());
+
+        buttonBuilder(ModBlocks.INFESTED_SCULK_BRICK_BUTTON.get(), Ingredient.of(ModBlocks.INFESTED_SCULK_BRICKS.get())).group("infested_sculk_bricks")
+                .unlockedBy("has_infested_sculk_bricks", has(ModBlocks.INFESTED_SCULK_BRICKS.get())).save(pRecipeOutput);
+
+        fenceBuilder(ModBlocks.INFESTED_SCULK_BRICK_FENCE.get(), Ingredient.of(ModBlocks.INFESTED_SCULK_BRICKS.get())).group("infested_sculk_bricks")
+                .unlockedBy("has_infested_sculk_bricks", has(ModBlocks.INFESTED_SCULK_BRICKS.get())).save(pRecipeOutput);
+
+        fenceGateBuilder(ModBlocks.INFESTED_SCULK_BRICK_FENCE_GATE.get(), Ingredient.of(ModBlocks.INFESTED_SCULK_BRICKS.get())).group("infested_sculk_bricks")
+                .unlockedBy("has_infested_sculk_bricks", has(ModBlocks.INFESTED_SCULK_BRICKS.get())).save(pRecipeOutput);
+
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.INFESTED_SCULK_BRICK_WALL.get(), ModBlocks.INFESTED_SCULK_BRICKS.get());
 
         // --- Planks from Logs tag (for both normal + stripped) ---
         planksFromLogs(pRecipeOutput, ModBlocks.INFESTED_SCULK_PLANKS.get(), ModBlocks.INFESTED_SCULK_LOG.get());

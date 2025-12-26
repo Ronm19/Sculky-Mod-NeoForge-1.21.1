@@ -54,9 +54,17 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                         .add(ModBlocks.INFESTED_SCULK_ROOTED_DIRT_BLOCK.get())
                         .add(ModBlocks.INFESTED_SCULK_PODZOL_BLOCK.get());
 
-        tag(BlockTags.FENCES).add(ModBlocks.INFESTED_SCULK_FENCE.get());
-        tag(BlockTags.FENCE_GATES).add(ModBlocks.INFESTED_SCULK_FENCE_GATE.get());
-        tag(BlockTags.WALLS).add(ModBlocks.INFESTED_SCULK_WALL.get());
+        tag(BlockTags.FENCES)
+                .add(ModBlocks.INFESTED_SCULK_BRICK_FENCE.get())
+                .add(ModBlocks.INFESTED_SCULK_FENCE.get());
+
+        tag(BlockTags.FENCE_GATES)
+                .add(ModBlocks.INFESTED_SCULK_BRICK_FENCE_GATE.get())
+                .add(ModBlocks.INFESTED_SCULK_FENCE_GATE.get());
+
+        tag(BlockTags.WALLS)
+                .add(ModBlocks.INFESTED_SCULK_BRICK_WALL.get())
+                .add(ModBlocks.INFESTED_SCULK_WALL.get());
     }
 
 

@@ -82,6 +82,14 @@
   "block.sculky.infested_sculk_door": "Infested Sculk Door",
   "block.sculky.infested_sculk_trapdoor": "Infested Sculk Trapdoor",
 
+  "block.sculky.infested_sculk_brick_stairs": "Infested Sculk Brick Stairs",
+  "block.sculky.infested_sculk_brick_slab": "Infested Sculk Brick Slab",
+  "block.sculky.infested_sculk_brick_pressure_plate": "Infested Sculk Brick Pressure Plate",
+  "block.sculky.infested_sculk_brick_button": "Infested Sculk Brick Button",
+  "block.sculky.infested_sculk_brick_fence": "Infested Sculk Brick Fence",
+  "block.sculky.infested_sculk_brick_fence_gate": "Infested Sculk Brick Fence Gate",
+  "block.sculky.infested_sculk_brick_wall": "Infested Sculk Brick Wall",
+
   "block.sculky.tomato_sculk_crop": "Tomato Sculk Crop",
   "block.sculky.sculkbloom": "Sculk Bloom",
 

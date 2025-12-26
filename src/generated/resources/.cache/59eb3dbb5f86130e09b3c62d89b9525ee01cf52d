@@ -1,7 +1,14 @@
-// 1.21.1	2025-12-22T19:22:45.3247157	Loot Tables
+// 1.21.1	2025-12-26T19:27:52.0418728	Loot Tables
 48952f5c8e28b717cf5f872a8ea3889e1aa5d4da data/sculky/loot_table/blocks/deepslate_sculk_ore.json
 90d20ca4e2b7b4bb2f9a3e3a67880ad9cfb2d6fc data/sculky/loot_table/blocks/infested_sculk_block.json
 528985b726959b76e36451e546067dcd322f23ea data/sculky/loot_table/blocks/infested_sculk_bricks.json
+543743036e88377334901e0549d11bda0653fb81 data/sculky/loot_table/blocks/infested_sculk_brick_button.json
+f3d34c8f8d4b9dedbf29c85048c932f5e45f3f39 data/sculky/loot_table/blocks/infested_sculk_brick_fence.json
+55d995aeef39bba7f2e6dc1388a63db1c3381e79 data/sculky/loot_table/blocks/infested_sculk_brick_fence_gate.json
+f41c3f84d34612dec4439f3227e174998bd86d94 data/sculky/loot_table/blocks/infested_sculk_brick_pressure_plate.json
+4ce70f089df3bc2baa6c4620e8e0b23ce51f41c2 data/sculky/loot_table/blocks/infested_sculk_brick_slab.json
+cc2ac73c6409f508427ca556bf21e3a495ce8313 data/sculky/loot_table/blocks/infested_sculk_brick_stairs.json
+b659f0edc20508fe0508ad262fa8cbcfbe3342bd data/sculky/loot_table/blocks/infested_sculk_brick_wall.json
 6c964ca4eb91b8128430e7a2bdd8481edf39e386 data/sculky/loot_table/blocks/infested_sculk_button.json
 67a3fb0b59cf780d259787dd2c62d8d41bd484bc data/sculky/loot_table/blocks/infested_sculk_dirt_block.json
 50bf3dd8fc6f6883be24f26a34455e418e061a4f data/sculky/loot_table/blocks/infested_sculk_door.json

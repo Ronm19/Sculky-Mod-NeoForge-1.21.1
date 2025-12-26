@@ -67,14 +67,24 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.INFESTED_SCULK_STAIRS);
                         pOutput.accept(ModBlocks.INFESTED_SCULK_SLAB);
 
+                        pOutput.accept(ModBlocks.INFESTED_SCULK_BRICK_STAIRS);
+                        pOutput.accept(ModBlocks.INFESTED_SCULK_BRICK_SLAB);
+
                         pOutput.accept(ModBlocks.SCULKBLOOM);
 
                         pOutput.accept(ModBlocks.INFESTED_SCULK_PRESSURE_PLATE);
                         pOutput.accept(ModBlocks.INFESTED_SCULK_BUTTON);
 
+                        pOutput.accept(ModBlocks.INFESTED_SCULK_BRICK_PRESSURE_PLATE);
+                        pOutput.accept(ModBlocks.INFESTED_SCULK_BRICK_BUTTON);
+
                         pOutput.accept(ModBlocks.INFESTED_SCULK_FENCE);
                         pOutput.accept(ModBlocks.INFESTED_SCULK_FENCE_GATE);
                         pOutput.accept(ModBlocks.INFESTED_SCULK_WALL);
+
+                        pOutput.accept(ModBlocks.INFESTED_SCULK_BRICK_FENCE);
+                        pOutput.accept(ModBlocks.INFESTED_SCULK_BRICK_FENCE_GATE);
+                        pOutput.accept(ModBlocks.INFESTED_SCULK_BRICK_WALL);
 
                         pOutput.accept(ModBlocks.INFESTED_SCULK_DOOR);
                         pOutput.accept(ModBlocks.INFESTED_SCULK_TRAPDOOR);

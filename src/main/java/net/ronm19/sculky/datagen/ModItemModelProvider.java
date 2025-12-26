@@ -71,6 +71,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         fenceItem(ModBlocks.INFESTED_SCULK_FENCE, ModBlocks.INFESTED_SCULK_BLOCK);
         wallItem(ModBlocks.INFESTED_SCULK_WALL, ModBlocks.INFESTED_SCULK_BLOCK);
 
+
+        buttonItem(ModBlocks.INFESTED_SCULK_BRICK_BUTTON, ModBlocks.INFESTED_SCULK_BRICKS);
+        fenceItem(ModBlocks.INFESTED_SCULK_BRICK_FENCE, ModBlocks.INFESTED_SCULK_BRICKS);
+        wallItem(ModBlocks.INFESTED_SCULK_BRICK_WALL, ModBlocks.INFESTED_SCULK_BRICKS);
+
         trimmedArmorItem(ModItems.INFESTED_SCULK_HELMET);
         trimmedArmorItem(ModItems.INFESTED_SCULK_CHESTPLATE);
         trimmedArmorItem(ModItems.INFESTED_SCULK_LEGGINGS);

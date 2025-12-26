@@ -2,6 +2,10 @@ package net.ronm19.sculky.entity.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.AreaEffectCloud;
@@ -21,6 +25,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
+import org.jetbrains.annotations.NotNull;
 
 public class SculkCreeperEntity extends Creeper implements Enemy {
 
@@ -89,29 +94,61 @@ public class SculkCreeperEntity extends Creeper implements Enemy {
 
 
 
+
     protected void explodeCreeper() {
         if (!(this.level() instanceof ServerLevel level)) return;
 
         boolean charged = this.isPowered();
 
-        // Custom explosion
-        this.level().explode(
+        float explosionPower = charged ? CHARGED_EXPLOSION_POWER : EXPLOSION_POWER;
+        int sculkRadius = charged ? CHARGED_SCULK_RADIUS : SCULK_RADIUS;
+
+        BlockPos center = this.blockPosition();
+
+        // 1️⃣ Do explosion FIRST (vanilla-style)
+        level.explode(
                 this,
                 this.getX(),
                 this.getY(),
                 this.getZ(),
-                charged ? CHARGED_EXPLOSION_POWER : EXPLOSION_POWER,
+                explosionPower,
                 Level.ExplosionInteraction.MOB
         );
 
-        BlockPos center = this.blockPosition();
-
+        // 2️⃣ Apply darkness effects
         applyInstantDarkness(level, center, charged);
         spawnDarknessCloud(level, charged);
-        spreadSculk(level, center, charged);
 
+        // 3️⃣ Spread sculk AROUND the crater (IMPORTANT)
+        spreadSculkAroundCrater(level, center, sculkRadius + 2);
+
+        tryPlaceShrieker(level, center, charged);
+        tryPlaceWardenShrieker(level, center, charged);
+
+
+        explodeCreeper();
+
+        // 4️⃣ Kill creeper
         this.discard();
     }
+
+
+    @Override
+    public void tick() {
+        super.tick();
+
+        if (!this.level().isClientSide && this.isIgnited() && this.tickCount % 10 == 0) {
+            this.level().playSound(
+                    null,
+                    this.blockPosition(),
+                    SoundEvents.SCULK_SENSOR_HIT,
+                    SoundSource.HOSTILE,
+                    this.isPowered() ? 1.2F : 0.8F,
+                    this.isPowered() ? 0.7F : 0.9F
+            );
+        }
+    }
+
 
     // ============================
     // INSTANT DARKNESS
@@ -157,8 +194,7 @@ public class SculkCreeperEntity extends Creeper implements Enemy {
     // ============================
     // SCULK SPREAD
     // ============================
-    private void spreadSculk(ServerLevel level, BlockPos center, boolean charged) {
-        int radius = charged ? CHARGED_SCULK_RADIUS : SCULK_RADIUS;
+    private void spreadSculkAroundCrater(ServerLevel level, BlockPos center, int radius) {
         BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
 
         for (int dx = -radius; dx <= radius; dx++) {
@@ -166,15 +202,19 @@ public class SculkCreeperEntity extends Creeper implements Enemy {
                 for (int dz = -radius; dz <= radius; dz++) {
 
                     pos.set(center.getX() + dx, center.getY() + dy, center.getZ() + dz);
-                    if (pos.distSqr(center) > radius * radius) continue;
+
+                    // Skip inside the blast core
+                    if (pos.distSqr(center) <= 4) continue;
 
                     BlockState state = level.getBlockState(pos);
+
+                    // Only convert solid natural blocks
                     if (state.is(Blocks.STONE)
                             || state.is(Blocks.DEEPSLATE)
                             || state.is(Blocks.DIRT)
                             || state.is(Blocks.GRASS_BLOCK)) {
 
-                        if (level.random.nextFloat() < (charged ? 0.7f : 0.45f)) {
+                        if (level.random.nextFloat() < 0.55f) {
                             level.setBlock(pos, Blocks.SCULK.defaultBlockState(), 3);
                         }
                     }
@@ -190,5 +230,80 @@ public class SculkCreeperEntity extends Creeper implements Enemy {
                         net.minecraft.resources.ResourceLocation.fromNamespaceAndPath(
                                 "sculky", "sculk_mobs"
                         )));
+    }
+
+    private void tryPlaceShrieker(ServerLevel level, BlockPos center, boolean charged) {
+        float chance = charged ? 0.35f : 0.15f;
+        if (level.random.nextFloat() > chance) return;
+
+        BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
+
+        for (int i = 0; i < 20; i++) {
+            pos.set(
+                    center.getX() + level.random.nextInt(-4, 5),
+                    center.getY() + level.random.nextInt(-2, 3),
+                    center.getZ() + level.random.nextInt(-4, 5)
+            );
+
+            BlockState state = level.getBlockState(pos);
+            BlockState below = level.getBlockState(pos.below());
+
+            if (state.isAir() && below.is(Blocks.SCULK)) {
+                level.setBlock(pos, Blocks.SCULK_SHRIEKER.defaultBlockState(), 3);
+                break;
+            }
+        }
+    }
+
+    private void tryPlaceWardenShrieker(ServerLevel level, BlockPos center, boolean charged) {
+        float chance = charged ? 0.35f : 0.15f;
+        if (level.random.nextFloat() > chance) return;
+
+        BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
+
+        for (int i = 0; i < 25; i++) {
+            pos.set(
+                    center.getX() + level.random.nextInt(-5, 6),
+                    center.getY() + level.random.nextInt(-2, 3),
+                    center.getZ() + level.random.nextInt(-5, 6)
+            );
+
+            // Avoid blast core
+            if (pos.distSqr(center) <= 9) continue;
+
+            BlockState state = level.getBlockState(pos);
+            BlockState below = level.getBlockState(pos.below());
+
+            // Place ONLY on sculk
+            if (state.isAir() && below.is(Blocks.SCULK)) {
+
+                BlockState shrieker = Blocks.SCULK_SHRIEKER
+                        .defaultBlockState()
+                        .setValue(
+                                net.minecraft.world.level.block.SculkShriekerBlock.CAN_SUMMON,
+                                true
+                        );
+
+                level.setBlock(pos, shrieker, 3);
+                break;
+            }
+        }
+    }
+
+
+
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return SoundEvents.SCULK_SENSOR_STEP;
+    }
+
+    @Override
+    protected @NotNull SoundEvent getHurtSound( @NotNull DamageSource source) {
+        return SoundEvents.SCULK_BLOCK_BREAK;
+    }
+
+    @Override
+    protected @NotNull SoundEvent getDeathSound() {
+        return SoundEvents.SCULK_BLOCK_BREAK;
     }
 }

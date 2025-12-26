@@ -66,6 +66,25 @@ public class ModBlocks {
     public static final DeferredBlock<Block> INFESTED_SCULK_TRAPDOOR = registerBlock("infested_sculk_trapdoor",
             () -> new TrapDoorBlock(BlockSetType.CRIMSON, BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SCULK).noOcclusion()));
 
+
+    public static final DeferredBlock<Block> INFESTED_SCULK_BRICK_STAIRS = registerBlock("infested_sculk_brick_stairs",
+            () -> new StairBlock(ModBlocks.INFESTED_SCULK_BLOCK.get().defaultBlockState(),
+                    BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SCULK)));
+    public static final DeferredBlock<Block> INFESTED_SCULK_BRICK_SLAB = registerBlock("infested_sculk_brick_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SCULK)));
+
+    public static final DeferredBlock<Block> INFESTED_SCULK_BRICK_PRESSURE_PLATE = registerBlock("infested_sculk_brick_pressure_plate",
+            () -> new PressurePlateBlock(BlockSetType.IRON, BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SCULK)));
+    public static final DeferredBlock<Block> INFESTED_SCULK_BRICK_BUTTON = registerBlock("infested_sculk_brick_button",
+            () -> new ButtonBlock(BlockSetType.IRON, 10, BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SCULK).noCollission()));
+
+    public static final DeferredBlock<Block> INFESTED_SCULK_BRICK_FENCE = registerBlock("infested_sculk_brick_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SCULK)));
+    public static final DeferredBlock<Block> INFESTED_SCULK_BRICK_FENCE_GATE = registerBlock("infested_sculk_brick_fence_gate",
+            () -> new FenceGateBlock(WoodType.CRIMSON, BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SCULK)));
+    public static final DeferredBlock<Block> INFESTED_SCULK_BRICK_WALL = registerBlock("infested_sculk_brick_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.SCULK)));
+
     public static final DeferredBlock<Block> TOMATO_SCULK_CROP = BLOCKS.register("tomato_sculk_crop",
             () -> new TomatoSculkCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT)));
 

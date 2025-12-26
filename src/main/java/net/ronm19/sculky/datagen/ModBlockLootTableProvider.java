@@ -54,6 +54,17 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.INFESTED_SCULK_TRAPDOOR.get());
         this.add(ModBlocks.INFESTED_SCULK_DOOR.get(), block -> createDoorTable(ModBlocks.INFESTED_SCULK_DOOR.get()));
 
+
+        dropSelf(ModBlocks.INFESTED_SCULK_BRICK_STAIRS.get());
+        this.add(ModBlocks.INFESTED_SCULK_BRICK_SLAB.get(), block -> createSlabItemTable(ModBlocks.INFESTED_SCULK_BRICK_SLAB.get()));
+
+        dropSelf(ModBlocks.INFESTED_SCULK_BRICK_PRESSURE_PLATE.get());
+        dropSelf(ModBlocks.INFESTED_SCULK_BRICK_BUTTON.get());
+
+        dropSelf(ModBlocks.INFESTED_SCULK_BRICK_FENCE.get());
+        dropSelf(ModBlocks.INFESTED_SCULK_BRICK_FENCE_GATE.get());
+        dropSelf(ModBlocks.INFESTED_SCULK_BRICK_WALL.get());
+
         LootItemCondition.Builder lootItemConditionBuilder = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.TOMATO_SCULK_CROP.get())
                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(TomatoSculkCropBlock.AGE, 5));
         this.add(ModBlocks.TOMATO_SCULK_CROP.get(), this.createCropDrops(ModBlocks.TOMATO_SCULK_CROP.get(),
