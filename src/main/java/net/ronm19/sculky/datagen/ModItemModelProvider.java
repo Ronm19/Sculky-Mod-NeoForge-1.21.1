@@ -52,6 +52,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.SCULK_PASTRY.get());
         basicItem(ModItems.SOULBITE_COOKIE.get());
         basicItem(ModItems.SCULK_BONE.get());
+        basicItem(ModItems.SCULK_RESONANCE.get());
+        basicItem(ModItems.ECHO_DUST.get());
+        basicItem(ModItems.SCULK_FANG.get());
 
         handheldItem(ModItems.INFESTED_SCULK_SWORD);
         handheldItem(ModItems.INFESTED_SCULK_PICKAXE);
@@ -60,6 +63,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.INFESTED_SCULK_HOE);
         handheldItem(ModItems.INFESTED_SCULK_HAMMER);
         handheldItem(ModItems.ECHO_CONDUIT);
+        handheldItem(ModItems.ECHO_DAGGER);
 
 
         basicItem(ModItems.TOMATO_SCULK_SEEDS.get());
@@ -95,13 +99,14 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent(ModItems.SCULK_ZOMBIE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCULK_SKELETON_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCULK_CREEPER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.SCULK_SPIDER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 
         withExistingParent(ModItems.SCULK_WOLF_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCULK_WOLF_ALPHA_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCULK_HORSE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCULK_FOX_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.SCULK_TAIL_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCULK_BAT_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
-
     }
 
     private ItemModelBuilder saplingItem(DeferredBlock<Block> item) {

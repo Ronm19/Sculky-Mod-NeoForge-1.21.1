@@ -48,6 +48,11 @@ public class ModEntities {
             ENTITY_TYPES.register("sculk_creeper", () -> EntityType.Builder.of(SculkCreeperEntity ::new, MobCategory.MONSTER)
                     .sized(0.6F, 1.7F).eyeHeight(1.47F).build("sculk_creeper"));
 
+    public static final Supplier<EntityType<SculkSpiderEntity>> SCULK_SPIDER =
+            ENTITY_TYPES.register("sculk_spider", () -> EntityType.Builder.of(SculkSpiderEntity::new, MobCategory.MONSTER)
+                            .sized(1.6F, 1.0F).eyeHeight(0.75F).build("sculk_spider"));
+
+
 
 
 
@@ -67,10 +72,15 @@ public class ModEntities {
             ENTITY_TYPES.register("sculk_fox", () -> EntityType.Builder.of(SculkFoxEntity::new, MobCategory.CREATURE)
                     .sized(0.6F, 0.7F).eyeHeight(0.45F).build("sculk_fox"));
 
+    public static final Supplier<EntityType<SculkTailEntity>> SCULK_TAIL =
+            ENTITY_TYPES.register("sculk_tail", () -> EntityType.Builder.of(SculkTailEntity::new, MobCategory.CREATURE)
+                            .sized(0.9F, 0.45F).eyeHeight(0.25F).build("sculk_tail"));
+
 
     public static final Supplier<EntityType<SculkBatEntity>> SCULK_BAT =
             ENTITY_TYPES.register("sculk_bat", () -> EntityType.Builder.of(SculkBatEntity::new, MobCategory.AMBIENT)
                     .sized(0.5F, 0.9F).eyeHeight(0.45F).build("sculk_bat"));
+
 
     public static void register( IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

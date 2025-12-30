@@ -9,6 +9,9 @@
   "item.sculky.tomato_sculk_seeds": "Tomato Sculk Seeds",
 
   "item.sculky.sculk_bone": "Sculk Bone",
+  "item.sculky.sculk_resonance": "Sculk Resonance",
+  "item.sculky.echo_dust": "Echo Dust",
+  "item.sculky.sculk_fang": "Sculk Fang",
 
   "item.sculky.echo_jelly": "Echo Jelly",
   "item.sculky.sculk_pastry": "Sculk Pastry",
@@ -22,6 +25,7 @@
   "item.sculky.infested_sculk_hammer": "Infested Sculk Hammer",
   "item.sculky.sculk_edge": "Sculk Edge",
   "item.sculky.echo_conduit": "Echo Conduit",
+  "item.sculky.echo_dagger": "Echo Dagger",
 
   "item.sculky.infested_sculk_helmet": "Infested Sculk Helmet",
   "item.sculky.infested_sculk_chestplate": "Infested Sculk Chestplate",
@@ -36,11 +40,13 @@
   "item.sculky.sculk_zombie_spawn_egg": "Sculk Zombie Spawn Egg",
   "item.sculky.sculk_skeleton_spawn_egg": "Sculk Skeleton Spawn Egg",
   "item.sculky.sculk_creeper_spawn_egg": "Sculk Creeper Spawn Egg",
+  "item.sculky.sculk_spider_spawn_egg": "Sculk Spider Spawn Egg",
 
   "item.sculky.sculk_wolf_spawn_egg": "Sculk Wolf Spawn Egg",
   "item.sculky.sculk_horse_spawn_egg": "Sculk Horse Spawn Egg",
   "item.sculky.sculk_fox_spawn_egg": "Sculk Fox Spawn Egg",
   "item.sculky.sculk_bat_spawn_egg": "Sculk Bat Spawn Egg",
+  "item.sculky.sculk_tail_spawn_egg": "Sculk Tail Spawn Egg",
   "item.sculky.sculk_wolf_alpha_spawn_egg": "Sculk Wolf Alpha Spawn Egg",
 
   "item.minecraft.potion.effect.sculk_infection_potion": "Sculk Infection Potion",
@@ -105,12 +111,14 @@
   "entity.sculky.sculk_zombie": "Sculk Zombie",
   "entity.sculky.sculk_skeleton": "Sculk Skeleton",
   "entity.sculky.sculk_creeper": "Sculk Creeper",
+  "entity.sculky.sculk_spider": "Sculk Spider",
 
   "entity.sculky.sculk_wolf": "Sculk Wolf",
   "entity.sculky.sculk_wolf_alpha": "Sculk Wolf Alpha",
   "entity.sculky.sculk_horse": "Sculk Horse",
   "entity.sculky.sculk_fox": "Sculk Fox",
   "entity.sculky.sculk_bat": "Sculk Bat",
+  "entity.sculky.sculk_tail": "Sculk Tail",
 
   "key.sculky.use_ability": "Use Ability",
   "key.categories.sculky": "Sculky Mod",

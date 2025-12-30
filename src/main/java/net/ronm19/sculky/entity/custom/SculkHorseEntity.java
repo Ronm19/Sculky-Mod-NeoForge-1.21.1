@@ -529,8 +529,8 @@ public class SculkHorseEntity extends AbstractHorse implements AbilityUser {
 // -----------------------------------------------------
 
     private static final double SEAT_SIDE = -0.03;
-    private static final double SEAT_BACK = 0.70;
-    private static final double SEAT_HEIGHT = 0.40;
+    private static final double SEAT_BACK = 0.10;
+    private static final double SEAT_HEIGHT = 0.10;
 
     @Override
     public boolean canUseSlot( @NotNull EquipmentSlot slot ) {

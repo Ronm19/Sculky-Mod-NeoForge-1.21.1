@@ -73,6 +73,8 @@ public class ModEvents {
         event.registerLayerDefinition(ModModelLayers.SCULK_SENTINEL, SculkSentinelModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SCULK_SHADE, SculkShadeModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SCULK_HORROR, SculkHorrorModel :: createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.SCULK_SPIDER, SculkSpiderModel :: createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.SCULK_TAIL, SculkTailModel :: createBodyLayer);
 
         event.registerLayerDefinition(ModModelLayers.SCULK_WOLF, SculkWolfModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SCULK_FOX, SculkFoxModel :: createBodyLayer);
@@ -90,6 +92,8 @@ public class ModEvents {
         event.put(ModEntities.SCULK_ZOMBIE.get(), SculkZombieEntity.createSculkZombieAttributes().build());
         event.put(ModEntities.SCULK_SKELETON.get(), SculkSkeletonEntity.createSculkSkeletonAttributes().build());
         event.put(ModEntities.SCULK_CREEPER.get(), SculkCreeperEntity.createSculkCreeperAttributes().build());
+        event.put(ModEntities.SCULK_SPIDER.get(), SculkSpiderEntity.createSculkSpiderAttributes().build());
+        event.put(ModEntities.SCULK_TAIL.get(), SculkTailEntity.createSculkTailAttributes().build());
 
         event.put(ModEntities.SCULK_WOLF.get(), SculkWolfEntity.createsSculkWolfAttributes().build());
         event.put(ModEntities.SCULK_WOLF_ALPHA.get(), SculkWolfAlphaEntity.createSculkWolfAlphaAttributes().build());
@@ -153,6 +157,13 @@ public class ModEvents {
                 Monster :: checkMobSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.REPLACE);
 
+
+        event.register(ModEntities.SCULK_SPIDER.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster :: checkMobSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+
         // ---------------------------------------------------------
         //                NEUTRAL / TAMABLE-TYPE ENTITIES
         // ---------------------------------------------------------
@@ -169,6 +180,12 @@ public class ModEvents {
                 RegisterSpawnPlacementsEvent.Operation.REPLACE);
 
         event.register(ModEntities.SCULK_FOX.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                TamableAnimal :: checkMobSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+
+        event.register(ModEntities.SCULK_TAIL.get(),
                 SpawnPlacementTypes.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 TamableAnimal :: checkMobSpawnRules,

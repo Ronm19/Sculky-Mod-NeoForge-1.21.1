@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "E": {
+      "item": "minecraft:echo_shard"
+    },
+    "T": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "  E",
+    " E ",
+    "T  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "sculky:echo_dagger"
+  }
+}

@@ -3,6 +3,7 @@ package net.ronm19.sculky.datagen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
@@ -93,6 +94,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('T', Items.STICK)
                 .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get())).save(pRecipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.ECHO_DAGGER.get())
+                .pattern("  E")
+                .pattern(" E ")
+                .pattern("T  ")
+                .define('E', Items.ECHO_SHARD)
+                .define('T', Items.STICK)
+                .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get())).save(pRecipeOutput);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.INFESTED_SCULK_HELMET.get())
                 .pattern("SSS")
                 .pattern("S S")
@@ -160,7 +169,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('B', Items.BONE)
                 .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get())).save(pRecipeOutput);
 
-
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ECHO_CONDUIT.get())
                 .pattern("  S")
                 .pattern(" S ")
@@ -168,6 +176,37 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', ModItems.SCULK_SHARD.get())
                 .define('T', Items.STICK)
                 .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get())).save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SCULK_RESONANCE.get())
+                .pattern(" S ")
+                .pattern("SES")
+                .pattern(" S ")
+                .define('S', Items.SCULK)
+                .define('E', Items.ECHO_SHARD)
+                .unlockedBy("has_echo_shard", has(Items.ECHO_SHARD))
+                .save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ECHO_DUST.get())
+                .pattern(" G ")
+                .pattern("GEG")
+                .pattern(" G ")
+                .define('G', Items.GUNPOWDER)
+                .define('E', Items.ECHO_SHARD)
+                .unlockedBy("has_echo_shard", has(Items.ECHO_SHARD))
+                .save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, Blocks.SCULK_SHRIEKER)
+                .pattern(" T ")
+                .pattern("SBS")
+                .pattern(" S ")
+                .define('T', Items.REDSTONE_TORCH)
+                .define('S', Items.SCULK)
+                .define('B', Items.SCULK_SENSOR)
+                .unlockedBy("has_sculk_sensor", has(Items.SCULK_SENSOR))
+                .save(pRecipeOutput);
+
+
+
 
         // ------------------------------ SHAPELESS RECIPES ------------------------------- //
 

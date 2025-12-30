@@ -235,7 +235,7 @@ public class SculkShadeEntity extends Vex implements Enemy {
     // -------------------------------
     public static AttributeSupplier.Builder createSculkShadeAttributes() {
         return Monster.createMonsterAttributes()
-                .add(Attributes.MAX_HEALTH, 24.0D)
+                .add(Attributes.MAX_HEALTH, 20.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.25D)
                 .add(Attributes.FLYING_SPEED, 0.33D)
                 .add(Attributes.ATTACK_DAMAGE, 6.0D)

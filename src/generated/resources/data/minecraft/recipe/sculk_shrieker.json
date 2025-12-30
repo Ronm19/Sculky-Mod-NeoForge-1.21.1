@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "B": {
+      "item": "minecraft:sculk_sensor"
+    },
+    "S": {
+      "item": "minecraft:sculk"
+    },
+    "T": {
+      "item": "minecraft:redstone_torch"
+    }
+  },
+  "pattern": [
+    " T ",
+    "SBS",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:sculk_shrieker"
+  }
+}

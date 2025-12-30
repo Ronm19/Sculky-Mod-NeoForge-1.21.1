@@ -31,9 +31,9 @@ public class ModBlocks {
             DeferredRegister.createBlocks(SculkyMod.MOD_ID);
 
     public static final DeferredBlock<Block> INFESTED_SCULK_BLOCK = registerBlock("infested_sculk_block",
-            () -> new SculkBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.SCULK)));
+            () -> new SculkBlock(BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().sound(SoundType.SCULK)));
     public static final DeferredBlock<Block> RAW_INFESTED_SCULK_BLOCK = registerBlock("raw_infested_sculk_block",
-            () -> new SculkBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.SCULK)));
+            () -> new SculkBlock(BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().sound(SoundType.SCULK)));
 
     public static final DeferredBlock<Block> INFESTED_SCULK_BRICKS = registerBlock("infested_sculk_bricks",
             () -> new InfestedSculkBricksBlock(BlockBehaviour.Properties.of().strength(3.5f, 8.0f).requiresCorrectToolForDrops().sound(SoundType.SCULK)));

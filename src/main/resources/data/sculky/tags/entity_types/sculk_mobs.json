@@ -7,10 +7,14 @@
     "sculky:sculk_shade",
     "sculky:sculk_horror",
     "sculky:sculk_zombie",
+    "sculky:sculk_skeleton",
+    "sculky:sculk_creeper",
+    "sculky:sculk_spider",
     "sculky:sculk_horse",
     "sculky:sculk_wolf",
     "sculky:sculk_fox",
     "sculky:sculk_bat",
+    "sculky:sculk_tail",
     "sculky:sculk_wolf_alpha"
   ]
 }

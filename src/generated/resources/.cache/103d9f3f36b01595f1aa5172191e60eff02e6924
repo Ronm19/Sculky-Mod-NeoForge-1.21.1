@@ -1,10 +1,10 @@
-// 1.21.1	2025-12-23T00:09:39.6606718	Registries
+// 1.21.1	2025-12-28T23:54:36.5777608	Registries
 84d78c4cce52f45b5248b0f1057abf8a37663097 data/sculky/enchantment/infection.json
 9767d1811cef9e097497e46866da0a7c4ecc5f70 data/sculky/neoforge/biome_modifier/add_deepslate_infested_sculk_ore.json
 730c9c4cf49a7b7395d18a3ff45aa534ae603780 data/sculky/neoforge/biome_modifier/add_infested_sculk_ore.json
 41460662d6b6988f4c2abc37ba5b8a2bc853f548 data/sculky/neoforge/biome_modifier/add_sculkbloom.json
 4019aeddb64122635a0887d922038d4d9264b1f0 data/sculky/neoforge/biome_modifier/add_tree_infested_sculk.json
-d4e6fb42607e3d9d9d29cffcda23f0751fe0a39f data/sculky/worldgen/biome/sculk_forest.json
+d27aba26cc11106825ad6650c08328cf3c73e651 data/sculky/worldgen/biome/sculk_forest.json
 2baa6da957226921f91ca9e12af46ff6ce2b1e10 data/sculky/worldgen/configured_feature/deeplsate_infested_sculk_ore.json
 56ba2b65678abbab003d6a70a9d176f622e37bb0 data/sculky/worldgen/configured_feature/infested_sculk.json
 97eaaaaf1fc653c3d65256fbcb514964ef4322cb data/sculky/worldgen/configured_feature/infested_sculk_ore.json

@@ -23,6 +23,7 @@ public class ModCreativeModeTabs {
                     .displayItems((pParameters, pOutput) -> {
 
                         pOutput.accept(ModItems.SCULK_SHARD);
+                        pOutput.accept(ModItems.RAW_SCULK_SHARD);
                         pOutput.accept(ModItems.SCULK_HEARTFRUIT);
                         pOutput.accept(ModItems.TOMATO_SCULK);
                         pOutput.accept(ModItems.ECHO_JELLY);
@@ -31,6 +32,9 @@ public class ModCreativeModeTabs {
 
                         pOutput.accept(ModItems.TOMATO_SCULK_SEEDS);
                         pOutput.accept(ModItems.SCULK_BONE);
+                        pOutput.accept(ModItems.SCULK_RESONANCE);
+                        pOutput.accept(ModItems.ECHO_DUST);
+                        pOutput.accept(ModItems.SCULK_FANG);
 
                         pOutput.accept(ModItems.INFESTED_SCULK_SWORD);
                         pOutput.accept(ModItems.INFESTED_SCULK_PICKAXE);
@@ -40,6 +44,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.INFESTED_SCULK_HAMMER);
                         pOutput.accept(ModItems.SCULK_EDGE);
                         pOutput.accept(ModItems.ECHO_CONDUIT);
+                        pOutput.accept(ModItems.ECHO_DAGGER);
 
                         pOutput.accept(ModItems.INFESTED_SCULK_HELMET);
                         pOutput.accept(ModItems.INFESTED_SCULK_CHESTPLATE);
@@ -118,10 +123,12 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.SCULK_ZOMBIE_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_SKELETON_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_CREEPER_SPAWN_EGG);
+                        pOutput.accept(ModItems.SCULK_SPIDER_SPAWN_EGG);
 
                         pOutput.accept(ModItems.SCULK_WOLF_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_HORSE_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_FOX_SPAWN_EGG);
+                        pOutput.accept(ModItems.SCULK_TAIL_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_BAT_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_WOLF_ALPHA_SPAWN_EGG);
 

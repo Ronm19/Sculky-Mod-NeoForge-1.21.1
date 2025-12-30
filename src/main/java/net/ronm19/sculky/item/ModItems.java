@@ -13,6 +13,8 @@ import net.ronm19.sculky.block.ModBlocks;
 import net.ronm19.sculky.entity.ModEntities;
 import net.ronm19.sculky.item.custom.*;
 
+import java.util.function.Supplier;
+
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(SculkyMod.MOD_ID);
 
@@ -20,6 +22,14 @@ public class ModItems {
     public static final DeferredItem<Item> RAW_SCULK_SHARD = ITEMS.registerSimpleItem("raw_sculk_shard");
 
     public static final DeferredItem<Item> SCULK_BONE = ITEMS.registerSimpleItem("sculk_bone");
+
+    public static final DeferredItem<Item> SCULK_RESONANCE =
+            ITEMS.registerItem("sculk_resonance", Item::new, new Item.Properties().stacksTo(16).rarity(Rarity.RARE));
+    public static final DeferredItem<Item> ECHO_DUST =
+            ITEMS.registerItem("echo_dust", Item::new, new Item.Properties());
+    public static final DeferredItem<Item> SCULK_FANG =
+            ITEMS.registerItem("sculk_fang", Item::new, new Item.Properties());
+
 
     public static final DeferredItem<Item> SCULK_HEARTFRUIT =
             ITEMS.registerItem("sculk_heartfruit", Item::new, new Item.Properties().food(ModFoodProperties.SCULK_HEARTFRUIT));
@@ -86,6 +96,10 @@ public class ModItems {
     public static final DeferredItem<Item> ECHO_CONDUIT = ITEMS.register("echo_conduit",
             () -> new EchoConduitItem(new Item.Properties().stacksTo(1).durability(1300)));
 
+    public static final DeferredItem<Item> ECHO_DAGGER = ITEMS.register("echo_dagger",
+            () -> new EchoDaggerItem(ModToolTiers.INFESTED_SCULK, new Item.Properties().attributes
+                    (SwordItem.createAttributes(ModToolTiers.INFESTED_SCULK, 8, -2.2f))));
+
 
 
     // ------------------------------- MONSTERs Egg Spawns --------------------------------------------- //
@@ -122,6 +136,10 @@ public class ModItems {
             () -> new DeferredSpawnEggItem(ModEntities.SCULK_CREEPER,  0x0B0F12, 0x2FA6A3,
                     new Item.Properties()));
 
+    public static final DeferredItem<Item> SCULK_SPIDER_SPAWN_EGG = ITEMS.register("sculk_spider_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.SCULK_SPIDER,  0x0B1220, 0x19C7FF,
+                    new Item.Properties()));
+
 
     // ------------------------------- NEUTRAL Egg Spawns --------------------------------------------- //
 
@@ -141,9 +159,14 @@ public class ModItems {
             () -> new DeferredSpawnEggItem(ModEntities.SCULK_FOX, 0x0A0F12, 0x34D5E7,
                     new Item.Properties()));
 
+    public static final DeferredItem<Item> SCULK_TAIL_SPAWN_EGG = ITEMS.register("sculk_tail_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.SCULK_TAIL, 0x0A0F1C, 0x0A0F1C,
+                    new Item.Properties()));
+
     public static final DeferredItem<Item> SCULK_BAT_SPAWN_EGG = ITEMS.register("sculk_bat_spawn_egg",
             () -> new DeferredSpawnEggItem(ModEntities.SCULK_BAT, 0x060A14, 0x0CF1AE,
                     new Item.Properties()));
+
 
 
 

@@ -11,6 +11,10 @@ public class ModModelLayers {
             ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "sculk_shade"), "main");
     public static final ModelLayerLocation SCULK_HORROR = new ModelLayerLocation(
             ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "sculk_horror"), "main");
+    public static final ModelLayerLocation SCULK_SPIDER = new ModelLayerLocation(
+            ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "sculk_spider"), "main");
+    public static final ModelLayerLocation SCULK_TAIL = new ModelLayerLocation(
+            ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "sculk_tail"), "main");
 
 
 

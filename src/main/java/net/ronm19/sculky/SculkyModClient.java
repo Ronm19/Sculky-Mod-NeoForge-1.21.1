@@ -12,6 +12,7 @@ import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.ronm19.sculky.entity.ModEntities;
 import net.ronm19.sculky.entity.client.*;
+import net.ronm19.sculky.entity.custom.SculkTailEntity;
 
 // This class will not load on dedicated servers. Accessing client side code from here is safe.
 @Mod(value = SculkyMod.MOD_ID, dist = Dist.CLIENT)
@@ -36,12 +37,15 @@ public class SculkyModClient {
         EntityRenderers.register(ModEntities.SCULK_ZOMBIE.get(), SculkZombieRenderer::new);
         EntityRenderers.register(ModEntities.SCULK_SKELETON.get(), SculkSkeletonRenderer::new);
         EntityRenderers.register(ModEntities.SCULK_CREEPER.get(), SculkCreeperRenderer::new);
+        EntityRenderers.register(ModEntities.SCULK_SPIDER.get(), SculkSpiderRenderer::new);
+
 
         EntityRenderers.register(ModEntities.SCULK_WOLF.get(), SculkWolfRender::new);
         EntityRenderers.register(ModEntities.SCULK_WOLF_ALPHA.get(), SculkWolfAlphaRenderer::new);
         EntityRenderers.register(ModEntities.SCULK_HORSE.get(), SculkHorseRenderer::new);
         EntityRenderers.register(ModEntities.SCULK_FOX.get(), SculkFoxRenderer::new);
         EntityRenderers.register(ModEntities.SCULK_BAT.get(), SculkBatRenderer::new);
+        EntityRenderers.register(ModEntities.SCULK_TAIL.get(), SculkTailRenderer::new);
     }
 
     @SubscribeEvent

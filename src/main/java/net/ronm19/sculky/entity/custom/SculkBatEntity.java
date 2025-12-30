@@ -1,6 +1,7 @@
 package net.ronm19.sculky.entity.custom;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -14,8 +15,10 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ambient.Bat;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
+import net.ronm19.sculky.item.ModItems;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.EnumSet;
@@ -284,4 +287,27 @@ public class SculkBatEntity extends Bat implements NeutralMob {
     public void startPersistentAngerTimer() {
 
     }
+
+    @Override
+    protected void dropCustomDeathLoot(ServerLevel level, DamageSource source, boolean recentlyHit) {
+
+        if (level.isClientSide) return;
+
+        // --- Echo Dust (30%) ---
+        if (this.random.nextFloat() < 0.30F) {
+            this.spawnAtLocation(ModItems.ECHO_DUST.get(), 1);
+        }
+
+        // --- Sculk Fang (7%) ---
+        if (this.random.nextFloat() < 0.07F) {
+            this.spawnAtLocation(ModItems.SCULK_FANG.get(), 1);
+        }
+
+        // --- Phantom Membrane (12%) ---
+        if (this.random.nextFloat() < 0.12F) {
+            this.spawnAtLocation(Items.PHANTOM_MEMBRANE, 1);
+        }
+    }
+
+
 }
