@@ -142,7 +142,7 @@ public class SculkHorseEntity extends AbstractHorse implements AbilityUser {
     // ------------------------------
 
     @Override
-    public void thunderHit(ServerLevel level, LightningBolt lightning) {
+    public void thunderHit( @NotNull ServerLevel level, @NotNull LightningBolt lightning) {
         super.thunderHit(level, lightning);
 
         BlockPos pos = this.blockPosition();
@@ -368,6 +368,7 @@ public class SculkHorseEntity extends AbstractHorse implements AbilityUser {
     private boolean isTamingItem( ItemStack stack ) {
         return stack.is(Items.ROTTEN_FLESH)
                 || stack.is(Items.ECHO_SHARD)
+                || stack.is(ModItems.SCULK_SHARD)
                 || stack.is(Items.SCULK)
                 || stack.is(Items.BONE);
     }

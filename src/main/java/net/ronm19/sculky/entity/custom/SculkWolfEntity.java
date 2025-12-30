@@ -112,8 +112,8 @@ public class SculkWolfEntity extends TamableAnimal implements NeutralMob {
     private float interestedAngleO;
 
     // Constants
-    private static final float UNTAMED_HEALTH = 8.0F;
-    private static final float TAMED_HEALTH = 40.0F;
+    private static final float UNTAMED_HEALTH = 20.0F;
+    private static final float TAMED_HEALTH = 90.0F;
 
     // ============================================================
     //                        CONSTRUCTOR
@@ -134,8 +134,8 @@ public class SculkWolfEntity extends TamableAnimal implements NeutralMob {
     public static AttributeSupplier.Builder createsSculkWolfAttributes() {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, UNTAMED_HEALTH)
-                .add(Attributes.MAX_HEALTH, 80.0D)
-                .add(Attributes.ATTACK_DAMAGE, 4.0D)
+                .add(Attributes.MAX_HEALTH, 90.0D)
+                .add(Attributes.ATTACK_DAMAGE, 5.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.30D);
     }
 

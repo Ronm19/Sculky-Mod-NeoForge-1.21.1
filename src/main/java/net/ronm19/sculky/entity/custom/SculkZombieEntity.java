@@ -1,15 +1,22 @@
 package net.ronm19.sculky.entity.custom;
 
+import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -22,12 +29,21 @@ import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.monster.ZombieVillager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.phys.Vec3;
+import net.ronm19.sculky.entity.variant.CorruptedSculkZombieVariant;
 import org.jetbrains.annotations.NotNull;
 
+import javax.annotation.Nullable;
 import java.util.EnumSet;
+import java.util.Objects;
 
 public class SculkZombieEntity extends Zombie implements Enemy {
+
+    public static final EntityDataAccessor<Integer> CORRUPTED =
+            SynchedEntityData.defineId(SculkZombieEntity.class, EntityDataSerializers.INT);
+
 
     private int pulseCooldown = 0;
     private int infectionCooldown = 0;
@@ -40,6 +56,130 @@ public class SculkZombieEntity extends Zombie implements Enemy {
     public boolean fireImmune() {
         return true;
     }
+
+    // ---------------------------------------------------------
+    //               DATA
+    // ---------------------------------------------------------
+
+    @Override
+    protected void defineSynchedData(SynchedEntityData.Builder pBuilder) {
+        super.defineSynchedData(pBuilder);
+        pBuilder.define(CORRUPTED, 0);
+    }
+
+    @Override
+    public void addAdditionalSaveData( CompoundTag pCompound) {
+        super.addAdditionalSaveData(pCompound);
+        pCompound.putInt("Variant", this.getTypeVariant());
+    }
+
+    @Override
+    public void readAdditionalSaveData(CompoundTag tag) {
+        super.readAdditionalSaveData(tag);
+        this.entityData.set(CORRUPTED, tag.getInt("Variant"));
+
+        if (getVariant() == CorruptedSculkZombieVariant.CORRUPTED) {
+            applyCorruptedAttributes();
+        }
+    }
+
+
+    // ---------------------------------------------------------
+    //               VARIANT
+    // ---------------------------------------------------------
+
+    private int getTypeVariant() {
+        return this.entityData.get(CORRUPTED);
+    }
+
+    public CorruptedSculkZombieVariant getVariant() {
+        return CorruptedSculkZombieVariant.byId(this.getTypeVariant() & 255);
+    }
+
+    private void setVariant(CorruptedSculkZombieVariant variant) {
+        this.entityData.set(CORRUPTED, variant.getId() & 255);
+    }
+
+    @Override
+    public SpawnGroupData finalizeSpawn(
+            ServerLevelAccessor level,
+            DifficultyInstance difficulty,
+            MobSpawnType spawnType,
+            @Nullable SpawnGroupData spawnData
+    ) {
+        spawnData = super.finalizeSpawn(level, difficulty, spawnType, spawnData);
+
+        boolean corrupted;
+
+        if (spawnType == MobSpawnType.SPAWN_EGG) {
+            corrupted = this.random.nextFloat() < 0.6F;
+        } else {
+            corrupted = shouldSpawnCorrupted(
+                    level,
+                    this.blockPosition(),
+                    level.getRandom(),
+                    difficulty
+            );
+        }
+
+        if (corrupted) {
+            this.setVariant(CorruptedSculkZombieVariant.CORRUPTED);
+            applyCorruptedAttributes();
+        } else {
+            this.setVariant(CorruptedSculkZombieVariant.NORMAL);
+        }
+
+        return spawnData;
+    }
+
+    public static boolean shouldSpawnCorrupted(
+            ServerLevelAccessor level,
+            BlockPos pos,
+            RandomSource random,
+            DifficultyInstance difficulty
+    ) {
+        float baseChance;
+
+        // Surface bias
+        if (pos.getY() >= 60) {
+            baseChance = 0.12F; // noticeable but not spammy
+        }
+        // Underground (rare but possible)
+        else {
+            baseChance = 0.04F;
+        }
+
+        // Difficulty scaling
+        switch (difficulty.getDifficulty()) {
+            case PEACEFUL -> baseChance = 0.0F;
+            case EASY -> baseChance *= 0.6F;
+            case NORMAL -> baseChance *= 1.0F;
+            case HARD -> baseChance *= 1.4F;
+        }
+
+        return random.nextFloat() < baseChance;
+    }
+
+
+    private void applyCorruptedAttributes() {
+        Objects.requireNonNull(this.getAttribute(Attributes.MAX_HEALTH)).setBaseValue(70.0D);
+        Objects.requireNonNull(this.getAttribute(Attributes.ATTACK_DAMAGE)).setBaseValue(8.0D);
+        Objects.requireNonNull(this.getAttribute(Attributes.MOVEMENT_SPEED)).setBaseValue(0.23D);
+        Objects.requireNonNull(this.getAttribute(Attributes.FOLLOW_RANGE)).setBaseValue(35.0D);
+        Objects.requireNonNull(this.getAttribute(Attributes.ARMOR)).setBaseValue(3.5D);
+
+        this.setHealth(this.getMaxHealth());
+    }
+
+    @Override
+    public int getMaxSpawnClusterSize() {
+        return 2; // usually alone, sometimes paired
+    }
+
+
+
+
+
 
     // ---------------------------------------------------------
     //               ATTRIBUTES

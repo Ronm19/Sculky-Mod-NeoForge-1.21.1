@@ -1,15 +1,22 @@
 package net.ronm19.sculky.entity.custom;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.NeutralMob;
+import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.Goal;
@@ -17,11 +24,16 @@ import net.minecraft.world.entity.ambient.Bat;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.phys.Vec3;
+import net.ronm19.sculky.entity.variant.CorruptedSculkBatVariant;
+import net.ronm19.sculky.entity.variant.CorruptedSculkCreeperVariant;
 import net.ronm19.sculky.item.ModItems;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.EnumSet;
+import java.util.Objects;
 import java.util.UUID;
 
 public class SculkBatEntity extends Bat implements NeutralMob {
@@ -29,6 +41,9 @@ public class SculkBatEntity extends Bat implements NeutralMob {
     private boolean angry = false;
     private int angerTimer = 0;
     private int pulseCooldown = 0;
+
+    public static final EntityDataAccessor<Integer> CORRUPTED =
+            SynchedEntityData.defineId(SculkBatEntity.class, EntityDataSerializers.INT);
 
     public SculkBatEntity(EntityType<? extends Bat> type, Level level) {
         super(type, level);
@@ -307,6 +322,102 @@ public class SculkBatEntity extends Bat implements NeutralMob {
         if (this.random.nextFloat() < 0.12F) {
             this.spawnAtLocation(Items.PHANTOM_MEMBRANE, 1);
         }
+    }
+
+    /* ------------------------------------------------ */
+    /* VARIANTS                                         */
+    /* ------------------------------------------------ */
+
+    public CorruptedSculkBatVariant getVariant() {
+        return CorruptedSculkBatVariant.byId(this.entityData.get(CORRUPTED));
+    }
+
+    private void setVariant(CorruptedSculkBatVariant variant) {
+        this.entityData.set(CORRUPTED, variant.getId());
+    }
+
+    private void applyCorruptedAttributes() {
+        Objects.requireNonNull(getAttribute(Attributes.MAX_HEALTH)).setBaseValue(12.0D);
+        Objects.requireNonNull(getAttribute(Attributes.MOVEMENT_SPEED)).setBaseValue(0.30D);
+        Objects.requireNonNull(getAttribute(Attributes.FOLLOW_RANGE)).setBaseValue(32.0D);
+        Objects.requireNonNull(getAttribute(Attributes.ARMOR)).setBaseValue(1.0D);
+        this.setHealth(this.getMaxHealth());
+    }
+
+    @Override
+    public SpawnGroupData finalizeSpawn(
+            @NotNull ServerLevelAccessor level,
+            @NotNull DifficultyInstance difficulty,
+            @NotNull MobSpawnType spawnType,
+            @javax.annotation.Nullable SpawnGroupData spawnData
+    ) {
+        spawnData = super.finalizeSpawn(level, difficulty, spawnType, spawnData);
+
+        boolean corrupted = decideCorruption(level, difficulty, spawnType);
+
+        this.setVariant(
+                corrupted
+                        ? CorruptedSculkBatVariant.CORRUPTED
+                        : CorruptedSculkBatVariant.NORMAL
+        );
+
+        if (corrupted) {
+            applyCorruptedAttributes();
+        }
+
+        return spawnData;
+    }
+
+    /* ------------------------------------------------ */
+    /* CORRUPTION LOGIC                                  */
+    /* ------------------------------------------------ */
+
+    private boolean decideCorruption(
+            ServerLevelAccessor level,
+            DifficultyInstance difficulty,
+            MobSpawnType spawnType
+    ) {
+        // Spawn eggs → fixed low chance
+        if (spawnType == MobSpawnType.SPAWN_EGG) {
+            return this.random.nextFloat() < 0.15F;
+        }
+
+        // Natural spawning → environment based
+        return shouldSpawnCorrupted(
+                level,
+                this.blockPosition(),
+                level.getRandom(),
+                difficulty
+        );
+    }
+
+    public static boolean shouldSpawnCorrupted(
+            ServerLevelAccessor level,
+            BlockPos pos,
+            RandomSource random,
+            DifficultyInstance difficulty
+    ) {
+        // Base chance depending on depth
+        float baseChance = pos.getY() < 50 ? 0.15F : 0.02F;
+
+        // Difficulty scaling
+        return switch (difficulty.getDifficulty()) {
+            case PEACEFUL -> false;
+            case EASY     -> random.nextFloat() < baseChance * 0.6F;
+            case NORMAL   -> random.nextFloat() < baseChance;
+            case HARD     -> random.nextFloat() < baseChance * 1.5F;
+        };
+    }
+
+
+    /* ------------------------------------------------ */
+    /* DATA                                             */
+    /* ------------------------------------------------ */
+
+    @Override
+    protected void defineSynchedData( SynchedEntityData.Builder builder) {
+        super.defineSynchedData(builder);
+        builder.define(CORRUPTED, 0);
     }
 
 
