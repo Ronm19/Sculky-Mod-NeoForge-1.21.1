@@ -77,11 +77,6 @@ public class SculkCreeperEntity extends Creeper implements Enemy {
         // Aggro players
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, TamableAnimal.class, true));
-
-        // Optional: target non-sculk mobs (if you want chaos)
-        // this.targetSelector.addGoal(3,
-        //        new NearestAttackableTargetGoal<>(this, Mob.class, 10, false, false,
-        //                mob -> !mob.getType().is(SCULK_MOBS)));
     }
 
     public static AttributeSupplier.Builder createSculkCreeperAttributes() {
