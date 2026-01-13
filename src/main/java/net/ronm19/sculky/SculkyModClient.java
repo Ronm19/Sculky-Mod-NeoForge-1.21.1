@@ -38,6 +38,7 @@ public class SculkyModClient {
         EntityRenderers.register(ModEntities.SCULK_SKELETON.get(), SculkSkeletonRenderer::new);
         EntityRenderers.register(ModEntities.SCULK_CREEPER.get(), SculkCreeperRenderer::new);
         EntityRenderers.register(ModEntities.SCULK_SPIDER.get(), SculkSpiderRenderer::new);
+        EntityRenderers.register(ModEntities.SCULK_ENDERMAN.get(), SculkEndermanRenderer::new);
 
 
         EntityRenderers.register(ModEntities.SCULK_WOLF.get(), SculkWolfRender::new);

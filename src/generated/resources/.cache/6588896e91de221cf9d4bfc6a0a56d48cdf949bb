@@ -1,4 +1,4 @@
-// 1.21.1	2025-12-29T08:24:18.8267976	Item Models: sculky
+// 1.21.1	2026-01-13T06:25:10.5545885	Item Models: sculky
 fb0446df9bc6cd6ae702e28ae2c9682758c92d2f assets/sculky/models/item/echo_conduit.json
 73e021106fd0960f0ffc52d87d21b556d2456623 assets/sculky/models/item/echo_dagger.json
 111b7c0261b93565f85b16aed9de521de8dad0d5 assets/sculky/models/item/echo_dust.json
@@ -67,6 +67,7 @@ e52d4d3ad5fd594c1e5f09293b1ada92fc86f507 assets/sculky/models/item/raw_sculk_sha
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_bat_spawn_egg.json
 694997df7fe0d0986a1e2a89196236f627e8ffb9 assets/sculky/models/item/sculk_bone.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_creeper_spawn_egg.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_enderman_spawn_egg.json
 e4502af2613269d7d935a6b3928c77e5b3d4a58f assets/sculky/models/item/sculk_fang.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_fox_spawn_egg.json
 f464738a4f677f6db95bee334b255d6a9502307a assets/sculky/models/item/sculk_heartfruit.json

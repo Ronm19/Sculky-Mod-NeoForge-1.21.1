@@ -124,6 +124,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.SCULK_SKELETON_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_CREEPER_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_SPIDER_SPAWN_EGG);
+                        pOutput.accept(ModItems.SCULK_ENDERMAN_SPAWN_EGG);
 
                         pOutput.accept(ModItems.SCULK_WOLF_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_HORSE_SPAWN_EGG);

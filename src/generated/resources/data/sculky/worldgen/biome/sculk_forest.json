@@ -149,8 +149,14 @@
       },
       {
         "type": "sculky:sculk_spider",
-        "maxCount": 5,
-        "minCount": 3,
+        "maxCount": 3,
+        "minCount": 2,
+        "weight": 60
+      },
+      {
+        "type": "sculky:sculk_enderman",
+        "maxCount": 3,
+        "minCount": 2,
         "weight": 60
       },
       {

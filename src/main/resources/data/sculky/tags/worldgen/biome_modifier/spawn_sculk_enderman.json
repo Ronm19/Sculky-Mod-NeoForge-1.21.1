@@ -5,9 +5,9 @@
     "minecraft:deep_dark"
   ],
   "spawners": {
-    "type": "sculky:sculk_spider",
+    "type": "sculky:sculk_enderman",
     "weight": 60,
     "minCount": 2,
-    "maxCount": 3
+    "maxCount": 5
   }
 }

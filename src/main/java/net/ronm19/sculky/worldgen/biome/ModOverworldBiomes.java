@@ -35,7 +35,8 @@ public class ModOverworldBiomes {
         spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_ZOMBIE.get(), 60, 2, 5));
         spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_SKELETON.get(), 60, 2, 4));
         spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_CREEPER.get(), 60, 2, 4));
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_SPIDER.get(), 60, 3, 5));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_SPIDER.get(), 60, 2, 3));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_ENDERMAN.get(), 60, 2, 3));
 
         spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_WOLF.get(), 60, 2, 5));
         spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_WOLF_ALPHA.get(), 60, 1, 2));

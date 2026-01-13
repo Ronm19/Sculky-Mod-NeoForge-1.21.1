@@ -94,6 +94,7 @@ public class ModEvents {
         event.put(ModEntities.SCULK_CREEPER.get(), SculkCreeperEntity.createSculkCreeperAttributes().build());
         event.put(ModEntities.SCULK_SPIDER.get(), SculkSpiderEntity.createSculkSpiderAttributes().build());
         event.put(ModEntities.SCULK_TAIL.get(), SculkTailEntity.createSculkTailAttributes().build());
+        event.put(ModEntities.SCULK_ENDERMAN.get(), SculkEndermanEntity.createSculkEndermanAttributes().build());
 
         event.put(ModEntities.SCULK_WOLF.get(), SculkWolfEntity.createsSculkWolfAttributes().build());
         event.put(ModEntities.SCULK_WOLF_ALPHA.get(), SculkWolfAlphaEntity.createSculkWolfAlphaAttributes().build());
@@ -162,6 +163,12 @@ public class ModEvents {
                 SpawnPlacementTypes.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 Monster :: checkMobSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+
+        event.register(ModEntities.SCULK_ENDERMAN.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMobSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.REPLACE);
 
         // ---------------------------------------------------------

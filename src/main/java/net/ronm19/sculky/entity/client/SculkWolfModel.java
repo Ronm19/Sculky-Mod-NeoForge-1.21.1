@@ -171,6 +171,6 @@ public class SculkWolfModel <T extends SculkWolfEntity> extends HierarchicalMode
 
     @Override
     public ModelPart root() {
-        return null;
+        return this.root;
     }
 }

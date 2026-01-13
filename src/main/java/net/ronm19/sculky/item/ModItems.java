@@ -140,6 +140,11 @@ public class ModItems {
             () -> new DeferredSpawnEggItem(ModEntities.SCULK_SPIDER,  0x0B1220, 0x19C7FF,
                     new Item.Properties()));
 
+    public static final DeferredItem<Item> SCULK_ENDERMAN_SPAWN_EGG = ITEMS.register("sculk_enderman_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.SCULK_ENDERMAN,  0x0B1416, 0x3FD6C6,
+                    new Item.Properties()));
+
+
 
     // ------------------------------- NEUTRAL Egg Spawns --------------------------------------------- //
 

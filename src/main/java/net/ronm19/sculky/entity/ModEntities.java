@@ -52,6 +52,10 @@ public class ModEntities {
             ENTITY_TYPES.register("sculk_spider", () -> EntityType.Builder.of(SculkSpiderEntity::new, MobCategory.MONSTER)
                             .sized(1.6F, 1.0F).eyeHeight(0.75F).build("sculk_spider"));
 
+    public static final Supplier<EntityType<SculkEndermanEntity>> SCULK_ENDERMAN =
+            ENTITY_TYPES.register("sculk_enderman", () -> EntityType.Builder.of(SculkEndermanEntity::new, MobCategory.MONSTER)
+                    .sized(0.6F, 2.9F).eyeHeight(2.55F).build("sculk_enderman"));
+
 
 
 
