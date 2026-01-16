@@ -6,7 +6,7 @@
   ],
   "spawners": {
     "type": "sculky:sculk_parasite",
-    "weight": 60,
+    "weight": 30,
     "minCount": 1,
     "maxCount": 3
   }

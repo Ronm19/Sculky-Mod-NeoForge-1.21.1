@@ -1,0 +1,11 @@
+{
+  "values": [
+    "#minecraft:dirt",
+    "#minecraft:convertable_to_mud",
+    "#minecraft:base_stone_overworld",
+    "#minecraft:base_stone_nether",
+    "#minecraft:sand",
+    "#minecraft:terracotta",
+    "#minecraft:moss_replaceable"
+  ]
+}

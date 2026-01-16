@@ -20,6 +20,10 @@ public class ModEntities {
             ENTITY_TYPES.register("sculk_parasite", () -> EntityType.Builder.of(SculkParasiteEntity::new, MobCategory.MONSTER)
                     .sized(0.4F, 0.3F).eyeHeight(0.15F).build("sculk_parasite"));
 
+    public static final Supplier<EntityType<SculkmiteEntity>> SCULKMITE =
+            ENTITY_TYPES.register("sculkmite", () -> EntityType.Builder.of(SculkmiteEntity::new, MobCategory.MONSTER)
+                    .sized(0.6F, 0.4F).eyeHeight(0.25F).build("sculkmite"));
+
     public static final Supplier<EntityType<SculkSentinelEntity>> SCULK_SENTINEL =
             ENTITY_TYPES.register("sculk_sentinel", () -> EntityType.Builder.of(SculkSentinelEntity::new, MobCategory.MONSTER)
                     .sized(1.2F, 3.0F).eyeHeight(2.6F).clientTrackingRange(10).build("sculk_sentinel"));

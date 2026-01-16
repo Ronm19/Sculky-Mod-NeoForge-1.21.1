@@ -160,6 +160,12 @@
         "weight": 60
       },
       {
+        "type": "sculky:sculkmite",
+        "maxCount": 3,
+        "minCount": 1,
+        "weight": 60
+      },
+      {
         "type": "sculky:sculk_wolf",
         "maxCount": 5,
         "minCount": 2,

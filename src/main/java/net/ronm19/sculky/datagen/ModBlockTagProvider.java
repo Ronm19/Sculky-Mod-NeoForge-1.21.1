@@ -7,6 +7,7 @@ import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.ronm19.sculky.SculkyMod;
 import net.ronm19.sculky.block.ModBlocks;
+import net.ronm19.sculky.util.ModTags;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
@@ -65,7 +66,21 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.WALLS)
                 .add(ModBlocks.INFESTED_SCULK_BRICK_WALL.get())
                 .add(ModBlocks.INFESTED_SCULK_WALL.get());
+
+        this.tag(ModTags.Blocks.SCULK_SPREADABLE)
+                // Dirt-like blocks
+                .addTag(BlockTags.DIRT)
+                .addTag(BlockTags.CONVERTABLE_TO_MUD)
+                // Stone-like blocks
+                .addTag(BlockTags.BASE_STONE_OVERWORLD)
+                .addTag(BlockTags.BASE_STONE_NETHER)
+                // Sand & terracotta
+                .addTag(BlockTags.SAND)
+                .addTag(BlockTags.TERRACOTTA)
+                // Optional: moss-replaceables (nice synergy)
+                .addTag(BlockTags.MOSS_REPLACEABLE);
     }
+
 
 
 }

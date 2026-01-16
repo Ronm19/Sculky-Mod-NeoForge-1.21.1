@@ -6,7 +6,7 @@
   ],
   "spawners": {
     "type": "sculky:sculk_wolf_alpha",
-    "weight": 60,
+    "weight": 30,
     "minCount": 1,
     "maxCount": 2
   }

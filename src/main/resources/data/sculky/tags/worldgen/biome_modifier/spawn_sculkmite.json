@@ -1,13 +1,12 @@
 {
   "type": "neoforge:add_spawns",
   "biomes": [
-    "sculky:sculk_forest",
-    "minecraft:deep_dark"
+    "sculky:sculk_forest"
   ],
   "spawners": {
-    "type": "sculky:sculk_sentinel",
+    "type": "sculky:sculkmite",
     "weight": 30,
-    "minCount": 2,
+    "minCount": 1,
     "maxCount": 3
   }
 }

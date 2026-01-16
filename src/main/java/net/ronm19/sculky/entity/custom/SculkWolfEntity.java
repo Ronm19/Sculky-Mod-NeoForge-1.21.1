@@ -112,7 +112,7 @@ public class SculkWolfEntity extends TamableAnimal implements NeutralMob {
     private float interestedAngleO;
 
     // Constants
-    private static final float UNTAMED_HEALTH = 20.0F;
+    private static final float UNTAMED_HEALTH = 50.0F;
     private static final float TAMED_HEALTH = 90.0F;
 
     // ============================================================

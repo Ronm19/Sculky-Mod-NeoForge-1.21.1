@@ -101,6 +101,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent(ModItems.SCULK_CREEPER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCULK_SPIDER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCULK_ENDERMAN_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.SCULKMITE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 
         withExistingParent(ModItems.SCULK_WOLF_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCULK_WOLF_ALPHA_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));

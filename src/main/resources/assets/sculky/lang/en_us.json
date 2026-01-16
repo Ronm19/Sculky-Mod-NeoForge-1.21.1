@@ -42,6 +42,7 @@
   "item.sculky.sculk_creeper_spawn_egg": "Sculk Creeper Spawn Egg",
   "item.sculky.sculk_spider_spawn_egg": "Sculk Spider Spawn Egg",
   "item.sculky.sculk_enderman_spawn_egg": "Sculk Enderman Spawn Egg",
+  "item.sculky.sculkmite_spawn_egg": "Sculkmite Spawn Egg",
 
   "item.sculky.sculk_wolf_spawn_egg": "Sculk Wolf Spawn Egg",
   "item.sculky.sculk_horse_spawn_egg": "Sculk Horse Spawn Egg",
@@ -114,6 +115,7 @@
   "entity.sculky.sculk_creeper": "Sculk Creeper",
   "entity.sculky.sculk_spider": "Sculk Spider",
   "entity.sculky.sculk_enderman": "Sculk Enderman",
+  "entity.sculky.sculkmite": "Sculkmite",
 
   "entity.sculky.sculk_wolf": "Sculk Wolf",
   "entity.sculky.sculk_wolf_alpha": "Sculk Wolf Alpha",

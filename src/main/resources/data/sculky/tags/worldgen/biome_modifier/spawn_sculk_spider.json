@@ -6,7 +6,7 @@
   ],
   "spawners": {
     "type": "sculky:sculk_spider",
-    "weight": 60,
+    "weight": 30,
     "minCount": 2,
     "maxCount": 3
   }

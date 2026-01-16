@@ -17,6 +17,8 @@ public class ModTags {
         public static final TagKey<Block> NEEDS_INFESTED_SCULK_TOOL = createTag("needs_infested_sculk_tool");
         public static final TagKey<Block> SCULK_TRANSFORMABLE =  createTag("sculk_transformable");
 
+        public static final TagKey<Block> SCULK_SPREADABLE = createTag("sculk_spreadable");
+
         private static TagKey<Block> createTag( String name ) {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, name));
         }
