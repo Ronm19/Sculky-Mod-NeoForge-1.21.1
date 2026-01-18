@@ -2,15 +2,19 @@ package net.ronm19.sculky.entity.custom;
 
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
@@ -25,7 +29,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.ronm19.sculky.block.ModBlocks;
-import net.ronm19.sculky.entity.variant.CorruptedSculkEndermanVariant;
 import net.ronm19.sculky.entity.variant.SculkmiteVariant;
 import net.ronm19.sculky.util.ModTags;
 import net.ronm19.sculky.worldgen.biome.ModBiomes;
@@ -42,6 +45,36 @@ public class SculkmiteEntity extends Monster implements Enemy {
     public static final EntityDataAccessor<Integer> VARIANT =
             SynchedEntityData.defineId(SculkmiteEntity.class, EntityDataSerializers.INT);
 
+    // ---- Tuning knobs (0.5 gameplay knobs) ----
+    private static final int BLOOM_RADIUS = 4;
+    private static final int BLOOM_CHECK_INTERVAL_TICKS = 20; // 1 second
+
+    private static final int SPREAD_INTERVAL_NORMAL = 60;
+    private static final int SPREAD_INTERVAL_NORMAL_NEAR_BLOOM = 45;
+    private static final int SPREAD_INTERVAL_KING = 30;
+    private static final int SPREAD_INTERVAL_KING_NEAR_BLOOM = 20;
+
+    private static final float KING_SPREAD_BONUS = 0.15F;
+    private static final float BLOOM_SPREAD_BONUS = 0.05F;
+
+    // Base chances
+    private static final float BASE_SCULK_CHANCE = 0.75F;
+    private static final float BASE_GRASS_CHANCE = 0.90F;
+
+    // Caps so bonuses can't make it "always convert"
+    private static final float MAX_SCULK_CHANCE = 0.90F;
+    private static final float MAX_GRASS_CHANCE = 0.98F;
+
+    private static final float KING_NATURAL_CHANCE = 0.05F;
+    private static final double KING_EXCLUSION_RADIUS = 12.0D;
+
+    // For eggs/commands: allow King sometimes (testing-friendly)
+    private static final float KING_ARTIFICIAL_ALLOW = 0.25F;
+
+    // Cached bloom proximity
+    private boolean cachedNearBloom = false;
+    private int bloomCheckCooldown = 0;
+
     public SculkmiteEntity(EntityType<? extends Monster> type, Level level) {
         super(type, level);
     }
@@ -49,9 +82,9 @@ public class SculkmiteEntity extends Monster implements Enemy {
     /* ========================= SYNC ========================= */
 
     @Override
-    protected void defineSynchedData(SynchedEntityData.Builder pBuilder) {
-        super.defineSynchedData(pBuilder);
-        pBuilder.define(VARIANT, 0);
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+        super.defineSynchedData(builder);
+        builder.define(VARIANT, 0);
     }
 
     private int getTypeVariant() {
@@ -70,19 +103,29 @@ public class SculkmiteEntity extends Monster implements Enemy {
         return getVariant() == SculkmiteVariant.KING;
     }
 
-    @Override
-    public void addAdditionalSaveData(CompoundTag pCompound) {
-        super.addAdditionalSaveData(pCompound);
-        pCompound.putInt("Variant", this.getTypeVariant());
+    private boolean isAggressiveVariant() {
+        // Later: add more variants here
+        return isKing();
     }
 
     @Override
-    public void readAdditionalSaveData(CompoundTag pCompound) {
-        super.readAdditionalSaveData(pCompound);
-        this.entityData.set(VARIANT, pCompound.getInt("Variant"));
+    public void addAdditionalSaveData(CompoundTag tag) {
+        super.addAdditionalSaveData(tag);
+        tag.putInt("Variant", this.getTypeVariant());
     }
 
-        /* ========================= ATTRIBUTES ========================= */
+    @Override
+    public void readAdditionalSaveData(CompoundTag tag) {
+        super.readAdditionalSaveData(tag);
+        this.entityData.set(VARIANT, tag.getInt("Variant"));
+
+        // Important: if it loads as KING, re-apply KING stats after world reload
+        if (!level().isClientSide && isKing()) {
+            applyKingStats();
+        }
+    }
+
+    /* ========================= ATTRIBUTES ========================= */
 
     public static AttributeSupplier.Builder createSculkmiteAttributes() {
         return Monster.createMonsterAttributes()
@@ -121,10 +164,54 @@ public class SculkmiteEntity extends Monster implements Enemy {
     public void tick() {
         super.tick();
 
-        if (!level().isClientSide && tickCount % 40 == 0) {
-            trySpreadSculk();
-            if (isKing()) commandNearbyMites();
+        if (level().isClientSide) return;
+
+        // Update movement speed based on terrain
+        updateMoveSpeed();
+
+        // Bloom proximity (cached for performance)
+        boolean nearBloom = isNearBloomCached(BLOOM_RADIUS);
+
+        // Spread interval depends on variant + bloom proximity
+        int spreadInterval = getSpreadInterval(nearBloom);
+
+        // Optional: King "presence" without spam
+        if (isKing() && tickCount % 80 == 0) { // every 4 seconds
+            spawnKingAura();
         }
+
+        if (tickCount % spreadInterval == 0) {
+            boolean spreadHappened = trySpreadSculk(nearBloom);
+
+            // Pulse effects only when something actually changes
+            if (spreadHappened) {
+                if (nearBloom) spawnBloomAura();
+                if (isKing()) spawnKingAura();
+            }
+
+            // Command only if King actually has a target (prevents pointless retarget loops)
+            if (isKing() && getTarget() != null) {
+                commandNearbyMites();
+            }
+        }
+    }
+
+    private void updateMoveSpeed() {
+        AttributeInstance speed = getAttribute(Attributes.MOVEMENT_SPEED);
+        if (speed == null) return;
+
+        double base = isOnSculk()
+                ? (isKing() ? 0.27D : 0.26D)
+                : (isKing() ? 0.23D : 0.25D);
+
+        speed.setBaseValue(base);
+    }
+
+    private int getSpreadInterval(boolean nearBloom) {
+        if (isKing()) {
+            return nearBloom ? SPREAD_INTERVAL_KING_NEAR_BLOOM : SPREAD_INTERVAL_KING;
+        }
+        return nearBloom ? SPREAD_INTERVAL_NORMAL_NEAR_BLOOM : SPREAD_INTERVAL_NORMAL;
     }
 
     private void commandNearbyMites() {
@@ -139,44 +226,127 @@ public class SculkmiteEntity extends Monster implements Enemy {
         }
     }
 
+    /* ========================= VISUAL FEEDBACK ========================= */
+
+    private void spawnBloomAura() {
+        if (!(level() instanceof ServerLevel server)) return;
+
+        server.sendParticles(
+                ParticleTypes.SCULK_SOUL,
+                getX(), getY() + 0.2D, getZ(),
+                2,
+                0.25D, 0.15D, 0.25D,
+                0.0D
+        );
+
+        // Reduced sound spam
+        if (random.nextFloat() < 0.05F) {
+            level().playSound(
+                    null,
+                    blockPosition(),
+                    SoundEvents.SCULK_BLOCK_SPREAD,
+                    SoundSource.HOSTILE,
+                    0.2F,
+                    1.0F + (random.nextFloat() - 0.5F) * 0.2F
+            );
+        }
+    }
+
+    private void spawnKingAura() {
+        if (!(level() instanceof ServerLevel server)) return;
+
+        server.sendParticles(
+                ParticleTypes.SCULK_CHARGE_POP,
+                getX(), getY() + 0.6D, getZ(),
+                3,
+                0.35D, 0.25D, 0.35D,
+                0.0D
+        );
+
+        // Reduced sound spam
+        if (random.nextFloat() < 0.03F) {
+            level().playSound(
+                    null,
+                    blockPosition(),
+                    SoundEvents.SCULK_SHRIEKER_SHRIEK,
+                    SoundSource.HOSTILE,
+                    0.15F,
+                    1.6F
+            );
+        }
+    }
+
     /* ========================= SCULK SPREAD ========================= */
 
-    private void trySpreadSculk() {
+    private boolean trySpreadSculk(boolean nearBloom) {
+        float spreadBonus = isAggressiveVariant() ? KING_SPREAD_BONUS : 0.0F;
+        if (nearBloom) spreadBonus += BLOOM_SPREAD_BONUS;
+
         BlockPos feet = blockPosition();
         BlockPos below = feet.below();
 
         BlockState belowState = level().getBlockState(below);
         BlockState aboveState = level().getBlockState(feet);
 
-        if (!level().getFluidState(below).isEmpty()) return;
-        if (belowState.is(Blocks.BEDROCK)) return;
+        if (!level().getFluidState(below).isEmpty()) return false;
+        if (belowState.is(Blocks.BEDROCK)) return false;
 
-        // Standing on infested sculk
+        // Bloom placement on infested sculk
         if (belowState.is(ModBlocks.INFESTED_SCULK_GRASS_BLOCK.get())
                 || belowState.is(ModBlocks.INFESTED_SCULK_DIRT_BLOCK.get())) {
 
             if (aboveState.isAir()) {
-                level().setBlock(feet,
-                        ModBlocks.SCULKBLOOM.get().defaultBlockState(),
-                        Block.UPDATE_ALL);
+                level().setBlock(feet, ModBlocks.SCULKBLOOM.get().defaultBlockState(), Block.UPDATE_ALL);
+                return true;
             }
-            return;
+            return false;
         }
 
-        // Normal blocks
+        // Convert normal blocks
         if (belowState.is(ModTags.Blocks.SCULK_SPREADABLE)) {
             float roll = random.nextFloat();
 
-            if (roll < 0.75F) {
-                level().setBlock(below,
-                        Blocks.SCULK.defaultBlockState(),
-                        Block.UPDATE_ALL);
-            } else if (roll < 0.90F) {
-                level().setBlock(below,
-                        ModBlocks.INFESTED_SCULK_GRASS_BLOCK.get().defaultBlockState(),
-                        Block.UPDATE_ALL);
+            float sculkChance = Math.min(MAX_SCULK_CHANCE, BASE_SCULK_CHANCE + spreadBonus);
+            float grassChance = Math.min(MAX_GRASS_CHANCE, BASE_GRASS_CHANCE + spreadBonus);
+
+            if (roll < sculkChance) {
+                level().setBlock(below, Blocks.SCULK.defaultBlockState(), Block.UPDATE_ALL);
+                return true;
+            } else if (roll < grassChance) {
+                level().setBlock(below, ModBlocks.INFESTED_SCULK_GRASS_BLOCK.get().defaultBlockState(), Block.UPDATE_ALL);
+                return true;
             }
         }
+
+        return false;
+    }
+
+    private boolean isOnSculk() {
+        BlockState below = level().getBlockState(blockPosition().below());
+        return below.is(Blocks.SCULK)
+                || below.is(ModBlocks.INFESTED_SCULK_GRASS_BLOCK.get())
+                || below.is(ModBlocks.INFESTED_SCULK_DIRT_BLOCK.get());
+    }
+
+    private boolean isNearBloomCached(int radius) {
+        if (--bloomCheckCooldown <= 0) {
+            bloomCheckCooldown = BLOOM_CHECK_INTERVAL_TICKS;
+            cachedNearBloom = isNearBloom(radius);
+        }
+        return cachedNearBloom;
+    }
+
+    private boolean isNearBloom(int radius) {
+        BlockPos center = blockPosition();
+        for (BlockPos p : BlockPos.betweenClosed(
+                center.offset(-radius, -1, -radius),
+                center.offset(radius, 1, radius)
+        )) {
+            if (level().getBlockState(p).is(ModBlocks.SCULKBLOOM.get())) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /* ========================= SPAWN ========================= */
@@ -187,30 +357,42 @@ public class SculkmiteEntity extends Monster implements Enemy {
                                         MobSpawnType spawnType,
                                         @Nullable SpawnGroupData spawnData) {
 
-        // Try to spawn KING first
+        // Artificial spawns: eggs / commands / dispensers -> random variants, allow King sometimes
+        boolean artificial = spawnType == MobSpawnType.SPAWN_EGG
+                || spawnType == MobSpawnType.COMMAND
+                || spawnType == MobSpawnType.DISPENSER;
+
+        if (artificial) {
+            SculkmiteVariant variant = Util.getRandom(SculkmiteVariant.values(), random);
+
+            // Make King rarer for artificial spawns
+            if (variant == SculkmiteVariant.KING && random.nextFloat() > KING_ARTIFICIAL_ALLOW) {
+                variant = SculkmiteVariant.DEFAULT;
+            }
+
+            setVariant(variant);
+            if (variant == SculkmiteVariant.KING) applyKingStats();
+
+            return super.finalizeSpawn(level, difficulty, spawnType, spawnData);
+        }
+
+        // Natural King spawn: only in Sculk Forest + rare + only one nearby
         if (isInSculkForest(level)
-                && random.nextFloat() < 0.05F
+                && random.nextFloat() < KING_NATURAL_CHANCE
                 && !hasNearbyKing(level)) {
 
             setVariant(SculkmiteVariant.KING);
             applyKingStats();
 
         } else {
-            // Normal variants
-            SculkmiteVariant variant =
-                    Util.getRandom(SculkmiteVariant.values(), this.random);
-
-            // Safety: never randomly pick KING
-            if (variant == SculkmiteVariant.KING) {
-                variant = SculkmiteVariant.DEFAULT; // or another base variant
-            }
-
+            // Natural normal variants: random, but NEVER King
+            SculkmiteVariant variant = Util.getRandom(SculkmiteVariant.values(), random);
+            if (variant == SculkmiteVariant.KING) variant = SculkmiteVariant.DEFAULT;
             setVariant(variant);
         }
 
         return super.finalizeSpawn(level, difficulty, spawnType, spawnData);
     }
-
 
     private boolean isInSculkForest(ServerLevelAccessor level) {
         return level.getBiome(blockPosition()).is(ModBiomes.SCULK_FOREST);
@@ -219,7 +401,7 @@ public class SculkmiteEntity extends Monster implements Enemy {
     private boolean hasNearbyKing(ServerLevelAccessor level) {
         return !level.getEntitiesOfClass(
                 SculkmiteEntity.class,
-                getBoundingBox().inflate(32.0D),
+                getBoundingBox().inflate(KING_EXCLUSION_RADIUS),
                 SculkmiteEntity::isKing
         ).isEmpty();
     }
