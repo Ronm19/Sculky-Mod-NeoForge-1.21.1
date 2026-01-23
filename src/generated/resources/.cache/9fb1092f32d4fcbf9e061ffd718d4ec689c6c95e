@@ -1,4 +1,4 @@
-// 1.21.1	2025-12-29T09:07:15.9021483	Recipes
+// 1.21.1	2026-01-23T16:08:09.3770247	Recipes
 32795b090e8c28bcad43b511c07d52588d301844 data/minecraft/advancement/recipes/redstone/sculk_shrieker.json
 f00b4944da74f645a1372b3e13b20bebc9ee0c04 data/minecraft/recipe/sculk_shrieker.json
 418c801599be78e95301328beb50358b6ee22ff1 data/sculky/advancement/recipes/building_blocks/infested_sculk_bricks.json
@@ -9,6 +9,7 @@ ed07eaac461c00602cbeab2cb21f4a8bb1f5003e data/sculky/advancement/recipes/buildin
 e20e10439ee9d9ce493899d77bf3b68d3d90016f data/sculky/advancement/recipes/building_blocks/infested_sculk_planks.json
 86d6f618e658c029223bd078e323031f0770ca7c data/sculky/advancement/recipes/building_blocks/infested_sculk_podzol_block.json
 3cac690a1183db715e728dba9593f2de9752ee17 data/sculky/advancement/recipes/building_blocks/infested_sculk_rooted_dirt_block.json
+5faea24b847cf127534f2610f71922dc38bd5359 data/sculky/advancement/recipes/building_blocks/infested_sculk_sand.json
 1a4aab17de2384670fe6db392c2ac34fe9272696 data/sculky/advancement/recipes/building_blocks/infested_sculk_slab.json
 708a7bbded4330598130d771983d7951ad77fde5 data/sculky/advancement/recipes/building_blocks/infested_sculk_stairs.json
 74b77de3e5ef808588b6a6734360d5f7714bcc5f data/sculky/advancement/recipes/building_blocks/infested_sculk_wall.json
@@ -77,6 +78,7 @@ d2f628b8ab781803c0656075758730f91ff328f8 data/sculky/recipe/infested_sculk_plank
 ea8ed5c21acb033a432131a4861b5d1d2f14a053 data/sculky/recipe/infested_sculk_podzol_block.json
 c34bb13971370d9c71934d6ba3b5b7819a204412 data/sculky/recipe/infested_sculk_pressure_plate.json
 71f086c6b16baba916b8dabc88cd7fcd9f5fbd70 data/sculky/recipe/infested_sculk_rooted_dirt_block.json
+31cf6588587adab2f86e49dfcc4b13bb795e9c17 data/sculky/recipe/infested_sculk_sand.json
 04be58324cebb6b7dfda2cd0986c43714011d17d data/sculky/recipe/infested_sculk_shovel.json
 b8e4502fd8027043578b5a56288af781ca470b8c data/sculky/recipe/infested_sculk_slab.json
 5f68f30839e296a1211a2aece712da1121e88739 data/sculky/recipe/infested_sculk_stairs.json

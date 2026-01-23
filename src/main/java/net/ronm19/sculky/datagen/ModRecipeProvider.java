@@ -205,6 +205,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_sculk_sensor", has(Items.SCULK_SENSOR))
                 .save(pRecipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.INFESTED_SCULK_SAND.get())
+                .pattern("ESE")
+                .pattern("SES")
+                .pattern("ESE")
+                .define('E', ModItems.ECHO_DUST)
+                .define('S', Blocks.SAND)
+                .unlockedBy("has_echo_dust", has(ModItems.ECHO_DUST))
+                .save(pRecipeOutput);
+
 
 
 

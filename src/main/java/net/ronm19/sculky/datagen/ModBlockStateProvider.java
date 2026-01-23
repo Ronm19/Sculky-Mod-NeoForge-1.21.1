@@ -32,6 +32,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.SCULK_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_SCULK_ORE);
 
+        blockWithItem(ModBlocks.INFESTED_SCULK_SAND);
+
         stairsBlock(((StairBlock) ModBlocks.INFESTED_SCULK_STAIRS.get()), blockTexture(ModBlocks.INFESTED_SCULK_BLOCK.get()));
         slabBlock(((SlabBlock) ModBlocks.INFESTED_SCULK_SLAB.get()), blockTexture(ModBlocks.INFESTED_SCULK_BLOCK.get()), blockTexture(ModBlocks.INFESTED_SCULK_BLOCK.get()));
 

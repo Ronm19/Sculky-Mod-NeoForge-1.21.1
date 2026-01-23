@@ -11,6 +11,7 @@ import terrablender.api.Regions;
 
 public class ModBiomes {
     public static final ResourceKey<Biome> SCULK_FOREST = registerBiomeKey("sculk_forest");
+    public static final ResourceKey<Biome> SCULK_WASTES = registerBiomeKey("sculk_wastes");
 
     public static void registerBiomes() {
         Regions.register(new OverworldRegion(ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "sculky_overworld"), 20));
@@ -21,6 +22,7 @@ public class ModBiomes {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
 
         register(context, SCULK_FOREST, ModOverworldBiomes.sculkForest(placedFeatures, carver));
+        register(context, SCULK_WASTES, ModOverworldBiomes.sculkWastes(placedFeatures, carver));
     }
 
 

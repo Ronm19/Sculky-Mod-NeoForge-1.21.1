@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "E": {
+      "item": "sculky:echo_dust"
+    },
+    "S": {
+      "item": "minecraft:sand"
+    }
+  },
+  "pattern": [
+    "ESE",
+    "SES",
+    "ESE"
+  ],
+  "result": {
+    "count": 1,
+    "id": "sculky:infested_sculk_sand"
+  }
+}

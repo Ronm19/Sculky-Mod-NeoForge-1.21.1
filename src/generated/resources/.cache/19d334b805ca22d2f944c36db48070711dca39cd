@@ -1,4 +1,4 @@
-// 1.21.1	2025-12-26T19:32:37.7852677	Block States: sculky
+// 1.21.1	2026-01-23T16:08:09.3714634	Block States: sculky
 e320ea38181175adfe9a347d9cf864329405aaf4 assets/sculky/blockstates/deepslate_sculk_ore.json
 a7e372452cb228725c35ace703970c4cf1341f77 assets/sculky/blockstates/infested_sculk_block.json
 56c754150e8f3bb43f1eb8066558bba468618d3c assets/sculky/blockstates/infested_sculk_bricks.json
@@ -21,6 +21,7 @@ ad561c204323066ea0fb32667aa90bec1db09e2e assets/sculky/blockstates/infested_scul
 cec6150b9788ed00c2daadc139d036024969739f assets/sculky/blockstates/infested_sculk_podzol_block.json
 d75158a1d362b3dc701610b416354ba159207540 assets/sculky/blockstates/infested_sculk_pressure_plate.json
 15aa762a42150ccc4ae2b19a22bb023833f20d82 assets/sculky/blockstates/infested_sculk_rooted_dirt_block.json
+759860e99bc949c710ef11af771176f8c93e6263 assets/sculky/blockstates/infested_sculk_sand.json
 df9cafe6f4708e8fe8bab4fb4c847ef4e3b566d0 assets/sculky/blockstates/infested_sculk_sapling.json
 48ef52ad6a1fc5b560c180b2c240da39a8eb35d7 assets/sculky/blockstates/infested_sculk_slab.json
 8fa0c9b61c5526e6d51322c438a16f3f677b1f68 assets/sculky/blockstates/infested_sculk_stairs.json
@@ -81,6 +82,7 @@ b042a361d1b20e23a39d88e90c7f0724047e5153 assets/sculky/models/block/infested_scu
 00a99d3c307313fefe25abb3a7fcb610203ae1d3 assets/sculky/models/block/infested_sculk_pressure_plate.json
 d2832bcca1a102a33295854bfbd9b7c2df7ef040 assets/sculky/models/block/infested_sculk_pressure_plate_down.json
 69eb2a5c94bdfe463ae5b093e9bba22ecb078c4a assets/sculky/models/block/infested_sculk_rooted_dirt_block.json
+60388059e06b463dae07addd37c7b68884db39e7 assets/sculky/models/block/infested_sculk_sand.json
 d51a62679d673d42eaabf93ee1b7c15e80d54608 assets/sculky/models/block/infested_sculk_sapling.json
 34f3b663f2d977e28b2f407882c26477334cc16d assets/sculky/models/block/infested_sculk_slab.json
 cbab8f941e079220907ce0a7be673ee8251ea014 assets/sculky/models/block/infested_sculk_slab_top.json
@@ -125,6 +127,7 @@ c55239d44cd3ee1b508087ec44932ec410f8d4fe assets/sculky/models/item/infested_scul
 388f1ab1cef17d8dcfb37c79b8f4da462fef1f1d assets/sculky/models/item/infested_sculk_podzol_block.json
 77e094c2c11cdae6a750cd7d6775a863fd134685 assets/sculky/models/item/infested_sculk_pressure_plate.json
 cd30d1b311aaf71aa0b06e137ca7c5f96f6cea99 assets/sculky/models/item/infested_sculk_rooted_dirt_block.json
+c1adc153dfec7690d54fc462bd1307754c147839 assets/sculky/models/item/infested_sculk_sand.json
 d6607a9510ccb3c9630c721c86bd84eaea75b7b5 assets/sculky/models/item/infested_sculk_slab.json
 fa12780710de5e1ba11b7a390943ae5f08a94591 assets/sculky/models/item/infested_sculk_stairs.json
 7de64f1c2535ee1a8f2e474116c820f929e75910 assets/sculky/models/item/infested_sculk_trapdoor.json

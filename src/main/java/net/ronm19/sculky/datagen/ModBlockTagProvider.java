@@ -67,6 +67,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.INFESTED_SCULK_BRICK_WALL.get())
                 .add(ModBlocks.INFESTED_SCULK_WALL.get());
 
+        tag(BlockTags.SAND)
+                .add(ModBlocks.INFESTED_SCULK_SAND.get());
+
         this.tag(ModTags.Blocks.SCULK_SPREADABLE)
                 // Dirt-like blocks
                 .addTag(BlockTags.DIRT)

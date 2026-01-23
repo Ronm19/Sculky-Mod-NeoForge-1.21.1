@@ -77,8 +77,7 @@ public class SculkyMod {
 
             ModBiomes.registerBiomes();
 
-            SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeSculkForestRules());
-
+            SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeOverworldRules());
         });
     }
 

@@ -10,8 +10,8 @@
   "effects": {
     "ambient_sound": "minecraft:ambient.warped_forest.loop",
     "fog_color": 923938,
-    "foliage_color": 793104,
-    "grass_color": 730645,
+    "foliage_color": 3106130,
+    "grass_color": 2841162,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -28,9 +28,9 @@
       "options": {
         "type": "minecraft:sculk_soul"
       },
-      "probability": 0.0095
+      "probability": 0.0065
     },
-    "sky_color": 8168447,
+    "sky_color": 7254527,
     "water_color": 660255,
     "water_fog_color": 264721
   },
@@ -87,118 +87,81 @@
   "has_precipitation": false,
   "spawn_costs": {},
   "spawners": {
-    "ambient": [
-      {
-        "type": "sculky:sculk_bat",
-        "maxCount": 5,
-        "minCount": 2,
-        "weight": 30
-      }
-    ],
+    "ambient": [],
     "axolotls": [],
     "creature": [],
     "misc": [],
     "monster": [
       {
-        "type": "sculky:sculk_parasite",
+        "type": "sculky:sculk_zombie",
         "maxCount": 3,
         "minCount": 1,
-        "weight": 30
-      },
-      {
-        "type": "sculky:sculk_sentinel",
-        "maxCount": 3,
-        "minCount": 2,
-        "weight": 30
-      },
-      {
-        "type": "sculky:sculk_stalker",
-        "maxCount": 5,
-        "minCount": 2,
-        "weight": 30
-      },
-      {
-        "type": "sculky:sculk_shade",
-        "maxCount": 4,
-        "minCount": 2,
-        "weight": 30
-      },
-      {
-        "type": "sculky:sculk_horror",
-        "maxCount": 4,
-        "minCount": 2,
-        "weight": 30
-      },
-      {
-        "type": "sculky:sculk_zombie",
-        "maxCount": 5,
-        "minCount": 2,
-        "weight": 30
+        "weight": 12
       },
       {
         "type": "sculky:sculk_skeleton",
-        "maxCount": 4,
-        "minCount": 2,
-        "weight": 30
+        "maxCount": 3,
+        "minCount": 1,
+        "weight": 10
       },
       {
         "type": "sculky:sculk_creeper",
-        "maxCount": 4,
-        "minCount": 2,
-        "weight": 30
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 8
       },
       {
         "type": "sculky:sculk_spider",
-        "maxCount": 3,
-        "minCount": 2,
-        "weight": 30
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 8
       },
       {
-        "type": "sculky:sculk_enderman",
-        "maxCount": 3,
-        "minCount": 2,
-        "weight": 30
+        "type": "sculky:sculk_stalker",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 6
+      },
+      {
+        "type": "sculky:sculk_parasite",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 6
       },
       {
         "type": "sculky:sculkmite",
         "maxCount": 3,
         "minCount": 1,
-        "weight": 30
+        "weight": 7
       },
       {
-        "type": "sculky:sculk_wolf",
-        "maxCount": 5,
-        "minCount": 2,
-        "weight": 30
-      },
-      {
-        "type": "sculky:sculk_wolf_alpha",
-        "maxCount": 2,
+        "type": "sculky:sculk_sentinel",
+        "maxCount": 1,
         "minCount": 1,
-        "weight": 30
+        "weight": 3
       },
       {
-        "type": "sculky:sculk_horse",
-        "maxCount": 4,
-        "minCount": 2,
-        "weight": 30
-      },
-      {
-        "type": "sculky:sculk_fox",
-        "maxCount": 3,
+        "type": "sculky:sculk_shade",
+        "maxCount": 1,
         "minCount": 1,
-        "weight": 30
+        "weight": 3
       },
       {
-        "type": "sculky:sculk_tail",
-        "maxCount": 4,
-        "minCount": 2,
-        "weight": 30
+        "type": "sculky:sculk_horror",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 2
+      },
+      {
+        "type": "sculky:sculk_enderman",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 1
       }
     ],
     "underground_water_creature": [],
     "water_ambient": [],
     "water_creature": []
   },
-  "temperature": 1.2
+  "temperature": 2.0
 }
