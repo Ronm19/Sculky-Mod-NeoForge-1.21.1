@@ -117,46 +117,16 @@
         "weight": 8
       },
       {
-        "type": "sculky:sculk_stalker",
-        "maxCount": 2,
-        "minCount": 1,
-        "weight": 6
-      },
-      {
-        "type": "sculky:sculk_parasite",
-        "maxCount": 2,
-        "minCount": 1,
-        "weight": 6
-      },
-      {
-        "type": "sculky:sculkmite",
+        "type": "sculky:sculk_beetle",
         "maxCount": 3,
         "minCount": 1,
-        "weight": 7
+        "weight": 10
       },
       {
-        "type": "sculky:sculk_sentinel",
-        "maxCount": 1,
-        "minCount": 1,
-        "weight": 3
-      },
-      {
-        "type": "sculky:sculk_shade",
-        "maxCount": 1,
-        "minCount": 1,
-        "weight": 3
-      },
-      {
-        "type": "sculky:sculk_horror",
-        "maxCount": 1,
-        "minCount": 1,
-        "weight": 2
-      },
-      {
-        "type": "sculky:sculk_enderman",
-        "maxCount": 1,
-        "minCount": 1,
-        "weight": 1
+        "type": "sculky:sculk_sandsnare",
+        "maxCount": 5,
+        "minCount": 2,
+        "weight": 10
       }
     ],
     "underground_water_creature": [],

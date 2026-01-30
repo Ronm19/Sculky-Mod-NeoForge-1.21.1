@@ -15,6 +15,8 @@ public class ModModelLayers {
             ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "sculk_spider"), "main");
     public static final ModelLayerLocation SCULK_TAIL = new ModelLayerLocation(
             ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "sculk_tail"), "main");
+    public  static final ModelLayerLocation SCULK_SANDSNARE = new ModelLayerLocation(
+            ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "sculk_sandsnare"), "main");
 
 
 
@@ -25,6 +27,10 @@ public class ModModelLayers {
             ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "sculk_wolf_alpha"), "main");
     public static final ModelLayerLocation SCULK_FOX = new ModelLayerLocation(
             ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "sculk_fox"), "main");
+    public static final ModelLayerLocation SCULK_BEETLE = new ModelLayerLocation(
+            ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "sculk_beetle"), "main");
     public static final ModelLayerLocation SCULK_BAT = new ModelLayerLocation(
             ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "sculk_bat"), "main");
+    public static final ModelLayerLocation SCULK_SKIMMER = new ModelLayerLocation(
+            ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "sculk_skimmer"), "main");
 }

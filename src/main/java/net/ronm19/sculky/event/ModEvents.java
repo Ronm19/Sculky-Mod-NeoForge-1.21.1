@@ -6,7 +6,6 @@ import net.minecraft.world.entity.SpawnPlacementTypes;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.ambient.AmbientCreature;
 import net.minecraft.world.entity.animal.Animal;
-import net.minecraft.world.entity.animal.horse.AbstractHorse;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -75,11 +74,13 @@ public class ModEvents {
         event.registerLayerDefinition(ModModelLayers.SCULK_HORROR, SculkHorrorModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SCULK_SPIDER, SculkSpiderModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SCULK_TAIL, SculkTailModel :: createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.SCULK_SANDSNARE, SculkSandsnareModel :: createBodyLayer);
 
         event.registerLayerDefinition(ModModelLayers.SCULK_WOLF, SculkWolfModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SCULK_FOX, SculkFoxModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SCULK_WOLF_ALPHA, SculkWolfAlphaModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SCULK_BAT, SculkBatModel :: createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.SCULK_BEETLE, SculkBeetleModel :: createBodyLayer);
     }
 
     @SubscribeEvent
@@ -95,6 +96,7 @@ public class ModEvents {
         event.put(ModEntities.SCULK_SPIDER.get(), SculkSpiderEntity.createSculkSpiderAttributes().build());
         event.put(ModEntities.SCULK_TAIL.get(), SculkTailEntity.createSculkTailAttributes().build());
         event.put(ModEntities.SCULK_ENDERMAN.get(), SculkEndermanEntity.createSculkEndermanAttributes().build());
+        event.put(ModEntities.SCULK_SANDSNARE.get(), SculkSandsnareEntity.createSculkSandsnareAttributes().build());
         event.put(ModEntities.SCULKMITE.get(), SculkmiteEntity.createSculkmiteAttributes().build());
 
         event.put(ModEntities.SCULK_WOLF.get(), SculkWolfEntity.createsSculkWolfAttributes().build());
@@ -102,6 +104,7 @@ public class ModEvents {
         event.put(ModEntities.SCULK_HORSE.get(), SculkHorseEntity.createSculkHorseAttributes().build());
         event.put(ModEntities.SCULK_FOX.get(), SculkFoxEntity.createSculkFoxAttributes().build());
         event.put(ModEntities.SCULK_BAT.get(), SculkBatEntity.createSculkBatAttributes().build());
+        event.put(ModEntities.SCULK_BEETLE.get(), SculkBeetleEntity.createSculkBeetleAttributes().build());
 
     }
 
@@ -178,6 +181,13 @@ public class ModEvents {
                 Monster::checkMobSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.REPLACE);
 
+        event.register(ModEntities.SCULK_SANDSNARE.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMobSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+
+
         // ---------------------------------------------------------
         //                NEUTRAL / TAMABLE-TYPE ENTITIES
         // ---------------------------------------------------------
@@ -200,11 +210,15 @@ public class ModEvents {
                 TamableAnimal :: checkMobSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.REPLACE);
 
-        event.register(ModEntities.SCULK_TAIL.get(),
+
+        event.register(ModEntities.SCULK_BEETLE.get(),
                 SpawnPlacementTypes.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                TamableAnimal :: checkMobSpawnRules,
+                Animal :: checkMobSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.REPLACE);
+
+
+
 
         // ---------------------------------------------------------
         //                PASSIVE / RIDEABLE ENTITIES
@@ -212,8 +226,15 @@ public class ModEvents {
         event.register(ModEntities.SCULK_HORSE.get(),
                 SpawnPlacementTypes.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                AbstractHorse :: checkMobSpawnRules,
+                Animal :: checkMobSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.REPLACE);
+
+        event.register(ModEntities.SCULK_TAIL.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal :: checkMobSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+
 
         // ---------------------------------------------------------
         //                   AMBIENT / FLYING ENTITIES

@@ -41,7 +41,7 @@ public class ModBlocks {
             () -> new InfestedSculkBricksBlock(BlockBehaviour.Properties.of().strength(3.5f, 8.0f).requiresCorrectToolForDrops().sound(SoundType.SCULK)));
 
     public static final DeferredBlock<Block> INFESTED_SCULK_SAND = registerBlock("infested_sculk_sand",
-            () -> new ColoredFallingBlock(new ColorRGBA(14406560), BlockBehaviour.Properties.of().strength(0.5F).sound(SoundType.SCULK)));
+            () -> new Block(BlockBehaviour.Properties.of().strength(0.5F).sound(SoundType.SCULK)));
     public static final DeferredBlock<Block> SCULK_ORE = registerBlock("sculk_ore",
             () -> new DropExperienceBlock(UniformInt.of(1, 5), BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().sound(SoundType.SCULK)));
     public static final DeferredBlock<Block> DEEPSLATE_SCULK_ORE = registerBlock("deepslate_sculk_ore",

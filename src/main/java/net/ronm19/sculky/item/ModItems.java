@@ -29,6 +29,8 @@ public class ModItems {
             ITEMS.registerItem("echo_dust", Item::new, new Item.Properties());
     public static final DeferredItem<Item> SCULK_FANG =
             ITEMS.registerItem("sculk_fang", Item::new, new Item.Properties());
+    public static final DeferredItem<Item> SCULK_CHITIN =
+            ITEMS.registerItem("sculk_chitin", Item::new, new Item.Properties());
 
 
     public static final DeferredItem<Item> SCULK_HEARTFRUIT =
@@ -140,6 +142,12 @@ public class ModItems {
             () -> new DeferredSpawnEggItem(ModEntities.SCULK_SPIDER,  0x0B1220, 0x19C7FF,
                     new Item.Properties()));
 
+    public static final DeferredItem<Item> SCULK_SANDSNARE_SPAWN_EGG = ITEMS.register("sculk_sandsnare_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.SCULK_SANDSNARE, 0x0A0F1C, 0x2AA6A6,
+                    new Item.Properties()));
+
+
+
     public static final DeferredItem<Item> SCULK_ENDERMAN_SPAWN_EGG = ITEMS.register("sculk_enderman_spawn_egg",
             () -> new DeferredSpawnEggItem(ModEntities.SCULK_ENDERMAN,  0x0B1416, 0x3FD6C6,
                     new Item.Properties()));
@@ -172,6 +180,11 @@ public class ModItems {
     public static final DeferredItem<Item> SCULK_TAIL_SPAWN_EGG = ITEMS.register("sculk_tail_spawn_egg",
             () -> new DeferredSpawnEggItem(ModEntities.SCULK_TAIL, 0x0A0F1C, 0x0A0F1C,
                     new Item.Properties()));
+
+    public static final DeferredItem<Item> SCULK_BEETLE_SPAWN_EGG = ITEMS.register("sculk_beetle_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.SCULK_BEETLE, 0x0A0F1C, 0x1FE4FF, new Item.Properties()));
+
+
 
     public static final DeferredItem<Item> SCULK_BAT_SPAWN_EGG = ITEMS.register("sculk_bat_spawn_egg",
             () -> new DeferredSpawnEggItem(ModEntities.SCULK_BAT, 0x060A14, 0x0CF1AE,

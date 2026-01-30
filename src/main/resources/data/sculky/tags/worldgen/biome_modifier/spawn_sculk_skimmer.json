@@ -1,0 +1,13 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": [
+    "sculky:sculk_wastes",
+    "minecraft:deep_dark"
+  ],
+  "spawners": {
+    "type": "sculky:sculk_skimmer",
+    "weight": 14,
+    "minCount": 2,
+    "maxCount": 4
+  }
+}

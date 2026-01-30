@@ -35,6 +35,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.SCULK_RESONANCE);
                         pOutput.accept(ModItems.ECHO_DUST);
                         pOutput.accept(ModItems.SCULK_FANG);
+                        pOutput.accept(ModItems.SCULK_CHITIN);
 
                         pOutput.accept(ModItems.INFESTED_SCULK_SWORD);
                         pOutput.accept(ModItems.INFESTED_SCULK_PICKAXE);
@@ -127,11 +128,13 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.SCULK_SPIDER_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_ENDERMAN_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULKMITE_SPAWN_EGG);
+                        pOutput.accept(ModItems.SCULK_SANDSNARE_SPAWN_EGG);
 
                         pOutput.accept(ModItems.SCULK_WOLF_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_HORSE_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_FOX_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_TAIL_SPAWN_EGG);
+                        pOutput.accept(ModItems.SCULK_BEETLE_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_BAT_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_WOLF_ALPHA_SPAWN_EGG);
 

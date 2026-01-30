@@ -4,6 +4,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
@@ -19,10 +20,12 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.phys.Vec3;
+import net.ronm19.sculky.item.ModItems;
 import net.ronm19.sculky.worldgen.biome.ModBiomes;
 import org.jetbrains.annotations.NotNull;
 
@@ -330,5 +333,18 @@ public class SculkHorrorEntity extends Monster implements Enemy {
     protected void defineSynchedData( SynchedEntityData.Builder builder ) {
         super.defineSynchedData(builder);
         builder.define(DATA_FLAGS_ID, (byte) 0);
+    }
+
+    @Override
+    protected void dropCustomDeathLoot(ServerLevel level, DamageSource source, boolean recentlyHit) {
+        super.dropCustomDeathLoot(level, source, recentlyHit);
+
+        RandomSource random = this.getRandom();
+
+        int count = random.nextInt(2); // 0–1 base drop
+
+        if (count > 0) {
+            this.spawnAtLocation(new ItemStack(ModItems.SCULK_FANG.get(), count));
+        }
     }
 }

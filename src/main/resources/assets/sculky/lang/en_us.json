@@ -26,6 +26,7 @@
   "item.sculky.sculk_edge": "Sculk Edge",
   "item.sculky.echo_conduit": "Echo Conduit",
   "item.sculky.echo_dagger": "Echo Dagger",
+  "item.sculky.sculk_chitin": "Sculk Chitin",
 
   "item.sculky.infested_sculk_helmet": "Infested Sculk Helmet",
   "item.sculky.infested_sculk_chestplate": "Infested Sculk Chestplate",
@@ -43,12 +44,14 @@
   "item.sculky.sculk_spider_spawn_egg": "Sculk Spider Spawn Egg",
   "item.sculky.sculk_enderman_spawn_egg": "Sculk Enderman Spawn Egg",
   "item.sculky.sculkmite_spawn_egg": "Sculkmite Spawn Egg",
+  "item.sculky.sculk_sandsnare_spawn_egg": "Sculk Sandsnare Spawn Egg",
 
   "item.sculky.sculk_wolf_spawn_egg": "Sculk Wolf Spawn Egg",
   "item.sculky.sculk_horse_spawn_egg": "Sculk Horse Spawn Egg",
   "item.sculky.sculk_fox_spawn_egg": "Sculk Fox Spawn Egg",
   "item.sculky.sculk_bat_spawn_egg": "Sculk Bat Spawn Egg",
   "item.sculky.sculk_tail_spawn_egg": "Sculk Tail Spawn Egg",
+  "item.sculky.sculk_beetle_spawn_egg": "Sculk Beetle Spawn Egg",
   "item.sculky.sculk_wolf_alpha_spawn_egg": "Sculk Wolf Alpha Spawn Egg",
 
   "item.minecraft.potion.effect.sculk_infection_potion": "Sculk Infection Potion",
@@ -117,6 +120,7 @@
   "entity.sculky.sculk_spider": "Sculk Spider",
   "entity.sculky.sculk_enderman": "Sculk Enderman",
   "entity.sculky.sculkmite": "Sculkmite",
+  "entity.sculky.sculk_sandsnare": "Sculk Sandsnare",
 
   "entity.sculky.sculk_wolf": "Sculk Wolf",
   "entity.sculky.sculk_wolf_alpha": "Sculk Wolf Alpha",
@@ -124,6 +128,7 @@
   "entity.sculky.sculk_fox": "Sculk Fox",
   "entity.sculky.sculk_bat": "Sculk Bat",
   "entity.sculky.sculk_tail": "Sculk Tail",
+  "entity.sculky.sculk_beetle": "Sculk Beetle",
 
   "key.sculky.use_ability": "Use Ability",
   "key.categories.sculky": "Sculky Mod",

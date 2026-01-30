@@ -5,6 +5,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
@@ -154,6 +155,22 @@ public class SculkSkeletonEntity extends WitherSkeleton {
         }
 
         return random.nextFloat() < baseChance;
+    }
+
+    @Override
+    protected void dropCustomDeathLoot(ServerLevel level, DamageSource source, boolean recentlyHit) {
+        super.dropCustomDeathLoot(level, source, recentlyHit);
+
+        RandomSource random = this.getRandom();
+
+        // ----- SCULK CHITIN (common drop) -----
+        int chitinCount = random.nextInt(2) + 1; // 1–2
+        this.spawnAtLocation(new ItemStack(ModItems.SCULK_CHITIN.get(), chitinCount));
+
+        // ----- RARE DROP: INFESTED SCULK SWORD -----
+        if (random.nextFloat() < 0.05F) { // 5% chance
+            this.spawnAtLocation(new ItemStack(ModItems.INFESTED_SCULK_SWORD.get()));
+        }
     }
 
 
