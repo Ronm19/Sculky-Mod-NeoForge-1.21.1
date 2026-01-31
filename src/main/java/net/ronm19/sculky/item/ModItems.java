@@ -32,6 +32,19 @@ public class ModItems {
     public static final DeferredItem<Item> SCULK_CHITIN =
             ITEMS.registerItem("sculk_chitin", Item::new, new Item.Properties());
 
+    public static final DeferredItem<Item> SCULK_RAT_STAFF = ITEMS.register("sculk_rat_staff",
+            () -> new SculkRatStaffItem(new Item.Properties().stacksTo(1)));
+
+    public static final DeferredItem<Item> TOTEM_ECHO_RECALL = ITEMS.register("totem_echo_recall",
+            () -> new EchoRecallTotemItem(new Item.Properties().stacksTo(1)));
+
+    public static final DeferredItem<Item> TOTEM_SWARM = ITEMS.register("totem_swarm",
+            () -> new SwarmTotemItem(new Item.Properties().stacksTo(1)));
+
+    public static final DeferredItem<Item> TOTEM_SCULK_VEIL = ITEMS.register("totem_sculk_veil",
+            () -> new SculkVeilTotemItem(new Item.Properties().stacksTo(1)));
+
+
 
     public static final DeferredItem<Item> SCULK_HEARTFRUIT =
             ITEMS.registerItem("sculk_heartfruit", Item::new, new Item.Properties().food(ModFoodProperties.SCULK_HEARTFRUIT));
@@ -177,14 +190,18 @@ public class ModItems {
             () -> new DeferredSpawnEggItem(ModEntities.SCULK_FOX, 0x0A0F12, 0x34D5E7,
                     new Item.Properties()));
 
+    public static final DeferredItem<Item> SCULK_RAT_SPAWN_EGG = ITEMS.register(
+            "sculk_rat_spawn_egg", () -> new DeferredSpawnEggItem(ModEntities.SCULK_RAT, 0x070B10, 0x2FE6E6,
+                    new Item.Properties()));
+
+
+
     public static final DeferredItem<Item> SCULK_TAIL_SPAWN_EGG = ITEMS.register("sculk_tail_spawn_egg",
             () -> new DeferredSpawnEggItem(ModEntities.SCULK_TAIL, 0x0A0F1C, 0x0A0F1C,
                     new Item.Properties()));
 
     public static final DeferredItem<Item> SCULK_BEETLE_SPAWN_EGG = ITEMS.register("sculk_beetle_spawn_egg",
             () -> new DeferredSpawnEggItem(ModEntities.SCULK_BEETLE, 0x0A0F1C, 0x1FE4FF, new Item.Properties()));
-
-
 
     public static final DeferredItem<Item> SCULK_BAT_SPAWN_EGG = ITEMS.register("sculk_bat_spawn_egg",
             () -> new DeferredSpawnEggItem(ModEntities.SCULK_BAT, 0x060A14, 0x0CF1AE,

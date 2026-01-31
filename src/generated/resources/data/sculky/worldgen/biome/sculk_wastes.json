@@ -127,6 +127,12 @@
         "maxCount": 5,
         "minCount": 2,
         "weight": 10
+      },
+      {
+        "type": "sculky:sculk_rat",
+        "maxCount": 3,
+        "minCount": 2,
+        "weight": 10
       }
     ],
     "underground_water_creature": [],

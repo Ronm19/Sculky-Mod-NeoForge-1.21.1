@@ -51,6 +51,7 @@ public class SculkyModClient {
         EntityRenderers.register(ModEntities.SCULK_BAT.get(), SculkBatRenderer::new);
         EntityRenderers.register(ModEntities.SCULK_BEETLE.get(), SculkBeetleRenderer::new);
         EntityRenderers.register(ModEntities.SCULK_TAIL.get(), SculkTailRenderer::new);
+        EntityRenderers.register(ModEntities.SCULK_RAT.get(), SculkRatRenderer::new);
     }
 
     @SubscribeEvent

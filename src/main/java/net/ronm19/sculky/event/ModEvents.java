@@ -78,6 +78,7 @@ public class ModEvents {
 
         event.registerLayerDefinition(ModModelLayers.SCULK_WOLF, SculkWolfModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SCULK_FOX, SculkFoxModel :: createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.SCULK_RAT, SculkRatModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SCULK_WOLF_ALPHA, SculkWolfAlphaModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SCULK_BAT, SculkBatModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SCULK_BEETLE, SculkBeetleModel :: createBodyLayer);
@@ -103,6 +104,7 @@ public class ModEvents {
         event.put(ModEntities.SCULK_WOLF_ALPHA.get(), SculkWolfAlphaEntity.createSculkWolfAlphaAttributes().build());
         event.put(ModEntities.SCULK_HORSE.get(), SculkHorseEntity.createSculkHorseAttributes().build());
         event.put(ModEntities.SCULK_FOX.get(), SculkFoxEntity.createSculkFoxAttributes().build());
+        event.put(ModEntities.SCULK_RAT.get(), SculkRatEntity.createSculkRatAttributes().build());
         event.put(ModEntities.SCULK_BAT.get(), SculkBatEntity.createSculkBatAttributes().build());
         event.put(ModEntities.SCULK_BEETLE.get(), SculkBeetleEntity.createSculkBeetleAttributes().build());
 

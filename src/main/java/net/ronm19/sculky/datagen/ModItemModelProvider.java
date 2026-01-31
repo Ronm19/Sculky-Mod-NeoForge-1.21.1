@@ -44,6 +44,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+
         basicItem(ModItems.SCULK_SHARD.get());
         basicItem(ModItems.RAW_SCULK_SHARD.get());
         basicItem(ModItems.SCULK_HEARTFRUIT.get());
@@ -65,6 +66,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.INFESTED_SCULK_HAMMER);
         handheldItem(ModItems.ECHO_CONDUIT);
         handheldItem(ModItems.ECHO_DAGGER);
+        handheldItem(ModItems.SCULK_RAT_STAFF);
+
+        handheldItem(ModItems.TOTEM_ECHO_RECALL);
+        handheldItem(ModItems.TOTEM_SWARM);
+        handheldItem(ModItems.TOTEM_SCULK_VEIL);
 
 
         basicItem(ModItems.TOMATO_SCULK_SEEDS.get());
@@ -112,6 +118,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent(ModItems.SCULK_TAIL_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCULK_BAT_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCULK_BEETLE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.SCULK_RAT_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
     }
 
     private ItemModelBuilder saplingItem(DeferredBlock<Block> item) {

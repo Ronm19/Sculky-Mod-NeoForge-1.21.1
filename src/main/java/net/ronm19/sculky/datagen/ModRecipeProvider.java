@@ -177,6 +177,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('T', Items.STICK)
                 .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get())).save(pRecipeOutput);
 
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SCULK_RAT_STAFF.get())
+                .pattern("  S")
+                .pattern(" T ")
+                .pattern("T  ")
+                .define('S', ModItems.SCULK_SHARD.get())
+                .define('T', Items.STICK)
+                .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get())).save(pRecipeOutput);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SCULK_RESONANCE.get())
                 .pattern(" S ")
                 .pattern("SES")
@@ -184,6 +193,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', Items.SCULK)
                 .define('E', Items.ECHO_SHARD)
                 .unlockedBy("has_echo_shard", has(Items.ECHO_SHARD))
+                .save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.TOTEM_ECHO_RECALL.get())
+                .pattern(" S ")
+                .pattern("SCS")
+                .pattern(" S ")
+                .define('S', ModItems.SCULK_SHARD.get())
+                .define('C', ModItems.SCULK_CHITIN)
+                .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get()))
                 .save(pRecipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ECHO_DUST.get())

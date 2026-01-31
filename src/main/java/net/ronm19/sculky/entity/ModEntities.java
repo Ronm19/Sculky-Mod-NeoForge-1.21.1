@@ -83,15 +83,22 @@ public class ModEntities {
             ENTITY_TYPES.register("sculk_fox", () -> EntityType.Builder.of(SculkFoxEntity::new, MobCategory.CREATURE)
                     .sized(0.6F, 0.7F).eyeHeight(0.45F).build("sculk_fox"));
 
+    public static final Supplier<EntityType<SculkRatEntity>> SCULK_RAT =
+            ENTITY_TYPES.register("sculk_rat", () -> EntityType.Builder.of(SculkRatEntity::new, MobCategory.CREATURE)
+                            .sized(0.6F, 0.4F).eyeHeight(0.25F).build("sculk_rat"));
+
+
+
+
+
+
     public static final Supplier<EntityType<SculkBeetleEntity>> SCULK_BEETLE =
             ENTITY_TYPES.register("sculk_beetle", () -> EntityType.Builder.of(SculkBeetleEntity::new, MobCategory.CREATURE)
                     .sized(0.9F, 0.5F).eyeHeight(0.28F).build("sculk_beetle"));
 
-
     public static final Supplier<EntityType<SculkTailEntity>> SCULK_TAIL =
             ENTITY_TYPES.register("sculk_tail", () -> EntityType.Builder.of(SculkTailEntity::new, MobCategory.CREATURE)
                             .sized(0.9F, 0.45F).eyeHeight(0.25F).build("sculk_tail"));
-
 
     public static final Supplier<EntityType<SculkBatEntity>> SCULK_BAT =
             ENTITY_TYPES.register("sculk_bat", () -> EntityType.Builder.of(SculkBatEntity::new, MobCategory.AMBIENT)

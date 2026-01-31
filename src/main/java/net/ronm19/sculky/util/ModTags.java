@@ -28,6 +28,8 @@ public class ModTags {
 
     public static class Items {
 
+        public static final TagKey<Item> SCULK_RAT_STAFF = createTag("sculk_rat_staff");
+
 
         private static TagKey<Item> createTag( String name ) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, name));

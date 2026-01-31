@@ -1,4 +1,4 @@
-// 1.21.1	2026-01-23T16:08:09.3770247	Recipes
+// 1.21.1	2026-01-31T15:59:37.2725039	Recipes
 32795b090e8c28bcad43b511c07d52588d301844 data/minecraft/advancement/recipes/redstone/sculk_shrieker.json
 f00b4944da74f645a1372b3e13b20bebc9ee0c04 data/minecraft/recipe/sculk_shrieker.json
 418c801599be78e95301328beb50358b6ee22ff1 data/sculky/advancement/recipes/building_blocks/infested_sculk_bricks.json
@@ -33,6 +33,7 @@ fd297986e36f6f3d8a66fccf63818b53bce61d0e data/sculky/advancement/recipes/misc/ec
 d41b232f54cf2ff463408bc38c3c46a3ac5bd909 data/sculky/advancement/recipes/misc/echo_dust.json
 f562f36e5aeaceb8766555bb3ca1b90096749f4e data/sculky/advancement/recipes/misc/infested_sculk_block.json
 0f5293cbbd2afac569ecb50027213183c6278671 data/sculky/advancement/recipes/misc/sculk_bone.json
+416252b8d4763d1764141df9e3a534ba3356b46c data/sculky/advancement/recipes/misc/sculk_rat_staff.json
 75d681e8a12a105924d85f45902033cfb2d2f5af data/sculky/advancement/recipes/misc/sculk_resonance.json
 ed70983d3d99e4c73804b1e544eb7b0a7588d0af data/sculky/advancement/recipes/misc/sculk_shard.json
 56f28a1e7b956d812345578d9d60c27404543783 data/sculky/advancement/recipes/misc/sculk_shard_from_blasting_deepslate_sculk_ore.json
@@ -41,6 +42,7 @@ ed70983d3d99e4c73804b1e544eb7b0a7588d0af data/sculky/advancement/recipes/misc/sc
 3cd8c2304ccd869cbae28f4670d9980bea380914 data/sculky/advancement/recipes/misc/sculk_shard_from_smelting_deepslate_sculk_ore.json
 e119180b939a63df118d6107a36b8b2fabfea705 data/sculky/advancement/recipes/misc/sculk_shard_from_smelting_raw_sculk_shard.json
 ed97cfed272b3aa33b732224ec117562c322abc4 data/sculky/advancement/recipes/misc/sculk_shard_from_smelting_sculk_ore.json
+ad0eaa70a64c6ba69ee4b784dce80cdfa1d31e53 data/sculky/advancement/recipes/misc/totem_echo_recall.json
 37d50240aa47f16f0e42481333609e95ed1b3b79 data/sculky/advancement/recipes/redstone/infested_sculk_brick_button.json
 a4fa39a426678c93a2e268bfd56c05b045b2ac25 data/sculky/advancement/recipes/redstone/infested_sculk_brick_fence_gate.json
 80cba6248036923002a8ace480cf75c4f3ba520f data/sculky/advancement/recipes/redstone/infested_sculk_brick_pressure_plate.json
@@ -88,6 +90,7 @@ f954a53167cd3ece07e35b20b76f904d452016b5 data/sculky/recipe/infested_sculk_sword
 c7b7a288b0dfe27bef752d6483f7fc9f81f528e6 data/sculky/recipe/infested_sculk_wood.json
 eb6f5f7cbd11212f51e929ba83c4e4c60464972f data/sculky/recipe/sculk_bone.json
 35dec746cd1723ffc9c570c54aba4dc218a1b14d data/sculky/recipe/sculk_pastry.json
+92e54936e3b684e72c61a124324b80f3d0c26846 data/sculky/recipe/sculk_rat_staff.json
 d362a04369d05d88ff8f499397cb58c4712e15de data/sculky/recipe/sculk_resonance.json
 e864e1c8f869165950d3623d54bc910e2ec190ec data/sculky/recipe/sculk_shard.json
 5506456a494886577fffbdbe68ab505f086fe6fa data/sculky/recipe/sculk_shard_from_blasting_deepslate_sculk_ore.json
@@ -97,3 +100,4 @@ aedac3c109109a14d5e34e7f0539f7e36d2ee731 data/sculky/recipe/sculk_shard_from_bla
 0c4d534808088c3a76d2fc53ef43dd109998a892 data/sculky/recipe/sculk_shard_from_smelting_raw_sculk_shard.json
 6a57a06c8eff8f6d81628e2e2ad34587a87edb16 data/sculky/recipe/sculk_shard_from_smelting_sculk_ore.json
 798d6132ac4767cffa5a19400084673d00b68ebb data/sculky/recipe/stripped_infested_sculk_wood.json
+b9f07982fc7d9578041710e1c529188bb0aadce5 data/sculky/recipe/totem_echo_recall.json

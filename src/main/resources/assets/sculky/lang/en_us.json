@@ -13,6 +13,10 @@
   "item.sculky.echo_dust": "Echo Dust",
   "item.sculky.sculk_fang": "Sculk Fang",
 
+  "item.sculky.totem_echo_recall": "Totem of Echo Recall",
+  "item.sculky.totem_swarm": "Swarm Totem",
+  "item.sculky.totem_sculk_veil": "Totem of Sculk Veil",
+
   "item.sculky.echo_jelly": "Echo Jelly",
   "item.sculky.sculk_pastry": "Sculk Pastry",
   "item.sculky.soulbite_cookie": "Soulbite Cookie",
@@ -24,6 +28,7 @@
   "item.sculky.infested_sculk_hoe": "Infested Sculk Hoe",
   "item.sculky.infested_sculk_hammer": "Infested Sculk Hammer",
   "item.sculky.sculk_edge": "Sculk Edge",
+  "item.sculky.sculk_rat_staff": "Sculk Rat Staff",
   "item.sculky.echo_conduit": "Echo Conduit",
   "item.sculky.echo_dagger": "Echo Dagger",
   "item.sculky.sculk_chitin": "Sculk Chitin",
@@ -52,6 +57,7 @@
   "item.sculky.sculk_bat_spawn_egg": "Sculk Bat Spawn Egg",
   "item.sculky.sculk_tail_spawn_egg": "Sculk Tail Spawn Egg",
   "item.sculky.sculk_beetle_spawn_egg": "Sculk Beetle Spawn Egg",
+  "item.sculky.sculk_rat_spawn_egg": "Sculk Rat Spawn Egg",
   "item.sculky.sculk_wolf_alpha_spawn_egg": "Sculk Wolf Alpha Spawn Egg",
 
   "item.minecraft.potion.effect.sculk_infection_potion": "Sculk Infection Potion",
@@ -129,6 +135,7 @@
   "entity.sculky.sculk_bat": "Sculk Bat",
   "entity.sculky.sculk_tail": "Sculk Tail",
   "entity.sculky.sculk_beetle": "Sculk Beetle",
+  "entity.sculky.sculk_rat": "Sculk Rat",
 
   "key.sculky.use_ability": "Use Ability",
   "key.categories.sculky": "Sculky Mod",

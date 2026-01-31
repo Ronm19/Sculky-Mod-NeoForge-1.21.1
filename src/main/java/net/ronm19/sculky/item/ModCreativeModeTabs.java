@@ -37,6 +37,10 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.SCULK_FANG);
                         pOutput.accept(ModItems.SCULK_CHITIN);
 
+                        pOutput.accept(ModItems.TOTEM_ECHO_RECALL);
+                        pOutput.accept(ModItems.TOTEM_SWARM);
+                        pOutput.accept(ModItems.TOTEM_SCULK_VEIL);
+
                         pOutput.accept(ModItems.INFESTED_SCULK_SWORD);
                         pOutput.accept(ModItems.INFESTED_SCULK_PICKAXE);
                         pOutput.accept(ModItems.INFESTED_SCULK_AXE);
@@ -46,6 +50,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.SCULK_EDGE);
                         pOutput.accept(ModItems.ECHO_CONDUIT);
                         pOutput.accept(ModItems.ECHO_DAGGER);
+                        pOutput.accept(ModItems.SCULK_RAT_STAFF);
 
                         pOutput.accept(ModItems.INFESTED_SCULK_HELMET);
                         pOutput.accept(ModItems.INFESTED_SCULK_CHESTPLATE);
@@ -133,6 +138,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.SCULK_WOLF_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_HORSE_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_FOX_SPAWN_EGG);
+                        pOutput.accept(ModItems.SCULK_RAT_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_TAIL_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_BEETLE_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_BAT_SPAWN_EGG);
