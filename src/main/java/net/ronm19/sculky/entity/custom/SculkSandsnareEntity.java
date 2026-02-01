@@ -107,14 +107,7 @@ public class SculkSandsnareEntity extends Monster implements Enemy {
     }
 
     /* ---------------- SPAWN RULES ---------------- */
-
-    @Override
-    public boolean checkSpawnRules(LevelAccessor level, MobSpawnType reason) {
-        // Prevent spawning on random blocks
-        return level.getBlockState(this.blockPosition().below()).is(ModTags.Blocks.SCULK_SAND)
-                && super.checkSpawnRules(level, reason);
-    }
-
+    
     @Override
     protected boolean shouldDespawnInPeaceful() {
         return true;

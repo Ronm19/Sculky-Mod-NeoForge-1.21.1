@@ -6,8 +6,8 @@
   ],
   "spawners": {
     "type": "sculky:sculk_sandsnare",
-    "weight": 13,
+    "weight": 10,
     "minCount": 2,
-    "maxCount": 5
+    "maxCount": 3
   }
 }

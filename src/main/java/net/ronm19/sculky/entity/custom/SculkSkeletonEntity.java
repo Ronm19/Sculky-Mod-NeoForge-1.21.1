@@ -54,7 +54,6 @@ public class SculkSkeletonEntity extends WitherSkeleton {
 
         if (hit && this.getVariant() == CorruptedSculkSkeletonVariant.CORRUPTED) {
             if (target instanceof LivingEntity living) {
-
                 if (this.random.nextFloat() < 0.35F) {
                     living.addEffect(new MobEffectInstance(
                             MobEffects.WITHER,
@@ -166,6 +165,9 @@ public class SculkSkeletonEntity extends WitherSkeleton {
         // ----- SCULK CHITIN (common drop) -----
         int chitinCount = random.nextInt(2) + 1; // 1–2
         this.spawnAtLocation(new ItemStack(ModItems.SCULK_CHITIN.get(), chitinCount));
+
+        int sculkboneCount = random.nextInt(2) + 1;
+        this.spawnAtLocation(new ItemStack(ModItems.SCULK_BONE.get(), sculkboneCount));
 
         // ----- RARE DROP: INFESTED SCULK SWORD -----
         if (random.nextFloat() < 0.05F) { // 5% chance

@@ -219,6 +219,12 @@ public class ModEvents {
                 Animal :: checkMobSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.REPLACE);
 
+        event.register(ModEntities.SCULK_RAT.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal :: checkMobSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+
 
 
 
