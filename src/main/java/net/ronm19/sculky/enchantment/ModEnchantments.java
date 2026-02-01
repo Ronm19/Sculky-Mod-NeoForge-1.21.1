@@ -12,10 +12,15 @@ import net.minecraft.world.item.enchantment.EnchantmentEffectComponents;
 import net.minecraft.world.item.enchantment.EnchantmentTarget;
 import net.ronm19.sculky.SculkyMod;
 import net.ronm19.sculky.enchantment.custom.InfectionEnchantmentEffect;
+import net.ronm19.sculky.enchantment.custom.SculkSpeedEnchantmentEffect;
 
 public class ModEnchantments {
     public static final ResourceKey<Enchantment> INFECTION = ResourceKey.create(Registries.ENCHANTMENT,
             ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "infection"));
+
+    public static final ResourceKey<Enchantment> SCULK_SPEED = ResourceKey.create(Registries.ENCHANTMENT,
+            ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "sculk_speed"));
+
 
     public static void bootstrap( BootstrapContext<Enchantment> context ) {
         var enchantment = context.lookup(Registries.ENCHANTMENT);
@@ -36,6 +41,22 @@ public class ModEnchantments {
                         EnchantmentTarget.ATTACKER,
                         EnchantmentTarget.VICTIM,
                         new InfectionEnchantmentEffect(1))                         // applies infection effect logic
+        );
+
+        // ✅ NEW: SCULK SPEED (boots)
+        register(context, SCULK_SPEED, Enchantment.enchantment(
+                        Enchantment.definition(
+                                items.getOrThrow(ItemTags.FOOT_ARMOR_ENCHANTABLE),
+                                4,
+                                2,
+                                Enchantment.dynamicCost(10, 7),
+                                Enchantment.dynamicCost(28, 7),
+                                3,
+                                EquipmentSlotGroup.FEET))
+                .exclusiveWith(enchantment.getOrThrow(EnchantmentTags.BOOTS_EXCLUSIVE))
+                // ✅ FIX: TICK uses ConditionalEffect list (non-targeted)
+                .withEffect(EnchantmentEffectComponents.TICK,
+                        new SculkSpeedEnchantmentEffect(1))
         );
 
     }

@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "D": {
+      "item": "sculky:echo_dust"
+    },
+    "L": {
+      "item": "minecraft:lantern"
+    },
+    "R": {
+      "item": "sculky:sculk_resonance"
+    },
+    "S": {
+      "item": "sculky:sculk_shard"
+    }
+  },
+  "pattern": [
+    "ASA",
+    "RLR",
+    "ADA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "sculky:sculk_lantern"
+  }
+}

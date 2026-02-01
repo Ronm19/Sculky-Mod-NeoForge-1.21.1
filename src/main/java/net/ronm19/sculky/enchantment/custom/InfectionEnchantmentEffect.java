@@ -8,15 +8,8 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.enchantment.EnchantedItemInUse;
 import net.minecraft.world.item.enchantment.effects.EnchantmentEntityEffect;
 import net.minecraft.world.phys.Vec3;
-import com.mojang.serialization.Codec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.minecraft.core.Holder;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.enchantment.effects.EnchantmentEntityEffect;
-import net.minecraft.world.phys.Vec3;
 import net.ronm19.sculky.effect.ModEffects;
 import org.jetbrains.annotations.NotNull;
 
@@ -26,7 +19,7 @@ public record InfectionEnchantmentEffect(int level) implements EnchantmentEntity
                     .apply(instance, InfectionEnchantmentEffect::new));
 
     @Override
-    public void apply( ServerLevel level, int enchantmentLevel, @NotNull EnchantedItemInUse item, @NotNull Entity target, @NotNull Vec3 hitPos) {
+    public void apply(ServerLevel level, int enchantmentLevel, @NotNull EnchantedItemInUse item, @NotNull Entity target, @NotNull Vec3 hitPos) {
         // Only trigger on living entities
         if (!(target instanceof LivingEntity livingTarget)) return;
 

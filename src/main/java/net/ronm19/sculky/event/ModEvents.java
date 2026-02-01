@@ -15,11 +15,13 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import net.ronm19.sculky.SculkyMod;
+import net.ronm19.sculky.block.ModBlocks;
 import net.ronm19.sculky.entity.ModEntities;
 import net.ronm19.sculky.entity.client.*;
 import net.ronm19.sculky.entity.custom.*;
@@ -65,6 +67,18 @@ public class ModEvents {
         PotionBrewing.Builder builder = event.getBuilder();
 
         builder.addMix(Potions.AWKWARD, ModItems.SCULK_HEARTFRUIT.asItem(), ModPotions.SCULK_INFECTION_POTION);
+    }
+
+    @SubscribeEvent
+    public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
+        event.register((state, level, pos, tintIndex) -> 0xFFFFFF,
+                ModBlocks.INFESTED_SCULK_LEAVES.get());
+    }
+
+    @SubscribeEvent
+    public static void registerItemColors(RegisterColorHandlersEvent.Item event) {
+        event.register((stack, tintIndex) -> 0xFFFFFF,
+                ModBlocks.INFESTED_SCULK_LEAVES.get().asItem());
     }
 
     @SubscribeEvent
@@ -214,6 +228,12 @@ public class ModEvents {
 
 
         event.register(ModEntities.SCULK_BEETLE.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal :: checkMobSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+
+        event.register(ModEntities.SCULK_RAT.get(),
                 SpawnPlacementTypes.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 Animal :: checkMobSpawnRules,

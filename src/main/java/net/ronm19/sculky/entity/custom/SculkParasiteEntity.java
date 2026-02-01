@@ -151,6 +151,7 @@ public class SculkParasiteEntity extends Monster implements Enemy {
     private boolean isSculkHostBlock(BlockState state) {
         return state.is(ModBlocks.INFESTED_SCULK_DIRT_BLOCK.get())
                 || state.is(ModBlocks.INFESTED_SCULK_GRASS_BLOCK.get())
+                || state.is(ModBlocks.INFESTED_SCULK_SAND.get())
                 || state.is(ModBlocks.INFESTED_SCULK_PODZOL_BLOCK.get());
     }
 

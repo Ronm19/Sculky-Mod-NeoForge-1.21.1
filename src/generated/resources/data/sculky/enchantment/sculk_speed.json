@@ -1,0 +1,31 @@
+{
+  "anvil_cost": 3,
+  "description": {
+    "translate": "enchantment.sculky.sculk_speed"
+  },
+  "effects": {
+    "minecraft:tick": [
+      {
+        "effect": {
+          "type": "sculky:sculk_speed",
+          "level": 1
+        }
+      }
+    ]
+  },
+  "exclusive_set": "#minecraft:exclusive_set/boots",
+  "max_cost": {
+    "base": 28,
+    "per_level_above_first": 7
+  },
+  "max_level": 2,
+  "min_cost": {
+    "base": 10,
+    "per_level_above_first": 7
+  },
+  "slots": [
+    "feet"
+  ],
+  "supported_items": "#minecraft:enchantable/foot_armor",
+  "weight": 4
+}

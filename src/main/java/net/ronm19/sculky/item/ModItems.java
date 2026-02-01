@@ -32,6 +32,10 @@ public class ModItems {
     public static final DeferredItem<Item> SCULK_CHITIN =
             ITEMS.registerItem("sculk_chitin", Item::new, new Item.Properties());
 
+    public static final DeferredItem<Item> SCULK_LANTERN = ITEMS.registerItem("sculk_lantern",
+                    SculkLanternItem::new, new Item.Properties().stacksTo(1).rarity(Rarity.RARE));
+
+
     public static final DeferredItem<Item> SCULK_RAT_STAFF = ITEMS.register("sculk_rat_staff",
             () -> new SculkRatStaffItem(new Item.Properties().stacksTo(1)));
 
@@ -43,7 +47,6 @@ public class ModItems {
 
     public static final DeferredItem<Item> TOTEM_SCULK_VEIL = ITEMS.register("totem_sculk_veil",
             () -> new SculkVeilTotemItem(new Item.Properties().stacksTo(1)));
-
 
 
     public static final DeferredItem<Item> SCULK_HEARTFRUIT =

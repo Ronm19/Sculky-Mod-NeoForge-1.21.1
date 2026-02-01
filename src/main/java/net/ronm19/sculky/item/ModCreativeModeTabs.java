@@ -36,6 +36,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.ECHO_DUST);
                         pOutput.accept(ModItems.SCULK_FANG);
                         pOutput.accept(ModItems.SCULK_CHITIN);
+                        pOutput.accept(ModItems.SCULK_LANTERN);
 
                         pOutput.accept(ModItems.TOTEM_ECHO_RECALL);
                         pOutput.accept(ModItems.TOTEM_SWARM);
@@ -111,6 +112,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.STRIPPED_INFESTED_SCULK_LOG);
                         pOutput.accept(ModBlocks.STRIPPED_INFESTED_SCULK_WOOD);
                         pOutput.accept(ModBlocks.INFESTED_SCULK_PLANKS);
+                        pOutput.accept(ModBlocks.INFESTED_SCULK_LEAVES);
                         pOutput.accept(ModBlocks.INFESTED_SCULK_SAPLING);
 
                     }).build());

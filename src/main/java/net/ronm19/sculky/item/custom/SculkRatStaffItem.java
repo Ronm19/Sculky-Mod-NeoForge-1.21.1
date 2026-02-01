@@ -42,12 +42,9 @@ public class SculkRatStaffItem extends Item {
         if (level.isClientSide) return InteractionResultHolder.pass(stack);
         if (!(level instanceof ServerLevel sl)) return InteractionResultHolder.pass(stack);
 
+        // Recall
         if (user.isShiftKeyDown()) {
-            SculkRatEntity.recallAllOwnedRats(sl, user);
-            user.displayClientMessage(Component.literal("Sculk Rats: RECALL"), true);
-            level.playSound(null, user.blockPosition(), SoundEvents.SCULK_SHRIEKER_SHRIEK, SoundSource.PLAYERS, 0.9F, 1.1F);
-            user.getCooldowns().addCooldown(this, 10);
-            return InteractionResultHolder.consume(stack);
+            return recallAndReport(sl, user, stack);
         }
 
         return cycleAndApply(sl, user, stack);
@@ -63,12 +60,10 @@ public class SculkRatStaffItem extends Item {
         if (level.isClientSide) return InteractionResult.SUCCESS;
         if (!(level instanceof ServerLevel sl)) return InteractionResult.PASS;
 
+        // Recall
         if (user.isShiftKeyDown()) {
-            SculkRatEntity.recallAllOwnedRats(sl, user);
-            user.displayClientMessage(Component.literal("Sculk Rats: RECALL"), true);
-            level.playSound(null, user.blockPosition(), SoundEvents.SCULK_SHRIEKER_SHRIEK, SoundSource.PLAYERS, 0.9F, 1.1F);
-            user.getCooldowns().addCooldown(this, 10);
-            return InteractionResult.CONSUME;
+            InteractionResultHolder<ItemStack> res = recallAndReport(sl, user, ctx.getItemInHand());
+            return res.getResult() == InteractionResult.CONSUME ? InteractionResult.CONSUME : InteractionResult.PASS;
         }
 
         InteractionResultHolder<ItemStack> res = cycleAndApply(sl, user, ctx.getItemInHand());
@@ -87,7 +82,7 @@ public class SculkRatStaffItem extends Item {
         return InteractionResult.CONSUME;
     }
 
-    /* ===================== CORE: CYCLE + APPLY ===================== */
+    /* ===================== CYCLE + APPLY (WITH COUNTS) ===================== */
 
     private InteractionResultHolder<ItemStack> cycleAndApply(ServerLevel level, Player user, ItemStack staffStack) {
         List<SculkRatEntity> rats = getOwnedRatsInRange(level, user, COMMAND_RADIUS);
@@ -100,10 +95,11 @@ public class SculkRatStaffItem extends Item {
         RatCommandMode next = current.next();
         setStaffMode(staffStack, next);
 
-        // DEBUG (remove later)
-        // user.displayClientMessage(Component.literal("StaffMode: " + current + " -> " + next), true);
+        int acknowledged = rats.size();
+        int changed = 0;
 
         for (SculkRatEntity r : rats) {
+            if (r.getCommand() != next) changed++;
             r.applyCommand(next);
 
             // Make FOLLOW visibly happen immediately
@@ -112,15 +108,47 @@ public class SculkRatStaffItem extends Item {
             }
         }
 
-        user.displayClientMessage(Component.literal("Sculk Rats: " + next.name()), true);
+        user.displayClientMessage(
+                Component.literal("Sculk Rats: " + next.name() + " (" + acknowledged + " acknowledged, " + changed + " changed)"),
+                true
+        );
+
         level.playSound(null, user.blockPosition(), SoundEvents.SCULK_SHRIEKER_PLACE, SoundSource.PLAYERS, 0.9F, 1.2F);
         user.getCooldowns().addCooldown(this, 10);
 
         return InteractionResultHolder.consume(staffStack);
     }
 
+    /* ===================== RECALL (WITH COUNTS) ===================== */
 
-    /* ===================== ATTACK ORDER (NEOFORGE VERSION) ===================== */
+    private InteractionResultHolder<ItemStack> recallAndReport(ServerLevel level, Player user, ItemStack stack) {
+        // Count how many are in range (acknowledged)
+        List<SculkRatEntity> rats = getOwnedRatsInRange(level, user, COMMAND_RADIUS);
+        if (rats.isEmpty()) {
+            user.displayClientMessage(Component.literal("No Sculk Rats nearby to recall!"), true);
+            return InteractionResultHolder.pass(stack);
+        }
+
+        // Teleport count = only those far enough (same rule used by recall method: <=16 dist^2 skip)
+        int teleported = 0;
+        for (SculkRatEntity r : rats) {
+            if (r.distanceToSqr(user) > 16.0D) teleported++;
+        }
+
+        // Do the actual recall
+        SculkRatEntity.recallAllOwnedRats(level, user);
+
+        user.displayClientMessage(
+                Component.literal("Sculk Rats: RECALL (" + rats.size() + " acknowledged, " + teleported + " teleported)"),
+                true
+        );
+        level.playSound(null, user.blockPosition(), SoundEvents.SCULK_SHRIEKER_SHRIEK, SoundSource.PLAYERS, 0.9F, 1.1F);
+        user.getCooldowns().addCooldown(this, 10);
+
+        return InteractionResultHolder.consume(stack);
+    }
+
+    /* ===================== ATTACK ORDER (WITH COUNTS) ===================== */
 
     public static void commandOwnedRatsAttack(Player player, LivingEntity target, ServerLevel level, int radius) {
         List<SculkRatEntity> rats = getOwnedRatsInRange(level, player, radius);
@@ -129,11 +157,21 @@ public class SculkRatStaffItem extends Item {
             return;
         }
 
+        int acknowledged = rats.size();
+        int ordered = 0;
+
         for (SculkRatEntity rat : rats) {
+            if (rat == target) continue;
+            if (!target.isAlive()) break;
+
             rat.orderAttack(target);
+            ordered++;
         }
 
-        player.displayClientMessage(Component.literal("Sculk Rats: ATTACK " + target.getName().getString()), true);
+        player.displayClientMessage(
+                Component.literal("Sculk Rats: ATTACK " + target.getName().getString() + " (" + acknowledged + " acknowledged, " + ordered + " ordered)"),
+                true
+        );
         level.playSound(null, player.blockPosition(), SoundEvents.WARDEN_SONIC_BOOM, SoundSource.PLAYERS, 0.35F, 1.6F);
     }
 
@@ -163,9 +201,8 @@ public class SculkRatStaffItem extends Item {
     }
 
     private static void setStaffMode(ItemStack stack, RatCommandMode mode) {
-        CompoundTag tag;
         CustomData existing = stack.get(DataComponents.CUSTOM_DATA);
-        tag = (existing != null) ? existing.copyTag() : new CompoundTag();
+        CompoundTag tag = (existing != null) ? existing.copyTag() : new CompoundTag();
 
         tag.putInt(STAFF_MODE_NBT, mode.id);
         stack.set(DataComponents.CUSTOM_DATA, CustomData.of(tag));

@@ -1,8 +1,10 @@
 package net.ronm19.sculky.datagen;
 
+import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
@@ -232,6 +234,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_echo_dust", has(ModItems.ECHO_DUST))
                 .save(pRecipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SCULK_LANTERN.get())
+                .pattern("ASA")
+                .pattern("RLR")
+                .pattern("ADA")
+                .define('S', ModItems.SCULK_SHARD.get())
+                .define('A', Items.AMETHYST_SHARD)
+                .define('R', ModItems.SCULK_RESONANCE.get())
+                .define('L', Items.LANTERN)
+                .define('D', ModItems.ECHO_DUST.get())
+                .unlockedBy("has_resonance", has(ModItems.SCULK_RESONANCE.get()))
+                .save(pRecipeOutput);
 
 
 

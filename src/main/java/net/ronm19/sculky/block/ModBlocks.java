@@ -38,7 +38,8 @@ public class ModBlocks {
             () -> new SculkBlock(BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().sound(SoundType.SCULK)));
 
     public static final DeferredBlock<Block> INFESTED_SCULK_BRICKS = registerBlock("infested_sculk_bricks",
-            () -> new InfestedSculkBricksBlock(BlockBehaviour.Properties.of().strength(3.5f, 8.0f).requiresCorrectToolForDrops().sound(SoundType.SCULK)));
+            () -> new InfestedSculkBricksBlock(BlockBehaviour.Properties.of().strength(5.5f, 8.0f).requiresCorrectToolForDrops().sound(SoundType.SCULK)));
+
 
     public static final DeferredBlock<Block> INFESTED_SCULK_SAND = registerBlock("infested_sculk_sand",
             () -> new Block(BlockBehaviour.Properties.of().strength(0.5F).sound(SoundType.SCULK)));

@@ -19,7 +19,8 @@ public class ModTags {
 
         public static final TagKey<Block> SCULK_SPREADABLE = createTag("sculk_spreadable");
 
-        public static final TagKey<Block> SCULK_SAND = createTag("sculk_sand");
+        public static final TagKey<Block> INFESTED_SCULK_SAND = createTag("sculk_sand");
+        public static final TagKey<Block> SCULK_SPEED_BLOCKS = createTag("sculk_speed_blocks");
 
         private static TagKey<Block> createTag( String name ) {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, name));

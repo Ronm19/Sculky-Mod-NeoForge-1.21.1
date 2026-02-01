@@ -56,10 +56,10 @@ public class OverworldRegion extends Region {
                         ParameterUtils.Humidity.ARID,
                         ParameterUtils.Humidity.ARID))
                 .continentalness(ParameterUtils.Continentalness.span(
-                ParameterUtils.Continentalness.FAR_INLAND,
+                ParameterUtils.Continentalness.MID_INLAND,
                 ParameterUtils.Continentalness.FAR_INLAND)) // FAR only
                 .erosion(ParameterUtils.Erosion.span(
-                        ParameterUtils.Erosion.EROSION_4,
+                        ParameterUtils.Erosion.EROSION_2,
                         ParameterUtils.Erosion.EROSION_5)) // narrow
                 // <-- widen one step
                 .depth(ParameterUtils.Depth.SURFACE)

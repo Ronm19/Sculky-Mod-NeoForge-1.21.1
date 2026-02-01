@@ -57,6 +57,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.ECHO_DUST.get());
         basicItem(ModItems.SCULK_FANG.get());
         basicItem(ModItems.SCULK_CHITIN.get());
+        basicItem(ModItems.SCULK_LANTERN.get());
+
 
         handheldItem(ModItems.INFESTED_SCULK_SWORD);
         handheldItem(ModItems.INFESTED_SCULK_PICKAXE);

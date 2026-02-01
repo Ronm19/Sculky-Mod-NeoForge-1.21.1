@@ -126,7 +126,7 @@
         "type": "sculky:sculk_sandsnare",
         "maxCount": 5,
         "minCount": 2,
-        "weight": 10
+        "weight": 13
       },
       {
         "type": "sculky:sculk_rat",

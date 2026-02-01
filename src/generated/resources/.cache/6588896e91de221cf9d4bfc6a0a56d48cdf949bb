@@ -1,4 +1,4 @@
-// 1.21.1	2026-01-31T15:22:56.9003204	Item Models: sculky
+// 1.21.1	2026-02-07T12:00:12.892863	Item Models: sculky
 fb0446df9bc6cd6ae702e28ae2c9682758c92d2f assets/sculky/models/item/echo_conduit.json
 73e021106fd0960f0ffc52d87d21b556d2456623 assets/sculky/models/item/echo_dagger.json
 111b7c0261b93565f85b16aed9de521de8dad0d5 assets/sculky/models/item/echo_dust.json
@@ -76,6 +76,7 @@ e4502af2613269d7d935a6b3928c77e5b3d4a58f assets/sculky/models/item/sculk_fang.js
 f464738a4f677f6db95bee334b255d6a9502307a assets/sculky/models/item/sculk_heartfruit.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_horror_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_horse_spawn_egg.json
+19592f18032d6980f30930ca1c7cdc6f73f9994b assets/sculky/models/item/sculk_lantern.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_parasite_spawn_egg.json
 b41ac6d9289690bcfe9add53f1a1d69f2387d1a7 assets/sculky/models/item/sculk_pastry.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_rat_spawn_egg.json

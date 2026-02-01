@@ -12,6 +12,7 @@
   "item.sculky.sculk_resonance": "Sculk Resonance",
   "item.sculky.echo_dust": "Echo Dust",
   "item.sculky.sculk_fang": "Sculk Fang",
+  "item.sculky.sculk_lantern": "Sculk Lantern",
 
   "item.sculky.totem_echo_recall": "Totem of Echo Recall",
   "item.sculky.totem_swarm": "Swarm Totem",
@@ -73,6 +74,8 @@
   "block.sculky.sculk_ore": "Sculk Ore",
   "block.sculky.deepslate_sculk_ore": "Deepslate Sculk Ore",
 
+  "block.sculky.sculk_lantern": "Sculk Lantern",
+
   "block.sculky.infested_sculk_grass_block": "Infested Sculk Grass Block",
   "block.sculky.infested_sculk_dirt_block": "Infested Sculk Dirt Block",
   "block.sculky.infested_sculk_rooted_dirt_block": "Infested Sculk Rooted Dirt Block",
@@ -114,6 +117,7 @@
   "effect.sculky.sculk_infection": "Sculk Infection",
 
   "enchantment.sculky.infection": "Infection",
+  "enchantment.sculky.sculk_speed": "Sculk Speed",
 
   "entity.sculky.sculk_parasite": "Sculk Parasite",
   "entity.sculky.sculk_sentinel": "Sculk Sentinel",

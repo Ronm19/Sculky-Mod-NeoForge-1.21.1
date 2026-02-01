@@ -1,5 +1,7 @@
 package net.ronm19.sculky;
 
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
@@ -78,9 +80,15 @@ public class SculkyMod {
             ModBiomes.registerBiomes();
 
             SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeOverworldRules());
+
+        });
+
+        event.enqueueWork(() -> {
+                    ItemBlockRenderTypes.setRenderLayer(
+                            ModBlocks.INFESTED_SCULK_LEAVES.get(),
+                            RenderType.cutoutMipped());
         });
     }
-
 
 
     // Add the example block item to the building blocks tab
