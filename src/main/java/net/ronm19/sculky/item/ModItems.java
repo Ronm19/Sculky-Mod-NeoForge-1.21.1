@@ -59,6 +59,9 @@ public class ModItems {
             ITEMS.registerItem("sculk_pastry", Item::new, new Item.Properties().food(ModFoodProperties.SCULK_PASTRY));
     public static final DeferredItem<Item> SOULBITE_COOKIE =
             ITEMS.registerItem("soulbite_cookie", Item::new, new Item.Properties().food(ModFoodProperties.SOULBITE_COOKIE));
+    public static final DeferredItem<Item> SCULK_APPLE =
+            ITEMS.registerItem("sculk_apple", Item::new, new Item.Properties().food(ModFoodProperties.SCULK_APPLE));
+
 
     public static final DeferredItem<Item> TOMATO_SCULK_SEEDS = ITEMS.register("tomato_sculk_seeds",
             () -> new ItemNameBlockItem(ModBlocks.TOMATO_SCULK_CROP.get(), new Item.Properties()));

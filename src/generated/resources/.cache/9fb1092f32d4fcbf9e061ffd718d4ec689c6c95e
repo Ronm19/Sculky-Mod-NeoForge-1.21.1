@@ -1,4 +1,4 @@
-// 1.21.1	2026-02-07T12:00:12.8847783	Recipes
+// 1.21.1	2026-02-13T14:36:00.8798188	Recipes
 32795b090e8c28bcad43b511c07d52588d301844 data/minecraft/advancement/recipes/redstone/sculk_shrieker.json
 f00b4944da74f645a1372b3e13b20bebc9ee0c04 data/minecraft/recipe/sculk_shrieker.json
 418c801599be78e95301328beb50358b6ee22ff1 data/sculky/advancement/recipes/building_blocks/infested_sculk_bricks.json
@@ -28,7 +28,11 @@ a080ef489a84ec3c9f5c40b94d079de886a14764 data/sculky/advancement/recipes/combat/
 567914718c4ab63ef6c14c8f42073236846569df data/sculky/advancement/recipes/combat/infested_sculk_sword.json
 cf1c6f4711ccda67f27656977f51381278a56fd3 data/sculky/advancement/recipes/decorations/infested_sculk_brick_fence.json
 8222378d957ddf96d31885c326fb0bd6d81a56a0 data/sculky/advancement/recipes/decorations/infested_sculk_fence.json
+7b6f89c05adf7b7f5eaa0b79c38b83c2292fe7e3 data/sculky/advancement/recipes/food/echo_jelly.json
+93c6a2617e7c4f83a7de9eb1c5d920bb8eb660ba data/sculky/advancement/recipes/food/sculk_apple.json
+613548d27fb0896e202e3e2f1bd57f29e2735c3c data/sculky/advancement/recipes/food/sculk_heartfruit.json
 208057b5c16521d79ad4e0adbaf92c8d4b7776f1 data/sculky/advancement/recipes/food/sculk_pastry.json
+faa58bfce985cfa43211a8dab8bfbe61bab33a1c data/sculky/advancement/recipes/food/soulbite_cookie.json
 fd297986e36f6f3d8a66fccf63818b53bce61d0e data/sculky/advancement/recipes/misc/echo_conduit.json
 d41b232f54cf2ff463408bc38c3c46a3ac5bd909 data/sculky/advancement/recipes/misc/echo_dust.json
 f562f36e5aeaceb8766555bb3ca1b90096749f4e data/sculky/advancement/recipes/misc/infested_sculk_block.json
@@ -55,6 +59,7 @@ b1747269ae2a0e46677e0bfaa91b2408ceae5b9e data/sculky/advancement/recipes/redston
 e8aaceb64dc5db13a95c35a0927f8e117e8563de data/sculky/recipe/echo_conduit.json
 b21187d4da3827cd5e79fde1ed6742431ac8f2a0 data/sculky/recipe/echo_dagger.json
 c111d3d804254c2f4052b0eb97692dbefc5bced2 data/sculky/recipe/echo_dust.json
+c97df10221613a4894e03c2f3bb9fc7877a82b71 data/sculky/recipe/echo_jelly.json
 e50ff6f91e26886e0ae48c0522f0387a7752c7eb data/sculky/recipe/infested_sculk_axe.json
 e1e2c2f20c2e57ae2436f0c840a1674ebd740bef data/sculky/recipe/infested_sculk_block.json
 7851fa319ffff5c521b071a93a063e1fa9ce3757 data/sculky/recipe/infested_sculk_boots.json
@@ -89,7 +94,9 @@ f954a53167cd3ece07e35b20b76f904d452016b5 data/sculky/recipe/infested_sculk_sword
 212f02903245030cbb4ad37f42fd643ba032fcca data/sculky/recipe/infested_sculk_trapdoor.json
 5611ae144aee7f00c373cf44ab78f0c10f743a09 data/sculky/recipe/infested_sculk_wall.json
 c7b7a288b0dfe27bef752d6483f7fc9f81f528e6 data/sculky/recipe/infested_sculk_wood.json
+8a01296286c38f5dd4a2572b318ffe701a057d70 data/sculky/recipe/sculk_apple.json
 eb6f5f7cbd11212f51e929ba83c4e4c60464972f data/sculky/recipe/sculk_bone.json
+aaa8dbc7ef518cec047895eced603247489bff9a data/sculky/recipe/sculk_heartfruit.json
 95c114cddce9b6dc8bf548b1d1df3a7960c68806 data/sculky/recipe/sculk_lantern.json
 35dec746cd1723ffc9c570c54aba4dc218a1b14d data/sculky/recipe/sculk_pastry.json
 92e54936e3b684e72c61a124324b80f3d0c26846 data/sculky/recipe/sculk_rat_staff.json
@@ -101,5 +108,6 @@ aedac3c109109a14d5e34e7f0539f7e36d2ee731 data/sculky/recipe/sculk_shard_from_bla
 3b6a66be7bd8106f1f4a4234a1e6c32d4e586f46 data/sculky/recipe/sculk_shard_from_smelting_deepslate_sculk_ore.json
 0c4d534808088c3a76d2fc53ef43dd109998a892 data/sculky/recipe/sculk_shard_from_smelting_raw_sculk_shard.json
 6a57a06c8eff8f6d81628e2e2ad34587a87edb16 data/sculky/recipe/sculk_shard_from_smelting_sculk_ore.json
+d8649cc6028284c14cdc34bfdb71eeb240d299af data/sculky/recipe/soulbite_cookie.json
 798d6132ac4767cffa5a19400084673d00b68ebb data/sculky/recipe/stripped_infested_sculk_wood.json
 b9f07982fc7d9578041710e1c529188bb0aadce5 data/sculky/recipe/totem_echo_recall.json

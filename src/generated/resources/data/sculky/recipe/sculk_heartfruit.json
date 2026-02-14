@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "F": {
+      "item": "minecraft:rotten_flesh"
+    },
+    "S": {
+      "item": "sculky:sculk_shard"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SFS",
+    "SSS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "sculky:sculk_heartfruit"
+  }
+}

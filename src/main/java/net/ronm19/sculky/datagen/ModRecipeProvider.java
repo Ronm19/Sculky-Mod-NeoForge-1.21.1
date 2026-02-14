@@ -5,12 +5,14 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import net.ronm19.sculky.SculkyMod;
 import net.ronm19.sculky.block.ModBlocks;
@@ -46,6 +48,45 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('C', Items.CAKE)
                 .define('S', ModItems.SCULK_SHARD.get())
                 .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get())).save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.SCULK_APPLE.get())
+                .pattern("SSS")
+                .pattern("SAS")
+                .pattern("SSS")
+                .define('A', Items.APPLE)
+                .define('S', ModItems.SCULK_SHARD.get())
+                .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get()))
+                .save(pRecipeOutput);
+
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.SOULBITE_COOKIE.get())
+                .pattern("SSS")
+                .pattern("SCS")
+                .pattern("SSS")
+                .define('S', ModItems.SCULK_SHARD.get())
+                .define('C', Items.COOKIE)
+                .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get()))
+                .save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.ECHO_JELLY.get())
+                .pattern("WWW")
+                .pattern("GSG")
+                .pattern("GGG")
+                .define('S', ModItems.SCULK_SHARD.get())
+                .define('G', Blocks.GLASS)
+                .define('W', Blocks.OAK_PLANKS)
+                .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get()))
+                .save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.SCULK_HEARTFRUIT.get())
+                .pattern("SSS")
+                .pattern("SFS")
+                .pattern("SSS")
+                .define('S', ModItems.SCULK_SHARD.get())
+                .define('F', Items.ROTTEN_FLESH)
+                .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get()))
+                .save(pRecipeOutput);
+
 
 
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.INFESTED_SCULK_SWORD.get())

@@ -29,6 +29,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.ECHO_JELLY);
                         pOutput.accept(ModItems.SCULK_PASTRY);
                         pOutput.accept(ModItems.SOULBITE_COOKIE);
+                        pOutput.accept(ModItems.SCULK_APPLE);
 
                         pOutput.accept(ModItems.TOMATO_SCULK_SEEDS);
                         pOutput.accept(ModItems.SCULK_BONE);

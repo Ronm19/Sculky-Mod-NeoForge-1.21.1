@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "sculky:sculk_shrine",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 9472363,
+    "spacing": 32,
+    "separation": 12
+  }
+}
