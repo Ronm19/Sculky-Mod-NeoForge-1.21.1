@@ -1,0 +1,31 @@
+{
+  "parent": "sculky:root",
+  "display": {
+    "icon": { "id": "sculky:sculk_core", "count": 1 },
+    "title": { "translate": "advancement.sculky.core_calling.title" },
+    "description": { "translate": "advancement.sculky.core_calling.desc" },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_find_shrine": {
+      "trigger": "minecraft:impossible"
+    },
+    "has_core": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          { "items": ["sculky:sculk_core"] }
+        ]
+      }
+    },
+    "entered_all_biomes": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    ["has_core"]
+  ]
+}

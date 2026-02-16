@@ -1,0 +1,23 @@
+{
+  "parent": "sculky:find_shrine",
+  "display": {
+    "icon": { "id": "sculky:sculk_core", "count": 1 },
+    "title": { "translate": "advancement.sculky.obtain_sculk_core.title" },
+    "description": { "translate": "advancement.sculky.obtain_sculk_core.desc" },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "obtain_core": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          { "items": ["sculky:sculk_core"] }
+        ]
+      }
+    }
+  },
+  "requirements": [["obtain_core"]]
+}

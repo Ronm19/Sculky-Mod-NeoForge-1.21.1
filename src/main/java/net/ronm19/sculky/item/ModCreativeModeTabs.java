@@ -35,6 +35,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.SCULK_BONE);
                         pOutput.accept(ModItems.SCULK_RESONANCE);
                         pOutput.accept(ModItems.ECHO_DUST);
+                        pOutput.accept(ModItems.SCULK_CORE);
                         pOutput.accept(ModItems.SCULK_FANG);
                         pOutput.accept(ModItems.SCULK_CHITIN);
                         pOutput.accept(ModItems.SCULK_LANTERN);

@@ -1,0 +1,25 @@
+{
+  "display": {
+    "icon": {
+      "id": "sculky:sculk_shard"
+    },
+    "title": {
+      "translate": "advancement.sculky.root.title"
+    },
+    "description": {
+      "translate": "advancement.sculky.root.desc"
+    },
+    "background": "minecraft:textures/block/sculk.png",
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria":
+  {
+    "tick": {
+      "trigger": "minecraft:tick"
+    }
+  },
+  "requirements": [["tick"]]
+}

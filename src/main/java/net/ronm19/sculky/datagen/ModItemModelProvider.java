@@ -55,6 +55,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.SCULK_APPLE.get());
         basicItem(ModItems.SCULK_BONE.get());
         basicItem(ModItems.SCULK_RESONANCE.get());
+        basicItem(ModItems.SCULK_CORE.get());
         basicItem(ModItems.ECHO_DUST.get());
         basicItem(ModItems.SCULK_FANG.get());
         basicItem(ModItems.SCULK_CHITIN.get());

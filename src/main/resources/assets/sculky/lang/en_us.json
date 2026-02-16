@@ -148,6 +148,37 @@
   "ability.sculky.cooldown": "Ability ready in %s seconds",
   "ability.sculky.need_momentum": "You need to move forward!",
 
+  "advancement.sculky.root.title": "Sculky",
+  "advancement.sculky.root.desc": "Discover the corruption beneath...",
+
+  "advancement.sculky.find_shrine.title": "Ancient Shrine",
+  "advancement.sculky.find_shrine.desc": "You discovered a corrupted shrine.",
+
+  "advancement.sculky.eat_apple.title": "Echo Consumption",
+  "advancement.sculky.eat_apple.desc": "You consumed the corruption.",
+
+  "advancement.sculky.craft_resonance.title": "Resonance Awakened",
+  "advancement.sculky.craft_resonance.desc": "You forged sculk resonance from the shrine’s power.",
+
+  "advancement.sculky.find_sculk_forest.title": "Echoing Forest",
+  "advancement.sculky.find_sculk_forest.desc": "You entered a forest consumed by sculk.",
+
+  "advancement.sculky.find_sculk_wastes.title": "Corrupted Wasteland",
+  "advancement.sculky.find_sculk_wastes.desc": "You discovered the desolate sculk wastes.",
+
+  "advancement.sculky.obtain_sculk_core.title": "Core Extracted",
+  "advancement.sculky.obtain_sculk_core.desc": "You recovered a Sculk Core from the shrine.",
+
+  "advancement.sculky.enter_all_biomes.title": "Corruption Cartographer",
+  "advancement.sculky.enter_all_biomes.desc": "You ventured through every known sculk biome.",
+
+  "advancement.sculky.kill_sculky_mob.title": "Echo Slayer",
+  "advancement.sculky.kill_sculky_mob.desc": "You silenced a creature of corruption.",
+
+  "advancement.sculky.core_calling.title": "The Core is Calling",
+  "advancement.sculky.core_calling.desc": "This isn’t just a relic… it’s a key.",
+
+
   "itemGroup.sculky.sculky_items_tab": "Sculky Items Tab",
   "itemGroup.sculky.sculky_blocks_tab": "Sculky Blocks Tab",
   "itemGroup.sculky.sculky_entities_tab": "Sculky Entities Tab"
