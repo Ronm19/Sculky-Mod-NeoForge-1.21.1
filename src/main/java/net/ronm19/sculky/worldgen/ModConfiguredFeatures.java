@@ -12,7 +12,9 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.MegaJungleFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.MegaJungleTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
@@ -23,11 +25,14 @@ import java.util.List;
 
 public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> INFESTED_SCULK_KEY = registerKey("infested_sculk");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SCULK_JUNGLE_KEY = registerKey("sculk_jungle");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SCULK_JUNGLE_MEGA_KEY = registerKey("sculk_jungle_mega");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_INFESTED_SCULK_ORE_KEY = registerKey("infested_sculk_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_DEEPSLATE_INFESTED_SCULK_ORE_KEY = registerKey("deeplsate_infested_sculk_ore");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> SCULKBLOOM_KEY = registerKey("sculkbloom");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ECHOBLOOM_KEY = registerKey("echobloom");
 
 
 
@@ -39,6 +44,27 @@ public class ModConfiguredFeatures {
                 BlockStateProvider.simple(ModBlocks.INFESTED_SCULK_LEAVES.get()),
                 new BlobFoliagePlacer(ConstantInt.of(4), ConstantInt.of(2), 4),
                 new TwoLayersFeatureSize(1, 0, 2)).build());
+
+        register(context, SCULK_JUNGLE_KEY, Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(ModBlocks.SCULK_JUNGLE_LOG.get()),
+                        new StraightTrunkPlacer(7, 2, 2), // taller like jungle
+                        BlockStateProvider.simple(ModBlocks.SCULK_JUNGLE_LEAVES.get()),
+                        new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3), // tighter canopy, sits higher
+                        new TwoLayersFeatureSize(1, 0, 2)
+                ).ignoreVines().build());
+
+        register(context, SCULK_JUNGLE_MEGA_KEY, Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(ModBlocks.SCULK_JUNGLE_LOG.get()),
+                        new MegaJungleTrunkPlacer(10, 2, 19), // vanilla-ish mega jungle
+                        BlockStateProvider.simple(ModBlocks.SCULK_JUNGLE_LEAVES.get()),
+                        new MegaJungleFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 2),
+                        new TwoLayersFeatureSize(1, 1, 2)
+                ).ignoreVines().build()
+        );
+
+
 
         RuleTest sculkReplaceables = new TagMatchTest(BlockTags.SCULK_REPLACEABLE_WORLD_GEN);
 
@@ -54,6 +80,11 @@ public class ModConfiguredFeatures {
 
         register(context, SCULKBLOOM_KEY, Feature.FLOWER, new RandomPatchConfiguration(32, 6, 2,
                 PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.SCULKBLOOM.get())))));
+
+        register(context, ECHOBLOOM_KEY, Feature.FLOWER, new RandomPatchConfiguration(32, 6, 2,
+                PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.ECHOBLOOM.get())))));
+
+
 
     }
 

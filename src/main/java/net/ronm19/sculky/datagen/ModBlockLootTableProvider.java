@@ -42,6 +42,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.add(ModBlocks.DEEPSLATE_SCULK_ORE.get(),
                 block -> createMultipleOreDrops(ModBlocks.DEEPSLATE_SCULK_ORE.get(), ModItems.RAW_SCULK_SHARD.get(), 2, 5));
 
+        // ----------------------- SCULK SET --------------------- //
+
         dropSelf(ModBlocks.INFESTED_SCULK_STAIRS.get());
         this.add(ModBlocks.INFESTED_SCULK_SLAB.get(), block -> createSlabItemTable(ModBlocks.INFESTED_SCULK_SLAB.get()));
 
@@ -56,6 +58,9 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.add(ModBlocks.INFESTED_SCULK_DOOR.get(), block -> createDoorTable(ModBlocks.INFESTED_SCULK_DOOR.get()));
 
 
+        // ----------------------- SCULK BRICK SET --------------------- //
+
+
         dropSelf(ModBlocks.INFESTED_SCULK_BRICK_STAIRS.get());
         this.add(ModBlocks.INFESTED_SCULK_BRICK_SLAB.get(), block -> createSlabItemTable(ModBlocks.INFESTED_SCULK_BRICK_SLAB.get()));
 
@@ -66,6 +71,25 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.INFESTED_SCULK_BRICK_FENCE_GATE.get());
         dropSelf(ModBlocks.INFESTED_SCULK_BRICK_WALL.get());
 
+        // ----------------------- SCULK JUNGLE SET --------------------- //
+
+        dropSelf(ModBlocks.SCULK_JUNGLE_STAIRS.get());
+        this.add(ModBlocks.SCULK_JUNGLE_SLAB.get(), block -> createSlabItemTable(ModBlocks.SCULK_JUNGLE_SLAB.get()));
+
+        dropSelf(ModBlocks.SCULK_JUNGLE_PRESSURE_PLATE.get());
+        dropSelf(ModBlocks.SCULK_JUNGLE_BUTTON.get());
+
+        dropSelf(ModBlocks.SCULK_JUNGLE_FENCE.get());
+        dropSelf(ModBlocks.SCULK_JUNGLE_FENCE_GATE.get());
+        dropSelf(ModBlocks.SCULK_JUNGLE_WALL.get());
+
+        dropSelf(ModBlocks.SCULK_JUNGLE_TRAPDOOR.get());
+        this.add(ModBlocks.SCULK_JUNGLE_DOOR.get(), block -> createDoorTable(ModBlocks.SCULK_JUNGLE_DOOR.get()));
+
+
+        // ----------------------- REST  --------------------- //
+
+
         LootItemCondition.Builder lootItemConditionBuilder = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.TOMATO_SCULK_CROP.get())
                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(TomatoSculkCropBlock.AGE, 5));
         this.add(ModBlocks.TOMATO_SCULK_CROP.get(), this.createCropDrops(ModBlocks.TOMATO_SCULK_CROP.get(),
@@ -73,6 +97,9 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
         this.dropSelf(ModBlocks.SCULKBLOOM.get());
         this.add(ModBlocks.POTTED_SCULKBLOOM.get(), createPotFlowerItemTable(ModBlocks.SCULKBLOOM));
+
+        this.dropSelf(ModBlocks.ECHOBLOOM.get());
+        this.add(ModBlocks.POTTED_ECHOBLOOM.get(), createPotFlowerItemTable(ModBlocks.ECHOBLOOM));
 
         this.dropSelf(ModBlocks.INFESTED_SCULK_LOG.get());
         this.dropSelf(ModBlocks.INFESTED_SCULK_WOOD.get());
@@ -84,6 +111,18 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
         this.add(ModBlocks.INFESTED_SCULK_LEAVES.get(), block ->
                 createLeavesDrops(block, ModBlocks.INFESTED_SCULK_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+
+
+        this.dropSelf(ModBlocks.SCULK_JUNGLE_LOG.get());
+        this.dropSelf(ModBlocks.SCULK_JUNGLE_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_SCULK_JUNGLE_LOG.get());
+        this.dropSelf(ModBlocks.STRIPPED_SCULK_JUNGLE_WOOD.get());
+
+        this.dropSelf(ModBlocks.SCULK_JUNGLE_PLANKS.get());
+        this.dropSelf(ModBlocks.SCULK_JUNGLE_SAPLING.get());
+
+        this.add(ModBlocks.SCULK_JUNGLE_LEAVES.get(), block ->
+                createLeavesDrops(block, ModBlocks.SCULK_JUNGLE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
         dropSelf(ModBlocks.INFESTED_SCULK_GRASS_BLOCK.get());
         dropSelf(ModBlocks.INFESTED_SCULK_DIRT_BLOCK.get());

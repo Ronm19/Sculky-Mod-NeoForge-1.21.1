@@ -151,6 +151,10 @@ public class ModItems {
             () -> new DeferredSpawnEggItem(ModEntities.SCULK_ZOMBIE,  0x08351E, 0x0CF1AE,
                     new Item.Properties()));
 
+    public static final DeferredItem<Item> SCULK_HUSK_SPAWN_EGG = ITEMS.register("sculk_husk_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.SCULK_HUSK, 0x07131D, 0x16D6D1,
+                    new Item.Properties()));
+
     public static final DeferredItem<Item> SCULK_SKELETON_SPAWN_EGG = ITEMS.register("sculk_skeleton_spawn_egg",
             () -> new DeferredSpawnEggItem(ModEntities.SCULK_SKELETON,  0x0B0F14, 0x2FE6D6,
                     new Item.Properties()));

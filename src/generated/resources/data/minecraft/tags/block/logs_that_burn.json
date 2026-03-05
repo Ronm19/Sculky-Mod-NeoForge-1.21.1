@@ -3,6 +3,10 @@
     "sculky:infested_sculk_log",
     "sculky:infested_sculk_wood",
     "sculky:stripped_infested_sculk_log",
-    "sculky:stripped_infested_sculk_wood"
+    "sculky:stripped_infested_sculk_wood",
+    "sculky:sculk_jungle_log",
+    "sculky:sculk_jungle_wood",
+    "sculky:stripped_sculk_jungle_log",
+    "sculky:stripped_sculk_jungle_wood"
   ]
 }

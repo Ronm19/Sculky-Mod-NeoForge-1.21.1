@@ -34,6 +34,14 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         blockWithItem(ModBlocks.INFESTED_SCULK_SAND);
 
+        // ----------------------- SCULK SET --------------------- //
+
+        blockItem(ModBlocks.INFESTED_SCULK_STAIRS);
+        blockItem(ModBlocks.INFESTED_SCULK_SLAB);
+        blockItem(ModBlocks.INFESTED_SCULK_PRESSURE_PLATE);
+        blockItem(ModBlocks.INFESTED_SCULK_FENCE_GATE);
+        blockItem(ModBlocks.INFESTED_SCULK_TRAPDOOR, "_bottom");
+
         stairsBlock(((StairBlock) ModBlocks.INFESTED_SCULK_STAIRS.get()), blockTexture(ModBlocks.INFESTED_SCULK_BLOCK.get()));
         slabBlock(((SlabBlock) ModBlocks.INFESTED_SCULK_SLAB.get()), blockTexture(ModBlocks.INFESTED_SCULK_BLOCK.get()), blockTexture(ModBlocks.INFESTED_SCULK_BLOCK.get()));
 
@@ -44,6 +52,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
         fenceGateBlock(((FenceGateBlock) ModBlocks.INFESTED_SCULK_FENCE_GATE.get()), blockTexture(ModBlocks.INFESTED_SCULK_BLOCK.get()));
         wallBlock(((WallBlock) ModBlocks.INFESTED_SCULK_WALL.get()), blockTexture(ModBlocks.INFESTED_SCULK_BLOCK.get()));
 
+        doorBlockWithRenderType(((DoorBlock) ModBlocks.INFESTED_SCULK_DOOR.get()), modLoc("block/infested_sculk_door_bottom"), modLoc("block/infested_sculk_door_top"), "cutout");
+        trapdoorBlockWithRenderType(((TrapDoorBlock) ModBlocks.INFESTED_SCULK_TRAPDOOR.get()), modLoc("block/infested_sculk_trapdoor"), true, "cutout");
+
+        // ----------------------- SCULK BRICKS SET --------------------- //
+
+        blockItem(ModBlocks.INFESTED_SCULK_BRICK_STAIRS);
+        blockItem(ModBlocks.INFESTED_SCULK_BRICK_SLAB);
+        blockItem(ModBlocks.INFESTED_SCULK_BRICK_PRESSURE_PLATE);
+        blockItem(ModBlocks.INFESTED_SCULK_BRICK_FENCE_GATE);
 
         stairsBlock(((StairBlock) ModBlocks.INFESTED_SCULK_BRICK_STAIRS.get()), blockTexture(ModBlocks.INFESTED_SCULK_BRICKS.get()));
         slabBlock(((SlabBlock) ModBlocks.INFESTED_SCULK_BRICK_SLAB.get()), blockTexture(ModBlocks.INFESTED_SCULK_BRICKS.get()), blockTexture(ModBlocks.INFESTED_SCULK_BRICKS.get()));
@@ -55,28 +72,45 @@ public class ModBlockStateProvider extends BlockStateProvider {
         fenceGateBlock(((FenceGateBlock) ModBlocks.INFESTED_SCULK_BRICK_FENCE_GATE.get()), blockTexture(ModBlocks.INFESTED_SCULK_BRICKS.get()));
         wallBlock(((WallBlock) ModBlocks.INFESTED_SCULK_BRICK_WALL.get()), blockTexture(ModBlocks.INFESTED_SCULK_BRICKS.get()));
 
-        doorBlockWithRenderType(((DoorBlock) ModBlocks.INFESTED_SCULK_DOOR.get()), modLoc("block/infested_sculk_door_bottom"), modLoc("block/infested_sculk_door_top"), "cutout");
-        trapdoorBlockWithRenderType(((TrapDoorBlock) ModBlocks.INFESTED_SCULK_TRAPDOOR.get()), modLoc("block/infested_sculk_trapdoor"), true, "cutout");
+        // ----------------------- SCULK JUNGLE SET --------------------- //
 
-        blockItem(ModBlocks.INFESTED_SCULK_STAIRS);
-        blockItem(ModBlocks.INFESTED_SCULK_SLAB);
-        blockItem(ModBlocks.INFESTED_SCULK_PRESSURE_PLATE);
-        blockItem(ModBlocks.INFESTED_SCULK_FENCE_GATE);
+        blockItem(ModBlocks.SCULK_JUNGLE_STAIRS);
+        blockItem(ModBlocks.SCULK_JUNGLE_SLAB);
+        blockItem(ModBlocks.SCULK_JUNGLE_PRESSURE_PLATE);
+        blockItem(ModBlocks.SCULK_JUNGLE_FENCE_GATE);
+        blockItem(ModBlocks.SCULK_JUNGLE_TRAPDOOR, "_bottom");
 
-        blockItem(ModBlocks.INFESTED_SCULK_BRICK_STAIRS);
-        blockItem(ModBlocks.INFESTED_SCULK_BRICK_SLAB);
-        blockItem(ModBlocks.INFESTED_SCULK_BRICK_PRESSURE_PLATE);
-        blockItem(ModBlocks.INFESTED_SCULK_BRICK_FENCE_GATE);
+        stairsBlock(((StairBlock) ModBlocks.SCULK_JUNGLE_STAIRS.get()), blockTexture(ModBlocks.SCULK_JUNGLE_PLANKS.get()));
+        slabBlock(((SlabBlock) ModBlocks.SCULK_JUNGLE_SLAB.get()), blockTexture(ModBlocks.SCULK_JUNGLE_PLANKS.get()), blockTexture(ModBlocks.SCULK_JUNGLE_PLANKS.get()));
 
-        blockItem(ModBlocks.INFESTED_SCULK_TRAPDOOR, "_bottom");
+        pressurePlateBlock(((PressurePlateBlock) ModBlocks.SCULK_JUNGLE_PRESSURE_PLATE.get()), blockTexture(ModBlocks.SCULK_JUNGLE_PLANKS.get()));
+        buttonBlock(((ButtonBlock) ModBlocks.SCULK_JUNGLE_BUTTON.get()), blockTexture(ModBlocks.SCULK_JUNGLE_PLANKS.get()));
+
+        fenceBlock(((FenceBlock) ModBlocks.SCULK_JUNGLE_FENCE.get()), blockTexture(ModBlocks.SCULK_JUNGLE_PLANKS.get()));
+        fenceGateBlock(((FenceGateBlock) ModBlocks.SCULK_JUNGLE_FENCE_GATE.get()), blockTexture(ModBlocks.SCULK_JUNGLE_PLANKS.get()));
+        wallBlock(((WallBlock) ModBlocks.SCULK_JUNGLE_WALL.get()), blockTexture(ModBlocks.SCULK_JUNGLE_PLANKS.get()));
+
+        doorBlockWithRenderType(((DoorBlock) ModBlocks.SCULK_JUNGLE_DOOR.get()), modLoc("block/sculk_jungle_door_bottom"), modLoc("block/sculk_jungle_door_top"), "cutout");
+        trapdoorBlockWithRenderType(((TrapDoorBlock) ModBlocks.SCULK_JUNGLE_TRAPDOOR.get()), modLoc("block/sculk_jungle_trapdoor"), true, "cutout");
+
+        // ----------------------- REST --------------------- //
 
         makeCrop(((TomatoSculkCropBlock) ModBlocks.TOMATO_SCULK_CROP.get()), "tomato_sculk_crop_stage","tomato_sculk_crop_stage");
 
         simpleBlock(ModBlocks.SCULKBLOOM.get(),
                 models().cross(blockTexture(ModBlocks.SCULKBLOOM.get()).getPath(), blockTexture(ModBlocks.SCULKBLOOM.get())).renderType("cutout"));
 
+        simpleBlock(ModBlocks.ECHOBLOOM.get(),
+                models().cross(blockTexture(ModBlocks.ECHOBLOOM.get()).getPath(), blockTexture(ModBlocks.ECHOBLOOM.get())).renderType("cutout"));
+
         simpleBlock(ModBlocks.POTTED_SCULKBLOOM.get(), models().singleTexture("potted_sculkbloom", ResourceLocation.parse("flower_pot_cross"), "plant",
                 blockTexture(ModBlocks.SCULKBLOOM.get())).renderType("cutout"));
+
+        simpleBlock(ModBlocks.POTTED_ECHOBLOOM.get(), models().singleTexture("potted_echobloom", ResourceLocation.parse("flower_pot_cross"), "plant",
+                blockTexture(ModBlocks.ECHOBLOOM.get())).renderType("cutout"));
+
+
+        // ----------------------- INFESTED SCULK --------------------- //
 
         logBlock(((RotatedPillarBlock) ModBlocks.INFESTED_SCULK_LOG.get()));
         axisBlock(((RotatedPillarBlock) ModBlocks.INFESTED_SCULK_WOOD.get()), blockTexture(ModBlocks.INFESTED_SCULK_LOG.get()), blockTexture(ModBlocks.INFESTED_SCULK_LOG.get()));
@@ -87,11 +121,25 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.INFESTED_SCULK_WOOD);
         blockItem(ModBlocks.STRIPPED_INFESTED_SCULK_LOG);
         blockItem(ModBlocks.STRIPPED_INFESTED_SCULK_WOOD);
-
         blockWithItem(ModBlocks.INFESTED_SCULK_PLANKS);
-
         leavesBlock(ModBlocks.INFESTED_SCULK_LEAVES);
         saplingBlock(ModBlocks.INFESTED_SCULK_SAPLING);
+
+        // ----------------------- SCULK JUNGLE --------------------- //
+
+        blockItem(ModBlocks.SCULK_JUNGLE_LOG);
+        blockItem(ModBlocks.SCULK_JUNGLE_WOOD);
+        blockItem(ModBlocks.STRIPPED_SCULK_JUNGLE_LOG);
+        blockItem(ModBlocks.STRIPPED_SCULK_JUNGLE_WOOD);
+        leavesBlock(ModBlocks.SCULK_JUNGLE_LEAVES);
+        saplingBlock(ModBlocks.SCULK_JUNGLE_SAPLING);
+
+        logBlock(((RotatedPillarBlock) ModBlocks.SCULK_JUNGLE_LOG.get()));
+        axisBlock(((RotatedPillarBlock) ModBlocks.SCULK_JUNGLE_WOOD.get()), blockTexture(ModBlocks.SCULK_JUNGLE_LOG.get()), blockTexture(ModBlocks.SCULK_JUNGLE_LOG.get()));
+        logBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_SCULK_JUNGLE_LOG.get()));
+        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_SCULK_JUNGLE_WOOD.get()), blockTexture(ModBlocks.STRIPPED_SCULK_JUNGLE_LOG.get()), blockTexture(ModBlocks.STRIPPED_SCULK_JUNGLE_LOG.get()));
+
+        // ----------------------- REST --------------------- //
 
         blockWithItem(ModBlocks.INFESTED_SCULK_DIRT_BLOCK);
         blockWithItem(ModBlocks.INFESTED_SCULK_ROOTED_DIRT_BLOCK);

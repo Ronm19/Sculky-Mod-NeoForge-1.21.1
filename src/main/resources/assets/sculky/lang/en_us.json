@@ -46,6 +46,7 @@
   "item.sculky.sculk_shade_spawn_egg": "Sculk Shade Spawn Egg",
   "item.sculky.sculk_horror_spawn_egg": "Sculk Horror Spawn Egg",
   "item.sculky.sculk_zombie_spawn_egg": "Sculk Zombie Spawn Egg",
+  "item.sculky.sculk_husk_spawn_egg": "Sculk Husk Spawn Egg",
   "item.sculky.sculk_skeleton_spawn_egg": "Sculk Skeleton Spawn Egg",
   "item.sculky.sculk_creeper_spawn_egg": "Sculk Creeper Spawn Egg",
   "item.sculky.sculk_spider_spawn_egg": "Sculk Spider Spawn Egg",
@@ -94,6 +95,14 @@
   "block.sculky.infested_sculk_leaves": "Infested Sculk Leaves",
   "block.sculky.infested_sculk_sapling": "Infested Sculk Sapling",
 
+  "block.sculky.sculk_jungle_log": "Sculk Jungle Log",
+  "block.sculky.sculk_jungle_planks": "Sculk Jungle Planks",
+  "block.sculky.sculk_jungle_wood": "Sculk Jungle Wood",
+  "block.sculky.stripped_sculk_jungle_log": "Stripped Sculk Jungle Log",
+  "block.sculky.stripped_sculk_jungle_wood": "Stripped Sculk Jungle Wood",
+  "block.sculky.sculk_jungle_leaves": "Sculk Jungle Leaves",
+  "block.sculky.sculk_jungle_sapling": "Sculk Jungle Sapling",
+
   "block.sculky.infested_sculk_stairs": "Infested Sculk Stairs",
   "block.sculky.infested_sculk_slab": "Infested Sculk Slab",
   "block.sculky.infested_sculk_pressure_plate": "Infested Sculk Pressure Plate",
@@ -112,8 +121,20 @@
   "block.sculky.infested_sculk_brick_fence_gate": "Infested Sculk Brick Fence Gate",
   "block.sculky.infested_sculk_brick_wall": "Infested Sculk Brick Wall",
 
+  "block.sculky.sculk_jungle_stairs": "Sculk Jungle Stairs",
+  "block.sculky.sculk_jungle_slab": "Sculk Jungle Slab",
+  "block.sculky.sculk_jungle_pressure_plate": "Sculk Jungle Pressure Plate",
+  "block.sculky.sculk_jungle_button": "Sculk Jungle Button",
+  "block.sculky.sculk_jungle_fence": "Sculk Jungle Fence",
+  "block.sculky.sculk_jungle_fence_gate": "Sculk Jungle Fence Gate",
+  "block.sculky.sculk_jungle_wall": "Sculk Jungle Wall",
+  "block.sculky.sculk_jungle_door": "Sculk Jungle Door",
+  "block.sculky.sculk_jungle_trapdoor": "Sculk Jungle Trapdoor",
+
+
   "block.sculky.tomato_sculk_crop": "Tomato Sculk Crop",
   "block.sculky.sculkbloom": "Sculk Bloom",
+  "block.sculky.echobloom": "Echo Bloom",
 
   "effect.sculky.sculk_infection": "Sculk Infection",
 
@@ -126,6 +147,7 @@
   "entity.sculky.sculk_shade": "Sculk Shade",
   "entity.sculky.sculk_horror": "Sculk Horror",
   "entity.sculky.sculk_zombie": "Sculk Zombie",
+  "entity.sculky.sculk_husk": "Sculk Husk",
   "entity.sculky.sculk_skeleton": "Sculk Skeleton",
   "entity.sculky.sculk_creeper": "Sculk Creeper",
   "entity.sculky.sculk_spider": "Sculk Spider",
@@ -165,6 +187,10 @@
 
   "advancement.sculky.find_sculk_wastes.title": "Corrupted Wasteland",
   "advancement.sculky.find_sculk_wastes.desc": "You discovered the desolate sculk wastes.",
+
+  "advancement.sculky.find_sculk_jungle.title": "Echoing Jungle",
+  "advancement.sculky.find_sculk_jungle.desc": "You entered a jungle consumed by sculk.",
+
 
   "advancement.sculky.obtain_sculk_core.title": "Core Extracted",
   "advancement.sculky.obtain_sculk_core.desc": "You recovered a Sculk Core from the shrine.",

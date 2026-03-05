@@ -17,11 +17,14 @@ import net.ronm19.sculky.worldgen.biome.ModBiomes;
 
 public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_TREE_INFESTED_SCULK = registerKey("add_tree_infested_sculk");
+    public static final ResourceKey<BiomeModifier> ADD_TREE_SCULK_JUNGLE = registerKey("add_tree_sculk_jungle");
+    public static final ResourceKey<BiomeModifier> ADD_TREE_MEGA_SCULK_JUNGLE = registerKey("add_tree_mega_sculk_jungle");
 
     public static final ResourceKey<BiomeModifier> ADD_INFESTED_SCULK_ORE = registerKey("add_infested_sculk_ore");
     public static final ResourceKey<BiomeModifier> ADD_DEEPSLATE_INFESTED_SCULK_ORE = registerKey("add_deepslate_infested_sculk_ore");
 
     public static final ResourceKey<BiomeModifier> ADD_SCULKBLOOM = registerKey("add_sculkbloom");
+    public static final ResourceKey<BiomeModifier> ADD_ECHOBLOOM = registerKey("add_echobloom");
 
 
 
@@ -34,6 +37,18 @@ public class ModBiomeModifiers {
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.INFESTED_SCULK_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
+        context.register(ADD_TREE_SCULK_JUNGLE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                HolderSet.direct(biomes.getOrThrow(ModBiomes.SCULK_JUNGLE)),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.INFESTED_JUNGLE_SCULK_PLACED_KEY)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
+
+        context.register(ADD_TREE_MEGA_SCULK_JUNGLE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                HolderSet.direct(biomes.getOrThrow(ModBiomes.SCULK_JUNGLE)),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.INFESTED_MEGA_JUNGLE_SCULK_PLACED_KEY)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
+        
+
+
 
         context.register(ADD_DEEPSLATE_INFESTED_SCULK_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
@@ -45,10 +60,18 @@ public class ModBiomeModifiers {
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.INFESTED_SCULK_ORE_PLACED_KEY)),
                 GenerationStep.Decoration.UNDERGROUND_ORES));
 
+
+
         context.register(ADD_SCULKBLOOM, new BiomeModifiers.AddFeaturesBiomeModifier(
                 HolderSet.direct(biomes.getOrThrow(ModBiomes.SCULK_FOREST)),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.SCULKBLOOM_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
+
+        context.register(ADD_ECHOBLOOM, new BiomeModifiers.AddFeaturesBiomeModifier(
+                HolderSet.direct(biomes.getOrThrow(ModBiomes.SCULK_JUNGLE)),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.ECHOBLOOM_PLACED_KEY)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
+
 
     }
 

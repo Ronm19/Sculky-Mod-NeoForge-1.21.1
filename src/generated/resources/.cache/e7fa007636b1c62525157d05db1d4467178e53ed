@@ -1,8 +1,9 @@
-// 1.21.1	2026-01-23T16:08:09.3684412	Tags for minecraft:item mod id sculky
+// 1.21.1	2026-02-21T19:36:01.1550952	Tags for minecraft:item mod id sculky
 04092bcf9e29b68afeafcf254ff798bb06ca839b data/minecraft/tags/item/dirt.json
+efe333c3469fb6f51f0ad8e17ed7da227c91bd4d data/minecraft/tags/item/flowers.json
 caa22a70d5b929b41dbd3e7c1f0dea0fab9036a9 data/minecraft/tags/item/fox_food.json
-53dd30f7cf65e9f95f2dedc4ca715a7024e2bdbc data/minecraft/tags/item/logs_that_burn.json
-403686ecd099a4c548692066d938288b071c923f data/minecraft/tags/item/planks.json
+6d4996038371478fd37467f7140f1ab71a8a6065 data/minecraft/tags/item/logs_that_burn.json
+5d1482b56623c21b1e07c7e7059f286406467fa6 data/minecraft/tags/item/planks.json
 04625441a129a242b63124acfd158bc636722d20 data/minecraft/tags/item/sand.json
-fc0126fd72236874226fa15d78da552f3c16c116 data/minecraft/tags/item/swords.json
+5169614b957e080a5a6e3fc3678045684e3ff5f3 data/minecraft/tags/item/swords.json
 60afd04938831b2c3e4c5348f9fdba17841dd754 data/minecraft/tags/item/trimmable_armor.json

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "sculky:block/sculk_jungle_planks",
+    "side": "sculky:block/sculk_jungle_planks",
+    "top": "sculky:block/sculk_jungle_planks"
+  }
+}

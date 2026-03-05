@@ -21,8 +21,11 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags( HolderLookup.Provider provider ) {
+
         this.tag(ItemTags.SWORDS)
                 .add(ModItems.INFESTED_SCULK_SWORD.asItem())
+                .add(ModItems.ECHO_DAGGER.asItem())
+                .add(ModItems.INFESTED_SCULK_HAMMER.asItem())
                 .add(ModItems.SCULK_EDGE.asItem());
 
         this.tag(ItemTags.TRIMMABLE_ARMOR)
@@ -35,10 +38,15 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModBlocks.INFESTED_SCULK_LOG.get().asItem())
                 .add(ModBlocks.INFESTED_SCULK_WOOD.get().asItem())
                 .add(ModBlocks.STRIPPED_INFESTED_SCULK_LOG.get().asItem())
-                .add(ModBlocks.STRIPPED_INFESTED_SCULK_WOOD.get().asItem());
+                .add(ModBlocks.STRIPPED_INFESTED_SCULK_WOOD.get().asItem())
+                .add(ModBlocks.SCULK_JUNGLE_LOG.get().asItem())
+                .add(ModBlocks.SCULK_JUNGLE_WOOD.get().asItem())
+                .add(ModBlocks.STRIPPED_SCULK_JUNGLE_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_SCULK_JUNGLE_WOOD.get().asItem());
 
         tag(ItemTags.PLANKS)
-                .add(ModBlocks.INFESTED_SCULK_PLANKS.get().asItem());
+                .add(ModBlocks.INFESTED_SCULK_PLANKS.get().asItem())
+                .add(ModBlocks.SCULK_JUNGLE_PLANKS.get().asItem());
 
         tag(ItemTags.DIRT)
                 .add(ModBlocks.INFESTED_SCULK_GRASS_BLOCK.asItem())
@@ -48,6 +56,10 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
         tag(ItemTags.SAND)
         .add(ModBlocks.INFESTED_SCULK_SAND.get().asItem());
+
+        tag(ItemTags.FLOWERS)
+                .add(ModBlocks.ECHOBLOOM.get().asItem())
+                .add(ModBlocks.SCULKBLOOM.get().asItem());
 
         tag(ItemTags.FOX_FOOD)
                 .add(ModItems.ECHO_JELLY.asItem());

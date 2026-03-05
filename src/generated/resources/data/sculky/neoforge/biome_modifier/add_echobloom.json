@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "sculky:sculk_jungle",
+  "features": "sculky:echobloom_placed",
+  "step": "vegetal_decoration"
+}

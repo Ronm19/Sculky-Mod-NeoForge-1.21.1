@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "sculk_jungle_planks",
+  "key": {
+    "#": {
+      "item": "sculky:sculk_jungle_planks"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "sculky:sculk_jungle_stairs"
+  }
+}

@@ -13,38 +13,37 @@
     "sculk_forest": {
       "trigger": "minecraft:location",
       "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biomes": "sculky:sculk_forest"
-              }
-            }
+        "player": {
+          "location": {
+            "biomes": "sculky:sculk_forest"
           }
-        ]
+        }
       }
     },
     "sculk_wastes": {
       "trigger": "minecraft:location",
       "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biomes": "sculky:sculk_wastes"
-              }
-            }
+        "player": {
+          "location": {
+            "biomes": "sculky:sculk_wastes"
           }
-        ]
+        }
+      }
+    },
+    "sculk_jungle": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "location": {
+            "biomes": "sculky:sculk_jungle"
+          }
+        }
       }
     }
   },
   "requirements": [
     ["sculk_forest"],
-    ["sculk_wastes"]
+    ["sculk_wastes"],
+    ["sculk_jungle"]
   ]
 }

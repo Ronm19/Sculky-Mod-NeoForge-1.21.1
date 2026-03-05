@@ -80,16 +80,24 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.TOMATO_SCULK_SEEDS.get());
 
         flowerItem(ModBlocks.SCULKBLOOM);
+        flowerItem(ModBlocks.ECHOBLOOM);
 
 
         buttonItem(ModBlocks.INFESTED_SCULK_BUTTON, ModBlocks.INFESTED_SCULK_BLOCK);
         fenceItem(ModBlocks.INFESTED_SCULK_FENCE, ModBlocks.INFESTED_SCULK_BLOCK);
         wallItem(ModBlocks.INFESTED_SCULK_WALL, ModBlocks.INFESTED_SCULK_BLOCK);
-
+        basicItem(ModBlocks.INFESTED_SCULK_DOOR.asItem());
+        saplingItem(ModBlocks.INFESTED_SCULK_SAPLING);
 
         buttonItem(ModBlocks.INFESTED_SCULK_BRICK_BUTTON, ModBlocks.INFESTED_SCULK_BRICKS);
         fenceItem(ModBlocks.INFESTED_SCULK_BRICK_FENCE, ModBlocks.INFESTED_SCULK_BRICKS);
         wallItem(ModBlocks.INFESTED_SCULK_BRICK_WALL, ModBlocks.INFESTED_SCULK_BRICKS);
+
+        buttonItem(ModBlocks.SCULK_JUNGLE_BUTTON, ModBlocks.SCULK_JUNGLE_PLANKS);
+        fenceItem(ModBlocks.SCULK_JUNGLE_FENCE, ModBlocks.SCULK_JUNGLE_PLANKS);
+        wallItem(ModBlocks.SCULK_JUNGLE_WALL, ModBlocks.SCULK_JUNGLE_PLANKS);
+        basicItem(ModBlocks.SCULK_JUNGLE_DOOR.asItem());
+        saplingItem(ModBlocks.SCULK_JUNGLE_SAPLING);
 
         trimmedArmorItem(ModItems.INFESTED_SCULK_HELMET);
         trimmedArmorItem(ModItems.INFESTED_SCULK_CHESTPLATE);
@@ -97,10 +105,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         trimmedArmorItem(ModItems.INFESTED_SCULK_BOOTS);
 
         basicItem(ModItems.INFESTED_SCULK_HORSE_ARMOR.get());
-        
-        basicItem(ModBlocks.INFESTED_SCULK_DOOR.asItem());
 
-        saplingItem(ModBlocks.INFESTED_SCULK_SAPLING);
+
 
         withExistingParent(ModItems.SCULK_PARASITE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCULK_SENTINEL_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
@@ -108,6 +114,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent(ModItems.SCULK_SHADE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCULK_HORROR_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCULK_ZOMBIE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.SCULK_HUSK_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCULK_SKELETON_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCULK_CREEPER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCULK_SPIDER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));

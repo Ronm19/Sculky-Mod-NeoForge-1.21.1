@@ -25,51 +25,98 @@ public class OverworldRegion extends Region {
 
         VanillaParameterOverlayBuilder builder = new VanillaParameterOverlayBuilder();
 
-        // 🌲 SCULK FOREST (slightly wider so it competes)
+        // 🌲 SCULK FOREST — Core Infection Biome
         new ParameterUtils.ParameterPointListBuilder()
                 .temperature(ParameterUtils.Temperature.span(
                         ParameterUtils.Temperature.NEUTRAL,
-                        ParameterUtils.Temperature.NEUTRAL))
+                        ParameterUtils.Temperature.WARM))
+
+                // Avoid vanilla jungle overlap
                 .humidity(ParameterUtils.Humidity.span(
                         ParameterUtils.Humidity.NEUTRAL,
                         ParameterUtils.Humidity.HUMID))
+
                 .continentalness(ParameterUtils.Continentalness.span(
-                        ParameterUtils.Continentalness.MID_INLAND,
-                        ParameterUtils.Continentalness.FAR_INLAND))
+                        ParameterUtils.Continentalness.NEAR_INLAND,
+                        ParameterUtils.Continentalness.MID_INLAND))
+
+                // Mid-erosion = rolling terrain
                 .erosion(ParameterUtils.Erosion.span(
-                        ParameterUtils.Erosion.EROSION_2,
-                        ParameterUtils.Erosion.EROSION_5)) // was 2–4
+                        ParameterUtils.Erosion.EROSION_3,
+                        ParameterUtils.Erosion.EROSION_5))
+
                 .depth(ParameterUtils.Depth.SURFACE)
+
+                // Mid weirdness lane
                 .weirdness(ParameterUtils.Weirdness.span(
-                        ParameterUtils.Weirdness.LOW_SLICE_NORMAL_DESCENDING,
-                        ParameterUtils.Weirdness.LOW_SLICE_VARIANT_ASCENDING))
+                        ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING,
+                        ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING))
+
                 .build()
                 .forEach(point -> builder.add(point, ModBiomes.SCULK_FOREST));
 
 
-// 🏜️ SCULK WASTES (wider but still desert-only)
+        // 🌴 SCULK JUNGLE — Expanded but separated
         new ParameterUtils.ParameterPointListBuilder()
+
                 .temperature(ParameterUtils.Temperature.span(
-                        ParameterUtils.Temperature.HOT,
+                        ParameterUtils.Temperature.NEUTRAL,
                         ParameterUtils.Temperature.HOT))
+
                 .humidity(ParameterUtils.Humidity.span(
-                        ParameterUtils.Humidity.ARID,
-                        ParameterUtils.Humidity.ARID))
+                        ParameterUtils.Humidity.WET,
+                        ParameterUtils.Humidity.WET)) // exclusive lane
+
                 .continentalness(ParameterUtils.Continentalness.span(
-                ParameterUtils.Continentalness.MID_INLAND,
-                ParameterUtils.Continentalness.FAR_INLAND)) // FAR only
+                        ParameterUtils.Continentalness.MID_INLAND,
+                        ParameterUtils.Continentalness.FAR_INLAND))
+
                 .erosion(ParameterUtils.Erosion.span(
-                        ParameterUtils.Erosion.EROSION_2,
-                        ParameterUtils.Erosion.EROSION_5)) // narrow
-                // <-- widen one step
+                        ParameterUtils.Erosion.EROSION_5,
+                        ParameterUtils.Erosion.EROSION_6))
+
                 .depth(ParameterUtils.Depth.SURFACE)
+
                 .weirdness(ParameterUtils.Weirdness.span(
                         ParameterUtils.Weirdness.LOW_SLICE_NORMAL_DESCENDING,
                         ParameterUtils.Weirdness.LOW_SLICE_VARIANT_ASCENDING))
+
+                .build()
+                .forEach(point -> builder.add(point, ModBiomes.SCULK_JUNGLE));
+
+
+        // 🏜️ SCULK WASTES — Dry / Corrupted Variant
+        new ParameterUtils.ParameterPointListBuilder()
+                .temperature(ParameterUtils.Temperature.span(
+                        ParameterUtils.Temperature.NEUTRAL,
+                        ParameterUtils.Temperature.WARM))
+
+                // Opposite of Jungle
+                .humidity(ParameterUtils.Humidity.span(
+                        ParameterUtils.Humidity.ARID,
+                        ParameterUtils.Humidity.DRY))
+
+                .continentalness(ParameterUtils.Continentalness.span(
+                        ParameterUtils.Continentalness.MID_INLAND,
+                        ParameterUtils.Continentalness.FAR_INLAND))
+
+                // Rough terrain
+                .erosion(ParameterUtils.Erosion.span(
+                        ParameterUtils.Erosion.EROSION_0,
+                        ParameterUtils.Erosion.EROSION_2))
+
+                .depth(ParameterUtils.Depth.SURFACE)
+
+                // High weirdness = isolated biome
+                .weirdness(ParameterUtils.Weirdness.span(
+                        ParameterUtils.Weirdness.HIGH_SLICE_VARIANT_ASCENDING,
+                        ParameterUtils.Weirdness.HIGH_SLICE_VARIANT_DESCENDING))
+
                 .build()
                 .forEach(point -> builder.add(point, ModBiomes.SCULK_WASTES));
 
-        // ✅ THIS is what makes the region actually work:
+
+        // 🔧 Finalize region injection
         builder.build().forEach(mapper);
     }
 }

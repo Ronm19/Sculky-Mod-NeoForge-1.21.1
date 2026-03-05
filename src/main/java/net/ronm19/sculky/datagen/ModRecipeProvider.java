@@ -295,6 +295,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModBlocks.INFESTED_SCULK_BLOCK.get())
                 .unlockedBy("has_infested_sculk_block", has(ModBlocks.INFESTED_SCULK_BLOCK.get())).save(pRecipeOutput);
 
+
+        // ------------------------------ INFESTED SCULK SET --------------------------- //
+
+
         stairBuilder(ModBlocks.INFESTED_SCULK_STAIRS.get(), Ingredient.of(ModItems.SCULK_SHARD.get())).group("sculk_shard")
                 .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get())).save(pRecipeOutput);
 
@@ -319,6 +323,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         trapdoorBuilder(ModBlocks.INFESTED_SCULK_TRAPDOOR.get(), Ingredient.of(ModItems.SCULK_SHARD.get())).group("sculk_shard")
                 .unlockedBy("has_sculk_shard", has(ModItems.SCULK_SHARD.get())).save(pRecipeOutput);
 
+        // ------------------------------ BRICK SET --------------------------- //
+
 
         stairBuilder(ModBlocks.INFESTED_SCULK_BRICK_STAIRS.get(), Ingredient.of(ModBlocks.INFESTED_SCULK_BRICKS.get())).group("infested_sculk_bricks")
                 .unlockedBy("has_infested_sculk_bricks", has(ModBlocks.INFESTED_SCULK_BRICKS.get())).save(pRecipeOutput);
@@ -338,6 +344,36 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.INFESTED_SCULK_BRICK_WALL.get(), ModBlocks.INFESTED_SCULK_BRICKS.get());
 
+
+
+        // ------------------------------ JUNGLE SET --------------------------- //
+
+        stairBuilder(ModBlocks.SCULK_JUNGLE_STAIRS.get(), Ingredient.of(ModBlocks.SCULK_JUNGLE_PLANKS.get())).group("sculk_jungle_planks")
+                .unlockedBy("has_sculk_jungle_planks", has(ModBlocks.SCULK_JUNGLE_PLANKS.get())).save(pRecipeOutput);
+
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SCULK_JUNGLE_SLAB.get(), ModBlocks.SCULK_JUNGLE_PLANKS.get());
+
+        pressurePlate(pRecipeOutput, ModBlocks.SCULK_JUNGLE_PRESSURE_PLATE.get(), ModBlocks.SCULK_JUNGLE_PLANKS.get());
+
+        buttonBuilder(ModBlocks.SCULK_JUNGLE_BUTTON.get(), Ingredient.of(ModBlocks.SCULK_JUNGLE_PLANKS.get())).group("sculk_jungle_planks")
+                .unlockedBy("has_sculk_jungle_planks", has(ModBlocks.SCULK_JUNGLE_PLANKS.get())).save(pRecipeOutput);
+
+        fenceBuilder(ModBlocks.SCULK_JUNGLE_FENCE.get(), Ingredient.of(ModBlocks.SCULK_JUNGLE_PLANKS.get())).group("sculk_jungle_planks")
+                .unlockedBy("has_sculk_jungle_planks", has(ModBlocks.SCULK_JUNGLE_PLANKS.get())).save(pRecipeOutput);
+
+        fenceGateBuilder(ModBlocks.SCULK_JUNGLE_FENCE_GATE.get(), Ingredient.of(ModBlocks.SCULK_JUNGLE_PLANKS.get())).group("sculk_jungle_planks")
+                .unlockedBy("has_sculk_jungle_planks", has(ModBlocks.SCULK_JUNGLE_PLANKS.get())).save(pRecipeOutput);
+
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SCULK_JUNGLE_WALL.get(), ModBlocks.SCULK_JUNGLE_PLANKS.get());
+
+        doorBuilder(ModBlocks.SCULK_JUNGLE_DOOR.get(), Ingredient.of(ModBlocks.SCULK_JUNGLE_PLANKS.get())).group("sculk_jungle_planks")
+                .unlockedBy("has_sculk_jungle_planks", has(ModBlocks.SCULK_JUNGLE_PLANKS.get())).save(pRecipeOutput);
+
+        trapdoorBuilder(ModBlocks.SCULK_JUNGLE_TRAPDOOR.get(), Ingredient.of(ModBlocks.SCULK_JUNGLE_PLANKS.get())).group("sculk_jungle_planks")
+                .unlockedBy("has_sculk_jungle_planks", has(ModBlocks.SCULK_JUNGLE_PLANKS.get())).save(pRecipeOutput);
+
+        // ---------------------------- INFESTED SCULK  ----------------------------------- //
+
         // --- Planks from Logs tag (for both normal + stripped) ---
         planksFromLogs(pRecipeOutput, ModBlocks.INFESTED_SCULK_PLANKS.get(), ModBlocks.INFESTED_SCULK_LOG.get());
 
@@ -348,7 +384,19 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         woodFromLogs(pRecipeOutput, ModBlocks.STRIPPED_INFESTED_SCULK_WOOD.get(), ModBlocks.STRIPPED_INFESTED_SCULK_LOG.get());
 
 
-        // ---------------------- COOKING RECIPES ------------------------------------------- //
+        // ---------------------------- SCULK JUNGLE ----------------------------------- //
+
+        // --- Planks from Logs tag (for both normal + stripped) ---
+        planksFromLogs(pRecipeOutput, ModBlocks.SCULK_JUNGLE_PLANKS.get(), ModBlocks.SCULK_JUNGLE_LOG.get());
+
+        // --- Wood from Logs ---
+        woodFromLogs(pRecipeOutput, ModBlocks.SCULK_JUNGLE_WOOD.get(), ModBlocks.SCULK_JUNGLE_LOG.get());
+
+        // --- Stripped Wood from Stripped Logs (optional) ---
+        woodFromLogs(pRecipeOutput, ModBlocks.STRIPPED_SCULK_JUNGLE_WOOD.get(), ModBlocks.STRIPPED_SCULK_JUNGLE_LOG.get());
+
+
+        // ---------------------- COOKING RECIPES ----------------------------------- //
 
 
         oreSmelting(pRecipeOutput, SCULK_SMELTABLES, RecipeCategory.MISC, ModItems.SCULK_SHARD.get(), 0.25f, 200, "sculk_shard");

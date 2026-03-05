@@ -1,0 +1,15 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": [
+    "sculky:sculk_jungle",
+    "sculky:sculk_wastes",
+    "sculky:sculk_forest",
+    "minecraft:deep_dark"
+  ],
+  "spawners": {
+    "type": "sculky:sculk_husk",
+    "weight": 30,
+    "minCount": 2,
+    "maxCount": 5
+  }
+}

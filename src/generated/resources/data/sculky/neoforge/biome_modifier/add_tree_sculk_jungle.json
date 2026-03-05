@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "sculky:sculk_jungle",
+  "features": "sculky:infested_jungle_sculk_placed",
+  "step": "vegetal_decoration"
+}

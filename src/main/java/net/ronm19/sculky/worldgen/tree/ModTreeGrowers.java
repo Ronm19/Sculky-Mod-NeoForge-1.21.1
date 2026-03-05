@@ -9,4 +9,7 @@ import java.util.Optional;
 public class ModTreeGrowers {
     public static final TreeGrower INFESTED_SCULK = new TreeGrower(SculkyMod.MOD_ID + ":sculk",
             Optional.empty(), Optional.of(ModConfiguredFeatures.INFESTED_SCULK_KEY), Optional.empty());
+
+    public static final TreeGrower SCULK_JUNGLE = new TreeGrower(SculkyMod.MOD_ID + ":jungle",
+            Optional.empty(), Optional.of(ModConfiguredFeatures.SCULK_JUNGLE_KEY), Optional.empty());
 }

@@ -1,12 +1,12 @@
-// 1.21.1	2026-01-23T16:08:09.380258	Tags for minecraft:block mod id sculky
+// 1.21.1	2026-02-21T19:36:01.1722819	Tags for minecraft:block mod id sculky
 04092bcf9e29b68afeafcf254ff798bb06ca839b data/minecraft/tags/block/dirt.json
-8f72bbf23a81f16603d852c47683762485640a99 data/minecraft/tags/block/fences.json
-8252b2633f3d2dfda9ee0377500b96bdd0ff5d4b data/minecraft/tags/block/fence_gates.json
-6f4f0446898117f998b350c82b4f4134020ecce3 data/minecraft/tags/block/flowers.json
-53dd30f7cf65e9f95f2dedc4ca715a7024e2bdbc data/minecraft/tags/block/logs_that_burn.json
+b97849fc574d4be96203f88a1c24d6068169c8e2 data/minecraft/tags/block/fences.json
+c84693f1f7096d87151ebef0cdc51d5ab7ee8805 data/minecraft/tags/block/fence_gates.json
+5c57aa39e47ebdf60b095f696ef49fb2c58d00bc data/minecraft/tags/block/flowers.json
+6d4996038371478fd37467f7140f1ab71a8a6065 data/minecraft/tags/block/logs_that_burn.json
 d2fd6c2d3e11e67dd13e2e67b3d15dba4f0d32ac data/minecraft/tags/block/mineable/pickaxe.json
 5860ce53bfffd324bdf7df9e816e89232048e13a data/minecraft/tags/block/needs_iron_tool.json
 04625441a129a242b63124acfd158bc636722d20 data/minecraft/tags/block/sand.json
 37bf330890479d52c4bab35e072598856e0b1634 data/minecraft/tags/block/sculk_replaceable.json
-c49198ba21349738c2cde01442e700145230563c data/minecraft/tags/block/walls.json
+2278ff423094706734c8feced6521eeb67b25162 data/minecraft/tags/block/walls.json
 b8b2e6bda9e63ac5acfe4e5c12d7181dbb767a4a data/sculky/tags/block/sculk_spreadable.json

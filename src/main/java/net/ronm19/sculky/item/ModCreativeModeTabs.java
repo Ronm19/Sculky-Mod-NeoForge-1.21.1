@@ -68,7 +68,7 @@ public class ModCreativeModeTabs {
             CREATIVE_MODE_TABS.register("sculky_blocks_tab", () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.sculky.sculky_blocks_tab"))
                     .icon(() -> new ItemStack(ModItems.RAW_SCULK_SHARD.get()))
-                    .icon(() -> new ItemStack(ModBlocks.INFESTED_SCULK_BLOCK))
+                    .icon(() -> new ItemStack(ModBlocks.INFESTED_SCULK_GRASS_BLOCK))
                     .withTabsBefore(ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "sculky_items_tab"))
                     .displayItems((pParameters, pOutput) -> {
 
@@ -78,30 +78,36 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.SCULK_ORE);
                         pOutput.accept(ModBlocks.DEEPSLATE_SCULK_ORE);
 
+                        pOutput.accept(ModBlocks.SCULKBLOOM);
+                        pOutput.accept(ModBlocks.ECHOBLOOM);
+
                         pOutput.accept(ModBlocks.INFESTED_SCULK_STAIRS);
                         pOutput.accept(ModBlocks.INFESTED_SCULK_SLAB);
-
-                        pOutput.accept(ModBlocks.INFESTED_SCULK_BRICK_STAIRS);
-                        pOutput.accept(ModBlocks.INFESTED_SCULK_BRICK_SLAB);
-
-                        pOutput.accept(ModBlocks.SCULKBLOOM);
-
+                        pOutput.accept(ModBlocks.INFESTED_SCULK_DOOR);
+                        pOutput.accept(ModBlocks.INFESTED_SCULK_TRAPDOOR);
                         pOutput.accept(ModBlocks.INFESTED_SCULK_PRESSURE_PLATE);
                         pOutput.accept(ModBlocks.INFESTED_SCULK_BUTTON);
-
-                        pOutput.accept(ModBlocks.INFESTED_SCULK_BRICK_PRESSURE_PLATE);
-                        pOutput.accept(ModBlocks.INFESTED_SCULK_BRICK_BUTTON);
-
                         pOutput.accept(ModBlocks.INFESTED_SCULK_FENCE);
                         pOutput.accept(ModBlocks.INFESTED_SCULK_FENCE_GATE);
                         pOutput.accept(ModBlocks.INFESTED_SCULK_WALL);
 
+                        pOutput.accept(ModBlocks.INFESTED_SCULK_BRICK_STAIRS);
+                        pOutput.accept(ModBlocks.INFESTED_SCULK_BRICK_SLAB);
                         pOutput.accept(ModBlocks.INFESTED_SCULK_BRICK_FENCE);
                         pOutput.accept(ModBlocks.INFESTED_SCULK_BRICK_FENCE_GATE);
                         pOutput.accept(ModBlocks.INFESTED_SCULK_BRICK_WALL);
+                        pOutput.accept(ModBlocks.INFESTED_SCULK_BRICK_PRESSURE_PLATE);
+                        pOutput.accept(ModBlocks.INFESTED_SCULK_BRICK_BUTTON);
 
-                        pOutput.accept(ModBlocks.INFESTED_SCULK_DOOR);
-                        pOutput.accept(ModBlocks.INFESTED_SCULK_TRAPDOOR);
+                        pOutput.accept(ModBlocks.SCULK_JUNGLE_STAIRS);
+                        pOutput.accept(ModBlocks.SCULK_JUNGLE_SLAB);
+                        pOutput.accept(ModBlocks.SCULK_JUNGLE_DOOR);
+                        pOutput.accept(ModBlocks.SCULK_JUNGLE_TRAPDOOR);
+                        pOutput.accept(ModBlocks.SCULK_JUNGLE_PRESSURE_PLATE);
+                        pOutput.accept(ModBlocks.SCULK_JUNGLE_BUTTON);
+                        pOutput.accept(ModBlocks.SCULK_JUNGLE_FENCE);
+                        pOutput.accept(ModBlocks.SCULK_JUNGLE_FENCE_GATE);
+                        pOutput.accept(ModBlocks.SCULK_JUNGLE_WALL);
 
                         pOutput.accept(ModBlocks.INFESTED_SCULK_GRASS_BLOCK);
                         pOutput.accept(ModBlocks.INFESTED_SCULK_DIRT_BLOCK);
@@ -116,6 +122,14 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.INFESTED_SCULK_PLANKS);
                         pOutput.accept(ModBlocks.INFESTED_SCULK_LEAVES);
                         pOutput.accept(ModBlocks.INFESTED_SCULK_SAPLING);
+
+                        pOutput.accept(ModBlocks.SCULK_JUNGLE_LOG);
+                        pOutput.accept(ModBlocks.SCULK_JUNGLE_WOOD);
+                        pOutput.accept(ModBlocks.STRIPPED_SCULK_JUNGLE_LOG);
+                        pOutput.accept(ModBlocks.STRIPPED_SCULK_JUNGLE_WOOD);
+                        pOutput.accept(ModBlocks.SCULK_JUNGLE_PLANKS);
+                        pOutput.accept(ModBlocks.SCULK_JUNGLE_LEAVES);
+                        pOutput.accept(ModBlocks.SCULK_JUNGLE_SAPLING);
 
                     }).build());
 
@@ -132,6 +146,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.SCULK_SHADE_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_HORROR_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_ZOMBIE_SPAWN_EGG);
+                        pOutput.accept(ModItems.SCULK_HUSK_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_SKELETON_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_CREEPER_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_SPIDER_SPAWN_EGG);

@@ -48,47 +48,98 @@ public class ModBlocks {
     public static final DeferredBlock<Block> DEEPSLATE_SCULK_ORE = registerBlock("deepslate_sculk_ore",
             () -> new DropExperienceBlock(UniformInt.of(2, 7),BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().sound(SoundType.SCULK)));
 
+
+    // ------------------------------------- INFESTED SCULK NON-BLOCKS ------------------------------------ //
+
+
     public static final DeferredBlock<Block> INFESTED_SCULK_STAIRS = registerBlock("infested_sculk_stairs",
             () -> new StairBlock(ModBlocks.INFESTED_SCULK_BLOCK.get().defaultBlockState(),
                     BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SCULK)));
+
     public static final DeferredBlock<Block> INFESTED_SCULK_SLAB = registerBlock("infested_sculk_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SCULK)));
 
     public static final DeferredBlock<Block> INFESTED_SCULK_PRESSURE_PLATE = registerBlock("infested_sculk_pressure_plate",
             () -> new PressurePlateBlock(BlockSetType.CRIMSON, BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SCULK)));
+
     public static final DeferredBlock<Block> INFESTED_SCULK_BUTTON = registerBlock("infested_sculk_button",
             () -> new ButtonBlock(BlockSetType.CRIMSON, 10, BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SCULK).noCollission()));
 
     public static final DeferredBlock<Block> INFESTED_SCULK_FENCE = registerBlock("infested_sculk_fence",
             () -> new FenceBlock(BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SCULK)));
+
     public static final DeferredBlock<Block> INFESTED_SCULK_FENCE_GATE = registerBlock("infested_sculk_fence_gate",
             () -> new FenceGateBlock(WoodType.CRIMSON, BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SCULK)));
+
     public static final DeferredBlock<Block> INFESTED_SCULK_WALL = registerBlock("infested_sculk_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.SCULK)));
 
     public static final DeferredBlock<Block> INFESTED_SCULK_DOOR = registerBlock("infested_sculk_door",
             () -> new DoorBlock(BlockSetType.CRIMSON, BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SCULK).noOcclusion()));
+
     public static final DeferredBlock<Block> INFESTED_SCULK_TRAPDOOR = registerBlock("infested_sculk_trapdoor",
             () -> new TrapDoorBlock(BlockSetType.CRIMSON, BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SCULK).noOcclusion()));
+
+    // ------------------------------------- INFESTED SCULK BRICK NON-BLOCKS ------------------------------------ //
 
 
     public static final DeferredBlock<Block> INFESTED_SCULK_BRICK_STAIRS = registerBlock("infested_sculk_brick_stairs",
             () -> new StairBlock(ModBlocks.INFESTED_SCULK_BLOCK.get().defaultBlockState(),
                     BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SCULK)));
+
     public static final DeferredBlock<Block> INFESTED_SCULK_BRICK_SLAB = registerBlock("infested_sculk_brick_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SCULK)));
 
     public static final DeferredBlock<Block> INFESTED_SCULK_BRICK_PRESSURE_PLATE = registerBlock("infested_sculk_brick_pressure_plate",
             () -> new PressurePlateBlock(BlockSetType.IRON, BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SCULK)));
+
     public static final DeferredBlock<Block> INFESTED_SCULK_BRICK_BUTTON = registerBlock("infested_sculk_brick_button",
             () -> new ButtonBlock(BlockSetType.IRON, 10, BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SCULK).noCollission()));
 
     public static final DeferredBlock<Block> INFESTED_SCULK_BRICK_FENCE = registerBlock("infested_sculk_brick_fence",
             () -> new FenceBlock(BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SCULK)));
+
     public static final DeferredBlock<Block> INFESTED_SCULK_BRICK_FENCE_GATE = registerBlock("infested_sculk_brick_fence_gate",
             () -> new FenceGateBlock(WoodType.CRIMSON, BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SCULK)));
+
     public static final DeferredBlock<Block> INFESTED_SCULK_BRICK_WALL = registerBlock("infested_sculk_brick_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.SCULK)));
+
+
+    // ------------------------------------- JUNGLE NON-BLOCKS ------------------------------------ //
+
+
+    public static final DeferredBlock<Block> SCULK_JUNGLE_STAIRS = registerBlock("sculk_jungle_stairs",
+            () -> new StairBlock(ModBlocks.INFESTED_SCULK_BRICKS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SCULK)));
+
+    public static final DeferredBlock<Block> SCULK_JUNGLE_SLAB = registerBlock("sculk_jungle_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SCULK)));
+
+    public static final DeferredBlock<Block> SCULK_JUNGLE_PRESSURE_PLATE = registerBlock("sculk_jungle_pressure_plate",
+            () -> new PressurePlateBlock(BlockSetType.JUNGLE, BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SCULK)));
+
+    public static final DeferredBlock<Block> SCULK_JUNGLE_BUTTON = registerBlock("sculk_jungle_button",
+            () -> new ButtonBlock(BlockSetType.JUNGLE, 10, BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SCULK).noCollission()));
+
+    public static final DeferredBlock<Block> SCULK_JUNGLE_FENCE = registerBlock("sculk_jungle_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SCULK)));
+
+    public static final DeferredBlock<Block> SCULK_JUNGLE_FENCE_GATE = registerBlock("sculk_jungle_fence_gate",
+            () -> new FenceGateBlock(WoodType.JUNGLE, BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SCULK)));
+
+    public static final DeferredBlock<Block> SCULK_JUNGLE_WALL = registerBlock("sculk_jungle_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.SCULK)));
+
+    public static final DeferredBlock<Block> SCULK_JUNGLE_DOOR = registerBlock("sculk_jungle_door",
+            () -> new DoorBlock(BlockSetType.JUNGLE, BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SCULK).noOcclusion()));
+
+    public static final DeferredBlock<Block> SCULK_JUNGLE_TRAPDOOR = registerBlock("sculk_jungle_trapdoor",
+            () -> new TrapDoorBlock(BlockSetType.JUNGLE, BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SCULK).noOcclusion()));
+
+
+    // ------------------------------------- ETC ------------------------------------ //
+
 
     public static final DeferredBlock<Block> TOMATO_SCULK_CROP = BLOCKS.register("tomato_sculk_crop",
             () -> new TomatoSculkCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT)));
@@ -108,8 +159,16 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> SCULKBLOOM = registerBlock("sculkbloom",
             () -> new FlowerBlock(MobEffects.DARKNESS, 12, BlockBehaviour.Properties.ofFullCopy(Blocks.WITHER_ROSE)));
+
     public static final DeferredBlock<Block> POTTED_SCULKBLOOM = BLOCKS.register("potted_sculkbloom",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), SCULKBLOOM, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_WITHER_ROSE)));
+
+
+    public static final DeferredBlock<Block> ECHOBLOOM = registerBlock("echobloom",
+            () -> new FlowerBlock(MobEffects.DAMAGE_RESISTANCE, 15, BlockBehaviour.Properties.ofFullCopy(Blocks.WITHER_ROSE)));
+
+    public static final DeferredBlock<Block> POTTED_ECHOBLOOM = BLOCKS.register("potted_echobloom",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ECHOBLOOM, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_WITHER_ROSE)));
 
     public static final DeferredBlock<Block> INFESTED_SCULK_LOG = registerBlock("infested_sculk_log",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG).sound(SoundType.SCULK)));
@@ -158,6 +217,56 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> INFESTED_SCULK_SAPLING = registerBlock("infested_sculk_sapling",
             () -> new ModSaplingBlock(ModTreeGrowers.INFESTED_SCULK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING).sound(SoundType.SCULK)));
+
+
+    public static final DeferredBlock<Block> SCULK_JUNGLE_LOG = registerBlock("sculk_jungle_log",
+            () -> new ModJungleFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.JUNGLE_LOG).sound(SoundType.SCULK)));
+    public static final DeferredBlock<Block> SCULK_JUNGLE_WOOD = registerBlock("sculk_jungle_wood",
+            () -> new ModJungleFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.JUNGLE_WOOD).sound(SoundType.SCULK)));
+    public static final DeferredBlock<Block> STRIPPED_SCULK_JUNGLE_LOG = registerBlock("stripped_sculk_jungle_log",
+            () -> new ModJungleFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_JUNGLE_LOG).sound(SoundType.SCULK)));
+    public static final DeferredBlock<Block> STRIPPED_SCULK_JUNGLE_WOOD = registerBlock("stripped_sculk_jungle_wood",
+            () -> new ModJungleFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_JUNGLE_WOOD).sound(SoundType.SCULK)));
+
+    public static final DeferredBlock<Block> SCULK_JUNGLE_PLANKS = registerBlock("sculk_jungle_planks",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.JUNGLE_PLANKS).sound(SoundType.SCULK)) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 20;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 5;
+                }
+            });
+
+    public static final DeferredBlock<Block> SCULK_JUNGLE_LEAVES = registerBlock("sculk_jungle_leaves",
+            () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.JUNGLE_LEAVES).sound(SoundType.SCULK)) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 60;
+                }
+
+                @Override
+                public int getFireSpreadSpeed( BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 30;
+                }
+            });
+
+    public static final DeferredBlock<Block> SCULK_JUNGLE_SAPLING = registerBlock("sculk_jungle_sapling",
+            () -> new ModSaplingBlock(ModTreeGrowers.SCULK_JUNGLE, BlockBehaviour.Properties.ofFullCopy(Blocks.JUNGLE_SAPLING).sound(SoundType.SCULK)));
+
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

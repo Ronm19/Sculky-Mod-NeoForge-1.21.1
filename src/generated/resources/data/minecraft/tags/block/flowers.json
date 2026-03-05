@@ -1,6 +1,8 @@
 {
   "values": [
     "sculky:sculkbloom",
-    "sculky:potted_sculkbloom"
+    "sculky:potted_sculkbloom",
+    "sculky:echobloom",
+    "sculky:potted_echobloom"
   ]
 }

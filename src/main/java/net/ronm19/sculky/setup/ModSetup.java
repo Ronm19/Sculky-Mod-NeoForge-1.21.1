@@ -4,12 +4,14 @@ import net.minecraft.world.entity.EntityType;
 import net.neoforged.bus.api.IEventBus;
 import net.ronm19.sculky.api.LightningTransformRegistry;
 import net.ronm19.sculky.transform.HorseToSculkHorseTransform;
+import net.ronm19.sculky.transform.HuskToSculkHuskTransform;
 
 public class ModSetup {
 
     public static void register(IEventBus modEventBus ) {
 
         LightningTransformRegistry.register(EntityType.HORSE, new HorseToSculkHorseTransform());
+        LightningTransformRegistry.register(EntityType.HUSK, new HuskToSculkHuskTransform());
 
     }
 }

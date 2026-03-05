@@ -21,11 +21,17 @@ public class ModSurfaceRules {
     // private static final SurfaceRules.RuleSource SCULK_SANDSTONE =
     //         makeStateRule(ModBlocks.SCULK_SANDSTONE.get());
 
+
+    // Jungle blocks
+    private static final SurfaceRules.RuleSource INFESTED_SCULK_PODZOL_BLOCK = makeStateRule(ModBlocks.INFESTED_SCULK_PODZOL_BLOCK.get());
+    private static final SurfaceRules.RuleSource INFESTED_SCULK_ROOTED_DIRT_BLOCK = makeStateRule(ModBlocks.INFESTED_SCULK_ROOTED_DIRT_BLOCK.get());
+
     /** Call this one in SurfaceRuleManager. */
     public static SurfaceRules.RuleSource makeOverworldRules() {
         return SurfaceRules.sequence(
                 makeSculkForestRules(),
-                makeSculkWastesRules()
+                makeSculkWastesRules(),
+                makeSculkJungleRules()
         );
     }
 
@@ -48,6 +54,19 @@ public class ModSurfaceRules {
                 )
         );
     }
+
+    public static SurfaceRules.RuleSource makeSculkJungleRules() {
+        return SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SCULK_JUNGLE),
+                SurfaceRules.sequence(
+                        SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, INFESTED_SCULK_PODZOL_BLOCK),
+                        SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, INFESTED_SCULK_ROOTED_DIRT_BLOCK),
+                        INFESTED_SCULK_ROOTED_DIRT_BLOCK // fallback ONLY inside this biome
+                )
+        );
+    }
+
+
+
 
     private static SurfaceRules.RuleSource makeStateRule(Block block) {
         return SurfaceRules.state(block.defaultBlockState());

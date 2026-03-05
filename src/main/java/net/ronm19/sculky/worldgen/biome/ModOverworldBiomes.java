@@ -136,6 +136,65 @@ public class ModOverworldBiomes {
     }
 
 
+    // 🌲 SCULK JUNGLE
+    public static Biome sculkJungle(HolderGetter<PlacedFeature> placedFeatureGetter,
+                                    HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+
+        // Keep spawns lighter than forest (wastes = open, harsher, less packed)
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_ZOMBIE.get(), 12, 1, 3));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_SKELETON.get(), 10, 1, 3));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_CREEPER.get(), 8, 1, 2));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_SPIDER.get(), 8, 1, 2));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_HUSK.get(), 12, 2, 5));
+
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(placedFeatureGetter, carverGetter);
+
+        // ✅ Vanilla-safe base gen (won’t break anything)
+        BiomeDefaultFeatures.addDefaultCarversAndLakes(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultCrystalFormations(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultMonsterRoom(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+
+        // ✅ Add your ore safely (resolve from placedFeatureGetter to avoid key/type issues)
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, placedFeatureGetter.getOrThrow(ModPlacedFeatures.INFESTED_SCULK_ORE_PLACED_KEY));
+
+        return new Biome.BiomeBuilder()
+                // Jungle = humid + rainy
+                .hasPrecipitation(true)
+                .temperature(0.85F)   // warm but not desert
+                .downfall(0.9F)       // heavy humidity
+
+                .specialEffects(new BiomeSpecialEffects.Builder()
+                        // 🌊 Water — deep infected tone
+                        .waterColor(0x0b1e2b)
+                        .waterFogColor(0x051017)
+                        // 🌫️ Fog — bioluminescent jungle haze
+                        .fogColor(0x10232c)
+                        // Sky slightly dimmed but still natural
+                        .skyColor(calculateSkyColor(0.85F))
+                        // 🌿 Grass / foliage overrides
+                        // Cyan-teal infected jungle palette
+                        .grassColorOverride(0x2f7a67)
+                        .foliageColorOverride(0x3aa17e)
+                        // ✨ Ambient particles — increase slightly for jungle density
+                        .ambientParticle(new AmbientParticleSettings(ParticleTypes.SCULK_SOUL, 0.0095f))
+                        // 🔊 Soundscape
+                        .ambientLoopSound(SoundEvents.AMBIENT_WARPED_FOREST_LOOP)
+                        .ambientMoodSound(new AmbientMoodSettings(SoundEvents.AMBIENT_CAVE, 4000, 10, 2.0D))
+                        // 🎵 Music — still deep dark themed
+                        .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_DEEP_DARK))
+                        .build())
+
+                .mobSpawnSettings(spawnBuilder.build())
+                .generationSettings(biomeBuilder.build())
+                .build();
+
+    }
+
+
 
     protected static int calculateSkyColor(float temperature) {
         float temp = temperature / 3.0F;

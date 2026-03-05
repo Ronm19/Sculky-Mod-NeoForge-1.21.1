@@ -65,6 +65,7 @@ public class SculkyMod {
         ModSetup.register(modEventBus);
 
 
+
         NeoForge.EVENT_BUS.register(this);
 
 
@@ -87,6 +88,12 @@ public class SculkyMod {
                     ItemBlockRenderTypes.setRenderLayer(
                             ModBlocks.INFESTED_SCULK_LEAVES.get(),
                             RenderType.cutoutMipped());
+        });
+
+        event.enqueueWork(() -> {
+            ItemBlockRenderTypes.setRenderLayer(
+                    ModBlocks.SCULK_JUNGLE_LEAVES.get(),
+                    RenderType.cutoutMipped());
         });
     }
 

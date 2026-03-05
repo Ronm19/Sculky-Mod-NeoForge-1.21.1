@@ -106,6 +106,7 @@ public class ModEvents {
         event.put(ModEntities.SCULK_SHADE.get(), SculkShadeEntity.createSculkShadeAttributes().build());
         event.put(ModEntities.SCULK_HORROR.get(), SculkHorrorEntity.createSculkHorrorAttributes().build());
         event.put(ModEntities.SCULK_ZOMBIE.get(), SculkZombieEntity.createSculkZombieAttributes().build());
+        event.put(ModEntities.SCULK_HUSK.get(), SculkHuskEntity.createSculkHuskAttributes().build());
         event.put(ModEntities.SCULK_SKELETON.get(), SculkSkeletonEntity.createSculkSkeletonAttributes().build());
         event.put(ModEntities.SCULK_CREEPER.get(), SculkCreeperEntity.createSculkCreeperAttributes().build());
         event.put(ModEntities.SCULK_SPIDER.get(), SculkSpiderEntity.createSculkSpiderAttributes().build());
@@ -161,6 +162,12 @@ public class ModEvents {
                 RegisterSpawnPlacementsEvent.Operation.REPLACE);
 
         event.register(ModEntities.SCULK_ZOMBIE.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster :: checkMobSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+
+        event.register(ModEntities.SCULK_HUSK.get(),
                 SpawnPlacementTypes.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 Monster :: checkMobSpawnRules,

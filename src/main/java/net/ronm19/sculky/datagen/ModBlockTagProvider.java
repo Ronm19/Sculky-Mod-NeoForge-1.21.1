@@ -41,13 +41,19 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
         this.tag(BlockTags.FLOWERS)
                         .add(ModBlocks.SCULKBLOOM.get())
-                        .add(ModBlocks.POTTED_SCULKBLOOM.get());
+                        .add(ModBlocks.POTTED_SCULKBLOOM.get())
+                        .add(ModBlocks.ECHOBLOOM.get())
+                        .add(ModBlocks.POTTED_ECHOBLOOM.get());
 
         this.tag(BlockTags.LOGS_THAT_BURN)
                 .add(ModBlocks.INFESTED_SCULK_LOG.get())
                 .add(ModBlocks.INFESTED_SCULK_WOOD.get())
                 .add(ModBlocks.STRIPPED_INFESTED_SCULK_LOG.get())
-                .add(ModBlocks.STRIPPED_INFESTED_SCULK_WOOD.get());
+                .add(ModBlocks.STRIPPED_INFESTED_SCULK_WOOD.get())
+                .add(ModBlocks.SCULK_JUNGLE_LOG.get())
+                .add(ModBlocks.SCULK_JUNGLE_WOOD.get())
+                .add(ModBlocks.STRIPPED_SCULK_JUNGLE_LOG.get())
+                .add(ModBlocks.STRIPPED_SCULK_JUNGLE_WOOD.get());
 
         this.tag(BlockTags.DIRT)
                         .add(ModBlocks.INFESTED_SCULK_GRASS_BLOCK.get())
@@ -57,14 +63,17 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
         tag(BlockTags.FENCES)
                 .add(ModBlocks.INFESTED_SCULK_BRICK_FENCE.get())
+                .add(ModBlocks.SCULK_JUNGLE_FENCE.get())
                 .add(ModBlocks.INFESTED_SCULK_FENCE.get());
 
         tag(BlockTags.FENCE_GATES)
                 .add(ModBlocks.INFESTED_SCULK_BRICK_FENCE_GATE.get())
+                .add(ModBlocks.SCULK_JUNGLE_FENCE_GATE.get())
                 .add(ModBlocks.INFESTED_SCULK_FENCE_GATE.get());
 
         tag(BlockTags.WALLS)
                 .add(ModBlocks.INFESTED_SCULK_BRICK_WALL.get())
+                .add(ModBlocks.SCULK_JUNGLE_WALL.get())
                 .add(ModBlocks.INFESTED_SCULK_WALL.get());
 
         tag(BlockTags.SAND)

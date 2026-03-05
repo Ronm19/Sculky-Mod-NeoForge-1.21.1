@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "sculky:infection"
+    "sculky:infection",
+    "sculky:sculk_speed"
   ]
 }

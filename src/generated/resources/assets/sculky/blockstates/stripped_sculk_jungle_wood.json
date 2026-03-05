@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "sculky:block/stripped_sculk_jungle_wood_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "sculky:block/stripped_sculk_jungle_wood"
+    },
+    "axis=z": {
+      "model": "sculky:block/stripped_sculk_jungle_wood_horizontal",
+      "x": 90
+    }
+  }
+}

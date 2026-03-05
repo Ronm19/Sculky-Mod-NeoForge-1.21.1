@@ -43,6 +43,10 @@ public class ModEntities {
             ENTITY_TYPES.register("sculk_zombie", () -> EntityType.Builder.of(SculkZombieEntity ::new, MobCategory.MONSTER)
                     .sized(0.6F, 1.95F).eyeHeight(1.74F).build("sculk_zombie"));
 
+    public static final Supplier<EntityType<SculkHuskEntity>> SCULK_HUSK =
+            ENTITY_TYPES.register("sculk_husk", () -> EntityType.Builder.of(SculkHuskEntity ::new, MobCategory.MONSTER)
+                    .sized(0.6F, 1.95F).eyeHeight(1.74F).build("sculk_husk"));
+
     public static final Supplier<EntityType<SculkSkeletonEntity>> SCULK_SKELETON =
             ENTITY_TYPES.register("sculk_skeleton", () -> EntityType.Builder.of(SculkSkeletonEntity ::new, MobCategory.MONSTER)
                     .sized(0.6F, 1.99F).eyeHeight(1.74F).build("sculk_skeleton"));

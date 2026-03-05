@@ -8,6 +8,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.ronm19.sculky.effect.ModEffects;
+import org.jetbrains.annotations.NotNull;
 
 public class SculkBlock extends Block {
 
@@ -25,7 +26,7 @@ public class SculkBlock extends Block {
     }
 
     protected boolean shouldReact(Level level) {
-        return level.random.nextFloat() < 0.15F; // subtle & vanilla-like
+        return !(level.random.nextFloat() < 0.15F); // subtle & vanilla-like
     }
 
     protected void spawnPulse(Level level, BlockPos pos) {
@@ -45,7 +46,7 @@ public class SculkBlock extends Block {
     @Override
     public void stepOn(Level level, BlockPos pos, BlockState state, Entity entity) {
         if (!level.isClientSide) return;
-        if (!shouldReact(level)) return;
+        if (shouldReact(level)) return;
 
         if (isInfected(entity)) {
             spawnPulse(level, pos);
@@ -56,7 +57,7 @@ public class SculkBlock extends Block {
 
     public void entityInside(Level level, BlockPos pos, BlockState state, Entity entity) {
         if (!level.isClientSide) return;
-        if (!shouldReact(level)) return;
+        if (shouldReact(level)) return;
 
         if (isInfected(entity)) {
             spawnPulse(level, pos);
@@ -66,7 +67,7 @@ public class SculkBlock extends Block {
     }
 
     @Override
-    public void animateTick(BlockState state, Level level, BlockPos pos, net.minecraft.util.RandomSource random) {
+    public void animateTick(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, net.minecraft.util.RandomSource random) {
         if (random.nextFloat() < 0.03F) {
             spawnPulse(level, pos);
         }

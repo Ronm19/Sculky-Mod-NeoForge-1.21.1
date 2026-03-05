@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_side",
+  "textures": {
+    "texture": "sculky:block/sculk_jungle_planks"
+  }
+}

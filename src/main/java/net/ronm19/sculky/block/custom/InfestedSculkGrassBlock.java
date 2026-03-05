@@ -10,11 +10,10 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.lighting.LightEngine;
 import net.ronm19.sculky.block.ModBlocks;
-import org.checkerframework.checker.units.qual.C;
+import org.jetbrains.annotations.NotNull;
 
 public class InfestedSculkGrassBlock extends SpreadingSnowyDirtBlock implements BonemealableBlock {
 
@@ -31,7 +30,7 @@ public class InfestedSculkGrassBlock extends SpreadingSnowyDirtBlock implements 
     }
 
     @Override
-    protected MapCodec<? extends SpreadingSnowyDirtBlock> codec() {
+    protected @NotNull MapCodec<? extends SpreadingSnowyDirtBlock> codec() {
         return CODEC;
     }
 
@@ -40,17 +39,17 @@ public class InfestedSculkGrassBlock extends SpreadingSnowyDirtBlock implements 
     /* ============================= */
 
     @Override
-    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state) {
+    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, @NotNull BlockState state) {
         return level.getBlockState(pos.above()).isAir();
     }
 
     @Override
-    public boolean isBonemealSuccess(Level level, RandomSource random, BlockPos pos, BlockState state) {
+    public boolean isBonemealSuccess(@NotNull Level level, @NotNull RandomSource random, @NotNull BlockPos pos, @NotNull BlockState state) {
         return true;
     }
 
     @Override
-    public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
+    public void performBonemeal(ServerLevel level, @NotNull RandomSource random, BlockPos pos, @NotNull BlockState state) {
         if (level.isEmptyBlock(pos.above())) {
             level.setBlockAndUpdate(
                     pos.above(),

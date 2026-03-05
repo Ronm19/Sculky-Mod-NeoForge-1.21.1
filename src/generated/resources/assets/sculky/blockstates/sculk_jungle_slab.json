@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "sculky:block/sculk_jungle_slab"
+    },
+    "type=double": {
+      "model": "sculky:block/sculk_jungle_planks"
+    },
+    "type=top": {
+      "model": "sculky:block/sculk_jungle_slab_top"
+    }
+  }
+}
