@@ -1,0 +1,13 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": [
+    "sculky:sculk_forest",
+    "sculky:sculk_jungle"
+  ],
+  "spawners": {
+    "type": "sculky:hollow_horn",
+    "weight": 12,
+    "minCount": 1,
+    "maxCount": 3
+  }
+}

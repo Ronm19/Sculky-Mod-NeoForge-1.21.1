@@ -89,6 +89,7 @@ public class ModEvents {
         event.registerLayerDefinition(ModModelLayers.SCULK_SPIDER, SculkSpiderModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SCULK_TAIL, SculkTailModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SCULK_SANDSNARE, SculkSandsnareModel :: createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.SALVATORE, SalvatoreModel :: createBodyLayer);
 
         event.registerLayerDefinition(ModModelLayers.SCULK_WOLF, SculkWolfModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SCULK_FOX, SculkFoxModel :: createBodyLayer);
@@ -96,6 +97,8 @@ public class ModEvents {
         event.registerLayerDefinition(ModModelLayers.SCULK_WOLF_ALPHA, SculkWolfAlphaModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SCULK_BAT, SculkBatModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SCULK_BEETLE, SculkBeetleModel :: createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.HOLLOW_HORN, HollowhornModel :: createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.INFESTED_EYE, InfestedEyeModel :: createBodyLayer);
     }
 
     @SubscribeEvent
@@ -114,6 +117,8 @@ public class ModEvents {
         event.put(ModEntities.SCULK_ENDERMAN.get(), SculkEndermanEntity.createSculkEndermanAttributes().build());
         event.put(ModEntities.SCULK_SANDSNARE.get(), SculkSandsnareEntity.createSculkSandsnareAttributes().build());
         event.put(ModEntities.SCULKMITE.get(), SculkmiteEntity.createSculkmiteAttributes().build());
+        event.put(ModEntities.SALVATORE.get(), SalvatoreEntity.createSalvatoreAttributes().build());
+        event.put(ModEntities.SCULK_PHANTOM.get(), SculkPhantomEntity.createSculkPhantomAttributes().build());
 
         event.put(ModEntities.SCULK_WOLF.get(), SculkWolfEntity.createsSculkWolfAttributes().build());
         event.put(ModEntities.SCULK_WOLF_ALPHA.get(), SculkWolfAlphaEntity.createSculkWolfAlphaAttributes().build());
@@ -122,6 +127,8 @@ public class ModEvents {
         event.put(ModEntities.SCULK_RAT.get(), SculkRatEntity.createSculkRatAttributes().build());
         event.put(ModEntities.SCULK_BAT.get(), SculkBatEntity.createSculkBatAttributes().build());
         event.put(ModEntities.SCULK_BEETLE.get(), SculkBeetleEntity.createSculkBeetleAttributes().build());
+        event.put(ModEntities.HOLLOW_HORN.get(), HollowhornEntity.createHollowhornAttributes().build());
+        event.put(ModEntities.INFESTED_EYE.get(), InfestedEyeEntity.createInfestedEyeAttributes().build());
 
     }
 
@@ -210,6 +217,14 @@ public class ModEvents {
                 Monster::checkMobSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.REPLACE);
 
+        event.register(ModEntities.SALVATORE.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMobSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+
+
+
 
         // ---------------------------------------------------------
         //                NEUTRAL / TAMABLE-TYPE ENTITIES
@@ -241,6 +256,12 @@ public class ModEvents {
                 RegisterSpawnPlacementsEvent.Operation.REPLACE);
 
         event.register(ModEntities.SCULK_RAT.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal :: checkMobSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+
+        event.register(ModEntities.HOLLOW_HORN.get(),
                 SpawnPlacementTypes.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 Animal :: checkMobSpawnRules,

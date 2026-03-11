@@ -171,8 +171,6 @@ public class ModItems {
             () -> new DeferredSpawnEggItem(ModEntities.SCULK_SANDSNARE, 0x0A0F1C, 0x2AA6A6,
                     new Item.Properties()));
 
-
-
     public static final DeferredItem<Item> SCULK_ENDERMAN_SPAWN_EGG = ITEMS.register("sculk_enderman_spawn_egg",
             () -> new DeferredSpawnEggItem(ModEntities.SCULK_ENDERMAN,  0x0B1416, 0x3FD6C6,
                     new Item.Properties()));
@@ -181,6 +179,13 @@ public class ModItems {
             () -> new DeferredSpawnEggItem(ModEntities.SCULKMITE, 0x05080A, 0x1FA7A1,
                     new Item.Properties()));
 
+    public static final DeferredItem<Item> SALVATORE_SPAWN_EGG = ITEMS.register("salvatore_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.SALVATORE, 0x0A0D10, 0x1EC6BE,
+                    new Item.Properties()));
+
+    public static final DeferredItem<Item> SCULK_PHANTOM_SPAWN_EGG = ITEMS.register("sculk_phantom_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.SCULK_PHANTOM, 0x05080C, 0x4AE7E0,
+                    new Item.Properties()));
 
 
 
@@ -206,8 +211,6 @@ public class ModItems {
             "sculk_rat_spawn_egg", () -> new DeferredSpawnEggItem(ModEntities.SCULK_RAT, 0x070B10, 0x2FE6E6,
                     new Item.Properties()));
 
-
-
     public static final DeferredItem<Item> SCULK_TAIL_SPAWN_EGG = ITEMS.register("sculk_tail_spawn_egg",
             () -> new DeferredSpawnEggItem(ModEntities.SCULK_TAIL, 0x0A0F1C, 0x0A0F1C,
                     new Item.Properties()));
@@ -216,9 +219,13 @@ public class ModItems {
             () -> new DeferredSpawnEggItem(ModEntities.SCULK_BEETLE, 0x0A0F1C, 0x1FE4FF, new Item.Properties()));
 
     public static final DeferredItem<Item> SCULK_BAT_SPAWN_EGG = ITEMS.register("sculk_bat_spawn_egg",
-            () -> new DeferredSpawnEggItem(ModEntities.SCULK_BAT, 0x060A14, 0x0CF1AE,
-                    new Item.Properties()));
+            () -> new DeferredSpawnEggItem(ModEntities.SCULK_BAT, 0x060A14, 0x0CF1AE, new Item.Properties()));
 
+    public static final DeferredItem<Item> HOLLOW_HORN_SPAWN_EGG = ITEMS.register("hollow_horn_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.HOLLOW_HORN, 0x8A8468, 0x66D6D1, new Item.Properties()));
+
+    public static final DeferredItem<Item> INFESTED_EYE_SPAWN_EGG = ITEMS.register("infested_eye_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.INFESTED_EYE, 0x08282B, 0x7CEAF3, new Item.Properties()));
 
 
 

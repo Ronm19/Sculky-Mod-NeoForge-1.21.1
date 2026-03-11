@@ -12,6 +12,8 @@
     "sculky:sculk_enderman",
     "sculky:sculk_spider",
     "sculky:sculkmite",
+    "sculky:salvatore",
+    "sculky:sculk_phantom",
     "sculky:sculk_husk",
     "sculky:sculk_horse",
     "sculky:sculk_wolf",
@@ -21,6 +23,8 @@
     "sculky:sculk_beetle",
     "sculky:sculk_sandsnare",
     "sculky:sculk_rat",
-    "sculky:sculk_wolf_alpha"
+    "sculky:sculk_wolf_alpha",
+    "sculky:hollow_horn",
+    "sculky:infested_eye"
   ]
 }

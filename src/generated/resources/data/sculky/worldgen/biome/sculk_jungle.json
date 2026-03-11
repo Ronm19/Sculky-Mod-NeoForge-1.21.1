@@ -121,6 +121,18 @@
         "maxCount": 5,
         "minCount": 2,
         "weight": 12
+      },
+      {
+        "type": "sculky:sculk_phantom",
+        "maxCount": 5,
+        "minCount": 2,
+        "weight": 12
+      },
+      {
+        "type": "sculky:hollow_horn",
+        "maxCount": 5,
+        "minCount": 2,
+        "weight": 3
       }
     ],
     "underground_water_creature": [],

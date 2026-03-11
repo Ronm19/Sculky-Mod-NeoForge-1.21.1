@@ -58,10 +58,10 @@
           "maxCount": 2
         },
         {
-          "type": "sculky:sculk_horror",
+          "type": "sculky:salvatore",
           "weight": 12,
           "minCount": 1,
-          "maxCount": 4
+          "maxCount": 2
         }
       ]
     },

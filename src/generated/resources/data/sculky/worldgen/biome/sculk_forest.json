@@ -166,6 +166,18 @@
         "weight": 30
       },
       {
+        "type": "sculky:salvatore",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 10
+      },
+      {
+        "type": "sculky:sculk_phantom",
+        "maxCount": 5,
+        "minCount": 2,
+        "weight": 10
+      },
+      {
         "type": "sculky:sculk_wolf",
         "maxCount": 5,
         "minCount": 2,
@@ -200,6 +212,18 @@
         "maxCount": 2,
         "minCount": 1,
         "weight": 3
+      },
+      {
+        "type": "sculky:hollow_horn",
+        "maxCount": 4,
+        "minCount": 1,
+        "weight": 20
+      },
+      {
+        "type": "sculky:infested_eye",
+        "maxCount": 5,
+        "minCount": 1,
+        "weight": 30
       }
     ],
     "underground_water_creature": [],

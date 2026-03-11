@@ -53,6 +53,8 @@
   "item.sculky.sculk_enderman_spawn_egg": "Sculk Enderman Spawn Egg",
   "item.sculky.sculkmite_spawn_egg": "Sculkmite Spawn Egg",
   "item.sculky.sculk_sandsnare_spawn_egg": "Sculk Sandsnare Spawn Egg",
+  "item.sculky.salvatore_spawn_egg": "Salvatore Spawn Egg",
+  "item.sculky.sculk_phantom_spawn_egg": "Sculk Phantom Spawn Egg",
 
   "item.sculky.sculk_wolf_spawn_egg": "Sculk Wolf Spawn Egg",
   "item.sculky.sculk_horse_spawn_egg": "Sculk Horse Spawn Egg",
@@ -62,6 +64,8 @@
   "item.sculky.sculk_beetle_spawn_egg": "Sculk Beetle Spawn Egg",
   "item.sculky.sculk_rat_spawn_egg": "Sculk Rat Spawn Egg",
   "item.sculky.sculk_wolf_alpha_spawn_egg": "Sculk Wolf Alpha Spawn Egg",
+  "item.sculky.hollow_horn_spawn_egg": "Hollow Horn Spawn Egg",
+  "item.sculky.infested_eye_spawn_egg": "Infested Eye Spawn Egg",
 
   "item.minecraft.potion.effect.sculk_infection_potion": "Sculk Infection Potion",
   "item.minecraft.splash_potion.effect.sculk_infection_potion": "Sculk Infection Splash Potion",
@@ -154,6 +158,8 @@
   "entity.sculky.sculk_enderman": "Sculk Enderman",
   "entity.sculky.sculkmite": "Sculkmite",
   "entity.sculky.sculk_sandsnare": "Sculk Sandsnare",
+  "entity.sculky.salvatore": "Salvatore",
+  "entity.sculky.sculk_phantom": "Sculk Phantom",
 
   "entity.sculky.sculk_wolf": "Sculk Wolf",
   "entity.sculky.sculk_wolf_alpha": "Sculk Wolf Alpha",
@@ -163,6 +169,10 @@
   "entity.sculky.sculk_tail": "Sculk Tail",
   "entity.sculky.sculk_beetle": "Sculk Beetle",
   "entity.sculky.sculk_rat": "Sculk Rat",
+  "entity.sculky.hollow_horn": "Hollow Horn",
+  "entity.sculky.infested_eye": "Infested Eye",
+
+  "entity.sculk.sonic_boom": "Sonic Boom",
 
   "key.sculky.use_ability": "Use Ability",
   "key.categories.sculky": "Sculky Mod",

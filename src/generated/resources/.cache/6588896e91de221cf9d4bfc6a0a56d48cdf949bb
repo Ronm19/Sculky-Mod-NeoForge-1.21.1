@@ -1,9 +1,11 @@
-// 1.21.1	2026-02-21T19:36:01.1742865	Item Models: sculky
+// 1.21.1	2026-03-10T22:34:29.0068785	Item Models: sculky
 062619c79a25ccce1665abb3baacabdc0ab83886 assets/sculky/models/item/echobloom.json
 fb0446df9bc6cd6ae702e28ae2c9682758c92d2f assets/sculky/models/item/echo_conduit.json
 73e021106fd0960f0ffc52d87d21b556d2456623 assets/sculky/models/item/echo_dagger.json
 111b7c0261b93565f85b16aed9de521de8dad0d5 assets/sculky/models/item/echo_dust.json
 f5ac69197066ddb7af9820347580fddc1f335c0c assets/sculky/models/item/echo_jelly.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/hollow_horn_spawn_egg.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/infested_eye_spawn_egg.json
 e00db0e98202fbd27bd6b9f7d6786bb4aae6e765 assets/sculky/models/item/infested_sculk_axe.json
 d8dddece2cb173816aadbafd67d8a31a9b7d30ac assets/sculky/models/item/infested_sculk_boots.json
 7bc8de6d9ffae0c3dca5f9ef7b06eea2ca5a14b1 assets/sculky/models/item/infested_sculk_boots_amethyst_trim.json
@@ -64,6 +66,7 @@ e7086de3449746926c766f6b08a53fb7665ba2b4 assets/sculky/models/item/infested_scul
 c274abfb0e4a13184c962a831102d02cacf86462 assets/sculky/models/item/infested_sculk_sword.json
 e76be376d41d0429e192a7b97fa7286174b3ce13 assets/sculky/models/item/infested_sculk_wall.json
 e52d4d3ad5fd594c1e5f09293b1ada92fc86f507 assets/sculky/models/item/raw_sculk_shard.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/salvatore_spawn_egg.json
 321f1602ca9003cc3712040715e663c78fad058f assets/sculky/models/item/sculkbloom.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculkmite_spawn_egg.json
 59a79d51754a4302d51c86d4cd90019f5a7e0877 assets/sculky/models/item/sculk_apple.json
@@ -88,6 +91,7 @@ e452f23c4798d2f555afd4396494dfc07c5f51fa assets/sculky/models/item/sculk_jungle_
 19592f18032d6980f30930ca1c7cdc6f73f9994b assets/sculky/models/item/sculk_lantern.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_parasite_spawn_egg.json
 b41ac6d9289690bcfe9add53f1a1d69f2387d1a7 assets/sculky/models/item/sculk_pastry.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_phantom_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_rat_spawn_egg.json
 6be896d6e858e8ecbce7e6d835ba08d0b895077b assets/sculky/models/item/sculk_rat_staff.json
 00a8fc10a98e3e8293b3c9e62083235c7b78f66b assets/sculky/models/item/sculk_resonance.json

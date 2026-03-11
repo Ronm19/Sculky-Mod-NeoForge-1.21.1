@@ -1,0 +1,12 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": [
+    "sculky:sculk_forest"
+  ],
+  "spawners": {
+    "type": "sculky:salvatore",
+    "weight": 10,
+    "minCount": 1,
+    "maxCount": 2
+  }
+}

@@ -1,12 +1,16 @@
 package net.ronm19.sculky.entity;
 
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.ronm19.sculky.SculkyMod;
 import net.ronm19.sculky.entity.custom.*;
+import net.ronm19.sculky.entity.projectile.SonicBoomEntity;
 
 import java.util.function.Supplier;
 
@@ -14,6 +18,7 @@ public class ModEntities {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
             DeferredRegister.create(BuiltInRegistries.ENTITY_TYPE, SculkyMod.MOD_ID);
 
+    // * ------------------------------------ MONSTER ------------------------------------- * //
 
     public static final Supplier<EntityType<SculkParasiteEntity>> SCULK_PARASITE =
             ENTITY_TYPES.register("sculk_parasite", () -> EntityType.Builder.of(SculkParasiteEntity::new, MobCategory.MONSTER)
@@ -67,7 +72,16 @@ public class ModEntities {
             ENTITY_TYPES.register("sculk_enderman", () -> EntityType.Builder.of(SculkEndermanEntity::new, MobCategory.MONSTER)
                     .sized(0.6F, 2.9F).eyeHeight(2.55F).build("sculk_enderman"));
 
+    public static final Supplier<EntityType<SculkPhantomEntity>> SCULK_PHANTOM =
+            ENTITY_TYPES.register("sculk_phantom", () -> EntityType.Builder.of(SculkPhantomEntity::new, MobCategory.MONSTER)
+                    .sized(0.9F, 0.5F).eyeHeight(0.25F).build("sculk_phantom"));
 
+    public static final Supplier<EntityType<SalvatoreEntity>> SALVATORE =
+            ENTITY_TYPES.register("salvatore", () -> EntityType.Builder.of(SalvatoreEntity::new, MobCategory.MONSTER)
+                    .sized(0.8F, 2.6F).eyeHeight(2.0F).build("salvatore"));
+
+
+    // ----------------------------- NATURAL & PASSIVE ---------------------------- //
 
 
 
@@ -91,14 +105,20 @@ public class ModEntities {
             ENTITY_TYPES.register("sculk_rat", () -> EntityType.Builder.of(SculkRatEntity::new, MobCategory.CREATURE)
                             .sized(0.6F, 0.4F).eyeHeight(0.25F).build("sculk_rat"));
 
+    public static final Supplier<EntityType<HollowhornEntity>> HOLLOW_HORN =
+            ENTITY_TYPES.register("hollow_horn", () -> EntityType.Builder.of(HollowhornEntity::new, MobCategory.CREATURE)
+                    .sized(1.0F, 1.45F).eyeHeight(1.15F).build("hollow_horn"));
 
-
-
-
+    public static final Supplier<EntityType<InfestedEyeEntity>> INFESTED_EYE =
+            ENTITY_TYPES.register("infested_eye", () -> EntityType.Builder.of(InfestedEyeEntity ::new, MobCategory.CREATURE)
+                    .sized(0.8F, 0.9F).eyeHeight(0.68F).build("infested_eye"));
 
     public static final Supplier<EntityType<SculkBeetleEntity>> SCULK_BEETLE =
             ENTITY_TYPES.register("sculk_beetle", () -> EntityType.Builder.of(SculkBeetleEntity::new, MobCategory.CREATURE)
                     .sized(0.9F, 0.5F).eyeHeight(0.28F).build("sculk_beetle"));
+
+    // -----------------------------  PASSIVE ---------------------------- //
+
 
     public static final Supplier<EntityType<SculkTailEntity>> SCULK_TAIL =
             ENTITY_TYPES.register("sculk_tail", () -> EntityType.Builder.of(SculkTailEntity::new, MobCategory.CREATURE)
@@ -107,6 +127,14 @@ public class ModEntities {
     public static final Supplier<EntityType<SculkBatEntity>> SCULK_BAT =
             ENTITY_TYPES.register("sculk_bat", () -> EntityType.Builder.of(SculkBatEntity::new, MobCategory.AMBIENT)
                     .sized(0.5F, 0.9F).eyeHeight(0.45F).build("sculk_bat"));
+
+
+    // * ----------------------------- MISC ------------------------------- * //
+
+    public static final Supplier<EntityType<SonicBoomEntity>> SONIC_BOOM =
+            ENTITY_TYPES.register("sonic_boom", () -> EntityType.Builder
+                    .<SonicBoomEntity>of(SonicBoomEntity::new, MobCategory.MISC)
+                    .sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(1).build("sonic_boom"));
 
 
 

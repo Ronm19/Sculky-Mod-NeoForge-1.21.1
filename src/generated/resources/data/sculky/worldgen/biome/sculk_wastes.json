@@ -117,16 +117,22 @@
         "weight": 8
       },
       {
-        "type": "sculky:sculk_beetle",
-        "maxCount": 3,
-        "minCount": 1,
-        "weight": 10
+        "type": "sculky:sculk_phantom",
+        "maxCount": 5,
+        "minCount": 2,
+        "weight": 20
       },
       {
         "type": "sculky:sculk_sandsnare",
         "maxCount": 5,
         "minCount": 2,
         "weight": 13
+      },
+      {
+        "type": "sculky:sculk_beetle",
+        "maxCount": 3,
+        "minCount": 1,
+        "weight": 10
       },
       {
         "type": "sculky:sculk_rat",
