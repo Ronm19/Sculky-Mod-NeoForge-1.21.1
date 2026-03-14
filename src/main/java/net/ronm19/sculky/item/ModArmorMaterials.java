@@ -8,6 +8,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.ronm19.sculky.SculkyMod;
@@ -30,6 +31,7 @@ public class ModArmorMaterials {
                     }), 49, SoundEvents.ARMOR_EQUIP_NETHERITE, () -> Ingredient.of(ModItems.SCULK_SHARD.get()),
                     List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "infested_sculk"))),
                     0.2f, 0.3f));
+
 
     public static void register( IEventBus eventBus) {
         ARMOR_MATERIALS.register(eventBus);

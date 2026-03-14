@@ -1,6 +1,7 @@
 package net.ronm19.sculky;
 
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -55,6 +56,10 @@ public class SculkyModClient {
         EntityRenderers.register(ModEntities.SCULK_RAT.get(), SculkRatRenderer::new);
         EntityRenderers.register(ModEntities.HOLLOW_HORN.get(), HollowhornRenderer::new);
         EntityRenderers.register(ModEntities.INFESTED_EYE.get(), InfestedEyeRenderer::new);
+        EntityRenderers.register(ModEntities.SCULK_HUNTER.get(), SculkHunterRenderer::new);
+
+
+        EntityRenderers.register(ModEntities.SCULK_JAR_PROJECTILE.get(), ThrownItemRenderer::new);
     }
 
     @SubscribeEvent

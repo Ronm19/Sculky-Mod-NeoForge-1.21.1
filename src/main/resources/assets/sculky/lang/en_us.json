@@ -13,6 +13,7 @@
   "item.sculky.echo_dust": "Echo Dust",
   "item.sculky.sculk_fang": "Sculk Fang",
   "item.sculky.sculk_lantern": "Sculk Lantern",
+  "item.sculky.sculk_chitin": "Sculk Chitin",
 
   "item.sculky.totem_echo_recall": "Totem of Echo Recall",
   "item.sculky.totem_swarm": "Swarm Totem",
@@ -33,12 +34,15 @@
   "item.sculky.sculk_rat_staff": "Sculk Rat Staff",
   "item.sculky.echo_conduit": "Echo Conduit",
   "item.sculky.echo_dagger": "Echo Dagger",
-  "item.sculky.sculk_chitin": "Sculk Chitin",
+  "item.sculky.sculk_jar": "Sculk Jar",
+
 
   "item.sculky.infested_sculk_helmet": "Infested Sculk Helmet",
   "item.sculky.infested_sculk_chestplate": "Infested Sculk Chestplate",
   "item.sculky.infested_sculk_leggings": "Infested Sculk Leggings",
   "item.sculky.infested_sculk_boots": "Infested Sculk Boots",
+
+  "item.sculky.sculk_boots": "Sculk Boots",
 
   "item.sculky.sculk_parasite_spawn_egg": "Sculk Parasite Spawn Egg",
   "item.sculky.sculk_sentinel_spawn_egg": "Sculk Sentinel Spawn Egg",
@@ -66,6 +70,7 @@
   "item.sculky.sculk_wolf_alpha_spawn_egg": "Sculk Wolf Alpha Spawn Egg",
   "item.sculky.hollow_horn_spawn_egg": "Hollow Horn Spawn Egg",
   "item.sculky.infested_eye_spawn_egg": "Infested Eye Spawn Egg",
+  "item.sculky.sculk_hunter_spawn_egg": "Sculk Hunter Spawn Egg",
 
   "item.minecraft.potion.effect.sculk_infection_potion": "Sculk Infection Potion",
   "item.minecraft.splash_potion.effect.sculk_infection_potion": "Sculk Infection Splash Potion",
@@ -171,8 +176,10 @@
   "entity.sculky.sculk_rat": "Sculk Rat",
   "entity.sculky.hollow_horn": "Hollow Horn",
   "entity.sculky.infested_eye": "Infested Eye",
+  "entity.sculky.sculk_hunter": "Sculk Hunter",
 
-  "entity.sculk.sonic_boom": "Sonic Boom",
+  "entity.sculky.sonic_boom": "Sonic Boom",
+  "entity.sculky.sculk_jar_projectile": "Sculk Jar Projectile",
 
   "key.sculky.use_ability": "Use Ability",
   "key.categories.sculky": "Sculky Mod",

@@ -287,6 +287,28 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_resonance", has(ModItems.SCULK_RESONANCE.get()))
                 .save(pRecipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SCULK_JAR.get())
+                .pattern("OOO")
+                .pattern("GSG")
+                .pattern("GGG")
+                .define('O', Blocks.OAK_SLAB)
+                .define('S', Blocks.SCULK)
+                .define('G', Blocks.GLASS)
+                .unlockedBy("sculk", has(Blocks.SCULK))
+                .save(pRecipeOutput);
+
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.SCULK_BOOTS.get())
+                .pattern("   ")
+                .pattern("S S")
+                .pattern("S S")
+                .define('S', Blocks.SCULK)
+                .unlockedBy("sculk", has(Blocks.SCULK))
+                .save(pRecipeOutput);
+
+
+
+
 
 
         // ------------------------------ SHAPELESS RECIPES ------------------------------- //

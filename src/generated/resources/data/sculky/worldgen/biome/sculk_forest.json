@@ -224,6 +224,12 @@
         "maxCount": 5,
         "minCount": 1,
         "weight": 30
+      },
+      {
+        "type": "sculky:sculk_hunter",
+        "maxCount": 3,
+        "minCount": 1,
+        "weight": 10
       }
     ],
     "underground_water_creature": [],

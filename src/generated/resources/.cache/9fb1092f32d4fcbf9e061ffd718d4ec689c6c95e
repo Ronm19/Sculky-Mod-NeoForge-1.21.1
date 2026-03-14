@@ -1,4 +1,4 @@
-// 1.21.1	2026-02-20T22:38:16.0716514	Recipes
+// 1.21.1	2026-03-13T23:23:46.0913853	Recipes
 32795b090e8c28bcad43b511c07d52588d301844 data/minecraft/advancement/recipes/redstone/sculk_shrieker.json
 f00b4944da74f645a1372b3e13b20bebc9ee0c04 data/minecraft/recipe/sculk_shrieker.json
 418c801599be78e95301328beb50358b6ee22ff1 data/sculky/advancement/recipes/building_blocks/infested_sculk_bricks.json
@@ -32,6 +32,7 @@ dc65edc7a3cc1b85b5bdebdc07a842f5ec1b7f42 data/sculky/advancement/recipes/combat/
 97016e2d4c1f57867ad77061d38ad58ae979236b data/sculky/advancement/recipes/combat/infested_sculk_pickaxe.json
 a080ef489a84ec3c9f5c40b94d079de886a14764 data/sculky/advancement/recipes/combat/infested_sculk_shovel.json
 567914718c4ab63ef6c14c8f42073236846569df data/sculky/advancement/recipes/combat/infested_sculk_sword.json
+30ff3a7a07073d90aab3d4b11688a0bd9b12c521 data/sculky/advancement/recipes/combat/sculk_boots.json
 cf1c6f4711ccda67f27656977f51381278a56fd3 data/sculky/advancement/recipes/decorations/infested_sculk_brick_fence.json
 8222378d957ddf96d31885c326fb0bd6d81a56a0 data/sculky/advancement/recipes/decorations/infested_sculk_fence.json
 b5c3ea8d44715b788dda1ae0e369df15b8954a39 data/sculky/advancement/recipes/decorations/sculk_jungle_fence.json
@@ -44,6 +45,7 @@ fd297986e36f6f3d8a66fccf63818b53bce61d0e data/sculky/advancement/recipes/misc/ec
 d41b232f54cf2ff463408bc38c3c46a3ac5bd909 data/sculky/advancement/recipes/misc/echo_dust.json
 f562f36e5aeaceb8766555bb3ca1b90096749f4e data/sculky/advancement/recipes/misc/infested_sculk_block.json
 0f5293cbbd2afac569ecb50027213183c6278671 data/sculky/advancement/recipes/misc/sculk_bone.json
+626069ba130024dafebcc461802e3f674f01e855 data/sculky/advancement/recipes/misc/sculk_jar.json
 31a9e432f246b29eb834a49384e2666d74da9ba8 data/sculky/advancement/recipes/misc/sculk_lantern.json
 416252b8d4763d1764141df9e3a534ba3356b46c data/sculky/advancement/recipes/misc/sculk_rat_staff.json
 75d681e8a12a105924d85f45902033cfb2d2f5af data/sculky/advancement/recipes/misc/sculk_resonance.json
@@ -108,7 +110,9 @@ f954a53167cd3ece07e35b20b76f904d452016b5 data/sculky/recipe/infested_sculk_sword
 c7b7a288b0dfe27bef752d6483f7fc9f81f528e6 data/sculky/recipe/infested_sculk_wood.json
 8a01296286c38f5dd4a2572b318ffe701a057d70 data/sculky/recipe/sculk_apple.json
 eb6f5f7cbd11212f51e929ba83c4e4c60464972f data/sculky/recipe/sculk_bone.json
+2ab8ff2ded9eed5a35658e6364166a929d3d2b8f data/sculky/recipe/sculk_boots.json
 aaa8dbc7ef518cec047895eced603247489bff9a data/sculky/recipe/sculk_heartfruit.json
+e7402ab3dabe7b4d3c8beb4f54e4b9fe80a8b51a data/sculky/recipe/sculk_jar.json
 cce79cabf46401c66fddc5f2e1e907abdf5b0b6b data/sculky/recipe/sculk_jungle_button.json
 1cd051cc3f3781f2dc6b6c6a0a7efe4853a1cd4b data/sculky/recipe/sculk_jungle_door.json
 a1e63e4674e3e97c10663ddc218003ca824ce50e data/sculky/recipe/sculk_jungle_fence.json

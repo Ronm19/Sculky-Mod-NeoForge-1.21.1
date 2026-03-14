@@ -76,24 +76,28 @@ public class SculkyMod {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
-            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.SCULKBLOOM.getId(), ModBlocks.POTTED_SCULKBLOOM);
+            SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeOverworldRules());
 
             ModBiomes.registerBiomes();
 
-            SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeOverworldRules());
-
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(
+                    ModBlocks.SCULKBLOOM.getId(),
+                    ModBlocks.POTTED_SCULKBLOOM
+            );
         });
 
         event.enqueueWork(() -> {
-                    ItemBlockRenderTypes.setRenderLayer(
-                            ModBlocks.INFESTED_SCULK_LEAVES.get(),
-                            RenderType.cutoutMipped());
+            ItemBlockRenderTypes.setRenderLayer(
+                    ModBlocks.INFESTED_SCULK_LEAVES.get(),
+                    RenderType.cutoutMipped()
+            );
         });
 
         event.enqueueWork(() -> {
             ItemBlockRenderTypes.setRenderLayer(
                     ModBlocks.SCULK_JUNGLE_LEAVES.get(),
-                    RenderType.cutoutMipped());
+                    RenderType.cutoutMipped()
+            );
         });
     }
 

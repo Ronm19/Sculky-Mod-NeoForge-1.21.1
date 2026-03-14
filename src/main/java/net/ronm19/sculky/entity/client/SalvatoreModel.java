@@ -156,19 +156,10 @@ public class SalvatoreModel <T  extends SalvatoreEntity> extends HierarchicalMod
     @Override
     public void setupAnim(SalvatoreEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         this.root().getAllParts().forEach(ModelPart::resetPose);
-        this.applyHeadRotation(netHeadYaw, headPitch);
 
         this.animateWalk(SalvatoreAnimations.walking, limbSwing, limbSwingAmount, 1f, 1f);
         this.animate(entity.idleAnimationState, SalvatoreAnimations.idle, ageInTicks, 1f);
         this.animate(entity.attackAnimationState, SalvatoreAnimations.attack, ageInTicks, 1f);
-    }
-
-    private void applyHeadRotation(float pNetHeadYaw, float pHeadPitch) {
-        pNetHeadYaw = Mth.clamp(pNetHeadYaw, -30.0F, 30.0F);
-        pHeadPitch = Mth.clamp(pHeadPitch, -25.0F, 45.0F);
-
-        this.head.yRot = pNetHeadYaw * ((float)Math.PI / 180F);
-        this.head.xRot = pHeadPitch * ((float)Math.PI / 180F);
     }
 
     @Override

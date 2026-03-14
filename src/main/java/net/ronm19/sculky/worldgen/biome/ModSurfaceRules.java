@@ -1,72 +1,53 @@
 package net.ronm19.sculky.worldgen.biome;
 
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.SurfaceRules;
-import net.minecraft.world.level.levelgen.placement.CaveSurface;
 import net.ronm19.sculky.block.ModBlocks;
-import net.ronm19.sculky.worldgen.biome.ModBiomes;
 
 public class ModSurfaceRules {
 
-    // Forest blocks
     private static final SurfaceRules.RuleSource INFESTED_SCULK_GRASS =
             makeStateRule(ModBlocks.INFESTED_SCULK_GRASS_BLOCK.get());
     private static final SurfaceRules.RuleSource INFESTED_SCULK_DIRT =
             makeStateRule(ModBlocks.INFESTED_SCULK_DIRT_BLOCK.get());
 
-    // Wastes blocks (use your own block names here)
-    private static final SurfaceRules.RuleSource INFESTED_SCULK_SAND = makeStateRule(ModBlocks.INFESTED_SCULK_SAND.get()); // <- your new sand block
-    // Optional: if you add a sandstone-ish block later
-    // private static final SurfaceRules.RuleSource SCULK_SANDSTONE =
-    //         makeStateRule(ModBlocks.SCULK_SANDSTONE.get());
+    private static final SurfaceRules.RuleSource INFESTED_SCULK_SAND =
+            makeStateRule(ModBlocks.INFESTED_SCULK_SAND.get());
 
+    private static final SurfaceRules.RuleSource INFESTED_SCULK_PODZOL =
+            makeStateRule(ModBlocks.INFESTED_SCULK_PODZOL_BLOCK.get());
+    private static final SurfaceRules.RuleSource INFESTED_SCULK_ROOTED_DIRT =
+            makeStateRule(ModBlocks.INFESTED_SCULK_ROOTED_DIRT_BLOCK.get());
 
-    // Jungle blocks
-    private static final SurfaceRules.RuleSource INFESTED_SCULK_PODZOL_BLOCK = makeStateRule(ModBlocks.INFESTED_SCULK_PODZOL_BLOCK.get());
-    private static final SurfaceRules.RuleSource INFESTED_SCULK_ROOTED_DIRT_BLOCK = makeStateRule(ModBlocks.INFESTED_SCULK_ROOTED_DIRT_BLOCK.get());
-
-    /** Call this one in SurfaceRuleManager. */
     public static SurfaceRules.RuleSource makeOverworldRules() {
         return SurfaceRules.sequence(
-                makeSculkForestRules(),
-                makeSculkWastesRules(),
-                makeSculkJungleRules()
+                biomeSurface(ModBiomes.SCULK_FOREST, INFESTED_SCULK_GRASS, INFESTED_SCULK_DIRT),
+                biomeSurface(ModBiomes.SCULK_WASTES, INFESTED_SCULK_SAND, INFESTED_SCULK_SAND),
+                biomeSurface(ModBiomes.SCULK_JUNGLE, INFESTED_SCULK_PODZOL, INFESTED_SCULK_ROOTED_DIRT)
         );
     }
 
-    public static SurfaceRules.RuleSource makeSculkForestRules() {
-        return SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SCULK_FOREST),
-                SurfaceRules.sequence(
-                        SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, INFESTED_SCULK_GRASS),
-                        SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, INFESTED_SCULK_DIRT),
-                        INFESTED_SCULK_DIRT // fallback ONLY inside this biome
+    private static SurfaceRules.RuleSource biomeSurface(ResourceKey<Biome> biome,
+                                                        SurfaceRules.RuleSource top,
+                                                        SurfaceRules.RuleSource under) {
+        return SurfaceRules.ifTrue(
+                SurfaceRules.isBiome(biome),
+                SurfaceRules.ifTrue(
+                        SurfaceRules.abovePreliminarySurface(),
+                        SurfaceRules.sequence(
+                                // Paint cliff/slope faces first
+                                SurfaceRules.ifTrue(SurfaceRules.steep(), under),
+
+                                // Then normal topsoil
+                                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, top),
+                                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, under),
+                                SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, under)
+                        )
                 )
         );
     }
-
-    public static SurfaceRules.RuleSource makeSculkWastesRules() {
-        return SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SCULK_WASTES),
-                SurfaceRules.sequence(
-                        SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, INFESTED_SCULK_SAND),
-                        SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, INFESTED_SCULK_SAND),
-                        INFESTED_SCULK_SAND // fallback ONLY inside this biome
-                )
-        );
-    }
-
-    public static SurfaceRules.RuleSource makeSculkJungleRules() {
-        return SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SCULK_JUNGLE),
-                SurfaceRules.sequence(
-                        SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, INFESTED_SCULK_PODZOL_BLOCK),
-                        SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, INFESTED_SCULK_ROOTED_DIRT_BLOCK),
-                        INFESTED_SCULK_ROOTED_DIRT_BLOCK // fallback ONLY inside this biome
-                )
-        );
-    }
-
-
-
 
     private static SurfaceRules.RuleSource makeStateRule(Block block) {
         return SurfaceRules.state(block.defaultBlockState());

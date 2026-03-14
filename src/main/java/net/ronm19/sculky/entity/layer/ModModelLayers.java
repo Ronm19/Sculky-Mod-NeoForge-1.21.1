@@ -40,4 +40,6 @@ public class ModModelLayers {
             ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "hollow_horn"), "main");
     public static final ModelLayerLocation INFESTED_EYE = new ModelLayerLocation(
             ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "infested_eye"), "main");
+    public static final ModelLayerLocation SCULK_HUNTER = new ModelLayerLocation(
+            ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "sculk_hunter"), "main");
 }

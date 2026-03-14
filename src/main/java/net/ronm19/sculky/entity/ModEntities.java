@@ -10,6 +10,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.ronm19.sculky.SculkyMod;
 import net.ronm19.sculky.entity.custom.*;
+import net.ronm19.sculky.entity.projectile.SculkJarProjectileEntity;
 import net.ronm19.sculky.entity.projectile.SonicBoomEntity;
 
 import java.util.function.Supplier;
@@ -113,9 +114,16 @@ public class ModEntities {
             ENTITY_TYPES.register("infested_eye", () -> EntityType.Builder.of(InfestedEyeEntity ::new, MobCategory.CREATURE)
                     .sized(0.8F, 0.9F).eyeHeight(0.68F).build("infested_eye"));
 
+    public static final Supplier<EntityType<SculkHunterEntity>> SCULK_HUNTER =
+            ENTITY_TYPES.register("sculk_hunter", () -> EntityType.Builder.of(SculkHunterEntity ::new, MobCategory.CREATURE)
+                    .sized(0.6F, 1.95F).eyeHeight(1.74F).build("sculk_hunter"));
+
+
     public static final Supplier<EntityType<SculkBeetleEntity>> SCULK_BEETLE =
             ENTITY_TYPES.register("sculk_beetle", () -> EntityType.Builder.of(SculkBeetleEntity::new, MobCategory.CREATURE)
                     .sized(0.9F, 0.5F).eyeHeight(0.28F).build("sculk_beetle"));
+
+
 
     // -----------------------------  PASSIVE ---------------------------- //
 
@@ -132,9 +140,12 @@ public class ModEntities {
     // * ----------------------------- MISC ------------------------------- * //
 
     public static final Supplier<EntityType<SonicBoomEntity>> SONIC_BOOM =
-            ENTITY_TYPES.register("sonic_boom", () -> EntityType.Builder
-                    .<SonicBoomEntity>of(SonicBoomEntity::new, MobCategory.MISC)
+            ENTITY_TYPES.register("sonic_boom", () -> EntityType.Builder.<SonicBoomEntity>of(SonicBoomEntity::new, MobCategory.MISC)
                     .sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(1).build("sonic_boom"));
+
+    public static final Supplier<EntityType<SculkJarProjectileEntity>> SCULK_JAR_PROJECTILE =
+            ENTITY_TYPES.register("sculk_jar_projectile", () -> EntityType.Builder.<SculkJarProjectileEntity>of(SculkJarProjectileEntity::new, MobCategory.MISC)
+                    .sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10).build("sculky:sculk_jar_projectile"));
 
 
 

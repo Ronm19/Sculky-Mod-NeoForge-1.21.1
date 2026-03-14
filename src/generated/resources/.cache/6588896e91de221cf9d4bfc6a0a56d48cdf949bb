@@ -1,4 +1,4 @@
-// 1.21.1	2026-03-10T22:34:29.0068785	Item Models: sculky
+// 1.21.1	2026-03-13T23:23:09.1952563	Item Models: sculky
 062619c79a25ccce1665abb3baacabdc0ab83886 assets/sculky/models/item/echobloom.json
 fb0446df9bc6cd6ae702e28ae2c9682758c92d2f assets/sculky/models/item/echo_conduit.json
 73e021106fd0960f0ffc52d87d21b556d2456623 assets/sculky/models/item/echo_dagger.json
@@ -73,6 +73,17 @@ e52d4d3ad5fd594c1e5f09293b1ada92fc86f507 assets/sculky/models/item/raw_sculk_sha
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_bat_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_beetle_spawn_egg.json
 694997df7fe0d0986a1e2a89196236f627e8ffb9 assets/sculky/models/item/sculk_bone.json
+431efa9864759c13028d718f57bd0e790fe2f48f assets/sculky/models/item/sculk_boots.json
+f4fa924a2d0b9d8190708806232cb4d5181839d0 assets/sculky/models/item/sculk_boots_amethyst_trim.json
+aa9cf7032bcc96d19b13de887fcca2592ac36a66 assets/sculky/models/item/sculk_boots_copper_trim.json
+8b52aa61401959f495a5dd2e1b3b473c6def5b80 assets/sculky/models/item/sculk_boots_diamond_trim.json
+b1978a193c04344a733291423a74290b0423cd5c assets/sculky/models/item/sculk_boots_emerald_trim.json
+98154819429fa77ee52b34bc718a355e214d03b2 assets/sculky/models/item/sculk_boots_gold_trim.json
+31539e950c4516c91ba621cb06c8211c8eb7eafb assets/sculky/models/item/sculk_boots_iron_trim.json
+99f08a4b11e1e90628e45c1fb3c4019f09e04510 assets/sculky/models/item/sculk_boots_lapis_trim.json
+8102f698f78082402ccc56fb4d8e4b52866e2283 assets/sculky/models/item/sculk_boots_netherite_trim.json
+8f0a5fabfab1da70360a1d360b8e928024574adc assets/sculky/models/item/sculk_boots_quartz_trim.json
+a4c4984370d52b0861d82d4edc2e3001906e44b1 assets/sculky/models/item/sculk_boots_redstone_trim.json
 db7f096ea4d1a998fa35d10a550182f4676e3dff assets/sculky/models/item/sculk_chitin.json
 41fffa1562d9aaac5f1d41c6df218c0e1031eb9e assets/sculky/models/item/sculk_core.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_creeper_spawn_egg.json
@@ -82,7 +93,9 @@ e4502af2613269d7d935a6b3928c77e5b3d4a58f assets/sculky/models/item/sculk_fang.js
 f464738a4f677f6db95bee334b255d6a9502307a assets/sculky/models/item/sculk_heartfruit.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_horror_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_horse_spawn_egg.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_hunter_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_husk_spawn_egg.json
+72e9e0a0ef1accba41a08134a8d43fb5544635cb assets/sculky/models/item/sculk_jar.json
 d5c792633efe2f3eea632fdfe9fa3bdbe03dc163 assets/sculky/models/item/sculk_jungle_button.json
 1a9285b74ab91b3aa27a508565f6610fd9ab300c assets/sculky/models/item/sculk_jungle_door.json
 df8211a8249cf3ee10d9773444c32dc21e918051 assets/sculky/models/item/sculk_jungle_fence.json

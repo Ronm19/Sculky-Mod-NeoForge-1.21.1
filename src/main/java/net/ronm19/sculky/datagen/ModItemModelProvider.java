@@ -60,6 +60,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.SCULK_FANG.get());
         basicItem(ModItems.SCULK_CHITIN.get());
         basicItem(ModItems.SCULK_LANTERN.get());
+        basicItem(ModItems.SCULK_JAR.get());
 
 
         handheldItem(ModItems.INFESTED_SCULK_SWORD);
@@ -104,6 +105,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         trimmedArmorItem(ModItems.INFESTED_SCULK_LEGGINGS);
         trimmedArmorItem(ModItems.INFESTED_SCULK_BOOTS);
 
+        trimmedArmorItem(ModItems.SCULK_BOOTS);
+
         basicItem(ModItems.INFESTED_SCULK_HORSE_ARMOR.get());
 
 
@@ -134,6 +137,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent(ModItems.SCULK_RAT_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.HOLLOW_HORN_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.INFESTED_EYE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.SCULK_HUNTER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
     }
 
     private ItemModelBuilder saplingItem(DeferredBlock<Block> item) {

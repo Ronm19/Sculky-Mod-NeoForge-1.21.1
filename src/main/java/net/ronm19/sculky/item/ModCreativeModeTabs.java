@@ -54,12 +54,15 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.ECHO_CONDUIT);
                         pOutput.accept(ModItems.ECHO_DAGGER);
                         pOutput.accept(ModItems.SCULK_RAT_STAFF);
+                        pOutput.accept(ModItems.SCULK_JAR);
 
                         pOutput.accept(ModItems.INFESTED_SCULK_HELMET);
                         pOutput.accept(ModItems.INFESTED_SCULK_CHESTPLATE);
                         pOutput.accept(ModItems.INFESTED_SCULK_LEGGINGS);
                         pOutput.accept(ModItems.INFESTED_SCULK_BOOTS);
                         pOutput.accept(ModItems.INFESTED_SCULK_HORSE_ARMOR);
+
+                        pOutput.accept(ModItems.SCULK_BOOTS);
 
 
                     }).build());
@@ -166,6 +169,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.SCULK_WOLF_ALPHA_SPAWN_EGG);
                         pOutput.accept(ModItems.HOLLOW_HORN_SPAWN_EGG);
                         pOutput.accept(ModItems.INFESTED_EYE_SPAWN_EGG);
+                        pOutput.accept(ModItems.SCULK_HUNTER_SPAWN_EGG);
 
                     }).build());
 

@@ -99,6 +99,7 @@ public class ModEvents {
         event.registerLayerDefinition(ModModelLayers.SCULK_BEETLE, SculkBeetleModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.HOLLOW_HORN, HollowhornModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.INFESTED_EYE, InfestedEyeModel :: createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.SCULK_HUNTER, SculkHunterModel :: createBodyLayer);
     }
 
     @SubscribeEvent
@@ -129,6 +130,7 @@ public class ModEvents {
         event.put(ModEntities.SCULK_BEETLE.get(), SculkBeetleEntity.createSculkBeetleAttributes().build());
         event.put(ModEntities.HOLLOW_HORN.get(), HollowhornEntity.createHollowhornAttributes().build());
         event.put(ModEntities.INFESTED_EYE.get(), InfestedEyeEntity.createInfestedEyeAttributes().build());
+        event.put(ModEntities.SCULK_HUNTER.get(), SculkHunterEntity.createSculkHunterAttributes().build());
 
     }
 
@@ -266,8 +268,6 @@ public class ModEvents {
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 Animal :: checkMobSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.REPLACE);
-
-
 
 
         // ---------------------------------------------------------
