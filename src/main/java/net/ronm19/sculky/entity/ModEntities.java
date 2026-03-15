@@ -10,6 +10,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.ronm19.sculky.SculkyMod;
 import net.ronm19.sculky.entity.custom.*;
+import net.ronm19.sculky.entity.projectile.SculkBombProjectileEntity;
 import net.ronm19.sculky.entity.projectile.SculkJarProjectileEntity;
 import net.ronm19.sculky.entity.projectile.SonicBoomEntity;
 
@@ -146,6 +147,11 @@ public class ModEntities {
     public static final Supplier<EntityType<SculkJarProjectileEntity>> SCULK_JAR_PROJECTILE =
             ENTITY_TYPES.register("sculk_jar_projectile", () -> EntityType.Builder.<SculkJarProjectileEntity>of(SculkJarProjectileEntity::new, MobCategory.MISC)
                     .sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10).build("sculky:sculk_jar_projectile"));
+
+    public static final Supplier<EntityType<SculkBombProjectileEntity>> SCULK_BOMB_PROJECTILE =
+            ENTITY_TYPES.register("sculk_bomb_projectile", () -> EntityType.Builder.<SculkBombProjectileEntity>of(SculkBombProjectileEntity::new, MobCategory.MISC)
+                    .sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10).build("sculky:sculk_bomb_projectile"));
+
 
 
 

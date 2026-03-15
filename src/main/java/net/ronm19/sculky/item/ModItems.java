@@ -34,6 +34,18 @@ public class ModItems {
     public static final DeferredItem<Item> SCULK_CORE =
             ITEMS.registerItem("sculk_core", Item::new, new Item.Properties());
 
+    public static final DeferredItem<Item> CROWN_FRAGMENT =
+            ITEMS.registerItem("crown_fragment", Item::new, new Item.Properties());
+    public static final DeferredItem<Item> ROYAL_SCULK_FRAGMENT =
+            ITEMS.registerItem("royal_sculk_fragment", Item::new, new Item.Properties());
+    public static final DeferredItem<Item> ANCIENT_RESONANCE_CORE =
+            ITEMS.registerItem("ancient_resonance_core", Item::new, new Item.Properties());
+    public static final DeferredItem<Item> KING_RELIC =
+            ITEMS.registerItem("king_relic", Item::new, new Item.Properties());
+    public static final DeferredItem<Item> THRONE_SHARD =
+            ITEMS.registerItem("throne_shard", Item::new, new Item.Properties());
+
+
     public static final DeferredItem<Item> SCULK_LANTERN = ITEMS.registerItem("sculk_lantern",
                     SculkLanternItem::new, new Item.Properties().stacksTo(1).rarity(Rarity.RARE));
 
@@ -129,6 +141,9 @@ public class ModItems {
 
     public static final DeferredItem<Item> SCULK_JAR = ITEMS.register("sculk_jar",
             () -> new SculkJarItem(new Item.Properties().stacksTo(16)));
+
+    public static final DeferredItem<Item> SCULK_BOMB = ITEMS.register("sculk_bomb",
+            () -> new SculkBombItem(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON)));
 
 
 

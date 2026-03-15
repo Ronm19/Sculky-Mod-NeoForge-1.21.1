@@ -60,6 +60,7 @@ public class SculkyModClient {
 
 
         EntityRenderers.register(ModEntities.SCULK_JAR_PROJECTILE.get(), ThrownItemRenderer::new);
+        EntityRenderers.register(ModEntities.SCULK_BOMB_PROJECTILE.get(), ThrownItemRenderer::new);
     }
 
     @SubscribeEvent

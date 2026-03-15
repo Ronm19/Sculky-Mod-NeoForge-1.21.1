@@ -61,6 +61,13 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.SCULK_CHITIN.get());
         basicItem(ModItems.SCULK_LANTERN.get());
         basicItem(ModItems.SCULK_JAR.get());
+        basicItem(ModItems.SCULK_BOMB.get());
+
+        basicItem(ModItems.CROWN_FRAGMENT.get());
+        basicItem(ModItems.ROYAL_SCULK_FRAGMENT.get());
+        basicItem(ModItems.ANCIENT_RESONANCE_CORE.get());
+        basicItem(ModItems.KING_RELIC.get());
+        basicItem(ModItems.THRONE_SHARD.get());
 
 
         handheldItem(ModItems.INFESTED_SCULK_SWORD);

@@ -48,6 +48,27 @@ public class ModBlocks {
     public static final DeferredBlock<Block> DEEPSLATE_SCULK_ORE = registerBlock("deepslate_sculk_ore",
             () -> new DropExperienceBlock(UniformInt.of(2, 7),BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().sound(SoundType.SCULK)));
 
+    public static final DeferredBlock<Block> THRONE_BLOCK = registerBlock("throne_block",
+            () -> new Block(BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().sound(SoundType.SCULK_SHRIEKER)));
+
+    public static final DeferredBlock<Block> KINGS_PEDESTAL = registerBlock("kings_pedestal",
+            () -> new KingsPedestalBlock(BlockBehaviour.Properties.of().strength(3.5f, 6.0F).requiresCorrectToolForDrops()
+                    .sound(SoundType.SCULK_SHRIEKER).lightLevel(state -> state.getValue(KingsPedestalBlock.ACTIVATED) ? 10 : 0)));
+
+    public static final DeferredBlock<Block> ANCIENT_SCULK_BRICKS = registerBlock("ancient_sculk_bricks",
+            () -> new InfestedSculkBricksBlock(BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().sound(SoundType.SCULK)));
+
+    public static final DeferredBlock<Block> CRACKED_ANCIENT_SCULK_BRICKS = registerBlock("cracked_ancient_sculk_bricks",
+            () -> new InfestedSculkBricksBlock(BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops().sound(SoundType.SCULK)));
+
+    public static final DeferredBlock<Block> CHISELED_ANCIENT_SCULK_BRICKS = registerBlock("chiseled_ancient_sculk_bricks",
+            () -> new InfestedSculkBricksBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.SCULK)));
+
+
+
+
+
+
 
     // ------------------------------------- INFESTED SCULK NON-BLOCKS ------------------------------------ //
 

@@ -39,6 +39,7 @@ public class ModTags {
 
     public static class Entities {
         public static final TagKey<EntityType<?>> SCULK_ALLIES = createTag("sculk_allies");
+        public static final TagKey<EntityType<?>> SCULK_MOBS = createTag("sculk_mobs");
 
         private static TagKey<EntityType<?>> createTag( String name ) {
             return TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, name));

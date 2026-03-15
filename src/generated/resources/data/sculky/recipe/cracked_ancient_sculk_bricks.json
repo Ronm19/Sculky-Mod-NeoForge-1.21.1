@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "K": {
+      "item": "sculky:king_relic"
+    },
+    "T": {
+      "item": "sculky:throne_shard"
+    }
+  },
+  "pattern": [
+    "KTK",
+    "TKT",
+    "KTK"
+  ],
+  "result": {
+    "count": 1,
+    "id": "sculky:cracked_ancient_sculk_bricks"
+  }
+}

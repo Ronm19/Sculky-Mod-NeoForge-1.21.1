@@ -306,6 +306,52 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("sculk", has(Blocks.SCULK))
                 .save(pRecipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.THRONE_BLOCK.get())
+                .pattern("TTT")
+                .pattern("TTT")
+                .pattern("TTT")
+                .define('T', ModItems.THRONE_SHARD.get())
+                .unlockedBy("throne_shard", has(ModItems.THRONE_SHARD.get()))
+                .save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ANCIENT_SCULK_BRICKS.get())
+                .pattern("TTT")
+                .pattern("TKT")
+                .pattern("TTT")
+                .define('T', ModItems.THRONE_SHARD.get())
+                .define('K', ModItems.KING_RELIC.get())
+                .unlockedBy("king_relic", has(ModItems.KING_RELIC.get()))
+                .save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRACKED_ANCIENT_SCULK_BRICKS.get())
+                .pattern("KTK")
+                .pattern("TKT")
+                .pattern("KTK")
+                .define('T', ModItems.THRONE_SHARD.get())
+                .define('K', ModItems.KING_RELIC.get())
+                .unlockedBy("king_relic", has(ModItems.KING_RELIC.get()))
+                .save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHISELED_ANCIENT_SCULK_BRICKS.get())
+                .pattern("KKK")
+                .pattern("KTK")
+                .pattern("KKK")
+                .define('T', ModItems.THRONE_SHARD.get())
+                .define('K', ModItems.KING_RELIC.get())
+                .unlockedBy("king_relic", has(ModItems.KING_RELIC.get()))
+                .save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.KINGS_PEDESTAL.get())
+                .pattern("KKK")
+                .pattern("KKK")
+                .pattern("KKK")
+                .define('K', ModItems.KING_RELIC.get())
+                .unlockedBy("king_relic", has(ModItems.KING_RELIC.get()))
+                .save(pRecipeOutput);
+
+
+
+
 
 
 

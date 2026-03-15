@@ -25,14 +25,24 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.SCULK_ORE.get())
                 .add(ModBlocks.INFESTED_SCULK_BRICKS.get())
                 .add(ModBlocks.INFESTED_SCULK_WALL.get())
+                .add(ModBlocks.CHISELED_ANCIENT_SCULK_BRICKS.get())
+                .add(ModBlocks.ANCIENT_SCULK_BRICKS.get())
+                .add(ModBlocks.CRACKED_ANCIENT_SCULK_BRICKS.get())
+                .add(ModBlocks.KINGS_PEDESTAL.get())
+                .add(ModBlocks.THRONE_BLOCK.get())
                 .add(ModBlocks.DEEPSLATE_SCULK_ORE.get());
 
-        this.tag(BlockTags.NEEDS_IRON_TOOL)
+        this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.INFESTED_SCULK_BLOCK.get())
                 .add(ModBlocks.RAW_INFESTED_SCULK_BLOCK.get())
                 .add(ModBlocks.INFESTED_SCULK_WALL.get())
                 .add(ModBlocks.INFESTED_SCULK_BRICKS.get())
                 .add(ModBlocks.SCULK_ORE.get())
+                .add(ModBlocks.CHISELED_ANCIENT_SCULK_BRICKS.get())
+                .add(ModBlocks.ANCIENT_SCULK_BRICKS.get())
+                .add(ModBlocks.CRACKED_ANCIENT_SCULK_BRICKS.get())
+                .add(ModBlocks.KINGS_PEDESTAL.get())
+                .add(ModBlocks.THRONE_BLOCK.get())
                 .add(ModBlocks.DEEPSLATE_SCULK_ORE.get());
 
         this.tag(BlockTags.SCULK_REPLACEABLE)

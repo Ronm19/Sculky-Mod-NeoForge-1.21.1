@@ -40,6 +40,12 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.SCULK_CHITIN);
                         pOutput.accept(ModItems.SCULK_LANTERN);
 
+                        pOutput.accept(ModItems.CROWN_FRAGMENT);
+                        pOutput.accept(ModItems.ROYAL_SCULK_FRAGMENT);
+                        pOutput.accept(ModItems.ANCIENT_RESONANCE_CORE);
+                        pOutput.accept(ModItems.KING_RELIC);
+                        pOutput.accept(ModItems.THRONE_SHARD);
+
                         pOutput.accept(ModItems.TOTEM_ECHO_RECALL);
                         pOutput.accept(ModItems.TOTEM_SWARM);
                         pOutput.accept(ModItems.TOTEM_SCULK_VEIL);
@@ -55,6 +61,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.ECHO_DAGGER);
                         pOutput.accept(ModItems.SCULK_RAT_STAFF);
                         pOutput.accept(ModItems.SCULK_JAR);
+                        pOutput.accept(ModItems.SCULK_BOMB);
 
                         pOutput.accept(ModItems.INFESTED_SCULK_HELMET);
                         pOutput.accept(ModItems.INFESTED_SCULK_CHESTPLATE);
@@ -80,6 +87,12 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.INFESTED_SCULK_BRICKS);
                         pOutput.accept(ModBlocks.SCULK_ORE);
                         pOutput.accept(ModBlocks.DEEPSLATE_SCULK_ORE);
+
+                        pOutput.accept(ModBlocks.THRONE_BLOCK);
+                        pOutput.accept(ModBlocks.ANCIENT_SCULK_BRICKS);
+                        pOutput.accept(ModBlocks.CRACKED_ANCIENT_SCULK_BRICKS);
+                        pOutput.accept(ModBlocks.CHISELED_ANCIENT_SCULK_BRICKS);
+                        pOutput.accept(ModBlocks.KINGS_PEDESTAL);
 
                         pOutput.accept(ModBlocks.SCULKBLOOM);
                         pOutput.accept(ModBlocks.ECHOBLOOM);

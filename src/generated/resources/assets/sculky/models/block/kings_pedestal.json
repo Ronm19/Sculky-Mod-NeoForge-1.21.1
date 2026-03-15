@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "sculky:block/kings_pedestal_bottom",
+    "side": "sculky:block/kings_pedestal_side",
+    "top": "sculky:block/kings_pedestal_top"
+  }
+}

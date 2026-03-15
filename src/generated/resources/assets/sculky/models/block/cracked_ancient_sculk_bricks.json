@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "sculky:block/cracked_ancient_sculk_bricks"
+  }
+}

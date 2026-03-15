@@ -42,6 +42,13 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.add(ModBlocks.DEEPSLATE_SCULK_ORE.get(),
                 block -> createMultipleOreDrops(ModBlocks.DEEPSLATE_SCULK_ORE.get(), ModItems.RAW_SCULK_SHARD.get(), 2, 5));
 
+        this.add(ModBlocks.THRONE_BLOCK.get(),
+                block -> createOreDrop(ModBlocks.THRONE_BLOCK.get(), ModItems.THRONE_SHARD.get()));
+        dropSelf(ModBlocks.KINGS_PEDESTAL.get());
+        dropSelf(ModBlocks.ANCIENT_SCULK_BRICKS.get());
+        dropSelf(ModBlocks.CRACKED_ANCIENT_SCULK_BRICKS.get());
+        dropSelf(ModBlocks.CHISELED_ANCIENT_SCULK_BRICKS.get());
+
         // ----------------------- SCULK SET --------------------- //
 
         dropSelf(ModBlocks.INFESTED_SCULK_STAIRS.get());

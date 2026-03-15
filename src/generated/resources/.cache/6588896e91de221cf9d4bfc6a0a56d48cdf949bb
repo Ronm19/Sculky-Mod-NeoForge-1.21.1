@@ -1,4 +1,6 @@
-// 1.21.1	2026-03-13T23:23:09.1952563	Item Models: sculky
+// 1.21.1	2026-03-15T16:25:26.0323709	Item Models: sculky
+af7db26754b709a1aada7bbf2a40ba8ccfea64e4 assets/sculky/models/item/ancient_resonance_core.json
+0bc74c970456a6384d2eb71e4c5a9b0076def5df assets/sculky/models/item/crown_fragment.json
 062619c79a25ccce1665abb3baacabdc0ab83886 assets/sculky/models/item/echobloom.json
 fb0446df9bc6cd6ae702e28ae2c9682758c92d2f assets/sculky/models/item/echo_conduit.json
 73e021106fd0960f0ffc52d87d21b556d2456623 assets/sculky/models/item/echo_dagger.json
@@ -65,13 +67,16 @@ e7086de3449746926c766f6b08a53fb7665ba2b4 assets/sculky/models/item/infested_scul
 2a80bb755043da7409b3834b9f79e7a6522fb039 assets/sculky/models/item/infested_sculk_shovel.json
 c274abfb0e4a13184c962a831102d02cacf86462 assets/sculky/models/item/infested_sculk_sword.json
 e76be376d41d0429e192a7b97fa7286174b3ce13 assets/sculky/models/item/infested_sculk_wall.json
+5b087e26b2c101c70f8beaebf2d107ba3907bc9a assets/sculky/models/item/king_relic.json
 e52d4d3ad5fd594c1e5f09293b1ada92fc86f507 assets/sculky/models/item/raw_sculk_shard.json
+d2745dd03ee38683fef1de79d919d99de4813003 assets/sculky/models/item/royal_sculk_fragment.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/salvatore_spawn_egg.json
 321f1602ca9003cc3712040715e663c78fad058f assets/sculky/models/item/sculkbloom.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculkmite_spawn_egg.json
 59a79d51754a4302d51c86d4cd90019f5a7e0877 assets/sculky/models/item/sculk_apple.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_bat_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_beetle_spawn_egg.json
+366079de6c8ee1997a7648ea39cea4c45656e631 assets/sculky/models/item/sculk_bomb.json
 694997df7fe0d0986a1e2a89196236f627e8ffb9 assets/sculky/models/item/sculk_bone.json
 431efa9864759c13028d718f57bd0e790fe2f48f assets/sculky/models/item/sculk_boots.json
 f4fa924a2d0b9d8190708806232cb4d5181839d0 assets/sculky/models/item/sculk_boots_amethyst_trim.json
@@ -120,6 +125,7 @@ b41ac6d9289690bcfe9add53f1a1d69f2387d1a7 assets/sculky/models/item/sculk_pastry.
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_wolf_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_zombie_spawn_egg.json
 d4428945045f0a08b871f08e757dc98533ed5699 assets/sculky/models/item/soulbite_cookie.json
+ca1c69c4157aa11a9b1dc8d97218c69b96bb03cb assets/sculky/models/item/throne_shard.json
 907c367bc024286e212c987976474676e859c6e5 assets/sculky/models/item/tomato_sculk.json
 11d989b0b18447a9551e4feb0051b04234048c9e assets/sculky/models/item/tomato_sculk_seeds.json
 6877de1836e00f44d7265523509b1e19ce465b46 assets/sculky/models/item/totem_echo_recall.json

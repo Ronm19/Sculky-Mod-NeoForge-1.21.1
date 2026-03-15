@@ -1,4 +1,7 @@
-// 1.21.1	2026-02-21T19:36:01.1675642	Loot Tables
+// 1.21.1	2026-03-15T17:59:05.0128838	Loot Tables
+a4d9b1e0d55ed7345d6f739cc4c996acfbe268c5 data/sculky/loot_table/blocks/ancient_sculk_bricks.json
+6ce0f6dd4560222a46079d802491c53c594f9133 data/sculky/loot_table/blocks/chiseled_ancient_sculk_bricks.json
+08872ac984df6cfbafc176d401251a77c9db093e data/sculky/loot_table/blocks/cracked_ancient_sculk_bricks.json
 48952f5c8e28b717cf5f872a8ea3889e1aa5d4da data/sculky/loot_table/blocks/deepslate_sculk_ore.json
 5135fca179d349a033550fc9372e1d37ad3b0e3c data/sculky/loot_table/blocks/echobloom.json
 90d20ca4e2b7b4bb2f9a3e3a67880ad9cfb2d6fc data/sculky/loot_table/blocks/infested_sculk_block.json
@@ -29,6 +32,7 @@ a6cb8f1234761afc57210c3ba165b48a994741d5 data/sculky/loot_table/blocks/infested_
 94fc9a4fa761096e0efad898e9e01ca67815cea2 data/sculky/loot_table/blocks/infested_sculk_trapdoor.json
 9d2e291aa9f479e6bca7e3ed7aad732908909bb6 data/sculky/loot_table/blocks/infested_sculk_wall.json
 957c70f98f1b743e220003237cda519e6ea6109a data/sculky/loot_table/blocks/infested_sculk_wood.json
+b029eafdbd4ad3808f53d547a4d90c22ae850710 data/sculky/loot_table/blocks/kings_pedestal.json
 005813daa25d1d073c4195838cb4261b43be2d23 data/sculky/loot_table/blocks/potted_echobloom.json
 ad6c0c59c92f6a381d2d8c9ca71afef856805fea data/sculky/loot_table/blocks/potted_sculkbloom.json
 efe275c63e17d34a7865522870f2c01df99d3b3f data/sculky/loot_table/blocks/raw_infested_sculk_block.json
@@ -52,4 +56,5 @@ f6a2045aa5d6b1432e8779e4e17661902f4de6ac data/sculky/loot_table/blocks/stripped_
 930b3ec539ecf5adcc1f194d3b8628ef2b7b5cd2 data/sculky/loot_table/blocks/stripped_infested_sculk_wood.json
 c704a80df6a72beb35ddfc404ec275640a19ed9d data/sculky/loot_table/blocks/stripped_sculk_jungle_log.json
 5806d7ffc381aa6ffb647609aeded58b4b4f38db data/sculky/loot_table/blocks/stripped_sculk_jungle_wood.json
+4c3613f620d731f7567e09bb5297b855e98203a5 data/sculky/loot_table/blocks/throne_block.json
 a779d7bcf7a1992b6fc7ea85acd6ab1b61a46dd0 data/sculky/loot_table/blocks/tomato_sculk_crop.json

@@ -5,6 +5,11 @@
     "sculky:sculk_ore",
     "sculky:infested_sculk_bricks",
     "sculky:infested_sculk_wall",
+    "sculky:chiseled_ancient_sculk_bricks",
+    "sculky:ancient_sculk_bricks",
+    "sculky:cracked_ancient_sculk_bricks",
+    "sculky:kings_pedestal",
+    "sculky:throne_block",
     "sculky:deepslate_sculk_ore"
   ]
 }

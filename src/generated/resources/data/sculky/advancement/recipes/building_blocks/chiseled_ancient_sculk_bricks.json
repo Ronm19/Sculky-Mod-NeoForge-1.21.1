@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "sculky:chiseled_ancient_sculk_bricks"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "king_relic": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sculky:king_relic"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "king_relic"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "sculky:chiseled_ancient_sculk_bricks"
+    ]
+  }
+}
