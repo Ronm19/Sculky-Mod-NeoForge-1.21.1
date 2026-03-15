@@ -206,6 +206,9 @@
   "advancement.sculky.find_shrine.title": "Ancient Shrine",
   "advancement.sculky.find_shrine.desc": "You discovered a corrupted shrine.",
 
+  "advancement.sculky.find_altar.title": "Ancient Altar",
+  "advancement.sculky.find_altar.desc": "You discovered an interesting altar.",
+
   "advancement.sculky.eat_apple.title": "Echo Consumption",
   "advancement.sculky.eat_apple.desc": "You consumed the corruption.",
 
