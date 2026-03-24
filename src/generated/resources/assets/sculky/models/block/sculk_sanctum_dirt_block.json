@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "sculky:block/sculk_sanctum_dirt_block"
+  }
+}

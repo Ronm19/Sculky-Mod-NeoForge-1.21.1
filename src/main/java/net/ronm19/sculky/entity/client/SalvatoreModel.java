@@ -157,7 +157,7 @@ public class SalvatoreModel <T  extends SalvatoreEntity> extends HierarchicalMod
     public void setupAnim(SalvatoreEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         this.root().getAllParts().forEach(ModelPart::resetPose);
 
-        this.animateWalk(SalvatoreAnimations.walking, limbSwing, limbSwingAmount, 1f, 1f);
+        this.animateWalk(SalvatoreAnimations.walking, limbSwing, limbSwingAmount, 1f, 1.4f);
         this.animate(entity.idleAnimationState, SalvatoreAnimations.idle, ageInTicks, 1f);
         this.animate(entity.attackAnimationState, SalvatoreAnimations.attack, ageInTicks, 1f);
     }

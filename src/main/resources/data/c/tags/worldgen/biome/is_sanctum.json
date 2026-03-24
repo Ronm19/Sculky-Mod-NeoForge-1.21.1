@@ -1,0 +1,9 @@
+{
+  "values": [
+    "#sculky:is_sanctum",
+    {
+      "id": "#sculky:is_sanctum",
+      "required": false
+    }
+  ]
+}

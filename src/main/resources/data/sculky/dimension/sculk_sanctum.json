@@ -1,0 +1,11 @@
+{
+  "type": "sculky:sculk_sanctum_type",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "sculky:sculk_sanctum",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "sculky:sanctum_wastes"
+    }
+  }
+}

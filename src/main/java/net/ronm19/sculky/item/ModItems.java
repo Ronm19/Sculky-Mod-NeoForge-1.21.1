@@ -12,6 +12,7 @@ import net.ronm19.sculky.SculkyMod;
 import net.ronm19.sculky.block.ModBlocks;
 import net.ronm19.sculky.entity.ModEntities;
 import net.ronm19.sculky.item.custom.*;
+import net.ronm19.sculky.sounds.ModSounds;
 
 import java.util.function.Supplier;
 
@@ -40,15 +41,14 @@ public class ModItems {
             ITEMS.registerItem("royal_sculk_fragment", Item::new, new Item.Properties());
     public static final DeferredItem<Item> ANCIENT_RESONANCE_CORE =
             ITEMS.registerItem("ancient_resonance_core", Item::new, new Item.Properties());
-    public static final DeferredItem<Item> KING_RELIC =
-            ITEMS.registerItem("king_relic", Item::new, new Item.Properties());
     public static final DeferredItem<Item> THRONE_SHARD =
             ITEMS.registerItem("throne_shard", Item::new, new Item.Properties());
 
 
     public static final DeferredItem<Item> SCULK_LANTERN = ITEMS.registerItem("sculk_lantern",
                     SculkLanternItem::new, new Item.Properties().stacksTo(1).rarity(Rarity.RARE));
-
+    public static final DeferredItem<Item> KING_RELIC = ITEMS.registerItem("king_relic",
+            KingRelicItem::new, new Item.Properties().stacksTo(1));
 
     public static final DeferredItem<Item> SCULK_RAT_STAFF = ITEMS.register("sculk_rat_staff",
             () -> new SculkRatStaffItem(new Item.Properties().stacksTo(1)));
@@ -75,6 +75,9 @@ public class ModItems {
             ITEMS.registerItem("soulbite_cookie", Item::new, new Item.Properties().food(ModFoodProperties.SOULBITE_COOKIE));
     public static final DeferredItem<Item> SCULK_APPLE =
             ITEMS.registerItem("sculk_apple", Item::new, new Item.Properties().food(ModFoodProperties.SCULK_APPLE));
+
+    public static final DeferredItem<Item> SHADOW_PANTHER_THEME_MUSIC_DISC = ITEMS.registerItem("shadow_panther_theme_music_disc",
+            properties -> new Item(properties.jukeboxPlayable(ModSounds.SHADOW_PANTHER_THEME_KEY).stacksTo(1).rarity(Rarity.RARE)));
 
 
     public static final DeferredItem<Item> TOMATO_SCULK_SEEDS = ITEMS.register("tomato_sculk_seeds",
@@ -147,7 +150,7 @@ public class ModItems {
 
 
 
-    // ------------------------------- MONSTERs Egg Spawns --------------------------------------------- //
+    // ------------------------------- Monsters Egg Spawns --------------------------------------------- //
 
     public static final DeferredItem<Item> SCULK_PARASITE_SPAWN_EGG = ITEMS.register("sculk_parasite_spawn_egg",
             () -> new DeferredSpawnEggItem(ModEntities.SCULK_PARASITE, 0x0a1019, 0x3cf0d0, new Item.Properties()));
@@ -194,6 +197,15 @@ public class ModItems {
     public static final DeferredItem<Item> SCULK_PHANTOM_SPAWN_EGG = ITEMS.register("sculk_phantom_spawn_egg",
             () -> new DeferredSpawnEggItem(ModEntities.SCULK_PHANTOM, 0x05080C, 0x4AE7E0, new Item.Properties()));
 
+    public static final DeferredItem<Item> SANCTUM_WATCHER_SPAWN_EGG = ITEMS.register("sanctum_watcher_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.SANCTUM_WATCHER, 0x0B0E12, 0x2FA8A3, new Item.Properties()));
+
+    public static final DeferredItem<Item> ROYAL_SCULK_KNIGHT_SPAWN_EGG = ITEMS.register("royal_sculk_knight_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.ROYAL_SCULK_KNIGHT, 0x080B12, 0x1EC6BE, new Item.Properties()));
+
+    public static final DeferredItem<Item> SCULK_NECROMANCER_SPAWN_EGG = ITEMS.register("sculk_necromancer_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.SCULK_NECROMANCER, 0x1A1E2B, 0x3FD6D1, new Item.Properties()));
+
 
 
     // ------------------------------- NEUTRAL Egg Spawns --------------------------------------------- //
@@ -230,6 +242,12 @@ public class ModItems {
 
     public static final DeferredItem<Item> SCULK_HUNTER_SPAWN_EGG = ITEMS.register("sculk_hunter_spawn_egg",
             () -> new DeferredSpawnEggItem(ModEntities.SCULK_HUNTER, 0x0B1012, 0x7CEAF3, new Item.Properties()));
+
+    public static final DeferredItem<Item> SHADOW_PANTHER_SPAWN_EGG = ITEMS.register("shadow_panther_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.SHADOW_PANTHER, 0x050709, 0x2ED0DC, new Item.Properties()));
+
+    public static final DeferredItem<Item> SCULK_GOLEM_SPAWN_EGG = ITEMS.register("sculk_golem_spawn_egg",
+                    () -> new DeferredSpawnEggItem(ModEntities.SCULK_GOLEM, 0x5B5044, 0x42D0CB, new Item.Properties()));
 
 
 

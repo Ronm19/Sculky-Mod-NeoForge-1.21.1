@@ -145,6 +145,12 @@
         "maxCount": 3,
         "minCount": 1,
         "weight": 10
+      },
+      {
+        "type": "sculky:shadow_panther",
+        "maxCount": 4,
+        "minCount": 2,
+        "weight": 12
       }
     ],
     "underground_water_creature": [],

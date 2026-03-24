@@ -49,6 +49,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.TOTEM_ECHO_RECALL);
                         pOutput.accept(ModItems.TOTEM_SWARM);
                         pOutput.accept(ModItems.TOTEM_SCULK_VEIL);
+                        pOutput.accept(ModItems.SHADOW_PANTHER_THEME_MUSIC_DISC);
 
                         pOutput.accept(ModItems.INFESTED_SCULK_SWORD);
                         pOutput.accept(ModItems.INFESTED_SCULK_PICKAXE);
@@ -129,6 +130,8 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.INFESTED_SCULK_DIRT_BLOCK);
                         pOutput.accept(ModBlocks.INFESTED_SCULK_ROOTED_DIRT_BLOCK);
                         pOutput.accept(ModBlocks.INFESTED_SCULK_PODZOL_BLOCK);
+                        pOutput.accept(ModBlocks.SCULK_SANCTUM_GRASS_BLOCK);
+                        pOutput.accept(ModBlocks.SCULK_SANCTUM_DIRT_BLOCK);
                         pOutput.accept(ModBlocks.INFESTED_SCULK_SAND);
 
                         pOutput.accept(ModBlocks.INFESTED_SCULK_LOG);
@@ -171,6 +174,9 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.SCULK_SANDSNARE_SPAWN_EGG);
                         pOutput.accept(ModItems.SALVATORE_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_PHANTOM_SPAWN_EGG);
+                        pOutput.accept(ModItems.SANCTUM_WATCHER_SPAWN_EGG);
+                        pOutput.accept(ModItems.ROYAL_SCULK_KNIGHT_SPAWN_EGG);
+                        pOutput.accept(ModItems.SCULK_NECROMANCER_SPAWN_EGG);
 
                         pOutput.accept(ModItems.SCULK_WOLF_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_HORSE_SPAWN_EGG);
@@ -183,6 +189,8 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.HOLLOW_HORN_SPAWN_EGG);
                         pOutput.accept(ModItems.INFESTED_EYE_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_HUNTER_SPAWN_EGG);
+                        pOutput.accept(ModItems.SHADOW_PANTHER_SPAWN_EGG);
+                        pOutput.accept(ModItems.SCULK_GOLEM_SPAWN_EGG);
 
                     }).build());
 

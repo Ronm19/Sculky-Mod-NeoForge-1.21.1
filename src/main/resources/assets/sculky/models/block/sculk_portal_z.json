@@ -1,0 +1,18 @@
+{
+  "parent": "block/block",
+  "textures": {
+    "particle": "sculky:block/sculk_portal",
+    "portal": "sculky:block/sculk_portal"
+  },
+  "elements": [
+    {
+      "from": [7.5, 0.0, 0.0],
+      "to": [8.5, 16.0, 16.0],
+      "shade": false,
+      "faces": {
+        "west": { "texture": "#portal" },
+        "east": { "texture": "#portal" }
+      }
+    }
+  ]
+}

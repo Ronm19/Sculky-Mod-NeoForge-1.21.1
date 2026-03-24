@@ -13,7 +13,7 @@
   "item.sculky.echo_dust": "Echo Dust",
   "item.sculky.sculk_fang": "Sculk Fang",
   "item.sculky.sculk_lantern": "Sculk Lantern",
-  "item.sculky.sculk_chiting": "Sculk Chitin",
+  "item.sculky.sculk_chitin": "Sculk Chitin",
 
   "item.sculky.crown_fragment": "Crown Fragment",
   "item.sculky.royal_sculk_fragment": "Royal Sculk Fragment",
@@ -66,6 +66,9 @@
   "item.sculky.sculk_sandsnare_spawn_egg": "Sculk Sandsnare Spawn Egg",
   "item.sculky.salvatore_spawn_egg": "Salvatore Spawn Egg",
   "item.sculky.sculk_phantom_spawn_egg": "Sculk Phantom Spawn Egg",
+  "item.sculky.sanctum_watcher_spawn_egg": "Sanctum Watcher Spawn Egg",
+  "item.sculky.royal_sculk_knight_spawn_egg": "Royal Sculk Knight Spawn Egg",
+  "item.sculky.sculk_necromancer_spawn_egg": "Sculk Necromancer Spawn Egg",
 
   "item.sculky.sculk_wolf_spawn_egg": "Sculk Wolf Spawn Egg",
   "item.sculky.sculk_horse_spawn_egg": "Sculk Horse Spawn Egg",
@@ -78,6 +81,8 @@
   "item.sculky.hollow_horn_spawn_egg": "Hollow Horn Spawn Egg",
   "item.sculky.infested_eye_spawn_egg": "Infested Eye Spawn Egg",
   "item.sculky.sculk_hunter_spawn_egg": "Sculk Hunter Spawn Egg",
+  "item.sculky.shadow_panther_spawn_egg": "Shadow Panther Spawn Egg",
+  "item.sculky.sculk_golem_spawn_egg": "Sculk Golem Spawn Egg",
 
   "item.minecraft.potion.effect.sculk_infection_potion": "Sculk Infection Potion",
   "item.minecraft.splash_potion.effect.sculk_infection_potion": "Sculk Infection Splash Potion",
@@ -104,6 +109,8 @@
   "block.sculky.infested_sculk_dirt_block": "Infested Sculk Dirt Block",
   "block.sculky.infested_sculk_rooted_dirt_block": "Infested Sculk Rooted Dirt Block",
   "block.sculky.infested_sculk_podzol_block": "Infested Sculk Podzol Block",
+  "block.sculky.sculk_sanctum_grass_block": "Sculk Sanctum Grass Block",
+  "block.sculky.sculk_sanctum_dirt_block": "Sculk Sanctum Dirt Block",
 
   "block.sculky.infested_sculk_sand": "Infested Sculk Sand",
 
@@ -158,6 +165,8 @@
   "block.sculky.sculkbloom": "Sculk Bloom",
   "block.sculky.echobloom": "Echo Bloom",
 
+  "block.sculky.sculk_portal": "Sculk Portal",
+
   "effect.sculky.sculk_infection": "Sculk Infection",
 
   "enchantment.sculky.infection": "Infection",
@@ -178,6 +187,9 @@
   "entity.sculky.sculk_sandsnare": "Sculk Sandsnare",
   "entity.sculky.salvatore": "Salvatore",
   "entity.sculky.sculk_phantom": "Sculk Phantom",
+  "entity.sculky.sanctum_watcher": "Sanctum Watcher",
+  "entity.sculky.royal_sculk_knight": "Royal Sculk Knight",
+  "entity.sculky.sculk_necromancer": "Sculk Necromancer",
 
   "entity.sculky.sculk_wolf": "Sculk Wolf",
   "entity.sculky.sculk_wolf_alpha": "Sculk Wolf Alpha",
@@ -190,9 +202,22 @@
   "entity.sculky.hollow_horn": "Hollow Horn",
   "entity.sculky.infested_eye": "Infested Eye",
   "entity.sculky.sculk_hunter": "Sculk Hunter",
+  "entity.sculky.shadow_panther": "Shadow Panther",
+  "entity.sculky.sculk_golem": "Sculk Golem",
 
   "entity.sculky.sonic_boom": "Sonic Boom",
   "entity.sculky.sculk_jar_projectile": "Sculk Jar Projectile",
+
+  "sounds.sculky.shadow_panther_theme": "Shadow Panther Theme",
+  "sounds.sculky.shadow_panther_ambient": "Shadow Panther Ambient Sound",
+  "sounds.sculky.shadow_panther_hurt": "Shadow Panther Hurt Sound",
+  "sounds.sculky.shadow_panther_death": "Shadow Panther Death Sound",
+  "sounds.sculky.shadow_panther_attack_stinger": "Shadow Panther Attacking",
+  "sounds.sculky.shadow_panther_pressure": "Shadow Panther Pressuring",
+  "sounds.sculky.shadow_panther_stalk": "Shadow Panther Stalking",
+
+  "item.sculky.shadow_panther_theme_music_disc": "Shadow Panther Theme",
+  "item.sculky.music_disc_shadow_panther_theme.desc": "Nocturne Dominus - All Credits goes to the said creator",
 
   "key.sculky.use_ability": "Use Ability",
   "key.categories.sculky": "Sculky Mod",
@@ -236,6 +261,9 @@
 
   "advancement.sculky.core_calling.title": "The Core is Calling",
   "advancement.sculky.core_calling.desc": "This isn’t just a relic… it’s a key.",
+
+  "advancement.sculky.enter_sanctum.title": "Into the Sanctum",
+  "advancement.sculky.enter_sanctum.desc": "Enter the forsaken realm of the Sculk King.",
 
 
   "itemGroup.sculky.sculky_items_tab": "Sculky Items Tab",

@@ -11,7 +11,10 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.Heightmap;
+import net.neoforged.bus.api.ICancellableEvent;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
@@ -71,15 +74,18 @@ public class ModEvents {
 
     @SubscribeEvent
     public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
-        event.register((state, level, pos, tintIndex) -> 0xFFFFFF,
-                ModBlocks.INFESTED_SCULK_LEAVES.get());
+        event.register((state, level, pos, tintIndex) -> 0xFFFFFF, ModBlocks.INFESTED_SCULK_LEAVES.get());
+        event.register((state, level, pos, tintIndex) -> 0xFFFFFF, ModBlocks.SCULK_JUNGLE_LEAVES.get());
     }
 
     @SubscribeEvent
     public static void registerItemColors(RegisterColorHandlersEvent.Item event) {
-        event.register((stack, tintIndex) -> 0xFFFFFF,
-                ModBlocks.INFESTED_SCULK_LEAVES.get().asItem());
+        event.register((stack, tintIndex) -> 0xFFFFFF, ModBlocks.INFESTED_SCULK_LEAVES.get().asItem());
+        event.register((stack, tintIndex) -> 0xFFFFFF, ModBlocks.SCULK_JUNGLE_LEAVES.get().asItem());
+
+
     }
+
 
     @SubscribeEvent
     public static void registerLayers( EntityRenderersEvent.RegisterLayerDefinitions event ) {
@@ -90,6 +96,8 @@ public class ModEvents {
         event.registerLayerDefinition(ModModelLayers.SCULK_TAIL, SculkTailModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SCULK_SANDSNARE, SculkSandsnareModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SALVATORE, SalvatoreModel :: createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.SANCTUM_WATCHER, SanctumWatcherModel :: createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.ROYAL_SCULK_KNIGHT, RoyalSculkKnightModel :: createBodyLayer);
 
         event.registerLayerDefinition(ModModelLayers.SCULK_WOLF, SculkWolfModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SCULK_FOX, SculkFoxModel :: createBodyLayer);
@@ -100,6 +108,8 @@ public class ModEvents {
         event.registerLayerDefinition(ModModelLayers.HOLLOW_HORN, HollowhornModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.INFESTED_EYE, InfestedEyeModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SCULK_HUNTER, SculkHunterModel :: createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.SHADOW_PANTHER, ShadowPantherModel :: createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.SCULK_GOLEM, SculkGolemModel :: createBodyLayer);
     }
 
     @SubscribeEvent
@@ -120,6 +130,9 @@ public class ModEvents {
         event.put(ModEntities.SCULKMITE.get(), SculkmiteEntity.createSculkmiteAttributes().build());
         event.put(ModEntities.SALVATORE.get(), SalvatoreEntity.createSalvatoreAttributes().build());
         event.put(ModEntities.SCULK_PHANTOM.get(), SculkPhantomEntity.createSculkPhantomAttributes().build());
+        event.put(ModEntities.SANCTUM_WATCHER.get(), SanctumWatcherEntity.createSanctumWatcherAttributes().build());
+        event.put(ModEntities.ROYAL_SCULK_KNIGHT.get(), RoyalSculkKnightEntity.createRoyalSculkKnightAttributes().build());
+        event.put(ModEntities.SCULK_NECROMANCER.get(), SculkNecromancerEntity.createSculkNecromancerAttributes().build());
 
         event.put(ModEntities.SCULK_WOLF.get(), SculkWolfEntity.createsSculkWolfAttributes().build());
         event.put(ModEntities.SCULK_WOLF_ALPHA.get(), SculkWolfAlphaEntity.createSculkWolfAlphaAttributes().build());
@@ -131,6 +144,8 @@ public class ModEvents {
         event.put(ModEntities.HOLLOW_HORN.get(), HollowhornEntity.createHollowhornAttributes().build());
         event.put(ModEntities.INFESTED_EYE.get(), InfestedEyeEntity.createInfestedEyeAttributes().build());
         event.put(ModEntities.SCULK_HUNTER.get(), SculkHunterEntity.createSculkHunterAttributes().build());
+        event.put(ModEntities.SHADOW_PANTHER.get(), ShadowPantherEntity.createShadowPantherAttributes().build());
+        event.put(ModEntities.SCULK_GOLEM.get(), SculkGolemEntity.createSculkGolemAttributes().build());
 
     }
 
@@ -225,6 +240,12 @@ public class ModEvents {
                 Monster::checkMobSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.REPLACE);
 
+        event.register(ModEntities.SANCTUM_WATCHER.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMobSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+
 
 
 
@@ -264,6 +285,13 @@ public class ModEvents {
                 RegisterSpawnPlacementsEvent.Operation.REPLACE);
 
         event.register(ModEntities.HOLLOW_HORN.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal :: checkMobSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+
+
+        event.register(ModEntities.SHADOW_PANTHER.get(),
                 SpawnPlacementTypes.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 Animal :: checkMobSpawnRules,

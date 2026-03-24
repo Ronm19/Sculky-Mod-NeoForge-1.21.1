@@ -68,6 +68,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         this.tag(BlockTags.DIRT)
                         .add(ModBlocks.INFESTED_SCULK_GRASS_BLOCK.get())
                         .add(ModBlocks.INFESTED_SCULK_DIRT_BLOCK.get())
+                        .add(ModBlocks.SCULK_SANCTUM_GRASS_BLOCK.get())
+                        .add(ModBlocks.SCULK_SANCTUM_DIRT_BLOCK.get())
                         .add(ModBlocks.INFESTED_SCULK_ROOTED_DIRT_BLOCK.get())
                         .add(ModBlocks.INFESTED_SCULK_PODZOL_BLOCK.get());
 

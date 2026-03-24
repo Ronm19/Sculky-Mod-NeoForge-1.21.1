@@ -1,4 +1,4 @@
-// 1.21.1	2026-03-15T17:59:05.0128838	Loot Tables
+// 1.21.1	2026-03-20T01:56:34.4214666	Loot Tables
 a4d9b1e0d55ed7345d6f739cc4c996acfbe268c5 data/sculky/loot_table/blocks/ancient_sculk_bricks.json
 6ce0f6dd4560222a46079d802491c53c594f9133 data/sculky/loot_table/blocks/chiseled_ancient_sculk_bricks.json
 08872ac984df6cfbafc176d401251a77c9db093e data/sculky/loot_table/blocks/cracked_ancient_sculk_bricks.json
@@ -52,6 +52,8 @@ a69488d3b4d07fc11c40106f271f5976ef8562d3 data/sculky/loot_table/blocks/sculk_jun
 9c27cd6ae9827213b71a14caed571cebb416061f data/sculky/loot_table/blocks/sculk_jungle_wall.json
 9348b2c38e13818d247fd62d90fa713b66809573 data/sculky/loot_table/blocks/sculk_jungle_wood.json
 9e60ac794d1efaa0689cfda7626b8296c992c18a data/sculky/loot_table/blocks/sculk_ore.json
+232834b5a455fd1d87fc0c8abfcb447884677363 data/sculky/loot_table/blocks/sculk_sanctum_dirt_block.json
+523296b921a6e6d1f8aa2cf40fc4ffd570888c24 data/sculky/loot_table/blocks/sculk_sanctum_grass_block.json
 f6a2045aa5d6b1432e8779e4e17661902f4de6ac data/sculky/loot_table/blocks/stripped_infested_sculk_log.json
 930b3ec539ecf5adcc1f194d3b8628ef2b7b5cd2 data/sculky/loot_table/blocks/stripped_infested_sculk_wood.json
 c704a80df6a72beb35ddfc404ec275640a19ed9d data/sculky/loot_table/blocks/stripped_sculk_jungle_log.json

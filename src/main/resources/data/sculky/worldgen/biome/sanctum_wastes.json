@@ -1,0 +1,114 @@
+{
+  "temperature": 0.5,
+  "downfall": 0.0,
+  "has_precipitation": false,
+
+  "effects": {
+    "fog_color": 2236962,
+    "sky_color": 0,
+    "water_color": 2236962,
+    "water_fog_color": 2236962
+  },
+
+  "ambient_sound": "minecraft:ambient.soul_sand_valley.loop",
+
+  "mood_sound": {
+    "sound": "minecraft:ambient.cave",
+    "tick_delay": 8000,
+    "block_search_extent": 8,
+    "offset": 2.0
+  },
+
+  "additions_sound": {
+    "sound": "minecraft:ambient.crimson_forest.additions",
+    "tick_chance": 0.005
+  },
+
+  "music": {
+    "sound": "minecraft:music.nether.warped_forest",
+    "min_delay": 12000,
+    "max_delay": 36000,
+    "replace_current_music": true
+  },
+
+  "spawners": {
+    "monster": [
+      {
+        "type": "sculky:sanctum_watcher",
+        "weight": 12,
+        "minCount": 1,
+        "maxCount": 3
+      },
+      {
+        "type": "sculky:salvatore",
+        "weight": 12,
+        "minCount": 1,
+        "maxCount": 3
+      },
+      {
+        "type": "sculky:royal_sculk_knight",
+        "weight": 12,
+        "minCount": 1,
+        "maxCount": 3
+      },
+      {
+        "type": "sculky:sculk_phantom",
+        "weight": 12,
+        "minCount": 1,
+        "maxCount": 3
+      },
+      {
+        "type": "sculky:sculk_enderman",
+        "weight": 12,
+        "minCount": 1,
+        "maxCount": 3
+      },
+      {
+        "type": "sculky:sculk_sentinel",
+        "weight": 12,
+        "minCount": 1,
+        "maxCount": 3
+      },
+      {
+        "type": "sculky:sculk_necromancer",
+        "weight": 12,
+        "minCount": 1,
+        "maxCount": 2
+      }
+    ],
+    "creature": [
+      {
+        "type": "sculky:sculk_golem",
+        "weight": 5,
+        "minCount": 1,
+        "maxCount": 1
+      },
+      {
+        "type": "sculky:shadow_panther",
+        "weight": 12,
+        "minCount": 3,
+        "maxCount": 4
+      },
+      {
+        "type": "sculky:sculk_hunter",
+        "weight": 5,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "sculky:infested_eye",
+        "weight": 5,
+        "minCount": 2,
+        "maxCount": 4
+      }
+    ]
+  },
+
+  "spawn_costs": {},
+
+  "creature_spawn_probability": 0.1,
+
+  "carvers": {},
+
+  "features": []
+}

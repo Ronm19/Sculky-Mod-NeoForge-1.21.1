@@ -49,7 +49,7 @@ public class ModBlocks {
             () -> new DropExperienceBlock(UniformInt.of(2, 7),BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().sound(SoundType.SCULK)));
 
     public static final DeferredBlock<Block> THRONE_BLOCK = registerBlock("throne_block",
-            () -> new Block(BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().sound(SoundType.SCULK_SHRIEKER)));
+            () -> new ThroneBlock(BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().sound(SoundType.SCULK_SHRIEKER)));
 
     public static final DeferredBlock<Block> KINGS_PEDESTAL = registerBlock("kings_pedestal",
             () -> new KingsPedestalBlock(BlockBehaviour.Properties.of().strength(3.5f, 6.0F).requiresCorrectToolForDrops()
@@ -161,6 +161,9 @@ public class ModBlocks {
 
     // ------------------------------------- ETC ------------------------------------ //
 
+    public static final DeferredBlock<Block> SCULK_PORTAL = registerBlock("sculk_portal",
+            () -> new SculkPortalBlock(BlockBehaviour.Properties.of().strength(0.1F, 3600000.0F).noCollission()
+                    .noLootTable().lightLevel(state -> 11).noOcclusion().noCollission().instabreak().sound(SoundType.SCULK_SHRIEKER)));
 
     public static final DeferredBlock<Block> TOMATO_SCULK_CROP = BLOCKS.register("tomato_sculk_crop",
             () -> new TomatoSculkCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT)));
@@ -176,6 +179,13 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> INFESTED_SCULK_PODZOL_BLOCK = registerBlock("infested_sculk_podzol_block",
             () -> new SculkBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.PODZOL).sound(SoundType.SCULK)));
+
+
+    public static final DeferredBlock<Block> SCULK_SANCTUM_GRASS_BLOCK = registerBlock("sculk_sanctum_grass_block",
+            () -> new SculkSanctumGrassBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK).sound(SoundType.SCULK)));
+
+    public static final DeferredBlock<Block> SCULK_SANCTUM_DIRT_BLOCK = registerBlock("sculk_sanctum_dirt_block",
+            () -> new SculkBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.SCULK)));
 
 
     public static final DeferredBlock<Block> SCULKBLOOM = registerBlock("sculkbloom",
@@ -238,7 +248,6 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> INFESTED_SCULK_SAPLING = registerBlock("infested_sculk_sapling",
             () -> new ModSaplingBlock(ModTreeGrowers.INFESTED_SCULK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING).sound(SoundType.SCULK)));
-
 
     public static final DeferredBlock<Block> SCULK_JUNGLE_LOG = registerBlock("sculk_jungle_log",
             () -> new ModJungleFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.JUNGLE_LOG).sound(SoundType.SCULK)));

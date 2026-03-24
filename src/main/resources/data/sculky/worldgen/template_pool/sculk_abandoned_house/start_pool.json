@@ -1,0 +1,15 @@
+{
+  "name": "sculky:sculk_abandoned_house/start_pool",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "sculky:sculk_abandoned_house",
+        "processors": "minecraft:empty",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

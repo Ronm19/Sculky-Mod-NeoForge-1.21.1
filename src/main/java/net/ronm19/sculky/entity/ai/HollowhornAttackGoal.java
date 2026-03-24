@@ -4,7 +4,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
-import net.ronm19.sculky.api.CheckAndPerform;
+import net.ronm19.sculky.api.interfaces.CheckAndPerform;
 import net.ronm19.sculky.entity.custom.HollowhornEntity;
 
 public class HollowhornAttackGoal extends MeleeAttackGoal implements CheckAndPerform {

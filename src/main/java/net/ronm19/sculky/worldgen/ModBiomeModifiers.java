@@ -33,7 +33,7 @@ public class ModBiomeModifiers {
         var biomes = context.lookup(Registries.BIOME);
 
         context.register(ADD_TREE_INFESTED_SCULK, new BiomeModifiers.AddFeaturesBiomeModifier(
-                HolderSet.direct(biomes.getOrThrow(ModBiomes.SCULK_FOREST)),
+                HolderSet.direct(biomes.getOrThrow(ModBiomeKeys.SANCTUM_WASTES), biomes.getOrThrow(ModBiomes.SCULK_FOREST)),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.INFESTED_SCULK_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 

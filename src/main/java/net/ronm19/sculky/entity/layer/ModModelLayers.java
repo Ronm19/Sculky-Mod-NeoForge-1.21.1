@@ -19,6 +19,10 @@ public class ModModelLayers {
             ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "sculk_sandsnare"), "main");
     public  static final ModelLayerLocation SALVATORE = new ModelLayerLocation(
             ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "salvatore"), "main");
+    public  static final ModelLayerLocation SANCTUM_WATCHER = new ModelLayerLocation(
+            ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "sanctum_watcher"), "main");
+    public  static final ModelLayerLocation ROYAL_SCULK_KNIGHT = new ModelLayerLocation(
+            ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "royal_sculk_knight"), "main");
 
 
 
@@ -42,4 +46,8 @@ public class ModModelLayers {
             ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "infested_eye"), "main");
     public static final ModelLayerLocation SCULK_HUNTER = new ModelLayerLocation(
             ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "sculk_hunter"), "main");
+    public static final ModelLayerLocation SHADOW_PANTHER = new ModelLayerLocation(
+            ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "shadow_panther"), "main");
+    public static final ModelLayerLocation SCULK_GOLEM = new ModelLayerLocation(
+            ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "sculk_golem"), "main");
 }

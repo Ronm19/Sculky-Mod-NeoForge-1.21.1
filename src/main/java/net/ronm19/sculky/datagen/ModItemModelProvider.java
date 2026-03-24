@@ -69,6 +69,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.KING_RELIC.get());
         basicItem(ModItems.THRONE_SHARD.get());
 
+        basicItem(ModItems.SHADOW_PANTHER_THEME_MUSIC_DISC.get());
+
 
         handheldItem(ModItems.INFESTED_SCULK_SWORD);
         handheldItem(ModItems.INFESTED_SCULK_PICKAXE);
@@ -133,6 +135,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent(ModItems.SCULK_SANDSNARE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SALVATORE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCULK_PHANTOM_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.SANCTUM_WATCHER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.ROYAL_SCULK_KNIGHT_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.SCULK_NECROMANCER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 
         withExistingParent(ModItems.SCULK_WOLF_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCULK_WOLF_ALPHA_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
@@ -145,6 +150,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent(ModItems.HOLLOW_HORN_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.INFESTED_EYE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCULK_HUNTER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.SHADOW_PANTHER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.SCULK_GOLEM_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
     }
 
     private ItemModelBuilder saplingItem(DeferredBlock<Block> item) {

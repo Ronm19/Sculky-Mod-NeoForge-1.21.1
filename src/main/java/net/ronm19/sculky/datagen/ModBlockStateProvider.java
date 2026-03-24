@@ -153,11 +153,18 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         blockWithItem(ModBlocks.INFESTED_SCULK_DIRT_BLOCK);
         blockWithItem(ModBlocks.INFESTED_SCULK_ROOTED_DIRT_BLOCK);
+        blockWithItem(ModBlocks.SCULK_SANCTUM_DIRT_BLOCK);
 
         simpleGrassLikeBlock(ModBlocks.INFESTED_SCULK_GRASS_BLOCK.get(),
         modLoc("block/infested_sculk_grass_block_top"),
                 modLoc("block/infested_sculk_grass_block_side"),
                 modLoc("block/infested_sculk_grass_block_bottom"));
+
+        simpleGrassLikeBlock(ModBlocks.SCULK_SANCTUM_GRASS_BLOCK.get(),
+                modLoc("block/sculk_sanctum_grass_block_top"),
+                modLoc("block/sculk_sanctum_grass_block_side"),
+                modLoc("block/sculk_sanctum_grass_block_bottom"));
+
 
         simpleGrassLikeBlock(ModBlocks.INFESTED_SCULK_PODZOL_BLOCK.get(),
                 modLoc("block/infested_sculk_podzol_block_top"),

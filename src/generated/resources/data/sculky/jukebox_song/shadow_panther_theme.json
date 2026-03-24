@@ -1,0 +1,8 @@
+{
+  "comparator_output": 15,
+  "description": {
+    "translate": "item.sculky.music_disc_shadow_panther_theme.desc"
+  },
+  "length_in_seconds": 270.0,
+  "sound_event": "sculky:shadow_panther_theme"
+}

@@ -2,6 +2,8 @@
   "values": [
     "sculky:infested_sculk_grass_block",
     "sculky:infested_sculk_dirt_block",
+    "sculky:sculk_sanctum_grass_block",
+    "sculky:sculk_sanctum_dirt_block",
     "sculky:infested_sculk_rooted_dirt_block",
     "sculky:infested_sculk_podzol_block"
   ]

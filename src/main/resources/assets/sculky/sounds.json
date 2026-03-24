@@ -1,3 +1,46 @@
 {
-
+  "shadow_panther_ambient": {
+    "subtitle": "sounds.sculky.shadow_panther_ambient",
+    "sounds": [
+      "sculky:shadow_panther_ambient"
+    ]
+  },
+  "shadow_panther_hurt": {
+    "subtitle": "sounds.sculky.shadow_panther_hurt",
+    "sounds": [
+      "sculky:shadow_panther_hurt"
+    ]
+  },
+  "shadow_panther_death": {
+    "subtitle": "sounds.sculky.shadow_panther_death",
+    "sounds": [
+      "sculky:shadow_panther_death"
+    ]
+  },
+  "shadow_panther_stalk": {
+    "subtitle": "sounds.sculky.shadow_panther_stalk",
+    "sounds": [
+      "sculky:shadow_panther_stalk"
+    ]
+  },
+  "shadow_panther_pressure": {
+    "subtitle": "sounds.sculky.shadow_panther_pressure",
+    "sounds": [
+      "sculky:shadow_panther_pressure"
+    ]
+  },
+  "shadow_panther_attack_stinger": {
+    "subtitle": "sounds.sculky.shadow_panther_attack_stinger",
+    "sounds": [
+      "sculky:shadow_panther_attack_stinger"
+    ]
+  },
+  "shadow_panther_theme": {
+    "sounds": [
+      {
+        "name": "sculky:shadow_panther_theme",
+        "stream": true
+      }
+    ]
+  }
 }

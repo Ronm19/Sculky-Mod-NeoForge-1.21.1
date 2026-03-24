@@ -1,5 +1,7 @@
 package net.ronm19.sculky.worldgen;
 
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
@@ -8,7 +10,10 @@ import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
+import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.*;
 import net.ronm19.sculky.SculkyMod;
@@ -36,9 +41,20 @@ public class ModPlacedFeatures {
     public static void bootstrap( BootstrapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
-        register(context, INFESTED_SCULK_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.INFESTED_SCULK_KEY),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2),
-                        ModBlocks.INFESTED_SCULK_SAPLING.get()));
+        register(context, INFESTED_SCULK_PLACED_KEY,
+                configuredFeatures.getOrThrow(ModConfiguredFeatures.INFESTED_SCULK_KEY),
+                List.of(
+                        PlacementUtils.countExtra(3, 0.1f, 2),
+                        InSquarePlacement.spread(),
+                        HeightmapPlacement.onHeightmap(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES),
+
+                        BlockPredicateFilter.forPredicate(
+                                BlockPredicate.matchesTag(BlockPos.ZERO.below(), BlockTags.DIRT)
+                        ),
+
+                        BiomeFilter.biome()
+                )
+        );
 
         register(context, INFESTED_JUNGLE_SCULK_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SCULK_JUNGLE_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1f, 2),

@@ -135,6 +135,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.INFESTED_SCULK_DIRT_BLOCK.get());
         dropSelf(ModBlocks.INFESTED_SCULK_ROOTED_DIRT_BLOCK.get());
         dropSelf(ModBlocks.INFESTED_SCULK_PODZOL_BLOCK.get());
+        dropSelf(ModBlocks.SCULK_SANCTUM_GRASS_BLOCK.get());
+        dropSelf(ModBlocks.SCULK_SANCTUM_DIRT_BLOCK.get());
 
         dropSelf(ModBlocks.INFESTED_SCULK_SAND.get());
 

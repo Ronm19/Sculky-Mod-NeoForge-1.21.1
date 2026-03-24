@@ -1,9 +1,6 @@
 package net.ronm19.sculky.entity;
 
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.neoforged.bus.api.IEventBus;
@@ -74,6 +71,14 @@ public class ModEntities {
             ENTITY_TYPES.register("sculk_enderman", () -> EntityType.Builder.of(SculkEndermanEntity::new, MobCategory.MONSTER)
                     .sized(0.6F, 2.9F).eyeHeight(2.55F).build("sculk_enderman"));
 
+    public static final Supplier<EntityType<SanctumWatcherEntity>> SANCTUM_WATCHER =
+            ENTITY_TYPES.register("sanctum_watcher", () -> EntityType.Builder.of(SanctumWatcherEntity::new, MobCategory.MONSTER)
+                    .sized(0.6F, 2.9F).eyeHeight(2.45F).build("sanctum_watcher"));
+
+    public static final Supplier<EntityType<RoyalSculkKnightEntity>> ROYAL_SCULK_KNIGHT =
+            ENTITY_TYPES.register("royal_sculk_knight", () -> EntityType.Builder.of(RoyalSculkKnightEntity::new, MobCategory.MONSTER)
+                    .sized(0.5F, 1.2F).eyeHeight(1.2F).clientTrackingRange(12).build("royal_sculk_knight"));
+
     public static final Supplier<EntityType<SculkPhantomEntity>> SCULK_PHANTOM =
             ENTITY_TYPES.register("sculk_phantom", () -> EntityType.Builder.of(SculkPhantomEntity::new, MobCategory.MONSTER)
                     .sized(0.9F, 0.5F).eyeHeight(0.25F).build("sculk_phantom"));
@@ -81,6 +86,10 @@ public class ModEntities {
     public static final Supplier<EntityType<SalvatoreEntity>> SALVATORE =
             ENTITY_TYPES.register("salvatore", () -> EntityType.Builder.of(SalvatoreEntity::new, MobCategory.MONSTER)
                     .sized(0.8F, 2.6F).eyeHeight(2.0F).build("salvatore"));
+
+    public static final Supplier<EntityType<SculkNecromancerEntity>> SCULK_NECROMANCER =
+            ENTITY_TYPES.register("sculk_necromancer", () -> EntityType.Builder.of(SculkNecromancerEntity ::new, MobCategory.MONSTER)
+                    .sized(0.6F, 1.99F).eyeHeight(1.74F).build("sculk_necromancer"));
 
 
     // ----------------------------- NATURAL & PASSIVE ---------------------------- //
@@ -119,10 +128,17 @@ public class ModEntities {
             ENTITY_TYPES.register("sculk_hunter", () -> EntityType.Builder.of(SculkHunterEntity ::new, MobCategory.CREATURE)
                     .sized(0.6F, 1.95F).eyeHeight(1.74F).build("sculk_hunter"));
 
-
     public static final Supplier<EntityType<SculkBeetleEntity>> SCULK_BEETLE =
             ENTITY_TYPES.register("sculk_beetle", () -> EntityType.Builder.of(SculkBeetleEntity::new, MobCategory.CREATURE)
                     .sized(0.9F, 0.5F).eyeHeight(0.28F).build("sculk_beetle"));
+
+    public static final Supplier<EntityType<ShadowPantherEntity>> SHADOW_PANTHER =
+            ENTITY_TYPES.register("shadow_panther", () -> EntityType.Builder.of(ShadowPantherEntity ::new, MobCategory.CREATURE)
+                    .sized(1.0F, 1.1F).eyeHeight(0.9F).build("shadow_panther"));
+
+    public static final Supplier<EntityType<SculkGolemEntity>> SCULK_GOLEM =
+            ENTITY_TYPES.register("sculk_golem", () -> EntityType.Builder.of(SculkGolemEntity::new, MobCategory.CREATURE)
+                            .sized(1.45F, 3.0F).eyeHeight(2.7F).clientTrackingRange(10).updateInterval(3).build("sculk_golem"));
 
 
 
