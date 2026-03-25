@@ -90,9 +90,9 @@
     "ambient": [
       {
         "type": "sculky:sculk_bat",
-        "maxCount": 5,
-        "minCount": 2,
-        "weight": 30
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 12
       }
     ],
     "axolotls": [],
@@ -101,129 +101,129 @@
     "monster": [
       {
         "type": "sculky:sculk_parasite",
-        "maxCount": 3,
+        "maxCount": 2,
         "minCount": 1,
-        "weight": 30
+        "weight": 18
       },
       {
         "type": "sculky:sculk_sentinel",
-        "maxCount": 3,
-        "minCount": 2,
-        "weight": 30
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 14
       },
       {
         "type": "sculky:sculk_stalker",
-        "maxCount": 5,
-        "minCount": 2,
-        "weight": 30
-      },
-      {
-        "type": "sculky:sculk_shade",
-        "maxCount": 4,
-        "minCount": 2,
-        "weight": 30
-      },
-      {
-        "type": "sculky:sculk_horror",
-        "maxCount": 4,
-        "minCount": 2,
-        "weight": 30
-      },
-      {
-        "type": "sculky:sculk_zombie",
-        "maxCount": 5,
-        "minCount": 2,
-        "weight": 30
-      },
-      {
-        "type": "sculky:sculk_skeleton",
-        "maxCount": 4,
-        "minCount": 2,
-        "weight": 30
-      },
-      {
-        "type": "sculky:sculk_creeper",
-        "maxCount": 4,
-        "minCount": 2,
-        "weight": 30
-      },
-      {
-        "type": "sculky:sculk_spider",
         "maxCount": 3,
-        "minCount": 2,
-        "weight": 30
-      },
-      {
-        "type": "sculky:sculk_enderman",
-        "maxCount": 3,
-        "minCount": 2,
-        "weight": 30
-      },
-      {
-        "type": "sculky:sculkmite",
-        "maxCount": 3,
-        "minCount": 1,
-        "weight": 30
-      },
-      {
-        "type": "sculky:sculk_phantom",
-        "maxCount": 5,
-        "minCount": 2,
-        "weight": 10
-      },
-      {
-        "type": "sculky:sculk_wolf",
-        "maxCount": 5,
-        "minCount": 2,
-        "weight": 30
-      },
-      {
-        "type": "sculky:sculk_wolf_alpha",
-        "maxCount": 2,
-        "minCount": 1,
-        "weight": 30
-      },
-      {
-        "type": "sculky:sculk_horse",
-        "maxCount": 4,
-        "minCount": 2,
-        "weight": 30
-      },
-      {
-        "type": "sculky:sculk_fox",
-        "maxCount": 3,
-        "minCount": 1,
-        "weight": 30
-      },
-      {
-        "type": "sculky:sculk_tail",
-        "maxCount": 4,
-        "minCount": 2,
-        "weight": 30
-      },
-      {
-        "type": "sculky:sculk_beetle",
-        "maxCount": 2,
-        "minCount": 1,
-        "weight": 3
-      },
-      {
-        "type": "sculky:hollow_horn",
-        "maxCount": 4,
         "minCount": 1,
         "weight": 20
       },
       {
-        "type": "sculky:infested_eye",
-        "maxCount": 5,
+        "type": "sculky:sculk_shade",
+        "maxCount": 2,
         "minCount": 1,
-        "weight": 30
+        "weight": 16
       },
       {
-        "type": "sculky:sculk_hunter",
+        "type": "sculky:sculk_horror",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 12
+      },
+      {
+        "type": "sculky:sculk_zombie",
+        "maxCount": 3,
+        "minCount": 1,
+        "weight": 12
+      },
+      {
+        "type": "sculky:sculk_skeleton",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 10
+      },
+      {
+        "type": "sculky:sculk_creeper",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 8
+      },
+      {
+        "type": "sculky:sculk_spider",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 8
+      },
+      {
+        "type": "sculky:sculk_enderman",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 6
+      },
+      {
+        "type": "sculky:sculkmite",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 10
+      },
+      {
+        "type": "sculky:sculk_phantom",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 6
+      },
+      {
+        "type": "sculky:sculk_wolf",
         "maxCount": 3,
         "minCount": 1,
         "weight": 10
+      },
+      {
+        "type": "sculky:sculk_wolf_alpha",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 4
+      },
+      {
+        "type": "sculky:sculk_horse",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 6
+      },
+      {
+        "type": "sculky:sculk_fox",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 8
+      },
+      {
+        "type": "sculky:sculk_tail",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 8
+      },
+      {
+        "type": "sculky:sculk_beetle",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 2
+      },
+      {
+        "type": "sculky:hollow_horn",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 6
+      },
+      {
+        "type": "sculky:infested_eye",
+        "maxCount": 3,
+        "minCount": 1,
+        "weight": 8
+      },
+      {
+        "type": "sculky:sculk_hunter",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 6
       }
     ],
     "underground_water_creature": [],

@@ -206,6 +206,16 @@ public class ModItems {
     public static final DeferredItem<Item> SCULK_NECROMANCER_SPAWN_EGG = ITEMS.register("sculk_necromancer_spawn_egg",
             () -> new DeferredSpawnEggItem(ModEntities.SCULK_NECROMANCER, 0x1A1E2B, 0x3FD6D1, new Item.Properties()));
 
+    public static final DeferredItem<Item> SCULK_BRUTE_SPAWN_EGG = ITEMS.register("sculk_brute_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.SCULK_BRUTE, 0x0F1620, 0x4FE6E1, new Item.Properties()));
+
+    public static final DeferredItem<Item> SCULK_BURROWER_SPAWN_EGG = ITEMS.register("sculk_burrower_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.SCULK_BURROWER, 0x0A1218, 0x35D9D1, new Item.Properties()));
+
+    public static final DeferredItem<Item> SCULK_SLIME_SPAWN_EGG = ITEMS.register("sculk_slime_spawn_egg",
+                    () -> new DeferredSpawnEggItem(ModEntities.SCULK_SLIME, 0x0A0F1C, 0x1EC6BE, new Item.Properties()));
+
+
 
 
     // ------------------------------- NEUTRAL Egg Spawns --------------------------------------------- //
@@ -248,6 +258,8 @@ public class ModItems {
 
     public static final DeferredItem<Item> SCULK_GOLEM_SPAWN_EGG = ITEMS.register("sculk_golem_spawn_egg",
                     () -> new DeferredSpawnEggItem(ModEntities.SCULK_GOLEM, 0x5B5044, 0x42D0CB, new Item.Properties()));
+
+
 
 
 

@@ -177,6 +177,9 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.SANCTUM_WATCHER_SPAWN_EGG);
                         pOutput.accept(ModItems.ROYAL_SCULK_KNIGHT_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_NECROMANCER_SPAWN_EGG);
+                        pOutput.accept(ModItems.SCULK_BRUTE_SPAWN_EGG);
+                        pOutput.accept(ModItems.SCULK_BURROWER_SPAWN_EGG);
+                        pOutput.accept(ModItems.SCULK_SLIME_SPAWN_EGG);
 
                         pOutput.accept(ModItems.SCULK_WOLF_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_HORSE_SPAWN_EGG);

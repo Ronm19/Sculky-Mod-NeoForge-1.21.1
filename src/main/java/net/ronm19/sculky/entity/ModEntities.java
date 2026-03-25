@@ -13,6 +13,8 @@ import net.ronm19.sculky.entity.projectile.SonicBoomEntity;
 
 import java.util.function.Supplier;
 
+import static javax.swing.text.html.parser.DTDConstants.ENTITIES;
+
 public class ModEntities {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
             DeferredRegister.create(BuiltInRegistries.ENTITY_TYPE, SculkyMod.MOD_ID);
@@ -90,6 +92,18 @@ public class ModEntities {
     public static final Supplier<EntityType<SculkNecromancerEntity>> SCULK_NECROMANCER =
             ENTITY_TYPES.register("sculk_necromancer", () -> EntityType.Builder.of(SculkNecromancerEntity ::new, MobCategory.MONSTER)
                     .sized(0.6F, 1.99F).eyeHeight(1.74F).build("sculk_necromancer"));
+
+    public static final Supplier<EntityType<SculkBruteEntity>> SCULK_BRUTE =
+            ENTITY_TYPES.register("sculk_brute", () -> EntityType.Builder.of(SculkBruteEntity::new, MobCategory.MONSTER)
+                    .sized(1.35F, 2.1F).eyeHeight(2.4F).clientTrackingRange(10).updateInterval(3).build("sculk_brute"));
+
+    public static final Supplier<EntityType<SculkBurrowerEntity>> SCULK_BURROWER =
+            ENTITY_TYPES.register("sculk_burrower", () -> EntityType.Builder.of(SculkBurrowerEntity::new, MobCategory.MONSTER)
+                    .sized(0.9F, 0.6F).eyeHeight(0.29F).build("sculk_burrower"));
+
+    public static final Supplier<EntityType<SculkSlimeEntity>> SCULK_SLIME =
+            ENTITY_TYPES.register("sculk_slime", () -> EntityType.Builder.of(SculkSlimeEntity::new, MobCategory.MONSTER)
+                            .sized(0.9F, 0.8F).eyeHeight(0.14F).clientTrackingRange(10).build("sculk_slime"));
 
 
     // ----------------------------- NATURAL & PASSIVE ---------------------------- //

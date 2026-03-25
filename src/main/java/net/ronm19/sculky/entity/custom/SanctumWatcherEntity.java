@@ -5,6 +5,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
@@ -43,7 +44,10 @@ public class SanctumWatcherEntity extends Monster {
     private static final double GIVE_UP_RANGE = 28.0D;
     private static final float STARE_DOT_THRESHOLD = 0.965F;
 
+
     private int aggressionTicks = 0;
+    private final boolean circleClockwise = this.random.nextBoolean();
+    private final float orbitOffset = this.random.nextFloat() * 360.0F;
 
     public SanctumWatcherEntity( EntityType<? extends Monster> entityType, Level level ) {
         super(entityType, level);
@@ -147,53 +151,99 @@ public class SanctumWatcherEntity extends Monster {
             return;
         }
 
+        if (!this.isAlerted() && this.getTarget() == null && this.random.nextFloat() < 0.03F) {
+            ServerLevel serverLevel = (ServerLevel) this.level();
+            serverLevel.sendParticles(
+                    ParticleTypes.SCULK_SOUL,
+                    this.getX(),
+                    this.getY(0.7D),
+                    this.getZ(),
+                    1,
+                    0.0D, 0.0D, 0.0D,
+                    0.01D
+            );
+        }
+
         this.tickWatcherLogic();
     }
 
     private void tickWatcherLogic() {
-        Player nearestPlayer = this.level().getNearestPlayer(this, STALK_RANGE);
+        Player player = this.level().getNearestPlayer(this, STALK_RANGE);
 
+        if (player == null || !player.isAlive()) {
+            return;
+        }
+
+        double distanceSqr = this.distanceToSqr(player);
+
+        // Always look at player (creepy behavior)
+        this.getLookControl().setLookAt(player, 30.0F, 30.0F);
+
+        // =========================
+        // 🔴 ALERTED STATE (COMBAT)
+        // =========================
         if (this.isAlerted()) {
-            if (nearestPlayer != null && (this.getTarget() == null || !this.getTarget().isAlive())) {
-                this.setTarget(nearestPlayer);
-            }
-
-            LivingEntity target = this.getTarget();
-            if (target != null && target.isAlive()) {
-                this.getLookControl().setLookAt(target, 30.0F, 30.0F);
+            if (this.getTarget() == null) {
+                this.setTarget(player);
             }
 
             if (this.aggressionTicks > 0) {
                 this.aggressionTicks--;
             }
 
-            if (target == null
-                    || !target.isAlive()
-                    || this.distanceToSqr(target) > GIVE_UP_RANGE * GIVE_UP_RANGE
-                    || this.aggressionTicks <= 0) {
+            if (this.getTarget() != null && this.getTarget().isAlive()) {
+                this.getNavigation().moveTo(this.getTarget(), 1.1D);
+            }
+
+            if (distanceSqr > GIVE_UP_RANGE * GIVE_UP_RANGE || this.aggressionTicks <= 0) {
                 this.calmDown();
             }
 
             return;
         }
 
-        if (nearestPlayer == null || !nearestPlayer.isAlive()) {
+        // =========================
+        // 👁️ STALKING STATE
+        // =========================
+
+        boolean looking = this.isPlayerLookingAtMe(player);
+
+        if (looking) {
+            Vec3 away = this.position().subtract(player.position()).normalize();
+            Vec3 targetPos = this.position().add(away.scale(0.6D));
+
+            this.getNavigation().setSpeedModifier(0.4D);
+            this.getNavigation().moveTo(targetPos.x, targetPos.y, targetPos.z, 0.4D);
             return;
         }
 
-        this.getLookControl().setLookAt(nearestPlayer, 20.0F, 20.0F);
+        // 🌀 Circle around player instead of direct path
 
-        double distanceSqr = this.distanceToSqr(nearestPlayer);
+        double direction = this.circleClockwise ? 1.0D : -1.0D;
+        double angle = ((this.tickCount * direction) + this.orbitOffset) * (Math.PI / 180.0D);
+        double radius = 3.5D;
+
+        double offsetX = Math.cos(angle) * radius;
+        double offsetZ = Math.sin(angle) * radius;
+
+        double targetX = player.getX() + offsetX;
+        double targetZ = player.getZ() + offsetZ;
+
+        this.getNavigation().setSpeedModifier(0.85D);
+        this.getNavigation().moveTo(targetX, player.getY(), targetZ, 0.85D);
+
+        // =========================
+        // ⚠️ TENSION BUILD-UP
+        // =========================
 
         if (distanceSqr <= AGGRO_RANGE * AGGRO_RANGE) {
-            this.becomeAlerted(nearestPlayer, 200);
-            return;
-        }
+            this.aggressionTicks += 2; // builds over time
 
-        if (this.isPlayerLookingAtMe(nearestPlayer)) {
-            this.getNavigation().stop();
+            if (this.aggressionTicks >= 40) {
+                this.becomeAlerted(player, 200);
+            }
         } else {
-            this.getNavigation().moveTo(nearestPlayer, 0.80D);
+            this.aggressionTicks = Math.max(0, this.aggressionTicks - 1);
         }
     }
 

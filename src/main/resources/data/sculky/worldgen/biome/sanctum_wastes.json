@@ -5,110 +5,126 @@
 
   "effects": {
     "fog_color": 2236962,
-    "sky_color": 0,
+    "sky_color": 131586,
     "water_color": 2236962,
-    "water_fog_color": 2236962
-  },
+    "water_fog_color": 2236962,
 
-  "ambient_sound": "minecraft:ambient.soul_sand_valley.loop",
+    "ambient_sound": "minecraft:ambient.warped_forest.loop",
 
-  "mood_sound": {
-    "sound": "minecraft:ambient.cave",
-    "tick_delay": 8000,
-    "block_search_extent": 8,
-    "offset": 2.0
-  },
+    "particle": {
+      "options": {
+        "type": "minecraft:sculk_soul"
+      },
+      "probability": 0.0045
+    },
 
-  "additions_sound": {
-    "sound": "minecraft:ambient.crimson_forest.additions",
-    "tick_chance": 0.005
-  },
+    "mood_sound": {
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 8000,
+      "block_search_extent": 8,
+      "offset": 2.0
+    },
 
-  "music": {
-    "sound": "minecraft:music.nether.warped_forest",
-    "min_delay": 12000,
-    "max_delay": 36000,
-    "replace_current_music": true
+    "additions_sound": {
+      "sound": "minecraft:ambient.crimson_forest.additions",
+      "tick_chance": 0.005
+    },
+
+    "music": {
+      "sound": "minecraft:music.nether.warped_forest",
+      "min_delay": 16000,
+      "max_delay": 40000,
+      "replace_current_music": true
+    }
   },
 
   "spawners": {
     "monster": [
       {
         "type": "sculky:sanctum_watcher",
-        "weight": 12,
+        "weight": 16,
         "minCount": 1,
-        "maxCount": 3
+        "maxCount": 2
       },
       {
-        "type": "sculky:salvatore",
-        "weight": 12,
+        "type": "sculky:sculk_burrower",
+        "weight": 11,
         "minCount": 1,
-        "maxCount": 3
+        "maxCount": 2
       },
       {
-        "type": "sculky:royal_sculk_knight",
-        "weight": 12,
+        "type": "sculky:sculk_slime",
+        "weight": 10,
         "minCount": 1,
-        "maxCount": 3
-      },
-      {
-        "type": "sculky:sculk_phantom",
-        "weight": 12,
-        "minCount": 1,
-        "maxCount": 3
-      },
-      {
-        "type": "sculky:sculk_enderman",
-        "weight": 12,
-        "minCount": 1,
-        "maxCount": 3
+        "maxCount": 2
       },
       {
         "type": "sculky:sculk_sentinel",
-        "weight": 12,
+        "weight": 9,
         "minCount": 1,
-        "maxCount": 3
+        "maxCount": 2
+      },
+      {
+        "type": "sculky:sculk_phantom",
+        "weight": 8,
+        "minCount": 1,
+        "maxCount": 2
+      },
+      {
+        "type": "sculky:sculk_brute",
+        "weight": 7,
+        "minCount": 1,
+        "maxCount": 1
+      },
+      {
+        "type": "sculky:sculk_enderman",
+        "weight": 6,
+        "minCount": 1,
+        "maxCount": 1
       },
       {
         "type": "sculky:sculk_necromancer",
-        "weight": 12,
-        "minCount": 1,
-        "maxCount": 2
-      }
-    ],
-    "creature": [
-      {
-        "type": "sculky:sculk_golem",
         "weight": 5,
         "minCount": 1,
         "maxCount": 1
       },
       {
-        "type": "sculky:shadow_panther",
-        "weight": 12,
-        "minCount": 3,
-        "maxCount": 4
+        "type": "sculky:royal_sculk_knight",
+        "weight": 4,
+        "minCount": 1,
+        "maxCount": 1
+      },
+      {
+        "type": "sculky:salvatore",
+        "weight": 3,
+        "minCount": 1,
+        "maxCount": 1
+      }
+    ],
+    "creature": [
+      {
+        "type": "sculky:sculk_golem",
+        "weight": 3,
+        "minCount": 1,
+        "maxCount": 1
       },
       {
         "type": "sculky:sculk_hunter",
         "weight": 5,
-        "minCount": 2,
-        "maxCount": 4
+        "minCount": 1,
+        "maxCount": 2
       },
       {
         "type": "sculky:infested_eye",
-        "weight": 5,
-        "minCount": 2,
-        "maxCount": 4
+        "weight": 4,
+        "minCount": 1,
+        "maxCount": 2
       }
     ]
   },
 
   "spawn_costs": {},
-
   "creature_spawn_probability": 0.1,
-
   "carvers": {},
-
   "features": []
 }

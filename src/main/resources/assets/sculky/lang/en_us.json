@@ -69,6 +69,9 @@
   "item.sculky.sanctum_watcher_spawn_egg": "Sanctum Watcher Spawn Egg",
   "item.sculky.royal_sculk_knight_spawn_egg": "Royal Sculk Knight Spawn Egg",
   "item.sculky.sculk_necromancer_spawn_egg": "Sculk Necromancer Spawn Egg",
+  "item.sculky.sculk_brute_spawn_egg": "Sculk Brute Spawn Egg",
+  "item.sculky.sculk_burrower_spawn_egg": "Sculk Burrower Spawn Egg",
+  "item.sculky.sculk_slime_spawn_egg": "Sculk Slime Spawn Egg",
 
   "item.sculky.sculk_wolf_spawn_egg": "Sculk Wolf Spawn Egg",
   "item.sculky.sculk_horse_spawn_egg": "Sculk Horse Spawn Egg",
@@ -190,6 +193,9 @@
   "entity.sculky.sanctum_watcher": "Sanctum Watcher",
   "entity.sculky.royal_sculk_knight": "Royal Sculk Knight",
   "entity.sculky.sculk_necromancer": "Sculk Necromancer",
+  "entity.sculky.sculk_brute": "Sculk Brute",
+  "entity.sculky.sculk_burrower": "Sculk Burrower",
+  "entity.sculky.sculk_slime": "Sculk Slime",
 
   "entity.sculky.sculk_wolf": "Sculk Wolf",
   "entity.sculky.sculk_wolf_alpha": "Sculk Wolf Alpha",

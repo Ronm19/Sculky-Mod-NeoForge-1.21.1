@@ -94,57 +94,57 @@
     "monster": [
       {
         "type": "sculky:sculk_zombie",
-        "maxCount": 3,
+        "maxCount": 2,
         "minCount": 1,
-        "weight": 12
+        "weight": 10
       },
       {
         "type": "sculky:sculk_skeleton",
-        "maxCount": 3,
+        "maxCount": 2,
         "minCount": 1,
-        "weight": 10
+        "weight": 8
       },
       {
         "type": "sculky:sculk_creeper",
-        "maxCount": 2,
+        "maxCount": 1,
         "minCount": 1,
-        "weight": 8
+        "weight": 6
       },
       {
         "type": "sculky:sculk_spider",
-        "maxCount": 2,
+        "maxCount": 1,
         "minCount": 1,
-        "weight": 8
+        "weight": 6
       },
       {
         "type": "sculky:sculk_phantom",
-        "maxCount": 5,
-        "minCount": 2,
-        "weight": 20
+        "maxCount": 3,
+        "minCount": 1,
+        "weight": 14
       },
       {
         "type": "sculky:sculk_sandsnare",
-        "maxCount": 5,
-        "minCount": 2,
-        "weight": 13
-      },
-      {
-        "type": "sculky:sculk_beetle",
-        "maxCount": 3,
-        "minCount": 1,
-        "weight": 10
-      },
-      {
-        "type": "sculky:sculk_rat",
-        "maxCount": 3,
-        "minCount": 2,
-        "weight": 10
-      },
-      {
-        "type": "sculky:sculk_hunter",
         "maxCount": 3,
         "minCount": 1,
         "weight": 12
+      },
+      {
+        "type": "sculky:sculk_beetle",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 6
+      },
+      {
+        "type": "sculky:sculk_rat",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 6
+      },
+      {
+        "type": "sculky:sculk_hunter",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 5
       }
     ],
     "underground_water_creature": [],
