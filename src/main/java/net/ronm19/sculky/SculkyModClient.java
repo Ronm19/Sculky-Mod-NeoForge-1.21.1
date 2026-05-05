@@ -53,6 +53,7 @@ public class SculkyModClient {
         EntityRenderers.register(ModEntities.SCULK_BRUTE.get(), SculkBruteRenderer::new);
         EntityRenderers.register(ModEntities.SCULK_BURROWER.get(), SculkBurrowerRenderer::new);
         EntityRenderers.register(ModEntities.SCULK_SLIME.get(), SculkSlimeRenderer::new);
+        EntityRenderers.register(ModEntities.SCULK_HERALD.get(), SculkHeraldRenderer::new);
 
 
         EntityRenderers.register(ModEntities.SCULK_WOLF.get(), SculkWolfRender::new);
@@ -72,6 +73,7 @@ public class SculkyModClient {
 
         EntityRenderers.register(ModEntities.SCULK_JAR_PROJECTILE.get(), ThrownItemRenderer::new);
         EntityRenderers.register(ModEntities.SCULK_BOMB_PROJECTILE.get(), ThrownItemRenderer::new);
+        EntityRenderers.register(ModEntities.SHADOW_BOLT.get(), ShadowBoltRenderer::new);
 
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.SCULK_PORTAL.get(), RenderType.translucent());
     }

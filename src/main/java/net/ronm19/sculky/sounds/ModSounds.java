@@ -17,6 +17,8 @@ public class ModSounds {
             DeferredRegister.create(BuiltInRegistries.SOUND_EVENT, SculkyMod.MOD_ID);
 
     public static final Supplier<SoundEvent> SHADOW_PANTHER_THEME = registerSoundEvent("shadow_panther_theme");
+    public static final Supplier<SoundEvent> ECHOES_OF_THE_CROWN = registerSoundEvent("echoes_of_the_crown");
+
     public static final Supplier<SoundEvent> SHADOW_PANTHER_AMBIENT = registerSoundEvent("shadow_panther_ambient");
     public static final Supplier<SoundEvent> SHADOW_PANTHER_HURT = registerSoundEvent("shadow_panther_hurt");
     public static final Supplier<SoundEvent> SHADOW_PANTHER_DEATH = registerSoundEvent("shadow_panther_death");
@@ -25,6 +27,7 @@ public class ModSounds {
     public static final Supplier<SoundEvent> SHADOW_PANTHER_ATTACK_STINGER = registerSoundEvent("shadow_panther_attack_stinger");
 
     public static final ResourceKey<JukeboxSong> SHADOW_PANTHER_THEME_KEY = createSong("shadow_panther_theme");
+    public static final ResourceKey<JukeboxSong> ECHOES_OF_THE_CROWN_KEY = createSong("echoes_of_the_crown");
 
     private static Supplier<SoundEvent> registerSoundEvent( String name) {
         ResourceLocation id = ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, name);

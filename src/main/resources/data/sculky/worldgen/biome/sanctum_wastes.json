@@ -99,6 +99,12 @@
         "weight": 3,
         "minCount": 1,
         "maxCount": 1
+      },
+      {
+        "type": "sculky:sculk_herald",
+        "weight": 5,
+        "minCount": 1,
+        "maxCount": 1
       }
     ],
     "creature": [

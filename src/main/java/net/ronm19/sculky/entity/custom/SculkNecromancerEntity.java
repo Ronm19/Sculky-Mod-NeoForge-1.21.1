@@ -22,6 +22,7 @@ import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.block.state.BlockState;
 import net.ronm19.sculky.entity.ModEntities;
+import net.ronm19.sculky.entity.projectile.ShadowBoltEntity;
 import org.jetbrains.annotations.NotNull;
 
 public class SculkNecromancerEntity extends Bogged implements Enemy, RangedAttackMob {
@@ -145,13 +146,36 @@ public class SculkNecromancerEntity extends Bogged implements Enemy, RangedAttac
     // =========================
     @Override
     public void performRangedAttack(LivingEntity target, float distanceFactor) {
+        if (!(this.level() instanceof ServerLevel serverLevel)) {
+            return;
+        }
 
         this.playSound(SoundEvents.EVOKER_CAST_SPELL, 1.0F, 0.85F);
 
-        target.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 60));
-        target.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 60));
+        ShadowBoltEntity bolt = new ShadowBoltEntity(ModEntities.SHADOW_BOLT.get(), serverLevel);
+        bolt.setOwner(this);
 
-        target.hurt(this.damageSources().mobAttack(this), 3.0F);
+        double startX = this.getX();
+        double startY = this.getEyeY() - 0.1D;
+        double startZ = this.getZ();
+
+        // Small lead so it feels smarter against moving targets
+        double leadFactor = 0.35D;
+
+        double targetX = target.getX() + target.getDeltaMovement().x * leadFactor;
+        double targetY = target.getEyeY() - 0.15D;
+        double targetZ = target.getZ() + target.getDeltaMovement().z * leadFactor;
+
+        double dx = targetX - startX;
+        double dy = targetY - startY;
+        double dz = targetZ - startZ;
+
+        bolt.setPos(startX, startY, startZ);
+
+        // Faster and much more accurate than before
+        bolt.shoot(dx, dy, dz, 1.5F, 0.05F);
+
+        serverLevel.addFreshEntity(bolt);
     }
 
     // =========================

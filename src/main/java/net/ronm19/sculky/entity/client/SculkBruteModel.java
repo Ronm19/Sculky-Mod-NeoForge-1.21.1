@@ -35,20 +35,20 @@ public class SculkBruteModel <T extends SculkBruteEntity> extends HierarchicalMo
         MeshDefinition meshdefinition = new MeshDefinition();
         PartDefinition partdefinition = meshdefinition.getRoot();
 
-        PartDefinition head = partdefinition.addOrReplaceChild("head", CubeListBuilder.create().texOffs(0, 79).addBox(-4.0F, -8.8F, -3.5F, 8.0F, 7.0F, 7.0F, new CubeDeformation(0.0F)), PartPose.offset(1.1F, -13.1F, 2.5F));
+        PartDefinition head = partdefinition.addOrReplaceChild("head", CubeListBuilder.create().texOffs(0, 79).addBox(-4.0F, -8.8F, -4.3F, 8.0F, 7.0F, 7.0F, new CubeDeformation(0.0F)), PartPose.offset(1.1F, -13.1F, 2.5F));
 
         PartDefinition body = partdefinition.addOrReplaceChild("body", CubeListBuilder.create().texOffs(0, 0).addBox(-10.05F, -16.6F, -6.5F, 20.0F, 11.0F, 12.0F, new CubeDeformation(0.0F))
                 .texOffs(40, 23).addBox(-6.45F, -5.6F, -5.5F, 13.0F, 11.0F, 10.0F, new CubeDeformation(0.0F)), PartPose.offset(1.45F, 1.5F, 2.7F));
 
         PartDefinition r_arm = partdefinition.addOrReplaceChild("r_arm", CubeListBuilder.create().texOffs(72, 71).addBox(-4.5F, -10.6F, -5.0F, 11.0F, 10.0F, 10.0F, new CubeDeformation(0.0F))
-                .texOffs(80, 60).addBox(-2.5F, -11.8F, -2.2F, 5.0F, 1.0F, 5.0F, new CubeDeformation(0.0F))
+                .texOffs(80, 60).addBox(-2.5F, -11.5F, -2.2F, 5.0F, 1.0F, 5.0F, new CubeDeformation(0.0F))
                 .texOffs(40, 44).addBox(-4.5F, -0.7F, -5.3F, 10.0F, 17.0F, 10.0F, new CubeDeformation(0.0F))
                 .texOffs(80, 44).addBox(-4.5F, 16.2F, -5.3F, 10.0F, 6.0F, 10.0F, new CubeDeformation(0.0F)), PartPose.offset(16.0F, -4.2F, 2.7F));
 
         PartDefinition l_arm = partdefinition.addOrReplaceChild("l_arm", CubeListBuilder.create().texOffs(0, 23).addBox(-5.3F, -13.4333F, -5.5F, 10.0F, 17.0F, 10.0F, new CubeDeformation(0.0F))
                 .texOffs(86, 20).addBox(-5.3F, 3.4667F, -5.6F, 10.0F, 6.0F, 10.0F, new CubeDeformation(0.0F))
                 .texOffs(64, 0).addBox(-6.9F, -23.3333F, -5.0F, 12.0F, 10.0F, 10.0F, new CubeDeformation(0.0F))
-                .texOffs(86, 36).addBox(-2.1F, -24.5333F, -2.2F, 5.0F, 1.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offset(-13.2F, 8.5333F, 2.7F));
+                .texOffs(86, 36).addBox(-2.1F, -24.2333F, -2.2F, 5.0F, 1.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offset(-13.2F, 8.5333F, 2.7F));
 
         PartDefinition leg1 = partdefinition.addOrReplaceChild("leg1", CubeListBuilder.create().texOffs(0, 50).addBox(-7.0F, -18.0F, -3.0F, 7.0F, 18.0F, 11.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 24.0F, 0.0F));
 

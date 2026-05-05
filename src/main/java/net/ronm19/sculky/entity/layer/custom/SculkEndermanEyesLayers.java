@@ -9,6 +9,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import net.ronm19.sculky.SculkyMod;
+import org.jetbrains.annotations.NotNull;
 
 @OnlyIn(Dist.CLIENT)
 public class SculkEndermanEyesLayers<T extends LivingEntity> extends EyesLayer<T, EndermanModel<T>> {
@@ -18,7 +19,7 @@ public class SculkEndermanEyesLayers<T extends LivingEntity> extends EyesLayer<T
         super(p_116964_);
     }
 
-    public RenderType renderType() {
+    public @NotNull RenderType renderType() {
         return ENDERMAN_EYES;
     }
 }

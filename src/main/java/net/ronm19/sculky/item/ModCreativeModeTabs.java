@@ -50,6 +50,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.TOTEM_SWARM);
                         pOutput.accept(ModItems.TOTEM_SCULK_VEIL);
                         pOutput.accept(ModItems.SHADOW_PANTHER_THEME_MUSIC_DISC);
+                        pOutput.accept(ModItems.ECHOES_OF_THE_CROWN_MUSIC_DISC);
 
                         pOutput.accept(ModItems.INFESTED_SCULK_SWORD);
                         pOutput.accept(ModItems.INFESTED_SCULK_PICKAXE);
@@ -180,6 +181,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.SCULK_BRUTE_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_BURROWER_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_SLIME_SPAWN_EGG);
+                        pOutput.accept(ModItems.SCULK_HERALD_SPAWN_EGG);
 
                         pOutput.accept(ModItems.SCULK_WOLF_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_HORSE_SPAWN_EGG);

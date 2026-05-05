@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "sculky:echo_dust"
+    },
+    "T": {
+      "item": "minecraft:tnt"
+    }
+  },
+  "pattern": [
+    "EEE",
+    "ETE",
+    "EEE"
+  ],
+  "result": {
+    "count": 1,
+    "id": "sculky:sculk_bomb"
+  }
+}

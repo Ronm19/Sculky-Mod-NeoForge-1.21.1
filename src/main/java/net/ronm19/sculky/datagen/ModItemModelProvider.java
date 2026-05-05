@@ -70,6 +70,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.THRONE_SHARD.get());
 
         basicItem(ModItems.SHADOW_PANTHER_THEME_MUSIC_DISC.get());
+        basicItem(ModItems.ECHOES_OF_THE_CROWN_MUSIC_DISC.get());
 
 
         handheldItem(ModItems.INFESTED_SCULK_SWORD);
@@ -141,6 +142,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent(ModItems.SCULK_BRUTE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCULK_BURROWER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCULK_SLIME_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.SCULK_HERALD_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 
         withExistingParent(ModItems.SCULK_WOLF_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCULK_WOLF_ALPHA_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));

@@ -79,6 +79,8 @@ public class ModItems {
     public static final DeferredItem<Item> SHADOW_PANTHER_THEME_MUSIC_DISC = ITEMS.registerItem("shadow_panther_theme_music_disc",
             properties -> new Item(properties.jukeboxPlayable(ModSounds.SHADOW_PANTHER_THEME_KEY).stacksTo(1).rarity(Rarity.RARE)));
 
+    public static final DeferredItem<Item> ECHOES_OF_THE_CROWN_MUSIC_DISC = ITEMS.registerItem("echo_of_the_crown_music_disc",
+            properties -> new Item(properties.jukeboxPlayable(ModSounds.ECHOES_OF_THE_CROWN_KEY).stacksTo(1).rarity(Rarity.RARE)));
 
     public static final DeferredItem<Item> TOMATO_SCULK_SEEDS = ITEMS.register("tomato_sculk_seeds",
             () -> new ItemNameBlockItem(ModBlocks.TOMATO_SCULK_CROP.get(), new Item.Properties()));
@@ -213,7 +215,10 @@ public class ModItems {
             () -> new DeferredSpawnEggItem(ModEntities.SCULK_BURROWER, 0x0A1218, 0x35D9D1, new Item.Properties()));
 
     public static final DeferredItem<Item> SCULK_SLIME_SPAWN_EGG = ITEMS.register("sculk_slime_spawn_egg",
-                    () -> new DeferredSpawnEggItem(ModEntities.SCULK_SLIME, 0x0A0F1C, 0x1EC6BE, new Item.Properties()));
+            () -> new DeferredSpawnEggItem(ModEntities.SCULK_SLIME, 0x0A0F1C, 0x1EC6BE, new Item.Properties()));
+
+    public static final DeferredItem<Item> SCULK_HERALD_SPAWN_EGG = ITEMS.register("sculk_herald_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.SCULK_HERALD, 0x061214, 0x00D8FF, new Item.Properties()));
 
 
 

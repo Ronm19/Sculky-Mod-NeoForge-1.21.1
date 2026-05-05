@@ -297,6 +297,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("sculk", has(Blocks.SCULK))
                 .save(pRecipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SCULK_BOMB.get())
+                .pattern("EEE")
+                .pattern("ETE")
+                .pattern("EEE")
+                .define('E', ModItems.ECHO_DUST.get())
+                .define('T', Blocks.TNT)
+                .unlockedBy("echo_dust", has(ModItems.ECHO_DUST.get()))
+                .save(pRecipeOutput);
+
+
 
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.SCULK_BOOTS.get())
                 .pattern("   ")

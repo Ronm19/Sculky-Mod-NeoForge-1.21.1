@@ -100,6 +100,7 @@ public class ModEvents {
         event.registerLayerDefinition(ModModelLayers.ROYAL_SCULK_KNIGHT, RoyalSculkKnightModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SCULK_BRUTE, SculkBruteModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SCULK_BURROWER, SculkBurrowerModel :: createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.SCULK_HERALD, SculkHeraldModel :: createBodyLayer);
 
         event.registerLayerDefinition(ModModelLayers.SCULK_WOLF, SculkWolfModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SCULK_FOX, SculkFoxModel :: createBodyLayer);
@@ -138,6 +139,7 @@ public class ModEvents {
         event.put(ModEntities.SCULK_BRUTE.get(), SculkBruteEntity.createSculkBruteAttributes().build());
         event.put(ModEntities.SCULK_BURROWER.get(), SculkBurrowerEntity.createSculkBurrowerAttributes().build());
         event.put(ModEntities.SCULK_SLIME.get(), SculkSlimeEntity.createSculkSlimeAttributes().build());
+        event.put(ModEntities.SCULK_HERALD.get(), SculkHeraldEntity.createSculkHeraldAttributes().build());
 
         event.put(ModEntities.SCULK_WOLF.get(), SculkWolfEntity.createsSculkWolfAttributes().build());
         event.put(ModEntities.SCULK_WOLF_ALPHA.get(), SculkWolfAlphaEntity.createSculkWolfAlphaAttributes().build());
@@ -251,8 +253,11 @@ public class ModEvents {
                 Monster::checkMobSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.REPLACE);
 
-
-
+        event.register(ModEntities.SCULK_HERALD.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMobSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
 
         // ---------------------------------------------------------
         //                NEUTRAL / TAMABLE-TYPE ENTITIES

@@ -1,4 +1,4 @@
-// 1.21.1	2026-03-15T16:25:26.0252484	Recipes
+// 1.21.1	2026-05-05T12:11:26.9079235	Recipes
 32795b090e8c28bcad43b511c07d52588d301844 data/minecraft/advancement/recipes/redstone/sculk_shrieker.json
 f00b4944da74f645a1372b3e13b20bebc9ee0c04 data/minecraft/recipe/sculk_shrieker.json
 4d57550a8ef1ac32fc99b32ffb98b246b3999b5e data/sculky/advancement/recipes/building_blocks/ancient_sculk_bricks.json
@@ -49,6 +49,7 @@ faa58bfce985cfa43211a8dab8bfbe61bab33a1c data/sculky/advancement/recipes/food/so
 fd297986e36f6f3d8a66fccf63818b53bce61d0e data/sculky/advancement/recipes/misc/echo_conduit.json
 d41b232f54cf2ff463408bc38c3c46a3ac5bd909 data/sculky/advancement/recipes/misc/echo_dust.json
 f562f36e5aeaceb8766555bb3ca1b90096749f4e data/sculky/advancement/recipes/misc/infested_sculk_block.json
+bfeadb472acacac7bc3d9276ceb4b2d799ae2a01 data/sculky/advancement/recipes/misc/sculk_bomb.json
 0f5293cbbd2afac569ecb50027213183c6278671 data/sculky/advancement/recipes/misc/sculk_bone.json
 626069ba130024dafebcc461802e3f674f01e855 data/sculky/advancement/recipes/misc/sculk_jar.json
 31a9e432f246b29eb834a49384e2666d74da9ba8 data/sculky/advancement/recipes/misc/sculk_lantern.json
@@ -118,6 +119,7 @@ f954a53167cd3ece07e35b20b76f904d452016b5 data/sculky/recipe/infested_sculk_sword
 c7b7a288b0dfe27bef752d6483f7fc9f81f528e6 data/sculky/recipe/infested_sculk_wood.json
 f209effb573bf2908691876f64f4488723264993 data/sculky/recipe/kings_pedestal.json
 8a01296286c38f5dd4a2572b318ffe701a057d70 data/sculky/recipe/sculk_apple.json
+e8dd02d21aba07b8df96fd8702f618a24a9fc66d data/sculky/recipe/sculk_bomb.json
 eb6f5f7cbd11212f51e929ba83c4e4c60464972f data/sculky/recipe/sculk_bone.json
 2ab8ff2ded9eed5a35658e6364166a929d3d2b8f data/sculky/recipe/sculk_boots.json
 aaa8dbc7ef518cec047895eced603247489bff9a data/sculky/recipe/sculk_heartfruit.json

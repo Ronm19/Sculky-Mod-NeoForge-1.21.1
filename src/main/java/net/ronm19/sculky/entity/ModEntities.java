@@ -9,6 +9,7 @@ import net.ronm19.sculky.SculkyMod;
 import net.ronm19.sculky.entity.custom.*;
 import net.ronm19.sculky.entity.projectile.SculkBombProjectileEntity;
 import net.ronm19.sculky.entity.projectile.SculkJarProjectileEntity;
+import net.ronm19.sculky.entity.projectile.ShadowBoltEntity;
 import net.ronm19.sculky.entity.projectile.SonicBoomEntity;
 
 import java.util.function.Supplier;
@@ -105,6 +106,9 @@ public class ModEntities {
             ENTITY_TYPES.register("sculk_slime", () -> EntityType.Builder.of(SculkSlimeEntity::new, MobCategory.MONSTER)
                             .sized(0.9F, 0.8F).eyeHeight(0.14F).clientTrackingRange(10).build("sculk_slime"));
 
+    public static final Supplier<EntityType<SculkHeraldEntity>> SCULK_HERALD =
+            ENTITY_TYPES.register("sculk_herald", () -> EntityType.Builder.of(SculkHeraldEntity::new, MobCategory.MONSTER)
+                    .sized(0.9F, 2.7F).eyeHeight(0.18F).clientTrackingRange(10).build("sculk_herald"));
 
     // ----------------------------- NATURAL & PASSIVE ---------------------------- //
 
@@ -181,6 +185,10 @@ public class ModEntities {
     public static final Supplier<EntityType<SculkBombProjectileEntity>> SCULK_BOMB_PROJECTILE =
             ENTITY_TYPES.register("sculk_bomb_projectile", () -> EntityType.Builder.<SculkBombProjectileEntity>of(SculkBombProjectileEntity::new, MobCategory.MISC)
                     .sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10).build("sculky:sculk_bomb_projectile"));
+
+    public static final Supplier<EntityType<ShadowBoltEntity>> SHADOW_BOLT =
+            ENTITY_TYPES.register("shadow_bolt", () -> EntityType.Builder.<ShadowBoltEntity>of(ShadowBoltEntity::new, MobCategory.MISC)
+                            .sized(0.3F, 0.3F).clientTrackingRange(4).updateInterval(10).build("shadow_bolt"));
 
 
 

@@ -1,4 +1,4 @@
-// 1.21.1	2026-03-24T18:23:10.9921723	Item Models: sculky
+// 1.21.1	2026-05-05T09:43:12.6637001	Item Models: sculky
 af7db26754b709a1aada7bbf2a40ba8ccfea64e4 assets/sculky/models/item/ancient_resonance_core.json
 0bc74c970456a6384d2eb71e4c5a9b0076def5df assets/sculky/models/item/crown_fragment.json
 062619c79a25ccce1665abb3baacabdc0ab83886 assets/sculky/models/item/echobloom.json
@@ -6,6 +6,7 @@ fb0446df9bc6cd6ae702e28ae2c9682758c92d2f assets/sculky/models/item/echo_conduit.
 73e021106fd0960f0ffc52d87d21b556d2456623 assets/sculky/models/item/echo_dagger.json
 111b7c0261b93565f85b16aed9de521de8dad0d5 assets/sculky/models/item/echo_dust.json
 f5ac69197066ddb7af9820347580fddc1f335c0c assets/sculky/models/item/echo_jelly.json
+edfbf10d71d6a27841edcd3c12105dc67f0f64bb assets/sculky/models/item/echo_of_the_crown_music_disc.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/hollow_horn_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/infested_eye_spawn_egg.json
 e00db0e98202fbd27bd6b9f7d6786bb4aae6e765 assets/sculky/models/item/infested_sculk_axe.json
@@ -101,6 +102,7 @@ e4502af2613269d7d935a6b3928c77e5b3d4a58f assets/sculky/models/item/sculk_fang.js
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_fox_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_golem_spawn_egg.json
 f464738a4f677f6db95bee334b255d6a9502307a assets/sculky/models/item/sculk_heartfruit.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_herald_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_horror_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_horse_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_hunter_spawn_egg.json

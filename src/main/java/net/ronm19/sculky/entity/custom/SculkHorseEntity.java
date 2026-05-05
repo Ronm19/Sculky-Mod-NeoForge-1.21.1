@@ -502,36 +502,9 @@ public class SculkHorseEntity extends AbstractHorse implements AbilityUser {
 }
 
 
-    // -----------------------------------------------------
+// -----------------------------------------------------
 //  RIDING METHODS — NeoForge 1.21.1 (Mojang mappings)
 // -----------------------------------------------------
-
-    @Nullable
-    @Override
-    public LivingEntity getControllingPassenger() {
-        Entity passenger = this.getFirstPassenger();
-        return passenger instanceof LivingEntity living ? living : null;
-    }
-
-    @Override
-    protected boolean canAddPassenger( @NotNull Entity passenger ) {
-        return this.getPassengers().isEmpty() && passenger instanceof LivingEntity;
-    }
-
-    // Player mounts the horse (correct Mojang mappings)
-    private void setRiding( Player player ) {
-        player.setYRot(this.getYRot());
-        player.setXRot(this.getXRot());
-        player.startRiding(this);
-    }
-
-// -----------------------------------------------------
-//  SEAT OFFSET (Modern — uses new attachment system)
-// -----------------------------------------------------
-
-    private static final double SEAT_SIDE = -0.03;
-    private static final double SEAT_BACK = 0.10;
-    private static final double SEAT_HEIGHT = 0.10;
 
     @Override
     public boolean canUseSlot( @NotNull EquipmentSlot slot ) {
@@ -557,124 +530,6 @@ public class SculkHorseEntity extends AbstractHorse implements AbilityUser {
         }
 
         return false;
-    }
-
-    @Override
-    public @NotNull Vec3 getPassengerAttachmentPoint( Entity passenger, @NotNull EntityDimensions dims, float partialTick ) {
-
-        double localX = SEAT_SIDE;
-        double localY = this.getPassengersRidingOffset() + passenger.getVehicleAttachmentPoint(this).y;
-        double localZ = -SEAT_BACK;
-
-        float yawRad = (float) Math.toRadians(this.yBodyRot);
-
-        double x = localX * Math.cos(yawRad) - localZ * Math.sin(yawRad);
-        double z = localX * Math.sin(yawRad) + localZ * Math.cos(yawRad);
-
-        return new Vec3(x, localY, z);
-    }
-
-    public double getPassengersRidingOffset() {
-        return this.getBbHeight() * SEAT_HEIGHT;
-    }
-
-// -----------------------------------------------------
-//  POSITION PASSENGER CORRECTLY
-// -----------------------------------------------------
-
-    @Override
-    protected void positionRider( Entity passenger, MoveFunction move ) {
-
-        Vec3 attach = passenger.getVehicleAttachmentPoint(this);
-
-        double x = this.getX() + attach.x;
-        double y = this.getY() + this.getPassengersRidingOffset() + attach.y;
-        double z = this.getZ() + attach.z;
-
-        move.accept(passenger, x, y, z);
-
-        if (passenger instanceof LivingEntity living) {
-            living.yBodyRot = this.yBodyRot;
-            living.setYRot(this.getYRot());
-        }
-    }
-
-// -----------------------------------------------------
-//  RIDER-CONTROLLED MOVEMENT
-// -----------------------------------------------------
-
-    @Override
-    public void travel(Vec3 input) {
-        LivingEntity ctrl = getControllingPassenger();
-
-        if (ctrl instanceof Player rider) {
-            setYRot(rider.getYRot());
-            yRotO = getYRot();
-            xRotO = getXRot();
-
-            float strafe = rider.xxa * 0.5F;
-            float forward = rider.zza;
-
-            if (forward <= 0.0F) forward *= 0.3F;
-
-            setSpeed((float) getAttributeValue(Attributes.MOVEMENT_SPEED));
-            super.travel(new Vec3(strafe, input.y, forward));
-            return;
-        }
-
-        super.travel(input);
-    }
-
-
-
-// -----------------------------------------------------
-//  DISMOUNT LOGIC
-// -----------------------------------------------------
-
-
-    private Vec3 getSafeDismountPos( LivingEntity passenger ) {
-        // Directions to test around the horse
-        Vec3[] checks = new Vec3[]{
-                new Vec3(1, 0, 0),   // east
-                new Vec3(-1, 0, 0),  // west
-                new Vec3(0, 0, 1),   // south
-                new Vec3(0, 0, -1),  // north
-                new Vec3(1, 0, 1),   // diagonal
-                new Vec3(-1, 0, 1),
-                new Vec3(1, 0, -1),
-                new Vec3(-1, 0, -1)
-        };
-
-        Level level = this.level();
-
-        for (Vec3 offset : checks) {
-            double x = this.getX() + offset.x;
-            double z = this.getZ() + offset.z;
-
-            // Find ground height beneath that position
-            BlockPos pos = BlockPos.containing(x, this.getY(), z);
-            BlockPos down = pos.below();
-
-            // Make sure the block below is solid ground
-            if (!level.getBlockState(down).isSolid()) continue;
-
-            // Check height for dismount
-            double y = down.getY() + 1.0;
-
-            // AABB check to prevent suffocation
-            AABB hitbox = passenger.getBoundingBox().move(x - passenger.getX(), y - passenger.getY(), z - passenger.getZ());
-            if (!level.noCollision(passenger, hitbox)) continue;
-
-            return new Vec3(x, y, z);
-        }
-
-        // Fallback: dismount on top of the horse
-        return new Vec3(this.getX(), this.getY() + 1.0, this.getZ());
-    }
-
-    @Override
-    public @NotNull Vec3 getDismountLocationForPassenger( @NotNull LivingEntity passenger ) {
-        return getSafeDismountPos(passenger);
     }
 
     @Override

@@ -1,0 +1,8 @@
+{
+  "comparator_output": 15,
+  "description": {
+    "translate": "item.sculky.music_disc_echoes_of_the_crown.desc"
+  },
+  "length_in_seconds": 295.0,
+  "sound_event": "sculky:echoes_of_the_crown"
+}

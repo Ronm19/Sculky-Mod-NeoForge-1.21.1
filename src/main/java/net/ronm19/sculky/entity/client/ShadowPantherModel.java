@@ -38,13 +38,11 @@ public class ShadowPantherModel <T extends ShadowPantherEntity> extends Hierarch
         PartDefinition partdefinition = meshdefinition.getRoot();
 
         PartDefinition head = partdefinition.addOrReplaceChild("head", CubeListBuilder.create().texOffs(22, 21).addBox(-2.4403F, -1.5F, -2.1977F, 5.0F, 5.0F, 6.0F, new CubeDeformation(0.0F))
-                .texOffs(56, 12).addBox(-3.4403F, -3.5F, 1.1023F, 2.0F, 2.0F, 1.0F, new CubeDeformation(0.0F))
-                .texOffs(56, 15).addBox(1.4597F, -3.5F, 0.8023F, 2.0F, 2.0F, 1.0F, new CubeDeformation(0.0F))
+                .texOffs(32, 0).addBox(2.5597F, -1.5F, -1.1977F, 1.0F, 5.0F, 4.0F, new CubeDeformation(0.0F))
+                .texOffs(31, 0).addBox(-3.4403F, -1.5F, -1.1977F, 1.0F, 5.0F, 4.0F, new CubeDeformation(0.0F))
+                .texOffs(56, 12).addBox(-2.9403F, -3.5F, 0.7023F, 2.0F, 2.0F, 1.0F, new CubeDeformation(0.0F))
+                .texOffs(56, 15).addBox(0.8597F, -3.5F, 0.8023F, 2.0F, 2.0F, 1.0F, new CubeDeformation(0.0F))
                 .texOffs(48, 32).addBox(-1.9403F, 0.5F, -5.1977F, 4.0F, 3.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-0.5597F, 12.7675F, -11.3743F, 0.0524F, 0.0F, 0.0F));
-
-        PartDefinition head_r1 = head.addOrReplaceChild("head_r1", CubeListBuilder.create().texOffs(20, 32).addBox(-1.0F, -2.5F, -3.0F, 2.0F, 5.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(2.6395F, 1.0F, 0.9616F, 0.0F, 0.3316F, 0.0F));
-
-        PartDefinition head_r2 = head.addOrReplaceChild("head_r2", CubeListBuilder.create().texOffs(34, 32).addBox(-1.0F, -2.5F, -3.0F, 2.0F, 5.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-2.9605F, 1.0F, 0.9616F, 0.0F, -0.4887F, 0.0F));
 
         PartDefinition body = partdefinition.addOrReplaceChild("body", CubeListBuilder.create().texOffs(0, 32).addBox(-3.5F, -3.125F, -6.5F, 7.0F, 6.0F, 3.0F, new CubeDeformation(0.0F))
                 .texOffs(0, 0).addBox(-3.5F, -2.675F, -3.5F, 7.0F, 6.0F, 15.0F, new CubeDeformation(0.0F)), PartPose.offset(-0.5F, 14.025F, -2.1F));
@@ -67,18 +65,19 @@ public class ShadowPantherModel <T extends ShadowPantherEntity> extends Hierarch
 
         PartDefinition tail = partdefinition.addOrReplaceChild("tail", CubeListBuilder.create(), PartPose.offset(-0.4F, 16.7121F, 21.0664F));
 
-        PartDefinition cube_r1 = tail.addOrReplaceChild("cube_r1", CubeListBuilder.create().texOffs(48, 38).addBox(-1.0F, -1.0F, -1.0F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 2.9F, 3.3F, -0.3316F, 0.0F, 0.0F));
+        PartDefinition tail_r1 = tail.addOrReplaceChild("tail_r1", CubeListBuilder.create().texOffs(48, 38).addBox(-1.0F, -1.0F, -1.0F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 2.9F, 3.3F, -0.3316F, 0.0F, 0.0F));
 
-        PartDefinition cube_r2 = tail.addOrReplaceChild("cube_r2", CubeListBuilder.create().texOffs(0, 55).addBox(0.0F, -2.0F, 0.0F, 2.0F, 2.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-1.0F, 2.1789F, -1.8175F, -0.3491F, 0.0F, 0.0F));
+        PartDefinition tail_r2 = tail.addOrReplaceChild("tail_r2", CubeListBuilder.create().texOffs(0, 55).addBox(0.0F, -2.0F, 0.0F, 2.0F, 2.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-1.0F, 2.1789F, -1.8175F, -0.3491F, 0.0F, 0.0F));
 
-        PartDefinition cube_r3 = tail.addOrReplaceChild("cube_r3", CubeListBuilder.create().texOffs(56, 0).addBox(0.0F, -2.0F, 0.0F, 2.0F, 2.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-1.0F, 0.2789F, -5.1175F, -0.5061F, 0.0F, 0.0F));
+        PartDefinition tail_r3 = tail.addOrReplaceChild("tail_r3", CubeListBuilder.create().texOffs(56, 0).addBox(0.0F, -2.0F, 0.0F, 2.0F, 2.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-1.0F, 0.2789F, -5.1175F, -0.5061F, 0.0F, 0.0F));
 
-        PartDefinition cube_r4 = tail.addOrReplaceChild("cube_r4", CubeListBuilder.create().texOffs(12, 56).addBox(0.0F, -2.0F, 0.0F, 2.0F, 2.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-1.0F, -1.3211F, -8.6175F, -0.4363F, 0.0F, 0.0F));
+        PartDefinition tail_r4 = tail.addOrReplaceChild("tail_r4", CubeListBuilder.create().texOffs(12, 56).addBox(0.0F, -2.0F, 0.0F, 2.0F, 2.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-1.0F, -1.3211F, -8.6175F, -0.4363F, 0.0F, 0.0F));
 
-        PartDefinition cube_r5 = tail.addOrReplaceChild("cube_r5", CubeListBuilder.create().texOffs(55, 5).addBox(0.0F, -2.0F, -1.0F, 2.0F, 2.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-1.0F, -2.9211F, -12.2175F, -0.4189F, 0.0F, 0.0F));
+        PartDefinition tail_r5 = tail.addOrReplaceChild("tail_r5", CubeListBuilder.create().texOffs(55, 5).addBox(0.0F, -2.0F, -1.0F, 2.0F, 2.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-1.0F, -2.9211F, -12.2175F, -0.4189F, 0.0F, 0.0F));
 
         return LayerDefinition.create(meshdefinition, 128, 128);
     }
+
 
     @Override
     public void setupAnim(ShadowPantherEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {

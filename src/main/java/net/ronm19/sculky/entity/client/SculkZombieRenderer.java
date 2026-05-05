@@ -33,7 +33,7 @@ public class SculkZombieRenderer extends AbstractZombieRenderer<SculkZombieEntit
                         CorruptedSculkZombieVariant.CORRUPTED,
                         ResourceLocation.fromNamespaceAndPath(
                                 SculkyMod.MOD_ID,
-                                "textures/entity/sculk_zombie/sculk_zombie_corrupted.png"
+                                "textures/entity/sculk_zombie/corrupted_sculk_zombie.png"
                         )
                 );
             });

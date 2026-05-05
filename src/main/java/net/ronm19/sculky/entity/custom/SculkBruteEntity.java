@@ -123,6 +123,13 @@ public class SculkBruteEntity extends Monster implements Enemy {
         return success;
     }
 
+    public boolean shouldGlowEyes() {
+        if (this.level() == null) return false;
+
+        long time = this.level().getDayTime() % 24000L;
+        return time >= 13000L && time <= 23000L;
+    }
+
     @Override
     protected SoundEvent getAmbientSound() {
         return SoundEvents.RAVAGER_AMBIENT;

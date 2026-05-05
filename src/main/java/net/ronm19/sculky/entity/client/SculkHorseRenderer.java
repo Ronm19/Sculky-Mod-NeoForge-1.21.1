@@ -6,12 +6,11 @@ import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.client.renderer.entity.layers.HorseArmorLayer;
 import net.minecraft.resources.ResourceLocation;
 import net.ronm19.sculky.SculkyMod;
 import net.ronm19.sculky.entity.custom.SculkHorseEntity;
-import net.ronm19.sculky.entity.custom.SculkWolfEntity;
 import net.ronm19.sculky.entity.layer.custom.SculkHorseArmorLayer;
+import org.jetbrains.annotations.NotNull;
 
 public class SculkHorseRenderer extends MobRenderer<SculkHorseEntity, HorseModel<SculkHorseEntity>> {
     private static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "textures/entity/sculk_horse/sculk_horse.png");
@@ -23,15 +22,13 @@ public class SculkHorseRenderer extends MobRenderer<SculkHorseEntity, HorseModel
     }
 
     @Override
-    public ResourceLocation getTextureLocation( SculkHorseEntity sculkHorseEntity ) {
+    public @NotNull ResourceLocation getTextureLocation( @NotNull SculkHorseEntity sculkHorseEntity ) {
         return TEXTURE;
     }
 
     @Override
-    public void render( SculkHorseEntity entity, float entityYaw, float partialTicks, PoseStack poseStack, MultiBufferSource buffer, int packedLight ) {
-        if(entity.isBaby()) {
-            poseStack.scale(0.45f, 0.45f, 0.45f);
-        }
-        super.render(entity, entityYaw, partialTicks, poseStack, buffer, packedLight);
+    protected void scale(SculkHorseEntity entity, PoseStack poseStack, float partialTickTime) {
+        float scale = entity.isBaby() ? 0.6F : 1.15F;
+        poseStack.scale(scale, scale, scale);
     }
 }

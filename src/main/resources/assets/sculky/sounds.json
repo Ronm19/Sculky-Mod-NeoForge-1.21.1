@@ -42,5 +42,13 @@
         "stream": true
       }
     ]
+  },
+  "echoes_of_the_crown": {
+    "sounds": [
+      {
+        "name": "sculky:echoes_of_the_crown",
+        "stream": true
+      }
+    ]
   }
 }

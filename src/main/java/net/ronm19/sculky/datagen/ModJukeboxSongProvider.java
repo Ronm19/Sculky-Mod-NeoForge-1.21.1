@@ -28,7 +28,9 @@ public class ModJukeboxSongProvider implements DataProvider {
         /* Inside this list below you can add your music disc.
            By typing new SongDef( ) and give it the song String name, int comparator, float length
         */
-        List<SongDef> entries = List.of(new SongDef("shadow_panther_theme", 15, 270.0f)
+        List<SongDef> entries = List.of(
+                new SongDef("shadow_panther_theme", 15, 270.0f),
+                new SongDef("echoes_of_the_crown", 15, 295.0f)
         );
 
         entries.forEach(this::addSong);
