@@ -11,6 +11,7 @@
   "item.sculky.sculk_bone": "Sculk Bone",
   "item.sculky.sculk_resonance": "Sculk Resonance",
   "item.sculky.echo_dust": "Echo Dust",
+  "item.sculky.sculk_fin": "Sculk Fin",
   "item.sculky.sculk_fang": "Sculk Fang",
   "item.sculky.sculk_lantern": "Sculk Lantern",
   "item.sculky.sculk_chitin": "Sculk Chitin",
@@ -73,6 +74,7 @@
   "item.sculky.sculk_burrower_spawn_egg": "Sculk Burrower Spawn Egg",
   "item.sculky.sculk_slime_spawn_egg": "Sculk Slime Spawn Egg",
   "item.sculky.sculk_herald_spawn_egg": "Sculk Herald Spawn Egg",
+  "item.sculky.sculk_snapper_spawn_egg": "Sculk Snapper Spawn Egg",
 
   "item.sculky.sculk_wolf_spawn_egg": "Sculk Wolf Spawn Egg",
   "item.sculky.sculk_horse_spawn_egg": "Sculk Horse Spawn Egg",
@@ -87,6 +89,7 @@
   "item.sculky.sculk_hunter_spawn_egg": "Sculk Hunter Spawn Egg",
   "item.sculky.shadow_panther_spawn_egg": "Shadow Panther Spawn Egg",
   "item.sculky.sculk_golem_spawn_egg": "Sculk Golem Spawn Egg",
+  "item.sculky.sculk_dolphin_spawn_egg": "Sculk Dolphin Spawn Egg",
 
   "item.minecraft.potion.effect.sculk_infection_potion": "Sculk Infection Potion",
   "item.minecraft.splash_potion.effect.sculk_infection_potion": "Sculk Infection Splash Potion",
@@ -102,6 +105,9 @@
   "block.sculky.deepslate_sculk_ore": "Deepslate Sculk Ore",
 
   "block.sculky.sculk_lantern": "Sculk Lantern",
+
+  "block.sculky.royal_sculk_lantern": "Royal Sculk Lantern",
+  "block.sculky.royal_sculk_block": "Royal Sculk Block",
 
   "block.sculky.throne_block": "Throne Block",
   "block.sculky.kings_pedestal": "King's Pedestal",
@@ -198,6 +204,7 @@
   "entity.sculky.sculk_burrower": "Sculk Burrower",
   "entity.sculky.sculk_slime": "Sculk Slime",
   "entity.sculky.sculk_herald": "Sculk Herald",
+  "entity.sculky.sculk_snapper": "Sculk Snapper",
 
   "entity.sculky.sculk_wolf": "Sculk Wolf",
   "entity.sculky.sculk_wolf_alpha": "Sculk Wolf Alpha",
@@ -212,6 +219,7 @@
   "entity.sculky.sculk_hunter": "Sculk Hunter",
   "entity.sculky.shadow_panther": "Shadow Panther",
   "entity.sculky.sculk_golem": "Sculk Golem",
+  "entity.sculky.sculk_dolphin": "Sculk Dolphin",
 
   "entity.sculky.sonic_boom": "Sonic Boom",
   "entity.sculky.sculk_jar_projectile": "Sculk Jar Projectile",

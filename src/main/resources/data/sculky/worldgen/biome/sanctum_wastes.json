@@ -107,6 +107,7 @@
         "maxCount": 1
       }
     ],
+
     "creature": [
       {
         "type": "sculky:sculk_golem",
@@ -125,6 +126,21 @@
         "weight": 4,
         "minCount": 1,
         "maxCount": 2
+      }
+    ],
+
+    "water_creature": [
+      {
+        "type": "sculky:sculk_dolphin",
+        "weight": 8,
+        "minCount": 1,
+        "maxCount": 2
+      },
+      {
+        "type": "sculky:sculk_snapper",
+        "weight": 5,
+        "minCount": 1,
+        "maxCount": 1
       }
     ]
   },

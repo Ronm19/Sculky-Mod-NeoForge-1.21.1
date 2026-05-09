@@ -359,6 +359,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("king_relic", has(ModItems.KING_RELIC.get()))
                 .save(pRecipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ROYAL_SCULK_BLOCK.get(), 1)
+                .pattern("SSS")
+                .pattern("SRS")
+                .pattern("SSS")
+                .define('S', Blocks.SCULK)
+                .define('R', ModItems.ROYAL_SCULK_FRAGMENT.get())
+                .unlockedBy("has_royal_sculk_fragment", has(ModItems.ROYAL_SCULK_FRAGMENT.get()))
+                .save(pRecipeOutput);
+
+
+
 
 
 
@@ -372,6 +383,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.SCULK_SHARD.get(), 9)
                 .requires(ModBlocks.INFESTED_SCULK_BLOCK.get())
                 .unlockedBy("has_infested_sculk_block", has(ModBlocks.INFESTED_SCULK_BLOCK.get())).save(pRecipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, ModBlocks.ROYAL_SCULK_LANTERN.get(), 1)
+                .requires(ModBlocks.ROYAL_SCULK_BLOCK.get())
+                .requires(Items.ECHO_SHARD)
+                .requires(Items.GLOWSTONE_DUST)
+                .unlockedBy("has_royal_sculk_block", has(ModBlocks.ROYAL_SCULK_BLOCK.get()))
+                .save(pRecipeOutput);
 
 
         // ------------------------------ INFESTED SCULK SET --------------------------- //

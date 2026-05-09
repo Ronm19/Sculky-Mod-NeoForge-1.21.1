@@ -1,4 +1,4 @@
-// 1.21.1	2026-05-05T09:43:12.6637001	Item Models: sculky
+// 1.21.1	2026-05-09T14:23:23.3209189	Item Models: sculky
 af7db26754b709a1aada7bbf2a40ba8ccfea64e4 assets/sculky/models/item/ancient_resonance_core.json
 0bc74c970456a6384d2eb71e4c5a9b0076def5df assets/sculky/models/item/crown_fragment.json
 062619c79a25ccce1665abb3baacabdc0ab83886 assets/sculky/models/item/echobloom.json
@@ -97,8 +97,10 @@ a4c4984370d52b0861d82d4edc2e3001906e44b1 assets/sculky/models/item/sculk_boots_r
 db7f096ea4d1a998fa35d10a550182f4676e3dff assets/sculky/models/item/sculk_chitin.json
 41fffa1562d9aaac5f1d41c6df218c0e1031eb9e assets/sculky/models/item/sculk_core.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_creeper_spawn_egg.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_dolphin_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_enderman_spawn_egg.json
 e4502af2613269d7d935a6b3928c77e5b3d4a58f assets/sculky/models/item/sculk_fang.json
+9dfa87d5c8e48fd89b3d3a6e331a53c7f134d92a assets/sculky/models/item/sculk_fin.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_fox_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_golem_spawn_egg.json
 f464738a4f677f6db95bee334b255d6a9502307a assets/sculky/models/item/sculk_heartfruit.json
@@ -127,6 +129,7 @@ b41ac6d9289690bcfe9add53f1a1d69f2387d1a7 assets/sculky/models/item/sculk_pastry.
 68f30216fcce08a30aa7e42d8243993182bcdd99 assets/sculky/models/item/sculk_shard.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_skeleton_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_slime_spawn_egg.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_snapper_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_spider_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_stalker_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_tail_spawn_egg.json

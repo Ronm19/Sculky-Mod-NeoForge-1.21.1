@@ -1,4 +1,4 @@
-// 1.21.1	2026-03-20T15:56:57.9639816	Block States: sculky
+// 1.21.1	2026-05-09T17:56:53.8308915	Block States: sculky
 276a3eab0430b19210f37a9e1c746c3b35c1bcf3 assets/sculky/blockstates/ancient_sculk_bricks.json
 de485d10d894f2951f37bbbcc34fc6abe63004d6 assets/sculky/blockstates/chiseled_ancient_sculk_bricks.json
 0d5c68e70d81028ce3cb69652257eedb7290b03b assets/sculky/blockstates/cracked_ancient_sculk_bricks.json
@@ -36,6 +36,8 @@ df9cafe6f4708e8fe8bab4fb4c847ef4e3b566d0 assets/sculky/blockstates/infested_scul
 054b4b50e13bd99bef16be906c4263578fbbca5e assets/sculky/blockstates/potted_echobloom.json
 b6c33c1dc1801f62a8b73abf49e6ad2a31daefc0 assets/sculky/blockstates/potted_sculkbloom.json
 c3d56d8009c2ed7d3893b53527572abf53774c86 assets/sculky/blockstates/raw_infested_sculk_block.json
+759dafb58955e013f9dc3f1a986c44f15b0e9d34 assets/sculky/blockstates/royal_sculk_block.json
+b5f5d99e7dd907760564f444ec80df7922c4ad81 assets/sculky/blockstates/royal_sculk_lantern.json
 d2e334e5049a9a71052912315007de1d03d5c197 assets/sculky/blockstates/sculkbloom.json
 7304e31727232e1db1c846d7c93a54a64dc44e80 assets/sculky/blockstates/sculk_jungle_button.json
 efa34c052824f162a2abc003c816a3ca8ddde746 assets/sculky/blockstates/sculk_jungle_door.json
@@ -129,6 +131,8 @@ a2877be50a3d0f8c038e86ccb65599216106bd5e assets/sculky/models/block/infested_scu
 eecd3759f4c528e30762a676b779870f84a9011b assets/sculky/models/block/potted_echobloom.json
 2b3ed802bb457f7ee467db48477fb69e608835f5 assets/sculky/models/block/potted_sculkbloom.json
 b040e5f5201e4a03c4b87d459d039710b8e58257 assets/sculky/models/block/raw_infested_sculk_block.json
+c8716459fa7105e204f1ee795faa74044967d352 assets/sculky/models/block/royal_sculk_block.json
+37d8450f4c83629a587f7ed16a5d77fcf511f62c assets/sculky/models/block/royal_sculk_lantern.json
 be8ee89440439c4a12557ec6b7f4f978c7b3fb72 assets/sculky/models/block/sculkbloom.json
 b4d1787a10923feffb35d84c406077fa013ccf61 assets/sculky/models/block/sculk_jungle_button.json
 b6d477ad89b7ec940f8edc6e33ad5f65df00e961 assets/sculky/models/block/sculk_jungle_button_pressed.json
@@ -209,6 +213,8 @@ fa12780710de5e1ba11b7a390943ae5f08a94591 assets/sculky/models/item/infested_scul
 841c3d12c7ffe26b309f407f604825016f12605c assets/sculky/models/item/infested_sculk_wood.json
 0c81dcea986896fb885e8e00c7e1669ecb4f1613 assets/sculky/models/item/kings_pedestal.json
 cb42d7fccc20384b9657e82309a6f5c3edbe97d6 assets/sculky/models/item/raw_infested_sculk_block.json
+09135020d546b019bf06a97c9aa90db7aa470fed assets/sculky/models/item/royal_sculk_block.json
+69e9469f49a2d18ea3ac0e6aec868d5f557aa183 assets/sculky/models/item/royal_sculk_lantern.json
 de10283be7475e79d0a47d16d544d28be49f07d3 assets/sculky/models/item/sculk_jungle_fence_gate.json
 dc5f3ada9ef4d30e53851c7ee6704fdfce9f9176 assets/sculky/models/item/sculk_jungle_leaves.json
 d7fa07116f6e35fb45d2478c0f95da77c89ca331 assets/sculky/models/item/sculk_jungle_log.json

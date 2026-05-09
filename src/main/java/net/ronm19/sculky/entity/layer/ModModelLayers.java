@@ -29,6 +29,8 @@ public class ModModelLayers {
             ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "sculk_burrower"), "main");
     public static final ModelLayerLocation SCULK_HERALD = new ModelLayerLocation(
             ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "sculk_herald"), "main");
+    public static final ModelLayerLocation SCULK_SNAPPER = new ModelLayerLocation(
+            ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "sculk_snapper"), "main");
 
 
 

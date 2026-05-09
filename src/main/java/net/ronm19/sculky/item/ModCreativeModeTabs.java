@@ -35,6 +35,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.SCULK_BONE);
                         pOutput.accept(ModItems.SCULK_RESONANCE);
                         pOutput.accept(ModItems.ECHO_DUST);
+                        pOutput.accept(ModItems.SCULK_FIN);
                         pOutput.accept(ModItems.SCULK_CORE);
                         pOutput.accept(ModItems.SCULK_FANG);
                         pOutput.accept(ModItems.SCULK_CHITIN);
@@ -95,6 +96,9 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.CRACKED_ANCIENT_SCULK_BRICKS);
                         pOutput.accept(ModBlocks.CHISELED_ANCIENT_SCULK_BRICKS);
                         pOutput.accept(ModBlocks.KINGS_PEDESTAL);
+                        pOutput.accept(ModBlocks.ROYAL_SCULK_BLOCK);
+                        pOutput.accept(ModBlocks.ROYAL_SCULK_LANTERN);
+
 
                         pOutput.accept(ModBlocks.SCULKBLOOM);
                         pOutput.accept(ModBlocks.ECHOBLOOM);
@@ -182,6 +186,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.SCULK_BURROWER_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_SLIME_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_HERALD_SPAWN_EGG);
+                        pOutput.accept(ModItems.SCULK_SNAPPER_SPAWN_EGG);
 
                         pOutput.accept(ModItems.SCULK_WOLF_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_HORSE_SPAWN_EGG);
@@ -196,6 +201,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.SCULK_HUNTER_SPAWN_EGG);
                         pOutput.accept(ModItems.SHADOW_PANTHER_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_GOLEM_SPAWN_EGG);
+                        pOutput.accept(ModItems.SCULK_DOLPHIN_SPAWN_EGG);
 
                     }).build());
 

@@ -70,6 +70,7 @@ public class SculkyMod {
 
 
         modEventBus.addListener(this::addCreative);
+        modEventBus.addListener(ModNetworking::registerPayloads);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }

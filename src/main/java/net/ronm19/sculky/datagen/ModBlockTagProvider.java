@@ -8,6 +8,7 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.ronm19.sculky.SculkyMod;
 import net.ronm19.sculky.block.ModBlocks;
 import net.ronm19.sculky.util.ModTags;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
@@ -18,7 +19,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
     }
 
     @Override
-    protected void addTags( HolderLookup.Provider provider ) {
+    protected void addTags( HolderLookup.@NotNull Provider provider ) {
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.INFESTED_SCULK_BLOCK.get())
                 .add(ModBlocks.RAW_INFESTED_SCULK_BLOCK.get())
@@ -30,6 +31,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.CRACKED_ANCIENT_SCULK_BRICKS.get())
                 .add(ModBlocks.KINGS_PEDESTAL.get())
                 .add(ModBlocks.THRONE_BLOCK.get())
+                .add(ModBlocks.ROYAL_SCULK_BLOCK.get())
+                .add(ModBlocks.ROYAL_SCULK_LANTERN.get())
                 .add(ModBlocks.DEEPSLATE_SCULK_ORE.get());
 
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
@@ -40,6 +43,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.SCULK_ORE.get())
                 .add(ModBlocks.CHISELED_ANCIENT_SCULK_BRICKS.get())
                 .add(ModBlocks.ANCIENT_SCULK_BRICKS.get())
+                .add(ModBlocks.ROYAL_SCULK_BLOCK.get())
+                .add(ModBlocks.ROYAL_SCULK_LANTERN.get())
                 .add(ModBlocks.CRACKED_ANCIENT_SCULK_BRICKS.get())
                 .add(ModBlocks.KINGS_PEDESTAL.get())
                 .add(ModBlocks.THRONE_BLOCK.get())

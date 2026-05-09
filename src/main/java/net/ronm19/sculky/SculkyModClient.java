@@ -32,6 +32,9 @@ public class SculkyModClient {
 
     @SubscribeEvent
     static void onClientSetup( FMLClientSetupEvent event ) {
+
+        // ----------------------------- MONSTERS --------------------------------------- //
+
         EntityRenderers.register(ModEntities.SCULK_PARASITE.get(), SculkParasiteRenderer::new);
         EntityRenderers.register(ModEntities.SCULK_SENTINEL.get(), SculkSentinelRenderer ::new);
         EntityRenderers.register(ModEntities.SCULK_STALKER.get(), SculkStalkerRenderer::new);
@@ -54,7 +57,10 @@ public class SculkyModClient {
         EntityRenderers.register(ModEntities.SCULK_BURROWER.get(), SculkBurrowerRenderer::new);
         EntityRenderers.register(ModEntities.SCULK_SLIME.get(), SculkSlimeRenderer::new);
         EntityRenderers.register(ModEntities.SCULK_HERALD.get(), SculkHeraldRenderer::new);
+        EntityRenderers.register(ModEntities.SCULK_SNAPPER.get(), SculkSnapperRenderer::new);
 
+
+        // ----------------------------- PASSIVE --------------------------------------- //
 
         EntityRenderers.register(ModEntities.SCULK_WOLF.get(), SculkWolfRender::new);
         EntityRenderers.register(ModEntities.SCULK_WOLF_ALPHA.get(), SculkWolfAlphaRenderer::new);
@@ -68,8 +74,12 @@ public class SculkyModClient {
         EntityRenderers.register(ModEntities.INFESTED_EYE.get(), InfestedEyeRenderer::new);
         EntityRenderers.register(ModEntities.SCULK_HUNTER.get(), SculkHunterRenderer::new);
         EntityRenderers.register(ModEntities.SHADOW_PANTHER.get(), ShadowPantherRenderer::new);
+        EntityRenderers.register(ModEntities.SCULK_DOLPHIN.get(), SculkDolphinRenderer::new);
+        EntityRenderers.register(ModEntities.SHADOW_PANTHER.get(), ShadowPantherRenderer::new);
         EntityRenderers.register(ModEntities.SCULK_GOLEM.get(), SculkGolemRenderer::new);
 
+
+        // ----------------------------- MISC --------------------------------------- //
 
         EntityRenderers.register(ModEntities.SCULK_JAR_PROJECTILE.get(), ThrownItemRenderer::new);
         EntityRenderers.register(ModEntities.SCULK_BOMB_PROJECTILE.get(), ThrownItemRenderer::new);

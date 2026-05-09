@@ -101,6 +101,7 @@ public class ModEvents {
         event.registerLayerDefinition(ModModelLayers.SCULK_BRUTE, SculkBruteModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SCULK_BURROWER, SculkBurrowerModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SCULK_HERALD, SculkHeraldModel :: createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.SCULK_SNAPPER, SculkSnapperModel :: createBodyLayer);
 
         event.registerLayerDefinition(ModModelLayers.SCULK_WOLF, SculkWolfModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SCULK_FOX, SculkFoxModel :: createBodyLayer);
@@ -140,6 +141,7 @@ public class ModEvents {
         event.put(ModEntities.SCULK_BURROWER.get(), SculkBurrowerEntity.createSculkBurrowerAttributes().build());
         event.put(ModEntities.SCULK_SLIME.get(), SculkSlimeEntity.createSculkSlimeAttributes().build());
         event.put(ModEntities.SCULK_HERALD.get(), SculkHeraldEntity.createSculkHeraldAttributes().build());
+        event.put(ModEntities.SCULK_SNAPPER.get(), SculkSnapperEntity.createSculkSnapperAttributes().build());
 
         event.put(ModEntities.SCULK_WOLF.get(), SculkWolfEntity.createsSculkWolfAttributes().build());
         event.put(ModEntities.SCULK_WOLF_ALPHA.get(), SculkWolfAlphaEntity.createSculkWolfAlphaAttributes().build());
@@ -153,6 +155,7 @@ public class ModEvents {
         event.put(ModEntities.SCULK_HUNTER.get(), SculkHunterEntity.createSculkHunterAttributes().build());
         event.put(ModEntities.SHADOW_PANTHER.get(), ShadowPantherEntity.createShadowPantherAttributes().build());
         event.put(ModEntities.SCULK_GOLEM.get(), SculkGolemEntity.createSculkGolemAttributes().build());
+        event.put(ModEntities.SCULK_DOLPHIN.get(), SculkDolphinEntity.createSculkDolphinAttributes().build());
 
     }
 
@@ -332,6 +335,22 @@ public class ModEvents {
                 SpawnPlacementTypes.NO_RESTRICTIONS, // correct for bats
                 Heightmap.Types.MOTION_BLOCKING,
                 AmbientCreature :: checkMobSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+
+        // ---------------------------------------------------------
+        //                WATER ENTITIES
+        // ---------------------------------------------------------
+
+        event.register(ModEntities.SCULK_DOLPHIN.get(),
+                SpawnPlacementTypes.IN_WATER,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                SculkDolphinEntity::checkSurfaceWaterAnimalSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+
+        event.register(ModEntities.SCULK_SNAPPER.get(),
+                SpawnPlacementTypes.IN_WATER,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                SculkSnapperEntity::canSpawn,
                 RegisterSpawnPlacementsEvent.Operation.REPLACE);
     }
 }

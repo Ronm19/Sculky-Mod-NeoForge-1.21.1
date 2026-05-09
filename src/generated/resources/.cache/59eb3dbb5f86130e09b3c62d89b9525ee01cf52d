@@ -1,4 +1,4 @@
-// 1.21.1	2026-03-20T01:56:34.4214666	Loot Tables
+// 1.21.1	2026-05-09T19:20:54.8430323	Loot Tables
 a4d9b1e0d55ed7345d6f739cc4c996acfbe268c5 data/sculky/loot_table/blocks/ancient_sculk_bricks.json
 6ce0f6dd4560222a46079d802491c53c594f9133 data/sculky/loot_table/blocks/chiseled_ancient_sculk_bricks.json
 08872ac984df6cfbafc176d401251a77c9db093e data/sculky/loot_table/blocks/cracked_ancient_sculk_bricks.json
@@ -36,6 +36,8 @@ b029eafdbd4ad3808f53d547a4d90c22ae850710 data/sculky/loot_table/blocks/kings_ped
 005813daa25d1d073c4195838cb4261b43be2d23 data/sculky/loot_table/blocks/potted_echobloom.json
 ad6c0c59c92f6a381d2d8c9ca71afef856805fea data/sculky/loot_table/blocks/potted_sculkbloom.json
 efe275c63e17d34a7865522870f2c01df99d3b3f data/sculky/loot_table/blocks/raw_infested_sculk_block.json
+62dd9f70a34549fc0ac41074f1f09e83d4fd76a8 data/sculky/loot_table/blocks/royal_sculk_block.json
+72eca903f7f8048744b87468b7abb24694c98796 data/sculky/loot_table/blocks/royal_sculk_lantern.json
 4747f6d2b6626aab18e49e172d100948eaddf528 data/sculky/loot_table/blocks/sculkbloom.json
 2c98f1adb6c086fa100d0e054077f09fa9f6054d data/sculky/loot_table/blocks/sculk_jungle_button.json
 90c37db3869e0eddc092d1f3f09b5c70db4ee761 data/sculky/loot_table/blocks/sculk_jungle_door.json

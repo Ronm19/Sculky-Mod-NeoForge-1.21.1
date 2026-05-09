@@ -39,6 +39,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.CRACKED_ANCIENT_SCULK_BRICKS);
         blockWithItem(ModBlocks.CHISELED_ANCIENT_SCULK_BRICKS);
 
+        blockWithItem(ModBlocks.ROYAL_SCULK_BLOCK);
+        blockWithItem(ModBlocks.ROYAL_SCULK_LANTERN);
+
         simpleGrassLikeBlock(ModBlocks.KINGS_PEDESTAL.get(),
                 modLoc("block/kings_pedestal_top"),
                 modLoc("block/kings_pedestal_side"),

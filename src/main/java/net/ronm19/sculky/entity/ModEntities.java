@@ -113,7 +113,6 @@ public class ModEntities {
     // ----------------------------- NATURAL & PASSIVE ---------------------------- //
 
 
-
     public static final Supplier<EntityType<SculkWolfEntity>> SCULK_WOLF =
             ENTITY_TYPES.register("sculk_wolf", () -> EntityType.Builder.of(SculkWolfEntity ::new, MobCategory.CREATURE)
                     .sized(0.8F, 0.9F).eyeHeight(0.68F).build("sculk_wolf"));
@@ -158,6 +157,16 @@ public class ModEntities {
             ENTITY_TYPES.register("sculk_golem", () -> EntityType.Builder.of(SculkGolemEntity::new, MobCategory.CREATURE)
                             .sized(1.45F, 3.0F).eyeHeight(2.7F).clientTrackingRange(10).updateInterval(3).build("sculk_golem"));
 
+
+    // -------------------- WATER CREATURES -------------------------- //
+
+    public static final Supplier<EntityType<SculkSnapperEntity>> SCULK_SNAPPER =
+            ENTITY_TYPES.register("sculk_snapper", () -> EntityType.Builder.of(SculkSnapperEntity::new, MobCategory.WATER_CREATURE)
+                    .sized(0.65F, 0.45F).eyeHeight(0.25F).clientTrackingRange(10).build("sculk_snapper"));
+
+    public static final Supplier<EntityType<SculkDolphinEntity>> SCULK_DOLPHIN =
+            ENTITY_TYPES.register("sculk_dolphin", () -> EntityType.Builder.of(SculkDolphinEntity::new, MobCategory.WATER_CREATURE)
+                    .sized(0.9F, 0.6F).clientTrackingRange(10).updateInterval(3).build("sculk_dolphin"));
 
 
     // -----------------------------  PASSIVE ---------------------------- //

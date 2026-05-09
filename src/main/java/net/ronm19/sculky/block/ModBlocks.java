@@ -65,6 +65,18 @@ public class ModBlocks {
             () -> new InfestedSculkBricksBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.SCULK)));
 
 
+    public static final DeferredBlock<Block> ROYAL_SCULK_BLOCK = registerBlock("royal_sculk_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(3.0F, 6.0F)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.SCULK)));
+
+    public static final DeferredBlock<Block> ROYAL_SCULK_LANTERN = registerBlock("royal_sculk_lantern",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(2.5F, 5.0F)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.SCULK)
+                    .lightLevel(state -> 12)));
 
 
 
