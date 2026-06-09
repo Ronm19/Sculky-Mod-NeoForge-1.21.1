@@ -46,6 +46,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.ANCIENT_RESONANCE_CORE);
                         pOutput.accept(ModItems.KING_RELIC);
                         pOutput.accept(ModItems.THRONE_SHARD);
+                        pOutput.accept(ModItems.ANCIENT_SCULK_TABLET);
 
                         pOutput.accept(ModItems.TOTEM_ECHO_RECALL);
                         pOutput.accept(ModItems.TOTEM_SWARM);
@@ -98,6 +99,8 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.KINGS_PEDESTAL);
                         pOutput.accept(ModBlocks.ROYAL_SCULK_BLOCK);
                         pOutput.accept(ModBlocks.ROYAL_SCULK_LANTERN);
+                        pOutput.accept(ModBlocks.CHISELED_ROYAL_SCULK.get());
+                        pOutput.accept(ModBlocks.ROYAL_SCULK_TOTEM);
 
 
                         pOutput.accept(ModBlocks.SCULKBLOOM);
@@ -176,6 +179,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.SCULK_SPIDER_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_ENDERMAN_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULKMITE_SPAWN_EGG);
+                        pOutput.accept(ModItems.CROWNED_SCULKMITE_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_SANDSNARE_SPAWN_EGG);
                         pOutput.accept(ModItems.SALVATORE_SPAWN_EGG);
                         pOutput.accept(ModItems.SCULK_PHANTOM_SPAWN_EGG);

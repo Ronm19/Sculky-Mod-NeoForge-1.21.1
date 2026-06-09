@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "sculky:chiseled_royal_sculk"
+    },
+    "R": {
+      "item": "sculky:royal_sculk_block"
+    },
+    "T": {
+      "item": "sculky:ancient_sculk_tablet"
+    }
+  },
+  "pattern": [
+    " C ",
+    "RTR",
+    " C "
+  ],
+  "result": {
+    "count": 1,
+    "id": "sculky:royal_sculk_totem"
+  }
+}

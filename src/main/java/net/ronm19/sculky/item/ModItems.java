@@ -39,6 +39,7 @@ public class ModItems {
     public static final DeferredItem<Item> ROYAL_SCULK_FRAGMENT = ITEMS.registerItem("royal_sculk_fragment", Item::new, new Item.Properties());
     public static final DeferredItem<Item> ANCIENT_RESONANCE_CORE = ITEMS.registerItem("ancient_resonance_core", Item::new, new Item.Properties());
     public static final DeferredItem<Item> THRONE_SHARD = ITEMS.registerItem("throne_shard", Item::new, new Item.Properties());
+    public static final DeferredItem<Item> ANCIENT_SCULK_TABLET = ITEMS.registerItem("ancient_sculk_tablet", AncientSculkTabletItem::new);
 
     public static final DeferredItem<Item> SCULK_FIN = ITEMS.registerItem("sculk_fin", Item::new, new Item.Properties());
 
@@ -191,6 +192,9 @@ public class ModItems {
 
     public static final DeferredItem<Item> SCULKMITE_SPAWN_EGG = ITEMS.register("sculkmite_spawn_egg",
             () -> new DeferredSpawnEggItem(ModEntities.SCULKMITE, 0x05080A, 0x1FA7A1, new Item.Properties()));
+
+    public static final DeferredItem<Item> CROWNED_SCULKMITE_SPAWN_EGG = ITEMS.register("crowned_sculkmite_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.CROWNED_SCULKMITE, 0x071012, 0x29D6D0, new Item.Properties()));
 
     public static final DeferredItem<Item> SALVATORE_SPAWN_EGG = ITEMS.register("salvatore_spawn_egg",
             () -> new DeferredSpawnEggItem(ModEntities.SALVATORE, 0x0A0D10, 0x1EC6BE, new Item.Properties()));

@@ -368,7 +368,22 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_royal_sculk_fragment", has(ModItems.ROYAL_SCULK_FRAGMENT.get()))
                 .save(pRecipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHISELED_ROYAL_SCULK.get(), 2)
+                .pattern("R")
+                .pattern("R")
+                .define('R', ModBlocks.ROYAL_SCULK_BLOCK.get())
+                .unlockedBy(getHasName(ModBlocks.ROYAL_SCULK_BLOCK.get()), has(ModBlocks.ROYAL_SCULK_BLOCK.get()))
+                .save(pRecipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.ROYAL_SCULK_TOTEM.get())
+                .pattern(" C ")
+                .pattern("RTR")
+                .pattern(" C ")
+                .define('C', ModBlocks.CHISELED_ROYAL_SCULK.get())
+                .define('R', ModBlocks.ROYAL_SCULK_BLOCK.get())
+                .define('T', ModItems.ANCIENT_SCULK_TABLET.get())
+                .unlockedBy(getHasName(ModItems.ANCIENT_SCULK_TABLET.get()), has(ModItems.ANCIENT_SCULK_TABLET.get()))
+                .save(pRecipeOutput);
 
 
 
@@ -391,6 +406,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_royal_sculk_block", has(ModBlocks.ROYAL_SCULK_BLOCK.get()))
                 .save(pRecipeOutput);
 
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS,
+                ModBlocks.CHISELED_ROYAL_SCULK.get(),
+                ModBlocks.ROYAL_SCULK_BLOCK.get());
 
         // ------------------------------ INFESTED SCULK SET --------------------------- //
 

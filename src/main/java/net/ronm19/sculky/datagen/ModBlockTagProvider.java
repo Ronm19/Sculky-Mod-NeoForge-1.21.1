@@ -31,8 +31,10 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.CRACKED_ANCIENT_SCULK_BRICKS.get())
                 .add(ModBlocks.KINGS_PEDESTAL.get())
                 .add(ModBlocks.THRONE_BLOCK.get())
+                .add(ModBlocks.ROYAL_SCULK_TOTEM.get())
                 .add(ModBlocks.ROYAL_SCULK_BLOCK.get())
                 .add(ModBlocks.ROYAL_SCULK_LANTERN.get())
+                .add(ModBlocks.CHISELED_ROYAL_SCULK.get())
                 .add(ModBlocks.DEEPSLATE_SCULK_ORE.get());
 
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
@@ -41,6 +43,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.INFESTED_SCULK_WALL.get())
                 .add(ModBlocks.INFESTED_SCULK_BRICKS.get())
                 .add(ModBlocks.SCULK_ORE.get())
+                .add(ModBlocks.CHISELED_ROYAL_SCULK.get())
+                .add(ModBlocks.ROYAL_SCULK_TOTEM.get())
                 .add(ModBlocks.CHISELED_ANCIENT_SCULK_BRICKS.get())
                 .add(ModBlocks.ANCIENT_SCULK_BRICKS.get())
                 .add(ModBlocks.ROYAL_SCULK_BLOCK.get())

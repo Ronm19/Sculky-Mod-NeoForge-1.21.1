@@ -64,12 +64,23 @@ public class ModBlocks {
     public static final DeferredBlock<Block> CHISELED_ANCIENT_SCULK_BRICKS = registerBlock("chiseled_ancient_sculk_bricks",
             () -> new InfestedSculkBricksBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.SCULK)));
 
+    public static final DeferredBlock<Block> CHISELED_ROYAL_SCULK = registerBlock("chiseled_royal_sculk",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.SCULK).strength(3.0F, 6.0F)
+                    .requiresCorrectToolForDrops().sound(SoundType.SCULK).lightLevel(state -> 4)));
 
     public static final DeferredBlock<Block> ROYAL_SCULK_BLOCK = registerBlock("royal_sculk_block",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(3.0F, 6.0F)
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.SCULK)));
+
+    public static final DeferredBlock<Block> ROYAL_SCULK_TOTEM = registerBlock("royal_sculk_totem",
+            () -> new RoyalSculkTotemBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SCULK)
+                    .strength(4.0F, 8.0F)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.SCULK)
+                    .lightLevel(state -> 7)
+            ));
 
     public static final DeferredBlock<Block> ROYAL_SCULK_LANTERN = registerBlock("royal_sculk_lantern",
             () -> new Block(BlockBehaviour.Properties.of()

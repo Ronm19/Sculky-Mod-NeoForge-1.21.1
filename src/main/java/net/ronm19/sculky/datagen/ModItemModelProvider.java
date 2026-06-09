@@ -69,6 +69,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.ANCIENT_RESONANCE_CORE.get());
         basicItem(ModItems.KING_RELIC.get());
         basicItem(ModItems.THRONE_SHARD.get());
+        basicItem(ModItems.ANCIENT_SCULK_TABLET.get());
 
         basicItem(ModItems.SHADOW_PANTHER_THEME_MUSIC_DISC.get());
         basicItem(ModItems.ECHOES_OF_THE_CROWN_MUSIC_DISC.get());
@@ -134,6 +135,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent(ModItems.SCULK_SPIDER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCULK_ENDERMAN_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCULKMITE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.CROWNED_SCULKMITE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCULK_SANDSNARE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SALVATORE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCULK_PHANTOM_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));

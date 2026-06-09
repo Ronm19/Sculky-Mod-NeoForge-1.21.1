@@ -50,6 +50,9 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.ANCIENT_SCULK_BRICKS.get());
         dropSelf(ModBlocks.CRACKED_ANCIENT_SCULK_BRICKS.get());
         dropSelf(ModBlocks.CHISELED_ANCIENT_SCULK_BRICKS.get());
+        dropSelf(ModBlocks.CHISELED_ROYAL_SCULK.get());
+
+        dropSelf(ModBlocks.ROYAL_SCULK_TOTEM.get());
 
         // ----------------------- SCULK SET --------------------- //
 

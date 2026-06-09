@@ -43,7 +43,7 @@
   "item.sculky.echo_dagger": "Echo Dagger",
   "item.sculky.sculk_jar": "Sculk Jar",
   "item.sculky.sculk_bomb": "Sculk Bomb",
-
+  "item.sculky.ancient_sculk_tablet": "Ancient Sculk Tablet",
 
   "item.sculky.infested_sculk_helmet": "Infested Sculk Helmet",
   "item.sculky.infested_sculk_chestplate": "Infested Sculk Chestplate",
@@ -64,6 +64,7 @@
   "item.sculky.sculk_spider_spawn_egg": "Sculk Spider Spawn Egg",
   "item.sculky.sculk_enderman_spawn_egg": "Sculk Enderman Spawn Egg",
   "item.sculky.sculkmite_spawn_egg": "Sculkmite Spawn Egg",
+  "item.sculky.crowned_sculkmite_spawn_egg": "Crowned Sculkmite Spawn Egg",
   "item.sculky.sculk_sandsnare_spawn_egg": "Sculk Sandsnare Spawn Egg",
   "item.sculky.salvatore_spawn_egg": "Salvatore Spawn Egg",
   "item.sculky.sculk_phantom_spawn_egg": "Sculk Phantom Spawn Egg",
@@ -98,6 +99,8 @@
 
   "item.sculky.infested_sculk_horse_armor": "Infested Sculk Horse Armor",
 
+  "tooltip.sculky.ancient_sculk_tablet": "A fractured record of a forgotten royal command.",
+
   "block.sculky.infested_sculk_block": "Infested Sculk Block",
   "block.sculky.raw_infested_sculk_block": "Raw Infested Sculk Block",
   "block.sculky.infested_sculk_bricks": "Infested Sculk Bricks",
@@ -108,6 +111,8 @@
 
   "block.sculky.royal_sculk_lantern": "Royal Sculk Lantern",
   "block.sculky.royal_sculk_block": "Royal Sculk Block",
+  "block.sculky.chiseled_royal_sculk": "Chiseled Royal Sculk",
+  "block.sculky.royal_sculk_totem": "Royal Sculk Totem",
 
   "block.sculky.throne_block": "Throne Block",
   "block.sculky.kings_pedestal": "King's Pedestal",
@@ -194,6 +199,7 @@
   "entity.sculky.sculk_spider": "Sculk Spider",
   "entity.sculky.sculk_enderman": "Sculk Enderman",
   "entity.sculky.sculkmite": "Sculkmite",
+  "entity.sculky.crowned_sculkmite": "Crowned Sculkmite",
   "entity.sculky.sculk_sandsnare": "Sculk Sandsnare",
   "entity.sculky.salvatore": "Salvatore",
   "entity.sculky.sculk_phantom": "Sculk Phantom",

@@ -47,6 +47,7 @@ public class SculkyModClient {
         EntityRenderers.register(ModEntities.SCULK_SPIDER.get(), SculkSpiderRenderer::new);
         EntityRenderers.register(ModEntities.SCULK_ENDERMAN.get(), SculkEndermanRenderer::new);
         EntityRenderers.register(ModEntities.SCULKMITE.get(), SculkmiteRenderer::new);
+        EntityRenderers.register(ModEntities.CROWNED_SCULKMITE.get(), CrownedSculkmiteRenderer::new);
         EntityRenderers.register(ModEntities.SCULK_SANDSNARE.get(), SculkSandsnareRenderer::new);
         EntityRenderers.register(ModEntities.SALVATORE.get(), SalvatoreRenderer::new);
         EntityRenderers.register(ModEntities.SCULK_PHANTOM.get(), SculkPhantomRenderer::new);

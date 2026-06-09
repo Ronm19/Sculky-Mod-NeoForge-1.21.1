@@ -38,6 +38,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.ANCIENT_SCULK_BRICKS);
         blockWithItem(ModBlocks.CRACKED_ANCIENT_SCULK_BRICKS);
         blockWithItem(ModBlocks.CHISELED_ANCIENT_SCULK_BRICKS);
+        blockWithItem(ModBlocks.CHISELED_ROYAL_SCULK);
 
         blockWithItem(ModBlocks.ROYAL_SCULK_BLOCK);
         blockWithItem(ModBlocks.ROYAL_SCULK_LANTERN);
@@ -46,6 +47,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 modLoc("block/kings_pedestal_top"),
                 modLoc("block/kings_pedestal_side"),
                 modLoc("block/kings_pedestal_bottom"));
+
+        simpleBlockWithItem(ModBlocks.ROYAL_SCULK_TOTEM.get(),
+                models().cubeBottomTop("royal_sculk_totem",
+                        modLoc("block/royal_sculk_totem_side"),
+                        modLoc("block/royal_sculk_totem_bottom"),
+                        modLoc("block/royal_sculk_totem_top")
+                ));
 
         // ----------------------- SCULK SET --------------------- //
 

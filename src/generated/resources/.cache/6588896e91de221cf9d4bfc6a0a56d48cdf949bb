@@ -1,5 +1,7 @@
-// 1.21.1	2026-05-09T14:23:23.3209189	Item Models: sculky
+// 1.21.1	2026-05-17T23:10:13.5800997	Item Models: sculky
 af7db26754b709a1aada7bbf2a40ba8ccfea64e4 assets/sculky/models/item/ancient_resonance_core.json
+5ef907571a55708c8bf0331f725bc95b70ac6a91 assets/sculky/models/item/ancient_sculk_tablet.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/crowned_sculkmite_spawn_egg.json
 0bc74c970456a6384d2eb71e4c5a9b0076def5df assets/sculky/models/item/crown_fragment.json
 062619c79a25ccce1665abb3baacabdc0ab83886 assets/sculky/models/item/echobloom.json
 fb0446df9bc6cd6ae702e28ae2c9682758c92d2f assets/sculky/models/item/echo_conduit.json

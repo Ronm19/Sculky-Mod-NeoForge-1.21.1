@@ -132,6 +132,7 @@ public class ModEvents {
         event.put(ModEntities.SCULK_ENDERMAN.get(), SculkEndermanEntity.createSculkEndermanAttributes().build());
         event.put(ModEntities.SCULK_SANDSNARE.get(), SculkSandsnareEntity.createSculkSandsnareAttributes().build());
         event.put(ModEntities.SCULKMITE.get(), SculkmiteEntity.createSculkmiteAttributes().build());
+        event.put(ModEntities.CROWNED_SCULKMITE.get(), CrownedSculkmiteEntity.createCrownedSculkmiteAttributes().build());
         event.put(ModEntities.SALVATORE.get(), SalvatoreEntity.createSalvatoreAttributes().build());
         event.put(ModEntities.SCULK_PHANTOM.get(), SculkPhantomEntity.createSculkPhantomAttributes().build());
         event.put(ModEntities.SANCTUM_WATCHER.get(), SanctumWatcherEntity.createSanctumWatcherAttributes().build());
@@ -237,6 +238,14 @@ public class ModEvents {
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 Monster::checkMobSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.REPLACE);
+
+        event.register(
+                ModEntities.CROWNED_SCULKMITE.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                CrownedSculkmiteEntity::checkMobSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE
+        );
 
         event.register(ModEntities.SCULK_SANDSNARE.get(),
                 SpawnPlacementTypes.ON_GROUND,

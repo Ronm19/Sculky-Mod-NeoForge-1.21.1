@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "sculky:royal_sculk_block"
+  },
+  "result": {
+    "count": 1,
+    "id": "sculky:chiseled_royal_sculk"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "sculky:block/royal_sculk_totem_bottom",
+    "side": "sculky:block/royal_sculk_totem_side",
+    "top": "sculky:block/royal_sculk_totem_top"
+  }
+}
