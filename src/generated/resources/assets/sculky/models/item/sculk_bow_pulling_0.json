@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/bow",
+  "textures": {
+    "layer0": "sculky:item/sculk_bow_pulling_0"
+  }
+}
