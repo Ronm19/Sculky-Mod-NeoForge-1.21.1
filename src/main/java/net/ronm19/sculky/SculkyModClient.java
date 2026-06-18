@@ -4,6 +4,8 @@ import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.client.renderer.item.ItemProperties;
+import net.minecraft.resources.ResourceLocation;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -16,6 +18,7 @@ import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.ronm19.sculky.block.ModBlocks;
 import net.ronm19.sculky.entity.ModEntities;
 import net.ronm19.sculky.entity.client.*;
+import net.ronm19.sculky.item.ModItems;
 
 // This class will not load on dedicated servers. Accessing client side code from here is safe.
 @Mod(value = SculkyMod.MOD_ID, dist = Dist.CLIENT)
@@ -32,6 +35,7 @@ public class SculkyModClient {
 
     @SubscribeEvent
     static void onClientSetup( FMLClientSetupEvent event ) {
+
 
         // ----------------------------- MONSTERS --------------------------------------- //
 
@@ -59,6 +63,10 @@ public class SculkyModClient {
         EntityRenderers.register(ModEntities.SCULK_SLIME.get(), SculkSlimeRenderer::new);
         EntityRenderers.register(ModEntities.SCULK_HERALD.get(), SculkHeraldRenderer::new);
         EntityRenderers.register(ModEntities.SCULK_SNAPPER.get(), SculkSnapperRenderer::new);
+        EntityRenderers.register(ModEntities.SCULK_VINDICATOR.get(), SculkVindicatorRenderer::new);
+        EntityRenderers.register(ModEntities.SCULK_SENTRY.get(), SculkSentryRenderer::new);
+        EntityRenderers.register(ModEntities.SCULK_SPIRIT.get(), SculkSpiritRenderer::new);
+        EntityRenderers.register(ModEntities.SCULK_EVOKER.get(), SculkEvokerRenderer::new);
 
 
         // ----------------------------- PASSIVE --------------------------------------- //
@@ -85,6 +93,7 @@ public class SculkyModClient {
         EntityRenderers.register(ModEntities.SCULK_JAR_PROJECTILE.get(), ThrownItemRenderer::new);
         EntityRenderers.register(ModEntities.SCULK_BOMB_PROJECTILE.get(), ThrownItemRenderer::new);
         EntityRenderers.register(ModEntities.SHADOW_BOLT.get(), ShadowBoltRenderer::new);
+        EntityRenderers.register(ModEntities.SCULK_FANGS.get(), SculkFangsRenderer::new);
 
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.SCULK_PORTAL.get(), RenderType.translucent());
     }

@@ -1,5 +1,6 @@
 package net.ronm19.sculky.datagen;
 
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -84,6 +85,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.ECHO_CONDUIT);
         handheldItem(ModItems.ECHO_DAGGER);
         handheldItem(ModItems.SCULK_RAT_STAFF);
+        handheldItem(ModItems.SCULK_FANG_SCEPTER);
+        bowItem(ModItems.SCULK_BOW.get());
 
         handheldItem(ModItems.TOTEM_ECHO_RECALL);
         handheldItem(ModItems.TOTEM_SWARM);
@@ -147,6 +150,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent(ModItems.SCULK_SLIME_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCULK_HERALD_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCULK_SNAPPER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.SCULK_VINDICATOR_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.SCULK_SENTRY_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.SCULK_SPIRIT_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.SCULK_EVOKER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 
         withExistingParent(ModItems.SCULK_WOLF_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCULK_WOLF_ALPHA_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
@@ -169,6 +176,36 @@ public class ModItemModelProvider extends ItemModelProvider {
                 ResourceLocation.parse("item/generated")).texture("layer0",
                 ResourceLocation.fromNamespaceAndPath(SculkyMod.MOD_ID, "block/" + item.getId().getPath()));
 
+    }
+
+    private void bowItem(Item item) {
+        String name = BuiltInRegistries.ITEM.getKey(item).getPath();
+
+        ModelFile pulling0 = withExistingParent(name + "_pulling_0", mcLoc("item/bow"))
+                .texture("layer0", modLoc("item/" + name + "_pulling_0"));
+
+        ModelFile pulling1 = withExistingParent(name + "_pulling_1", mcLoc("item/bow"))
+                .texture("layer0", modLoc("item/" + name + "_pulling_1"));
+
+        ModelFile pulling2 = withExistingParent(name + "_pulling_2", mcLoc("item/bow"))
+                .texture("layer0", modLoc("item/" + name + "_pulling_2"));
+
+        withExistingParent(name, mcLoc("item/bow"))
+                .texture("layer0", modLoc("item/" + name))
+                .override()
+                .predicate(mcLoc("pulling"), 1.0F)
+                .model(pulling0)
+                .end()
+                .override()
+                .predicate(mcLoc("pulling"), 1.0F)
+                .predicate(mcLoc("pull"), 0.65F)
+                .model(pulling1)
+                .end()
+                .override()
+                .predicate(mcLoc("pulling"), 1.0F)
+                .predicate(mcLoc("pull"), 0.9F)
+                .model(pulling2)
+                .end();
     }
 
     private ItemModelBuilder horizontalBlockItem(DeferredBlock<Block> block) {

@@ -111,6 +111,18 @@
         "weight": 12,
         "minCount": 1,
         "maxCount": 3
+      },
+      {
+        "type": "sculky:sculk_vindicator",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 3
+      },
+      {
+        "type": "sculky:sculk_sentry",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 3
       }
     ],
 

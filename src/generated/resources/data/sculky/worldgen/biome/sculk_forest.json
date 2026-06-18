@@ -92,7 +92,7 @@
         "type": "sculky:sculk_bat",
         "maxCount": 2,
         "minCount": 1,
-        "weight": 12
+        "weight": 10
       }
     ],
     "axolotls": [],
@@ -100,106 +100,106 @@
     "misc": [],
     "monster": [
       {
-        "type": "sculky:sculk_parasite",
-        "maxCount": 2,
-        "minCount": 1,
-        "weight": 18
-      },
-      {
-        "type": "sculky:sculk_sentinel",
-        "maxCount": 2,
-        "minCount": 1,
-        "weight": 14
-      },
-      {
         "type": "sculky:sculk_stalker",
-        "maxCount": 3,
-        "minCount": 1,
-        "weight": 20
-      },
-      {
-        "type": "sculky:sculk_shade",
         "maxCount": 2,
         "minCount": 1,
         "weight": 16
       },
       {
-        "type": "sculky:sculk_horror",
+        "type": "sculky:sculk_parasite",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 14
+      },
+      {
+        "type": "sculky:sculk_sentinel",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 11
+      },
+      {
+        "type": "sculky:sculk_shade",
         "maxCount": 2,
         "minCount": 1,
         "weight": 12
       },
       {
-        "type": "sculky:sculk_zombie",
-        "maxCount": 3,
+        "type": "sculky:sculk_horror",
+        "maxCount": 1,
         "minCount": 1,
-        "weight": 12
+        "weight": 7
+      },
+      {
+        "type": "sculky:sculk_zombie",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 9
       },
       {
         "type": "sculky:sculk_skeleton",
         "maxCount": 2,
         "minCount": 1,
-        "weight": 10
+        "weight": 8
       },
       {
         "type": "sculky:sculk_creeper",
-        "maxCount": 2,
+        "maxCount": 1,
         "minCount": 1,
-        "weight": 8
+        "weight": 5
       },
       {
         "type": "sculky:sculk_spider",
         "maxCount": 2,
         "minCount": 1,
-        "weight": 8
+        "weight": 6
       },
       {
         "type": "sculky:sculk_enderman",
         "maxCount": 1,
         "minCount": 1,
-        "weight": 6
+        "weight": 3
       },
       {
         "type": "sculky:sculkmite",
         "maxCount": 2,
         "minCount": 1,
-        "weight": 10
+        "weight": 7
       },
       {
         "type": "sculky:sculk_phantom",
-        "maxCount": 2,
-        "minCount": 1,
-        "weight": 6
-      },
-      {
-        "type": "sculky:sculk_wolf",
-        "maxCount": 3,
-        "minCount": 1,
-        "weight": 10
-      },
-      {
-        "type": "sculky:sculk_wolf_alpha",
         "maxCount": 1,
         "minCount": 1,
         "weight": 4
       },
       {
-        "type": "sculky:sculk_horse",
+        "type": "sculky:sculk_wolf",
         "maxCount": 2,
         "minCount": 1,
-        "weight": 6
+        "weight": 8
+      },
+      {
+        "type": "sculky:sculk_wolf_alpha",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 2
+      },
+      {
+        "type": "sculky:sculk_horse",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 4
       },
       {
         "type": "sculky:sculk_fox",
         "maxCount": 2,
         "minCount": 1,
-        "weight": 8
+        "weight": 5
       },
       {
         "type": "sculky:sculk_tail",
         "maxCount": 2,
         "minCount": 1,
-        "weight": 8
+        "weight": 5
       },
       {
         "type": "sculky:sculk_beetle",
@@ -209,21 +209,21 @@
       },
       {
         "type": "sculky:hollow_horn",
-        "maxCount": 2,
+        "maxCount": 1,
         "minCount": 1,
-        "weight": 6
+        "weight": 4
       },
       {
         "type": "sculky:infested_eye",
-        "maxCount": 3,
-        "minCount": 1,
-        "weight": 8
-      },
-      {
-        "type": "sculky:sculk_hunter",
         "maxCount": 2,
         "minCount": 1,
         "weight": 6
+      },
+      {
+        "type": "sculky:sculk_hunter",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 4
       }
     ],
     "underground_water_creature": [],

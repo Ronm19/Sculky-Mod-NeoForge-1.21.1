@@ -1,0 +1,23 @@
+{
+  "parent": "sculky:false_servant",
+  "display": {
+    "icon": { "id": "sculky:sculk_fang_scepter", "count": 1 },
+    "title": { "translate": "advancement.sculky.fang_of_the_throne.title" },
+    "description": { "translate": "advancement.sculky.fang_of_the_throne.desc" },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "obtain_sculk_fang_scepter": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          { "items": ["sculky:sculk_fang_scepter"] }
+        ]
+      }
+    }
+  },
+  "requirements": [["obtain_sculk_fang_scepter"]]
+}

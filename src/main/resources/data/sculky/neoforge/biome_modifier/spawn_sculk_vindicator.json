@@ -1,0 +1,12 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": [
+    "sculky:sanctum_wastes"
+  ],
+  "spawners": {
+    "type": "sculky:sculk_vindicator",
+    "weight": 10,
+    "minCount": 1,
+    "maxCount": 3
+  }
+}

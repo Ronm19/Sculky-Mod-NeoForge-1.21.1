@@ -1,0 +1,24 @@
+{
+  "parent": "sculky:obtain_sculk_core",
+  "display": {
+    "icon": { "id": "sculky:royal_sculk_totem", "count": 1 },
+    "title": { "translate": "advancement.sculky.royal_ritual.title" },
+    "description": { "translate": "advancement.sculky.royal_ritual.desc" },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_ritual_items": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          { "items": ["sculky:royal_sculk_totem"] },
+          { "items": ["sculky:sculk_core"] }
+        ]
+      }
+    }
+  },
+  "requirements": [["has_ritual_items"]]
+}

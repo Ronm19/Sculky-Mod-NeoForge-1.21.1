@@ -7,10 +7,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.ronm19.sculky.SculkyMod;
 import net.ronm19.sculky.entity.custom.*;
-import net.ronm19.sculky.entity.projectile.SculkBombProjectileEntity;
-import net.ronm19.sculky.entity.projectile.SculkJarProjectileEntity;
-import net.ronm19.sculky.entity.projectile.ShadowBoltEntity;
-import net.ronm19.sculky.entity.projectile.SonicBoomEntity;
+import net.ronm19.sculky.entity.projectile.*;
 
 import java.util.function.Supplier;
 
@@ -114,6 +111,22 @@ public class ModEntities {
             ENTITY_TYPES.register("sculk_herald", () -> EntityType.Builder.of(SculkHeraldEntity::new, MobCategory.MONSTER)
                     .sized(0.9F, 2.7F).eyeHeight(0.18F).clientTrackingRange(10).build("sculk_herald"));
 
+    public static final Supplier<EntityType<SculkVindicatorEntity>> SCULK_VINDICATOR =
+            ENTITY_TYPES.register("sculk_vindicator", () -> EntityType.Builder.of(SculkVindicatorEntity::new, MobCategory.MONSTER)
+                    .sized(0.6F, 1.95F).eyeHeight(1.62F).clientTrackingRange(8).build("sculk_vindicator"));
+
+    public static final Supplier<EntityType<SculkSentryEntity>> SCULK_SENTRY =
+            ENTITY_TYPES.register("sculk_sentry", () -> EntityType.Builder.of(SculkSentryEntity::new, MobCategory.MONSTER)
+                    .sized(0.6F, 1.95F).eyeHeight(1.62F).clientTrackingRange(8).build("sculk_sentry"));
+
+    public static final Supplier<EntityType<SculkSpiritEntity>> SCULK_SPIRIT =
+            ENTITY_TYPES.register("sculk_spirit", () -> EntityType.Builder.of(SculkSpiritEntity::new, MobCategory.MONSTER)
+                    .sized(0.4F, 0.8F).clientTrackingRange(8).updateInterval(2).build("sculk_spirit"));
+
+    public static final Supplier<EntityType<SculkEvokerEntity>> SCULK_EVOKER =
+            ENTITY_TYPES.register("sculk_evoker", () -> EntityType.Builder.of(SculkEvokerEntity::new, MobCategory.MONSTER)
+                    .sized(0.6F, 1.95F).eyeHeight(1.62F).clientTrackingRange(10).updateInterval(2).build("sculk_evoker"));
+
     // ----------------------------- NATURAL & PASSIVE ---------------------------- //
 
 
@@ -187,21 +200,20 @@ public class ModEntities {
 
     // * ----------------------------- MISC ------------------------------- * //
 
-    public static final Supplier<EntityType<SonicBoomEntity>> SONIC_BOOM =
-            ENTITY_TYPES.register("sonic_boom", () -> EntityType.Builder.<SonicBoomEntity>of(SonicBoomEntity::new, MobCategory.MISC)
-                    .sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(1).build("sonic_boom"));
+    public static final Supplier<EntityType<SonicBoomEntity>> SONIC_BOOM = ENTITY_TYPES.register("sonic_boom",
+            () -> EntityType.Builder.<SonicBoomEntity>of(SonicBoomEntity::new, MobCategory.MISC).sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(1).build("sonic_boom"));
 
-    public static final Supplier<EntityType<SculkJarProjectileEntity>> SCULK_JAR_PROJECTILE =
-            ENTITY_TYPES.register("sculk_jar_projectile", () -> EntityType.Builder.<SculkJarProjectileEntity>of(SculkJarProjectileEntity::new, MobCategory.MISC)
-                    .sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10).build("sculky:sculk_jar_projectile"));
+    public static final Supplier<EntityType<SculkJarProjectileEntity>> SCULK_JAR_PROJECTILE = ENTITY_TYPES.register("sculk_jar_projectile",
+            () -> EntityType.Builder.<SculkJarProjectileEntity>of(SculkJarProjectileEntity::new, MobCategory.MISC).sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10).build("sculky:sculk_jar_projectile"));
 
-    public static final Supplier<EntityType<SculkBombProjectileEntity>> SCULK_BOMB_PROJECTILE =
-            ENTITY_TYPES.register("sculk_bomb_projectile", () -> EntityType.Builder.<SculkBombProjectileEntity>of(SculkBombProjectileEntity::new, MobCategory.MISC)
-                    .sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10).build("sculky:sculk_bomb_projectile"));
+    public static final Supplier<EntityType<SculkBombProjectileEntity>> SCULK_BOMB_PROJECTILE = ENTITY_TYPES.register("sculk_bomb_projectile",
+            () -> EntityType.Builder.<SculkBombProjectileEntity>of(SculkBombProjectileEntity::new, MobCategory.MISC).sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10).build("sculky:sculk_bomb_projectile"));
 
-    public static final Supplier<EntityType<ShadowBoltEntity>> SHADOW_BOLT =
-            ENTITY_TYPES.register("shadow_bolt", () -> EntityType.Builder.<ShadowBoltEntity>of(ShadowBoltEntity::new, MobCategory.MISC)
+    public static final Supplier<EntityType<ShadowBoltEntity>> SHADOW_BOLT = ENTITY_TYPES.register("shadow_bolt", () -> EntityType.Builder.<ShadowBoltEntity>of(ShadowBoltEntity::new, MobCategory.MISC)
                             .sized(0.3F, 0.3F).clientTrackingRange(4).updateInterval(10).build("shadow_bolt"));
+
+    public static final Supplier<EntityType<SculkFangsEntity>> SCULK_FANGS = ENTITY_TYPES.register("sculk_fangs", () -> EntityType.Builder.<SculkFangsEntity>of(SculkFangsEntity::new, MobCategory.MISC)
+                            .sized(0.5F, 0.8F).clientTrackingRange(6).updateInterval(2).build("sculk_fangs"));
 
 
 

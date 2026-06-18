@@ -36,7 +36,7 @@ public class ModItems {
             ITEMS.registerItem("sculk_core", Item::new, new Item.Properties());
 
     public static final DeferredItem<Item> CROWN_FRAGMENT = ITEMS.registerItem("crown_fragment", Item::new, new Item.Properties());
-    public static final DeferredItem<Item> ROYAL_SCULK_FRAGMENT = ITEMS.registerItem("royal_sculk_fragment", Item::new, new Item.Properties());
+    public static final DeferredItem<Item> ROYAL_SCULK_FRAGMENT = ITEMS.registerItem("royal_sculk_fragment", RoyalSculkFragmentItem::new, new Item.Properties());
     public static final DeferredItem<Item> ANCIENT_RESONANCE_CORE = ITEMS.registerItem("ancient_resonance_core", Item::new, new Item.Properties());
     public static final DeferredItem<Item> THRONE_SHARD = ITEMS.registerItem("throne_shard", Item::new, new Item.Properties());
     public static final DeferredItem<Item> ANCIENT_SCULK_TABLET = ITEMS.registerItem("ancient_sculk_tablet", AncientSculkTabletItem::new);
@@ -113,6 +113,12 @@ public class ModItems {
     public static final DeferredItem<Item> SCULK_EDGE = ITEMS.register("sculk_edge",
             () -> new SculkEdgeItem(ModToolTiers.INFESTED_SCULK,
                     new Item.Properties().attributes(SwordItem.createAttributes(ModToolTiers.INFESTED_SCULK, 20, -2.2f))));
+
+    public static final DeferredItem<Item> SCULK_FANG_SCEPTER = ITEMS.register("sculk_fang_scepter",
+            () -> new SculkFangScepterItem(new Item.Properties().stacksTo(1).durability(192)));
+
+    public static final DeferredItem<Item> SCULK_BOW = ITEMS.register("sculk_bow",
+            () -> new SculkBowItem(new  Item.Properties().stacksTo(1).durability(456)));
 
     public static final DeferredItem<Item> INFESTED_SCULK_HELMET = ITEMS.register("infested_sculk_helmet",
             () -> new ModArmorItem(ModArmorMaterials.INFESTED_SCULK, ArmorItem.Type.HELMET,
@@ -226,7 +232,17 @@ public class ModItems {
     public static final DeferredItem<Item> SCULK_SNAPPER_SPAWN_EGG = ITEMS.register("sculk_snapper_spawn_egg",
             () -> new DeferredSpawnEggItem(ModEntities.SCULK_SNAPPER, 0x071014, 0x00D8E8, new Item.Properties()));
 
+    public static final DeferredItem<Item> SCULK_VINDICATOR_SPAWN_EGG = ITEMS.register("sculk_vindicator_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.SCULK_VINDICATOR, 0x1f252b, 0x25c8d8, new Item.Properties()));
 
+    public static final DeferredItem<Item> SCULK_SENTRY_SPAWN_EGG = ITEMS.register("sculk_sentry_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.SCULK_SENTRY, 0x20262E, 0x25C8D8, new Item.Properties()));
+
+    public static final DeferredItem<Item> SCULK_SPIRIT_SPAWN_EGG = ITEMS.register("sculk_spirit_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.SCULK_SPIRIT, 0x17232D, 0x2EDDEA, new Item.Properties()));
+
+    public static final DeferredItem<Item> SCULK_EVOKER_SPAWN_EGG = ITEMS.register("sculk_evoker_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.SCULK_EVOKER, 0x111821, 0x2EDDEA, new Item.Properties()));
 
     // ------------------------------- NEUTRAL Egg Spawns --------------------------------------------- //
 

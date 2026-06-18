@@ -4,6 +4,8 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.*;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -20,10 +22,15 @@ import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.monster.Bogged;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.ronm19.sculky.entity.ModEntities;
 import net.ronm19.sculky.entity.projectile.ShadowBoltEntity;
+import net.ronm19.sculky.item.ModItems;
 import org.jetbrains.annotations.NotNull;
+
+import java.time.LocalDate;
+import java.time.temporal.ChronoField;
 
 public class SculkNecromancerEntity extends Bogged implements Enemy, RangedAttackMob {
 
@@ -209,6 +216,26 @@ public class SculkNecromancerEntity extends Bogged implements Enemy, RangedAttac
                                         DifficultyInstance difficulty,
                                         MobSpawnType reason,
                                         SpawnGroupData spawnData) {
+        RandomSource randomsource = level.getRandom();
+        this.populateDefaultEquipmentSlots(randomsource, difficulty);
+        this.populateDefaultEquipmentEnchantments(level, randomsource, difficulty);
+        this.reassessWeaponGoal();
+        this.setCanPickUpLoot(randomsource.nextFloat() < 0.55F * difficulty.getSpecialMultiplier());
+        if (this.getItemBySlot(EquipmentSlot.HEAD).isEmpty()) {
+            LocalDate localdate = LocalDate.now();
+            int i = localdate.get(ChronoField.DAY_OF_MONTH);
+            int j = localdate.get(ChronoField.MONTH_OF_YEAR);
+            if (j == 10 && i == 31 && randomsource.nextFloat() < 0.25F) {
+                this.setItemSlot(EquipmentSlot.HEAD, new ItemStack(randomsource.nextFloat() < 0.1F ? Blocks.JACK_O_LANTERN : Blocks.CARVED_PUMPKIN));
+                this.armorDropChances[EquipmentSlot.HEAD.getIndex()] = 0.0F;
+            }
+        }
         return super.finalizeSpawn(level, difficulty, reason, spawnData);
+    }
+
+    @Override
+    protected void populateDefaultEquipmentSlots(RandomSource random, DifficultyInstance difficulty) {
+        super.populateDefaultEquipmentSlots(random, difficulty);
+        this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.SCULK_BOW.get()));
     }
 }

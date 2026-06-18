@@ -27,34 +27,34 @@ public class ModOverworldBiomes {
     public static Biome sculkForest(HolderGetter<PlacedFeature> placedFeatureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
 
-        // 🌲 SCULK FOREST (BALANCED)
+        // 🌲 SCULK FOREST — dense main biome, but controlled
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_STALKER.get(), 16, 1, 2));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_PARASITE.get(), 14, 1, 2));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_SENTINEL.get(), 11, 1, 1));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_SHADE.get(), 12, 1, 2));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_HORROR.get(), 7, 1, 1));
 
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_PARASITE.get(), 18, 1, 2));
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_SENTINEL.get(), 14, 1, 2));
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_STALKER.get(), 20, 1, 3));
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_SHADE.get(), 16, 1, 2));
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_HORROR.get(), 12, 1, 2));
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_ZOMBIE.get(), 12, 1, 3));
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_SKELETON.get(), 10, 1, 2));
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_CREEPER.get(), 8, 1, 2));
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_SPIDER.get(), 8, 1, 2));
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_ENDERMAN.get(), 6, 1, 1));
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULKMITE.get(), 10, 1, 2));
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_PHANTOM.get(), 6, 1, 2));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_ZOMBIE.get(), 9, 1, 2));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_SKELETON.get(), 8, 1, 2));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_CREEPER.get(), 5, 1, 1));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_SPIDER.get(), 6, 1, 2));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_ENDERMAN.get(), 3, 1, 1));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULKMITE.get(), 7, 1, 2));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_PHANTOM.get(), 4, 1, 1));
 
-// 🐺 Forest wildlife (reduced heavily)
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_WOLF.get(), 10, 1, 3));
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_WOLF_ALPHA.get(), 4, 1, 1));
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_HORSE.get(), 6, 1, 2));
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_FOX.get(), 8, 1, 2));
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_TAIL.get(), 8, 1, 2));
-        spawnBuilder.addSpawn(MobCategory.AMBIENT, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_BAT.get(), 12, 1, 2));
+// 🐺 Forest wildlife / corrupted beasts
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_WOLF.get(), 8, 1, 2));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_WOLF_ALPHA.get(), 2, 1, 1));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_HORSE.get(), 4, 1, 1));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_FOX.get(), 5, 1, 2));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_TAIL.get(), 5, 1, 2));
+        spawnBuilder.addSpawn(MobCategory.AMBIENT, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_BAT.get(), 10, 1, 2));
 
-// 🐞 Rare / special
+// Rare / special
         spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_BEETLE.get(), 2, 1, 1));
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.HOLLOW_HORN.get(), 6, 1, 2));
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.INFESTED_EYE.get(), 8, 1, 3));
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_HUNTER.get(), 6, 1, 2));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.HOLLOW_HORN.get(), 4, 1, 1));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.INFESTED_EYE.get(), 6, 1, 2));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_HUNTER.get(), 4, 1, 1));
 
 
 
@@ -96,21 +96,22 @@ public class ModOverworldBiomes {
                                     HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
 
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
-        // Keep spawns lighter than forest (wastes = open, harsher, less packed)
-        // 🏜️ SCULK WASTES (BALANCED)
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_ZOMBIE.get(), 10, 1, 2));
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_SKELETON.get(), 8, 1, 2));
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_CREEPER.get(), 6, 1, 1));
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_SPIDER.get(), 6, 1, 1));
-// 👻 Signature Wastes threat
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_PHANTOM.get(), 14, 1, 3));
-// 🪤 Unique terrain mob
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_SANDSNARE.get(), 12, 1, 3));
-// 🐞 Small life (keeps it from feeling dead)
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_BEETLE.get(), 6, 1, 2));
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_RAT.get(), 6, 1, 2));
-// 🧠 Hunter = rare but scary
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_HUNTER.get(), 5, 1, 2));
+        // 🏜️ SCULK WASTES — open, harsh, less crowded
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_ZOMBIE.get(), 7, 1, 2));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_SKELETON.get(), 6, 1, 1));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_CREEPER.get(), 4, 1, 1));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_SPIDER.get(), 4, 1, 1));
+
+// Signature Wastes threats
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_PHANTOM.get(), 12, 1, 2));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_SANDSNARE.get(), 10, 1, 2));
+
+// Small life
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_BEETLE.get(), 5, 1, 1));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_RAT.get(), 5, 1, 2));
+
+// Rare scary encounter
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_HUNTER.get(), 3, 1, 1));
 
 
 
@@ -163,23 +164,29 @@ public class ModOverworldBiomes {
         // Keep spawns lighter than forest (wastes = open, harsher, less packed)
         // 🌿 SCULK JUNGLE (BALANCED)
 
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_ZOMBIE.get(), 10, 1, 3));
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_SKELETON.get(), 8, 1, 2));
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_CREEPER.get(), 6, 1, 2));
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_SPIDER.get(), 10, 1, 2));
+        // 🌿 SCULK JUNGLE — ambush biome
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_ZOMBIE.get(), 7, 1, 2));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_SKELETON.get(), 6, 1, 1));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_CREEPER.get(), 4, 1, 1));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_SPIDER.get(), 8, 1, 2));
 
-// 🌴 Jungle-specific pressure
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_HUSK.get(), 12, 1, 3));
-// 👻 Less dominant than Wastes
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_PHANTOM.get(), 8, 1, 2));
-// 🐆 MAIN JUNGLE STAR
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SHADOW_PANTHER.get(), 14, 1, 2));
-// 🧠 Smart threats
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_HUNTER.get(), 8, 1, 2));
-// 👁️ Atmosphere + pressure
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.INFESTED_EYE.get(), 12, 1, 3));
-// 🐐 Rare encounter
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.HOLLOW_HORN.get(), 4, 1, 2));
+// Jungle-specific pressure
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_HUSK.get(), 10, 1, 2));
+
+// Less dominant than Wastes
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_PHANTOM.get(), 5, 1, 1));
+
+// Main jungle star
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SHADOW_PANTHER.get(), 12, 1, 2));
+
+// Smart threats
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCULK_HUNTER.get(), 6, 1, 1));
+
+// Atmosphere + pressure
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.INFESTED_EYE.get(), 9, 1, 2));
+
+// Rare encounter
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.HOLLOW_HORN.get(), 3, 1, 1));
 
 
 

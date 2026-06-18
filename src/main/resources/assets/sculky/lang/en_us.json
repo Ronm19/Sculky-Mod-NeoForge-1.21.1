@@ -39,11 +39,13 @@
   "item.sculky.infested_sculk_hammer": "Infested Sculk Hammer",
   "item.sculky.sculk_edge": "Sculk Edge",
   "item.sculky.sculk_rat_staff": "Sculk Rat Staff",
+  "item.sculky.sculk_fang_scepter": "Sculk Fang Scepter",
   "item.sculky.echo_conduit": "Echo Conduit",
   "item.sculky.echo_dagger": "Echo Dagger",
   "item.sculky.sculk_jar": "Sculk Jar",
   "item.sculky.sculk_bomb": "Sculk Bomb",
   "item.sculky.ancient_sculk_tablet": "Ancient Sculk Tablet",
+  "item.sculky.sculk_bow": "Sculk Bow",
 
   "item.sculky.infested_sculk_helmet": "Infested Sculk Helmet",
   "item.sculky.infested_sculk_chestplate": "Infested Sculk Chestplate",
@@ -76,6 +78,10 @@
   "item.sculky.sculk_slime_spawn_egg": "Sculk Slime Spawn Egg",
   "item.sculky.sculk_herald_spawn_egg": "Sculk Herald Spawn Egg",
   "item.sculky.sculk_snapper_spawn_egg": "Sculk Snapper Spawn Egg",
+  "item.sculky.sculk_vindicator_spawn_egg": "Sculk Vindicator Spawn Egg",
+  "item.sculky.sculk_sentry_spawn_egg": "Sculk Sentry Spawn Egg",
+  "item.sculky.sculk_spirit_spawn_egg": "Sculk Spirit Spawn Egg",
+  "item.sculky.sculk_evoker_spawn_egg": "Sculk Evoker Spawn Egg",
 
   "item.sculky.sculk_wolf_spawn_egg": "Sculk Wolf Spawn Egg",
   "item.sculky.sculk_horse_spawn_egg": "Sculk Horse Spawn Egg",
@@ -100,6 +106,9 @@
   "item.sculky.infested_sculk_horse_armor": "Infested Sculk Horse Armor",
 
   "tooltip.sculky.ancient_sculk_tablet": "A fractured record of a forgotten royal command.",
+  "tooltip.sculky.sculk_fang_scepter.line1": "A fang-shaped relic pulsing with royal sculk energy.",
+  "tooltip.sculky.sculk_fang_scepter.line2": "It bites where the throne commands.",
+  "tooltip.sculky.royal_sculk_fragment": "The sculk grows quiet.",
 
   "block.sculky.infested_sculk_block": "Infested Sculk Block",
   "block.sculky.raw_infested_sculk_block": "Raw Infested Sculk Block",
@@ -211,6 +220,10 @@
   "entity.sculky.sculk_slime": "Sculk Slime",
   "entity.sculky.sculk_herald": "Sculk Herald",
   "entity.sculky.sculk_snapper": "Sculk Snapper",
+  "entity.sculky.sculk_vindicator": "Sculk Vindicator",
+  "entity.sculky.sculk_sentry": "Sculk Sentry",
+  "entity.sculky.sculk_spirit": "Sculk Spirit",
+  "entity.sculky.sculk_evoker": "Sculk Evoker",
 
   "entity.sculky.sculk_wolf": "Sculk Wolf",
   "entity.sculky.sculk_wolf_alpha": "Sculk Wolf Alpha",
@@ -229,6 +242,7 @@
 
   "entity.sculky.sonic_boom": "Sonic Boom",
   "entity.sculky.sculk_jar_projectile": "Sculk Jar Projectile",
+  "entity.sculky.sculk_fangs": "Sculk Fangs",
 
   "sounds.sculky.shadow_panther_theme": "Shadow Panther Theme",
   "sounds.sculky.shadow_panther_ambient": "Shadow Panther Ambient Sound",
@@ -292,6 +306,18 @@
 
   "advancement.sculky.the_king_whispers.title": "The King Whispers",
   "advancement.sculky.the_king_whispers.desc": "Find proof that the Sculk King is no longer silent.",
+
+  "advancement.sculky.royal_ritual.title": "Royal Ritual",
+  "advancement.sculky.royal_ritual.desc": "The core waits before the royal sculk.",
+
+  "advancement.sculky.false_servant.title": "False Servant",
+  "advancement.sculky.false_servant.desc": "The throne's servant falls before the King arrives.",
+
+  "advancement.sculky.fang_of_the_throne.title": "Fang of the Throne",
+  "advancement.sculky.fang_of_the_throne.desc": "A weapon born from royal sculk hunger.",
+
+  "advancement.sculky.before_the_king.title": "Before the King",
+  "advancement.sculky.before_the_king.desc": "The throne is not ready.",
 
 
   "itemGroup.sculky.sculky_items_tab": "Sculky Items Tab",

@@ -1,4 +1,4 @@
-// 1.21.1	2026-05-17T23:10:13.5800997	Item Models: sculky
+// 1.21.1	2026-06-13T21:26:43.3511128	Item Models: sculky
 af7db26754b709a1aada7bbf2a40ba8ccfea64e4 assets/sculky/models/item/ancient_resonance_core.json
 5ef907571a55708c8bf0331f725bc95b70ac6a91 assets/sculky/models/item/ancient_sculk_tablet.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/crowned_sculkmite_spawn_egg.json
@@ -94,6 +94,10 @@ b1978a193c04344a733291423a74290b0423cd5c assets/sculky/models/item/sculk_boots_e
 8102f698f78082402ccc56fb4d8e4b52866e2283 assets/sculky/models/item/sculk_boots_netherite_trim.json
 8f0a5fabfab1da70360a1d360b8e928024574adc assets/sculky/models/item/sculk_boots_quartz_trim.json
 a4c4984370d52b0861d82d4edc2e3001906e44b1 assets/sculky/models/item/sculk_boots_redstone_trim.json
+8f8f4305481e1436f9eb44793c458df32ea08744 assets/sculky/models/item/sculk_bow.json
+d6a5b7d0b7023830fbf0bf2b8b563ef6d382536d assets/sculky/models/item/sculk_bow_pulling_0.json
+41b819165647a71a4165212f007a49dde5f44301 assets/sculky/models/item/sculk_bow_pulling_1.json
+9c40c0b81597d1927001a5eac8554700cd5f07a8 assets/sculky/models/item/sculk_bow_pulling_2.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_brute_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_burrower_spawn_egg.json
 db7f096ea4d1a998fa35d10a550182f4676e3dff assets/sculky/models/item/sculk_chitin.json
@@ -101,7 +105,9 @@ db7f096ea4d1a998fa35d10a550182f4676e3dff assets/sculky/models/item/sculk_chitin.
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_creeper_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_dolphin_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_enderman_spawn_egg.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_evoker_spawn_egg.json
 e4502af2613269d7d935a6b3928c77e5b3d4a58f assets/sculky/models/item/sculk_fang.json
+62c6eae5cdd23deb434051c7b7a458817e9b3b14 assets/sculky/models/item/sculk_fang_scepter.json
 9dfa87d5c8e48fd89b3d3a6e331a53c7f134d92a assets/sculky/models/item/sculk_fin.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_fox_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_golem_spawn_egg.json
@@ -127,14 +133,17 @@ b41ac6d9289690bcfe9add53f1a1d69f2387d1a7 assets/sculky/models/item/sculk_pastry.
 00a8fc10a98e3e8293b3c9e62083235c7b78f66b assets/sculky/models/item/sculk_resonance.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_sandsnare_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_sentinel_spawn_egg.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_sentry_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_shade_spawn_egg.json
 68f30216fcce08a30aa7e42d8243993182bcdd99 assets/sculky/models/item/sculk_shard.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_skeleton_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_slime_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_snapper_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_spider_spawn_egg.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_spirit_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_stalker_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_tail_spawn_egg.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_vindicator_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_wolf_alpha_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_wolf_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/sculky/models/item/sculk_zombie_spawn_egg.json

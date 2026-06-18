@@ -181,8 +181,18 @@ public class SculkHunterModel <T extends SculkHunterEntity> extends Hierarchical
     }
 
 
+    @Override
     public void translateToHand(HumanoidArm side, PoseStack poseStack) {
-        this.getArm(side).translateAndRotate(poseStack);
+        ModelPart armPart = this.getArm(side);
+
+        armPart.translateAndRotate(poseStack);
+
+        // Sculk Hunter arms have a centered pivot, so move the item down toward the hand.
+        poseStack.translate(
+                side == HumanoidArm.RIGHT ? -1.0F / 16.0F : 1.0F / 16.0F,
+                -0.2F,
+                0.0F
+        );
     }
 
     protected ModelPart getArm(HumanoidArm side) {

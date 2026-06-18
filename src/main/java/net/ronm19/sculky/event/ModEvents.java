@@ -143,6 +143,10 @@ public class ModEvents {
         event.put(ModEntities.SCULK_SLIME.get(), SculkSlimeEntity.createSculkSlimeAttributes().build());
         event.put(ModEntities.SCULK_HERALD.get(), SculkHeraldEntity.createSculkHeraldAttributes().build());
         event.put(ModEntities.SCULK_SNAPPER.get(), SculkSnapperEntity.createSculkSnapperAttributes().build());
+        event.put(ModEntities.SCULK_VINDICATOR.get(), SculkVindicatorEntity.createSculkVindicatorAttributes().build());
+        event.put(ModEntities.SCULK_SENTRY.get(), SculkSentryEntity.createSculkSentryAttributes().build());
+        event.put(ModEntities.SCULK_SPIRIT.get(), SculkSpiritEntity.createSculkSpiritAttributes().build());
+        event.put(ModEntities.SCULK_EVOKER.get(), SculkEvokerEntity.createSculkEvokerAttributes().build());
 
         event.put(ModEntities.SCULK_WOLF.get(), SculkWolfEntity.createsSculkWolfAttributes().build());
         event.put(ModEntities.SCULK_WOLF_ALPHA.get(), SculkWolfAlphaEntity.createSculkWolfAlphaAttributes().build());
@@ -220,7 +224,6 @@ public class ModEvents {
                 Monster :: checkMobSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.REPLACE);
 
-
         event.register(ModEntities.SCULK_SPIDER.get(),
                 SpawnPlacementTypes.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
@@ -269,6 +272,19 @@ public class ModEvents {
                 SpawnPlacementTypes.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 Monster::checkMobSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+
+        event.register(ModEntities.SCULK_VINDICATOR.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                SculkVindicatorEntity::checkMobSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+
+
+        event.register(ModEntities.SCULK_SENTRY.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                SculkSentryEntity::checkMobSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.REPLACE);
 
         // ---------------------------------------------------------
