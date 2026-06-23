@@ -2,6 +2,7 @@ package net.ronm19.sculky.event;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.Options;
+import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.util.Mth;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
@@ -9,12 +10,16 @@ import net.neoforged.neoforge.client.event.ClientTickEvent;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.neoforge.client.event.ComputeFovModifierEvent;
+import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
+import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
+import net.ronm19.sculky.client.renderer.item.SculkShieldRenderer;
 import net.ronm19.sculky.client.sound.ShadowPantherSoundHandler;
 import net.ronm19.sculky.entity.custom.SculkDolphinEntity;
 import net.ronm19.sculky.item.ModItems;
 import net.ronm19.sculky.item.SculkyItemProperties;
 import net.ronm19.sculky.network.SculkDolphinInputPayload;
+import org.jetbrains.annotations.NotNull;
 
 @EventBusSubscriber(value = Dist.CLIENT)
 public class ModClientEvents {
@@ -85,6 +90,23 @@ public class ModClientEvents {
             ));
         }
     }
+
+    @SubscribeEvent
+    public static void registerClientExtensions(RegisterClientExtensionsEvent event) {
+        event.registerItem(new IClientItemExtensions() {
+            private SculkShieldRenderer renderer;
+
+            @Override
+            public @NotNull BlockEntityWithoutLevelRenderer getCustomRenderer() {
+                if (this.renderer == null) {
+                    this.renderer = new SculkShieldRenderer();
+                }
+
+                return this.renderer;
+            }
+        }, ModItems.SCULK_SHIELD.get());
+    }
+
 
     @SubscribeEvent
     public static void onClientSetup( FMLClientSetupEvent event) {

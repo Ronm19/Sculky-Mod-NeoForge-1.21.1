@@ -27,6 +27,7 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> INFESTED_SCULK_PLACED_KEY = registerKey("infested_sculk_placed");
     public static final ResourceKey<PlacedFeature> INFESTED_JUNGLE_SCULK_PLACED_KEY = registerKey("infested_jungle_sculk_placed");
     public static final ResourceKey<PlacedFeature> INFESTED_MEGA_JUNGLE_SCULK_PLACED_KEY = registerKey("infested_mega_jungle_sculk_placed");
+    public static final ResourceKey<PlacedFeature> CROWNWOOD_PLACED_KEY = registerKey("crownwood_placed");
 
     public static final ResourceKey<PlacedFeature> INFESTED_SCULK_ORE_PLACED_KEY = registerKey("infested_sculk_ore_placed");
     public static final ResourceKey<PlacedFeature> DEEPSLATE_INFESTED_SCULK_ORE_PLACED_KEY = registerKey("deepslate_infested_sculk_ore_placed");
@@ -40,6 +41,8 @@ public class ModPlacedFeatures {
 
     public static void bootstrap( BootstrapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
+
+        // ---- Trees ----- //
 
         register(context, INFESTED_SCULK_PLACED_KEY,
                 configuredFeatures.getOrThrow(ModConfiguredFeatures.INFESTED_SCULK_KEY),
@@ -56,6 +59,24 @@ public class ModPlacedFeatures {
                 )
         );
 
+        register(context, CROWNWOOD_PLACED_KEY,
+                configuredFeatures.getOrThrow(ModConfiguredFeatures.CROWNWOOD_KEY),
+                List.of(
+                        PlacementUtils.countExtra(2, 0.1F, 1),
+                        InSquarePlacement.spread(),
+                        HeightmapPlacement.onHeightmap(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES),
+
+                        BlockPredicateFilter.forPredicate(
+                                BlockPredicate.anyOf(
+                                        BlockPredicate.matchesBlocks(BlockPos.ZERO.below(), ModBlocks.ROYAL_SCULK_GRASS_BLOCK.get()),
+                                        BlockPredicate.matchesBlocks(BlockPos.ZERO.below(), ModBlocks.ROYAL_SCULK_SOIL.get())
+                                )
+                        ),
+
+                        BiomeFilter.biome()
+                )
+        );
+
         register(context, INFESTED_JUNGLE_SCULK_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SCULK_JUNGLE_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1f, 2),
                         ModBlocks.SCULK_JUNGLE_SAPLING.get()));
@@ -65,6 +86,8 @@ public class ModPlacedFeatures {
                         ModBlocks.SCULK_JUNGLE_SAPLING.get()));
 
 
+
+        // ---- Ores ----- //
 
         register(context,
                 INFESTED_SCULK_ORE_PLACED_KEY,
@@ -92,6 +115,8 @@ public class ModPlacedFeatures {
                         ),
                         NearSculkPlacement.of(8), // custom sculk-proximity radius
                         BiomeFilter.biome()));
+
+        // ---- Plants ----- //
 
         register(context, SCULKBLOOM_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SCULKBLOOM_KEY),
                 List.of(RarityFilter.onAverageOnceEvery(16), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));

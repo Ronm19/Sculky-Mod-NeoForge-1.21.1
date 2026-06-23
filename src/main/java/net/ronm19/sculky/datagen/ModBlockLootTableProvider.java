@@ -133,8 +133,17 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.SCULK_JUNGLE_PLANKS.get());
         this.dropSelf(ModBlocks.SCULK_JUNGLE_SAPLING.get());
 
-        this.add(ModBlocks.SCULK_JUNGLE_LEAVES.get(), block ->
-                createLeavesDrops(block, ModBlocks.SCULK_JUNGLE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.add(ModBlocks.SCULK_JUNGLE_LEAVES.get(), block -> createLeavesDrops(block, ModBlocks.SCULK_JUNGLE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+
+        this.dropSelf(ModBlocks.CROWNWOOD_LOG.get());
+        this.dropSelf(ModBlocks.CROWNWOOD_SAPLING.get());
+        this.add(ModBlocks.CROWNWOOD_LEAVES.get(), block -> createLeavesDrops(block, ModBlocks.CROWNWOOD_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+
+        dropSelf(ModBlocks.ROYAL_SCULK_GRASS_BLOCK.get());
+        dropSelf(ModBlocks.ROYAL_SCULK_SOIL.get());
+        dropSelf(ModBlocks.ROYAL_SCULK_STONE.get());
+        dropSelf(ModBlocks.ROYAL_SCULK_CROWNSTONE.get());
+        dropSelf(ModBlocks.DARK_ROYAL_SCULK.get());
 
         dropSelf(ModBlocks.INFESTED_SCULK_GRASS_BLOCK.get());
         dropSelf(ModBlocks.INFESTED_SCULK_DIRT_BLOCK.get());

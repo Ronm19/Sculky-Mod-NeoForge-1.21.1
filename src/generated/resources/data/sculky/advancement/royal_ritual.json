@@ -1,0 +1,44 @@
+{
+  "parent": "sculky:find_altar",
+  "criteria": {
+    "has_ritual_items": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "sculky:royal_sculk_totem"
+            ]
+          },
+          {
+            "items": [
+              "sculky:sculk_core"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.sculky.royal_ritual.desc"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "count": 1,
+      "id": "sculky:royal_sculk_totem"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.sculky.royal_ritual.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_ritual_items"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

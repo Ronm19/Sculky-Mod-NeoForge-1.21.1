@@ -1,9 +1,13 @@
-// 1.21.1	2026-03-20T01:56:34.4056448	Tags for minecraft:item mod id sculky
+// 1.21.1	2026-06-20T22:22:37.9936061	Tags for minecraft:item mod id sculky
+f95b95ad819e5ec8efa48d6b9d4139092d540440 data/minecraft/tags/item/axes.json
 9d0873df6bd331e7b38ab6d9eb6823cada1cc432 data/minecraft/tags/item/dirt.json
 efe333c3469fb6f51f0ad8e17ed7da227c91bd4d data/minecraft/tags/item/flowers.json
 caa22a70d5b929b41dbd3e7c1f0dea0fab9036a9 data/minecraft/tags/item/fox_food.json
+19585e0a0df02705ebace38c98bdbff689b43fd5 data/minecraft/tags/item/hoes.json
 6d4996038371478fd37467f7140f1ab71a8a6065 data/minecraft/tags/item/logs_that_burn.json
+d594ab43f7e1ce973047b26f714c2c15422743fe data/minecraft/tags/item/pickaxes.json
 5d1482b56623c21b1e07c7e7059f286406467fa6 data/minecraft/tags/item/planks.json
 04625441a129a242b63124acfd158bc636722d20 data/minecraft/tags/item/sand.json
-5169614b957e080a5a6e3fc3678045684e3ff5f3 data/minecraft/tags/item/swords.json
+8bd7419487d55b2e7fb143c67b86fc8d4dafd8ee data/minecraft/tags/item/shovels.json
+f5ec116b940c9706ab66ffe0905b554684f582f6 data/minecraft/tags/item/swords.json
 60afd04938831b2c3e4c5348f9fdba17841dd754 data/minecraft/tags/item/trimmable_armor.json

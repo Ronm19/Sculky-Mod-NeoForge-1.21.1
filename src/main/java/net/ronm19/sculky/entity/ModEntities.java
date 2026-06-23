@@ -95,6 +95,10 @@ public class ModEntities {
             ENTITY_TYPES.register("sculk_necromancer", () -> EntityType.Builder.of(SculkNecromancerEntity ::new, MobCategory.MONSTER)
                     .sized(0.6F, 1.99F).eyeHeight(1.74F).build("sculk_necromancer"));
 
+    public static final Supplier<EntityType<SculkOracleEntity>> SCULK_ORACLE =
+            ENTITY_TYPES.register("sculk_oracle", () -> EntityType.Builder.of(SculkOracleEntity::new, MobCategory.MONSTER)
+                    .sized(0.65F, 2.25F).eyeHeight(2.0F).clientTrackingRange(8).updateInterval(3).build("sculk_oracle"));
+
     public static final Supplier<EntityType<SculkBruteEntity>> SCULK_BRUTE =
             ENTITY_TYPES.register("sculk_brute", () -> EntityType.Builder.of(SculkBruteEntity::new, MobCategory.MONSTER)
                     .sized(1.35F, 2.1F).eyeHeight(2.4F).clientTrackingRange(10).updateInterval(3).build("sculk_brute"));
@@ -126,6 +130,25 @@ public class ModEntities {
     public static final Supplier<EntityType<SculkEvokerEntity>> SCULK_EVOKER =
             ENTITY_TYPES.register("sculk_evoker", () -> EntityType.Builder.of(SculkEvokerEntity::new, MobCategory.MONSTER)
                     .sized(0.6F, 1.95F).eyeHeight(1.62F).clientTrackingRange(10).updateInterval(2).build("sculk_evoker"));
+
+    public static final Supplier<EntityType<SculkExecutionerEntity>> SCULK_EXECUTIONER =
+            ENTITY_TYPES.register("sculk_executioner", () -> EntityType.Builder.of(SculkExecutionerEntity::new, MobCategory.MONSTER)
+                    .sized(1.4F, 3.6F).eyeHeight(3.15F).clientTrackingRange(12).updateInterval(2).build("sculk_executioner"));
+
+    public static final Supplier<EntityType<SculkBulwarkEntity>> SCULK_BULWARK =
+            ENTITY_TYPES.register("sculk_bulwark", () -> EntityType.Builder.of(SculkBulwarkEntity::new, MobCategory.MONSTER)
+                    .sized(1.6F, 2.5F).eyeHeight(3.15F).clientTrackingRange(12).updateInterval(2).build("sculk_bulwark"));
+
+    public static final Supplier<EntityType<ThroneboundWraithEntity>> THRONEBOUND_WRAITH =
+            ENTITY_TYPES.register("thronebound_wraith", () -> EntityType.Builder.of(ThroneboundWraithEntity::new, MobCategory.MONSTER)
+                    .sized(0.6F, 2.15F).eyeHeight(1.85F).clientTrackingRange(8).updateInterval(3).build("thronebound_wraith"));
+
+
+    // ----------------------------- SCULK KING ---------------------------- //
+
+    public static final Supplier<EntityType<SculkKingEntity>> SCULK_KING =
+            ENTITY_TYPES.register("sculk_king", () -> EntityType.Builder.of(SculkKingEntity::new, MobCategory.MONSTER)
+                    .sized(1.4F, 3.6F).eyeHeight(3.15F).clientTrackingRange(12).updateInterval(2).build("sculk_king"));
 
     // ----------------------------- NATURAL & PASSIVE ---------------------------- //
 
@@ -173,6 +196,10 @@ public class ModEntities {
     public static final Supplier<EntityType<SculkGolemEntity>> SCULK_GOLEM =
             ENTITY_TYPES.register("sculk_golem", () -> EntityType.Builder.of(SculkGolemEntity::new, MobCategory.CREATURE)
                             .sized(1.45F, 3.0F).eyeHeight(2.7F).clientTrackingRange(10).updateInterval(3).build("sculk_golem"));
+
+    public static final Supplier<EntityType<SculkBearEntity>> SCULK_BEAR =
+            ENTITY_TYPES.register("sculk_bear", () -> EntityType.Builder.of(SculkBearEntity::new, MobCategory.CREATURE)
+                    .sized(1.35F, 1.35F).eyeHeight(0.95F).clientTrackingRange(10).updateInterval(3).build("sculk_bear"));
 
 
     // -------------------- WATER CREATURES -------------------------- //

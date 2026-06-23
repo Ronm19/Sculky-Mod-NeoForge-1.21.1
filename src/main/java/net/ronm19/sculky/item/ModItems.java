@@ -150,13 +150,20 @@ public class ModItems {
             () -> new EchoDaggerItem(ModToolTiers.INFESTED_SCULK, new Item.Properties().attributes
                     (SwordItem.createAttributes(ModToolTiers.INFESTED_SCULK, 8, -2.2f))));
 
+    public static final DeferredItem<Item> SCULK_CLEAVER = ITEMS.register("sculk_cleaver",
+            () -> new ExecutionerCleaverItem(ModToolTiers.INFESTED_SCULK, new Item.Properties().attributes(AxeItem.createAttributes(ModToolTiers.INFESTED_SCULK, 14.0F, -3.6F))));
+
+    public static final DeferredItem<Item> KINGS_AXE = ITEMS.register("kings_axe",
+            () -> new KingsAxeItem(ModToolTiers.INFESTED_SCULK, new Item.Properties().attributes(AxeItem.createAttributes(ModToolTiers.INFESTED_SCULK, 18.0F, -3.5F))));
+
+    public static final DeferredItem<Item> SCULK_SHIELD = ITEMS.register("sculk_shield",
+            () -> new SculkShieldItem(new Item.Properties().durability(3000)));
+
     public static final DeferredItem<Item> SCULK_JAR = ITEMS.register("sculk_jar",
             () -> new SculkJarItem(new Item.Properties().stacksTo(16)));
 
     public static final DeferredItem<Item> SCULK_BOMB = ITEMS.register("sculk_bomb",
             () -> new SculkBombItem(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON)));
-
-
 
     // ------------------------------- Monsters Egg Spawns --------------------------------------------- //
 
@@ -244,6 +251,21 @@ public class ModItems {
     public static final DeferredItem<Item> SCULK_EVOKER_SPAWN_EGG = ITEMS.register("sculk_evoker_spawn_egg",
             () -> new DeferredSpawnEggItem(ModEntities.SCULK_EVOKER, 0x111821, 0x2EDDEA, new Item.Properties()));
 
+    public static final DeferredItem<Item> SCULK_EXECUTIONER_SPAWN_EGG = ITEMS.register("sculk_executioner_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.SCULK_EXECUTIONER, 0x11191A, 0x1AA7B5, new Item.Properties()));
+
+    public static final DeferredItem<Item> SCULK_BULWARK_SPAWN_EGG = ITEMS.register("sculk_bulwark_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.SCULK_BULWARK, 0x11191A, 0x5B4A35, new Item.Properties()));
+
+    public static final DeferredItem<Item> SCULK_ORACLE_SPAWN_EGG = ITEMS.register("sculk_oracle_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.SCULK_ORACLE, 0x0B1116, 0x18D7F2, new Item.Properties()));
+
+    public static final DeferredItem<Item> THRONEBOUND_WRAITH_SPAWN_EGG = ITEMS.register("thronebound_wraith_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.THRONEBOUND_WRAITH, 0x0A0E12, 0x22D7F2, new Item.Properties()));
+
+    public static final DeferredItem<Item> SCULK_KING_SPAWN_EGG = ITEMS.register("sculk_king_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.SCULK_KING, 0x07191D, 0x18D8E8, new Item.Properties()));
+
     // ------------------------------- NEUTRAL Egg Spawns --------------------------------------------- //
 
     public static final DeferredItem<Item> SCULK_WOLF_SPAWN_EGG = ITEMS.register("sculk_wolf_spawn_egg",
@@ -288,9 +310,8 @@ public class ModItems {
     public static final DeferredItem<Item> SCULK_DOLPHIN_SPAWN_EGG = ITEMS.register("sculk_dolphin_spawn_egg",
             () -> new DeferredSpawnEggItem(ModEntities.SCULK_DOLPHIN,  0x07131A, 0x00D7E8, new Item.Properties()));
 
-
-
-
+    public static final DeferredItem<Item> SCULK_BEAR_SPAWN_EGG = ITEMS.register("sculk_bear_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.SCULK_BEAR, 0x0B1218, 0x18D7F2, new Item.Properties()));
 
 
 

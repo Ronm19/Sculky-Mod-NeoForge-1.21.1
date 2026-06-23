@@ -24,6 +24,13 @@
     "sculky:sculk_brute",
     "sculky:crowned_sculkmite",
     "sculky:sculk_vindicator",
+    "sculky:sculk_spirit",
+    "sculky:sculk_evoker",
+    "sculky:sculk_executioner",
+    "sculky:sculk_bulwark",
+    "sculky:sculk_oracle",
+    "sculky:thronebound_wraith",
+    "sculky:sculk_king",
     "sculky:sculk_sentry",
     "sculky:sculk_horse",
     "sculky:sculk_wolf",
@@ -36,6 +43,7 @@
     "sculky:sculk_wolf_alpha",
     "sculky:hollow_horn",
     "sculky:infested_eye",
-    "sculky:sculk_hunter"
+    "sculky:sculk_hunter",
+    "sculky:sculk_bear"
   ]
 }

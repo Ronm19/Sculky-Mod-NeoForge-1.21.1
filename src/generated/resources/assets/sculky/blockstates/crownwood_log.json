@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "sculky:block/crownwood_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "sculky:block/crownwood_log"
+    },
+    "axis=z": {
+      "model": "sculky:block/crownwood_log_horizontal",
+      "x": 90
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "parent": "sculky:root",
+  "criteria": {
+    "find_shrine": {
+      "conditions": {
+        "player": {
+          "location": {
+            "structures": "sculky:sculk_shrine"
+          }
+        }
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.sculky.find_shrine.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "count": 1,
+      "id": "minecraft:sculk_sensor"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.sculky.find_shrine.title"
+    }
+  },
+  "requirements": [
+    [
+      "find_shrine"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

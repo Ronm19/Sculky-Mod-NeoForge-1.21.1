@@ -19,6 +19,7 @@ public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_TREE_INFESTED_SCULK = registerKey("add_tree_infested_sculk");
     public static final ResourceKey<BiomeModifier> ADD_TREE_SCULK_JUNGLE = registerKey("add_tree_sculk_jungle");
     public static final ResourceKey<BiomeModifier> ADD_TREE_MEGA_SCULK_JUNGLE = registerKey("add_tree_mega_sculk_jungle");
+    public static final ResourceKey<BiomeModifier> ADD_TREE_CROWNWOOD = registerKey("add_tree_crownwood");
 
     public static final ResourceKey<BiomeModifier> ADD_INFESTED_SCULK_ORE = registerKey("add_infested_sculk_ore");
     public static final ResourceKey<BiomeModifier> ADD_DEEPSLATE_INFESTED_SCULK_ORE = registerKey("add_deepslate_infested_sculk_ore");
@@ -46,8 +47,11 @@ public class ModBiomeModifiers {
                 HolderSet.direct(biomes.getOrThrow(ModBiomes.SCULK_JUNGLE)),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.INFESTED_MEGA_JUNGLE_SCULK_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
-        
 
+         context.register(ADD_TREE_CROWNWOOD, new BiomeModifiers.AddFeaturesBiomeModifier(
+                 HolderSet.direct(biomes.getOrThrow(ModBiomeKeys.SCULK_CROWNLANDS)),
+                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.CROWNWOOD_PLACED_KEY)),
+                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
 
         context.register(ADD_DEEPSLATE_INFESTED_SCULK_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(

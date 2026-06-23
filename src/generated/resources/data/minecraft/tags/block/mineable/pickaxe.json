@@ -14,6 +14,9 @@
     "sculky:royal_sculk_block",
     "sculky:royal_sculk_lantern",
     "sculky:chiseled_royal_sculk",
+    "sculky:royal_sculk_crownstone",
+    "sculky:royal_sculk_stone",
+    "sculky:dark_royal_sculk",
     "sculky:deepslate_sculk_ore"
   ]
 }

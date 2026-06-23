@@ -42,129 +42,169 @@
     "monster": [
       {
         "type": "sculky:sanctum_watcher",
-        "weight": 16,
+        "weight": 8,
         "minCount": 1,
-        "maxCount": 2
+        "maxCount": 1
       },
       {
         "type": "sculky:sculk_burrower",
-        "weight": 11,
-        "minCount": 1,
-        "maxCount": 2
-      },
-      {
-        "type": "sculky:sculk_slime",
-        "weight": 10,
-        "minCount": 1,
-        "maxCount": 2
-      },
-      {
-        "type": "sculky:sculk_sentinel",
-        "weight": 9,
-        "minCount": 1,
-        "maxCount": 2
-      },
-      {
-        "type": "sculky:sculk_phantom",
-        "weight": 8,
-        "minCount": 1,
-        "maxCount": 2
-      },
-      {
-        "type": "sculky:sculk_brute",
         "weight": 7,
         "minCount": 1,
         "maxCount": 1
       },
       {
-        "type": "sculky:sculk_enderman",
+        "type": "sculky:sculk_slime",
         "weight": 6,
         "minCount": 1,
         "maxCount": 1
       },
       {
-        "type": "sculky:sculk_necromancer",
+        "type": "sculky:crowned_sculkmite",
+        "weight": 6,
+        "minCount": 1,
+        "maxCount": 2
+      },
+      {
+        "type": "sculky:sculk_sentinel",
         "weight": 5,
         "minCount": 1,
         "maxCount": 1
       },
       {
-        "type": "sculky:royal_sculk_knight",
+        "type": "sculky:sculk_vindicator",
         "weight": 4,
         "minCount": 1,
         "maxCount": 1
       },
       {
-        "type": "sculky:salvatore",
+        "type": "sculky:sculk_sentry",
+        "weight": 4,
+        "minCount": 1,
+        "maxCount": 1
+      },
+      {
+        "type": "sculky:sculk_phantom",
         "weight": 3,
         "minCount": 1,
         "maxCount": 1
       },
       {
-        "type": "sculky:sculk_herald",
-        "weight": 5,
+        "type": "sculky:sculk_brute",
+        "weight": 2,
         "minCount": 1,
         "maxCount": 1
       },
       {
-        "type": "sculky:crowned_sculkmite",
-        "weight": 12,
+        "type": "sculky:sculk_enderman",
+        "weight": 2,
         "minCount": 1,
-        "maxCount": 3
+        "maxCount": 1
       },
       {
-        "type": "sculky:sculk_vindicator",
-        "weight": 10,
+        "type": "sculky:sculk_necromancer",
+        "weight": 2,
         "minCount": 1,
-        "maxCount": 3
+        "maxCount": 1
       },
       {
-        "type": "sculky:sculk_sentry",
-        "weight": 10,
+        "type": "sculky:sculk_herald",
+        "weight": 2,
         "minCount": 1,
-        "maxCount": 3
+        "maxCount": 1
+      },
+      {
+        "type": "sculky:royal_sculk_knight",
+        "weight": 1,
+        "minCount": 1,
+        "maxCount": 1
+      },
+      {
+        "type": "sculky:salvatore",
+        "weight": 1,
+        "minCount": 1,
+        "maxCount": 1
       }
     ],
 
     "creature": [
       {
         "type": "sculky:sculk_golem",
-        "weight": 3,
+        "weight": 2,
         "minCount": 1,
         "maxCount": 1
       },
       {
         "type": "sculky:sculk_hunter",
-        "weight": 5,
+        "weight": 3,
         "minCount": 1,
-        "maxCount": 2
+        "maxCount": 1
       },
       {
         "type": "sculky:infested_eye",
-        "weight": 4,
+        "weight": 3,
         "minCount": 1,
-        "maxCount": 2
+        "maxCount": 1
+      },
+      {
+        "type": "sculky:sculk_bear",
+        "weight": 3,
+        "minCount": 1,
+        "maxCount": 1
       }
     ],
 
     "water_creature": [
       {
         "type": "sculky:sculk_dolphin",
-        "weight": 8,
+        "weight": 5,
         "minCount": 1,
-        "maxCount": 2
+        "maxCount": 1
       },
       {
         "type": "sculky:sculk_snapper",
-        "weight": 5,
+        "weight": 3,
         "minCount": 1,
         "maxCount": 1
       }
     ]
   },
 
-  "spawn_costs": {},
-  "creature_spawn_probability": 0.1,
+  "spawn_costs": {
+    "sculky:sanctum_watcher": {
+      "energy_budget": 0.12,
+      "charge": 0.35
+    },
+    "sculky:sculk_burrower": {
+      "energy_budget": 0.12,
+      "charge": 0.35
+    },
+    "sculky:sculk_sentinel": {
+      "energy_budget": 0.12,
+      "charge": 0.45
+    },
+    "sculky:sculk_brute": {
+      "energy_budget": 0.12,
+      "charge": 0.7
+    },
+    "sculky:sculk_necromancer": {
+      "energy_budget": 0.12,
+      "charge": 0.75
+    },
+    "sculky:sculk_herald": {
+      "energy_budget": 0.12,
+      "charge": 0.8
+    },
+    "sculky:royal_sculk_knight": {
+      "energy_budget": 0.12,
+      "charge": 0.9
+    },
+    "sculky:salvatore": {
+      "energy_budget": 0.12,
+      "charge": 1.0
+    }
+  },
+
+  "creature_spawn_probability": 0.035,
   "carvers": {},
   "features": []
 }

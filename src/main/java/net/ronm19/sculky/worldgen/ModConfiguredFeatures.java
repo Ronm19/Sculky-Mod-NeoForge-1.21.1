@@ -27,6 +27,7 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> INFESTED_SCULK_KEY = registerKey("infested_sculk");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SCULK_JUNGLE_KEY = registerKey("sculk_jungle");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SCULK_JUNGLE_MEGA_KEY = registerKey("sculk_jungle_mega");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> CROWNWOOD_KEY = registerKey("crownwood");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_INFESTED_SCULK_ORE_KEY = registerKey("infested_sculk_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_DEEPSLATE_INFESTED_SCULK_ORE_KEY = registerKey("deeplsate_infested_sculk_ore");
@@ -63,6 +64,14 @@ public class ModConfiguredFeatures {
                         new TwoLayersFeatureSize(1, 1, 2)
                 ).ignoreVines().build()
         );
+
+        register(context, CROWNWOOD_KEY, Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(ModBlocks.CROWNWOOD_LOG.get()),
+                        new StraightTrunkPlacer(6, 3, 2),
+                        BlockStateProvider.simple(ModBlocks.CROWNWOOD_LEAVES.get()),
+                        new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(1), 3),
+                        new TwoLayersFeatureSize(1, 0, 2)).ignoreVines().build());
 
 
 

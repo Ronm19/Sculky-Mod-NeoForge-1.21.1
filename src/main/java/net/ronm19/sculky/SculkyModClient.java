@@ -67,6 +67,11 @@ public class SculkyModClient {
         EntityRenderers.register(ModEntities.SCULK_SENTRY.get(), SculkSentryRenderer::new);
         EntityRenderers.register(ModEntities.SCULK_SPIRIT.get(), SculkSpiritRenderer::new);
         EntityRenderers.register(ModEntities.SCULK_EVOKER.get(), SculkEvokerRenderer::new);
+        EntityRenderers.register(ModEntities.SCULK_EXECUTIONER.get(), SculkExecutionerRenderer::new);
+        EntityRenderers.register(ModEntities.SCULK_BULWARK.get(), SculkBulwarkRenderer::new);
+        EntityRenderers.register(ModEntities.SCULK_ORACLE.get(), SculkOracleRenderer::new);
+        EntityRenderers.register(ModEntities.THRONEBOUND_WRAITH.get(), ThroneboundWraithRenderer::new);
+        EntityRenderers.register(ModEntities.SCULK_KING.get(), SculkKingRenderer::new);
 
 
         // ----------------------------- PASSIVE --------------------------------------- //
@@ -86,6 +91,7 @@ public class SculkyModClient {
         EntityRenderers.register(ModEntities.SCULK_DOLPHIN.get(), SculkDolphinRenderer::new);
         EntityRenderers.register(ModEntities.SHADOW_PANTHER.get(), ShadowPantherRenderer::new);
         EntityRenderers.register(ModEntities.SCULK_GOLEM.get(), SculkGolemRenderer::new);
+        EntityRenderers.register(ModEntities.SCULK_BEAR.get(), SculkBearRenderer::new);
 
 
         // ----------------------------- MISC --------------------------------------- //

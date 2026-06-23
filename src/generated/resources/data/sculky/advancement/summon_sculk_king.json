@@ -1,0 +1,29 @@
+{
+  "parent": "sculky:the_buried_throne",
+  "criteria": {
+    "summon_sculk_king": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "text": "Complete the ritual at the Buried Throne."
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "id": "sculky:royal_sculk_fragment"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "The King Awakens"
+    }
+  },
+  "requirements": [
+    [
+      "summon_sculk_king"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

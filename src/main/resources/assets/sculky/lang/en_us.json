@@ -46,6 +46,9 @@
   "item.sculky.sculk_bomb": "Sculk Bomb",
   "item.sculky.ancient_sculk_tablet": "Ancient Sculk Tablet",
   "item.sculky.sculk_bow": "Sculk Bow",
+  "item.sculky.kings_axe": "The Sculk King's Axe",
+  "item.sculky.sculk_cleaver": "The Executioner's Sculk Cleaver",
+  "item.sculky.sculk_shield": "Sculk Shield",
 
   "item.sculky.infested_sculk_helmet": "Infested Sculk Helmet",
   "item.sculky.infested_sculk_chestplate": "Infested Sculk Chestplate",
@@ -82,6 +85,11 @@
   "item.sculky.sculk_sentry_spawn_egg": "Sculk Sentry Spawn Egg",
   "item.sculky.sculk_spirit_spawn_egg": "Sculk Spirit Spawn Egg",
   "item.sculky.sculk_evoker_spawn_egg": "Sculk Evoker Spawn Egg",
+  "item.sculky.sculk_executioner_spawn_egg": "Sculk Executioner Spawn Egg",
+  "item.sculky.sculk_bulwark_spawn_egg": "Sculk Bulwark Spawn Egg",
+  "item.sculky.sculk_oracle_spawn_egg": "Sculk Oracle Spawn Egg",
+  "item.sculky.thronebound_wraith_spawn_egg": "Thronebound Wraith Spawn Egg",
+  "item.sculky.sculk_king_spawn_egg": "Sculk King Spawn Egg",
 
   "item.sculky.sculk_wolf_spawn_egg": "Sculk Wolf Spawn Egg",
   "item.sculky.sculk_horse_spawn_egg": "Sculk Horse Spawn Egg",
@@ -97,6 +105,7 @@
   "item.sculky.shadow_panther_spawn_egg": "Shadow Panther Spawn Egg",
   "item.sculky.sculk_golem_spawn_egg": "Sculk Golem Spawn Egg",
   "item.sculky.sculk_dolphin_spawn_egg": "Sculk Dolphin Spawn Egg",
+  "item.sculky.sculk_bear_spawn_egg": "Sculk Bear Spawn Egg",
 
   "item.minecraft.potion.effect.sculk_infection_potion": "Sculk Infection Potion",
   "item.minecraft.splash_potion.effect.sculk_infection_potion": "Sculk Infection Splash Potion",
@@ -184,6 +193,14 @@
   "block.sculky.sculk_jungle_door": "Sculk Jungle Door",
   "block.sculky.sculk_jungle_trapdoor": "Sculk Jungle Trapdoor",
 
+  "block.sculky.royal_sculk_grass_block": "Royal Sculk Grass Block",
+  "block.sculky.royal_sculk_soil": "Royal Sculk Soil",
+  "block.sculky.dark_royal_sculk": "Dark Royal Sculk Block",
+  "block.sculky.royal_sculk_stone": "Royal Sculk Stone",
+  "block.sculky.royal_sculk_crownstone": "Royal Sculk Crownstone",
+  "block.sculky.crownwood_log": "Crownwood Log",
+  "block.sculky.crownwood_leaves": "Crownwood Leaves",
+  "block.sculky.crownwood_sapling": "Crownwood Sapling",
 
   "block.sculky.tomato_sculk_crop": "Tomato Sculk Crop",
   "block.sculky.sculkbloom": "Sculk Bloom",
@@ -224,6 +241,11 @@
   "entity.sculky.sculk_sentry": "Sculk Sentry",
   "entity.sculky.sculk_spirit": "Sculk Spirit",
   "entity.sculky.sculk_evoker": "Sculk Evoker",
+  "entity.sculky.sculk_executioner": "Sculk Executioner",
+  "entity.sculky.sculk_bulwark": "Sculk Bulwark",
+  "entity.sculky.sculk_oracle": "Sculk Oracle",
+  "entity.sculky.thronebound_wraith": "Thronebound Wraith",
+  "entity.sculky.sculk_king": "The Sculk King",
 
   "entity.sculky.sculk_wolf": "Sculk Wolf",
   "entity.sculky.sculk_wolf_alpha": "Sculk Wolf Alpha",
@@ -239,6 +261,7 @@
   "entity.sculky.shadow_panther": "Shadow Panther",
   "entity.sculky.sculk_golem": "Sculk Golem",
   "entity.sculky.sculk_dolphin": "Sculk Dolphin",
+  "entity.sculky.sculk_bear": "Sculk Bear",
 
   "entity.sculky.sonic_boom": "Sonic Boom",
   "entity.sculky.sculk_jar_projectile": "Sculk Jar Projectile",

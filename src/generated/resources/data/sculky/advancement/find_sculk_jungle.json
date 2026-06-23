@@ -1,0 +1,43 @@
+{
+  "parent": "sculky:find_sculk_wastes",
+  "criteria": {
+    "find_sculk_jungle": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "sculky:sculk_jungle"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.sculky.find_sculk_jungle.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "count": 1,
+      "id": "sculky:infested_sculk_podzol_block"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.sculky.find_sculk_jungle.title"
+    }
+  },
+  "requirements": [
+    [
+      "find_sculk_jungle"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

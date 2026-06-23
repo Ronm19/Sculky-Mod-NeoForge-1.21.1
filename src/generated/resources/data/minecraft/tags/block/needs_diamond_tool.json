@@ -2,18 +2,21 @@
   "values": [
     "sculky:infested_sculk_block",
     "sculky:raw_infested_sculk_block",
-    "sculky:infested_sculk_wall",
-    "sculky:infested_sculk_bricks",
     "sculky:sculk_ore",
-    "sculky:chiseled_royal_sculk",
-    "sculky:royal_sculk_totem",
+    "sculky:infested_sculk_bricks",
+    "sculky:infested_sculk_wall",
     "sculky:chiseled_ancient_sculk_bricks",
     "sculky:ancient_sculk_bricks",
-    "sculky:royal_sculk_block",
-    "sculky:royal_sculk_lantern",
     "sculky:cracked_ancient_sculk_bricks",
     "sculky:kings_pedestal",
     "sculky:throne_block",
+    "sculky:royal_sculk_totem",
+    "sculky:royal_sculk_block",
+    "sculky:royal_sculk_lantern",
+    "sculky:chiseled_royal_sculk",
+    "sculky:royal_sculk_crownstone",
+    "sculky:royal_sculk_stone",
+    "sculky:dark_royal_sculk",
     "sculky:deepslate_sculk_ore"
   ]
 }

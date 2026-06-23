@@ -1,0 +1,37 @@
+{
+  "parent": "sculky:the_core_is_calling",
+  "criteria": {
+    "find_altar": {
+      "conditions": {
+        "player": {
+          "location": {
+            "structures": "sculky:sculk_altar"
+          }
+        }
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.sculky.find_altar.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "count": 1,
+      "id": "sculky:ancient_sculk_bricks"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.sculky.find_altar.title"
+    }
+  },
+  "requirements": [
+    [
+      "find_altar"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

@@ -12,4 +12,7 @@ public class ModTreeGrowers {
 
     public static final TreeGrower SCULK_JUNGLE = new TreeGrower(SculkyMod.MOD_ID + ":jungle",
             Optional.empty(), Optional.of(ModConfiguredFeatures.SCULK_JUNGLE_KEY), Optional.empty());
+
+    public static final TreeGrower CROWNWOOD = new TreeGrower(SculkyMod.MOD_ID + ":crownwood",
+            Optional.empty(), Optional.of(ModConfiguredFeatures.CROWNWOOD_KEY), Optional.empty());
 }

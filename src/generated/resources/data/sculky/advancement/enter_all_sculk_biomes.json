@@ -1,0 +1,63 @@
+{
+  "parent": "sculky:find_sculk_jungle",
+  "criteria": {
+    "sculk_forest": {
+      "conditions": {
+        "player": {
+          "location": {
+            "biomes": "sculky:sculk_forest"
+          }
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "sculk_jungle": {
+      "conditions": {
+        "player": {
+          "location": {
+            "biomes": "sculky:sculk_jungle"
+          }
+        }
+      },
+      "trigger": "minecraft:location"
+    },
+    "sculk_wastes": {
+      "conditions": {
+        "player": {
+          "location": {
+            "biomes": "sculky:sculk_wastes"
+          }
+        }
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.sculky.enter_all_biomes.desc"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "count": 1,
+      "id": "minecraft:echo_shard"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.sculky.enter_all_biomes.title"
+    }
+  },
+  "requirements": [
+    [
+      "sculk_forest"
+    ],
+    [
+      "sculk_wastes"
+    ],
+    [
+      "sculk_jungle"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

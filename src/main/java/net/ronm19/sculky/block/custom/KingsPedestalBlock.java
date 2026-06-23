@@ -3,7 +3,9 @@ package net.ronm19.sculky.block.custom;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
@@ -20,6 +22,8 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.ronm19.sculky.item.ModItems;
+import net.ronm19.sculky.util.ModAdvancementHelper;
+import net.ronm19.sculky.util.SculkKingRitualHelper;
 
 public class KingsPedestalBlock extends Block {
 
@@ -44,27 +48,83 @@ public class KingsPedestalBlock extends Block {
     @Override
     protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos,
                                               Player player, InteractionHand hand, BlockHitResult hitResult) {
-        if (!isRoyalItem(stack)) {
-            return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
-        }
-
-        if (!state.getValue(ACTIVATED)) {
-            if (!level.isClientSide) {
-                activatePedestal(level, pos, state);
-
-                // Uncomment this if you want the pedestal to consume the relic item.
-                // if (!player.getAbilities().instabuild) {
-                //     stack.shrink(1);
-                // }
-            }
+        if (!(level instanceof ServerLevel serverLevel)) {
             return ItemInteractionResult.SUCCESS;
         }
 
-        if (!level.isClientSide) {
-            pulsePedestal(level, pos);
+        // Step 1: Sculk Core awakens the pedestal.
+        if (stack.is(ModItems.SCULK_CORE.get())) {
+            if (state.getValue(ACTIVATED)) {
+                pulsePedestal(level, pos);
+                player.displayClientMessage(Component.literal("The King's Pedestal is already awake."), true);
+                return ItemInteractionResult.SUCCESS;
+            }
+
+            activatePedestal(level, pos, state);
+            player.displayClientMessage(Component.literal("The King's Pedestal awakens."), true);
+
+            if (!player.getAbilities().instabuild) {
+                stack.shrink(1);
+            }
+
+            return ItemInteractionResult.SUCCESS;
         }
 
-        return ItemInteractionResult.SUCCESS;
+        // Step 2: Royal Sculk Fragment summons the King.
+        if (stack.is(ModItems.ROYAL_SCULK_FRAGMENT.get())) {
+            if (!state.getValue(ACTIVATED)) {
+                if (player instanceof ServerPlayer serverPlayer) {
+                    ModAdvancementHelper.grant(serverPlayer, "before_the_king", "throne_not_ready");
+                }
+
+                player.displayClientMessage(Component.literal("The pedestal remains dormant."), true);
+                pulsePedestal(level, pos);
+                return ItemInteractionResult.SUCCESS;
+            }
+
+            if (!SculkKingRitualHelper.isInsideBuriedThrone(serverLevel, pos)) {
+                if (player instanceof ServerPlayer serverPlayer) {
+                    ModAdvancementHelper.grant(serverPlayer, "before_the_king", "throne_not_ready");
+                }
+
+                player.displayClientMessage(Component.literal("The throne does not hear you here."), true);
+                pulsePedestal(level, pos);
+                return ItemInteractionResult.SUCCESS;
+            }
+
+            if (SculkKingRitualHelper.hasNearbySculkKing(serverLevel, pos)) {
+                player.displayClientMessage(Component.literal("The King already walks these ruins."), true);
+                pulsePedestal(level, pos);
+                return ItemInteractionResult.SUCCESS;
+            }
+
+            SculkKingRitualHelper.playThroneAnswerEffects(serverLevel, pos);
+
+            boolean summoned = SculkKingRitualHelper.summonSculkKing(serverLevel, pos);
+
+            if (!summoned) {
+                player.displayClientMessage(Component.literal("The throne refuses to answer."), true);
+                pulsePedestal(level, pos);
+                return ItemInteractionResult.SUCCESS;
+            }
+
+            if (player instanceof ServerPlayer serverPlayer) {
+                ModAdvancementHelper.grant(serverPlayer, "summon_sculk_king", "summon_sculk_king");
+            }
+
+            player.displayClientMessage(Component.literal("The Sculk King rises."), true);
+
+            if (!player.getAbilities().instabuild) {
+                stack.shrink(1);
+            }
+
+            // Reset pedestal after successful summon.
+            level.setBlock(pos, state.setValue(ACTIVATED, false), Block.UPDATE_ALL);
+
+            return ItemInteractionResult.SUCCESS;
+        }
+
+        return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
     }
 
     @Override
@@ -106,14 +166,6 @@ public class KingsPedestalBlock extends Block {
 
             level.addParticle(ParticleTypes.SMOKE, x, y, z, 0.0D, 0.01D, 0.0D);
         }
-    }
-
-    private boolean isRoyalItem(ItemStack stack) {
-        return stack.is(ModItems.CROWN_FRAGMENT.get())
-                || stack.is(ModItems.ROYAL_SCULK_FRAGMENT.get())
-                || stack.is(ModItems.ANCIENT_RESONANCE_CORE.get())
-                || stack.is(ModItems.KING_RELIC.get())
-                || stack.is(ModItems.THRONE_SHARD.get());
     }
 
     private void activatePedestal(Level level, BlockPos pos, BlockState state) {

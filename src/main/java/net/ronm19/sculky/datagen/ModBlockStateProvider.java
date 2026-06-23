@@ -160,6 +160,24 @@ public class ModBlockStateProvider extends BlockStateProvider {
         logBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_SCULK_JUNGLE_LOG.get()));
         axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_SCULK_JUNGLE_WOOD.get()), blockTexture(ModBlocks.STRIPPED_SCULK_JUNGLE_LOG.get()), blockTexture(ModBlocks.STRIPPED_SCULK_JUNGLE_LOG.get()));
 
+        // ----------------------- SCULK KING / CROWNLANDS SET --------------------- //
+
+        simpleGrassLikeBlock(ModBlocks.ROYAL_SCULK_GRASS_BLOCK.get(),
+                modLoc("block/royal_sculk_grass_block_top"),
+                modLoc("block/royal_sculk_grass_block_side"),
+                modLoc("block/royal_sculk_soil"));
+
+        blockWithItem(ModBlocks.ROYAL_SCULK_SOIL);
+        blockWithItem(ModBlocks.ROYAL_SCULK_STONE);
+        blockWithItem(ModBlocks.ROYAL_SCULK_CROWNSTONE);
+        blockWithItem(ModBlocks.DARK_ROYAL_SCULK);
+
+        logBlock(((RotatedPillarBlock) ModBlocks.CROWNWOOD_LOG.get()));
+        blockItem(ModBlocks.CROWNWOOD_LOG);
+
+        leavesBlock(ModBlocks.CROWNWOOD_LEAVES);
+        saplingBlock(ModBlocks.CROWNWOOD_SAPLING);
+
         // ----------------------- REST --------------------- //
 
         blockWithItem(ModBlocks.INFESTED_SCULK_DIRT_BLOCK);

@@ -1,0 +1,39 @@
+{
+  "parent": "sculky:the_king_whispers",
+  "criteria": {
+    "find_buried_throne": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "structures": "sculky:buried_throne"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "text": "Find the arena where the Sculk King will awaken."
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "id": "sculky:royal_sculk_crownstone"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "The Buried Throne"
+    }
+  },
+  "requirements": [
+    [
+      "find_buried_throne"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

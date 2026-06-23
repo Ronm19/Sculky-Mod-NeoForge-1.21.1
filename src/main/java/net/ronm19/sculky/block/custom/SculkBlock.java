@@ -50,6 +50,7 @@ public class SculkBlock extends Block {
 
         if (isInfected(entity)) {
             spawnPulse(level, pos);
+            entityInside(level, pos, state, entity);
         }
 
         super.stepOn(level, pos, state, entity);

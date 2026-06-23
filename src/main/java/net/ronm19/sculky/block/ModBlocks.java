@@ -90,9 +90,6 @@ public class ModBlocks {
                     .lightLevel(state -> 12)));
 
 
-
-
-
     // ------------------------------------- INFESTED SCULK NON-BLOCKS ------------------------------------ //
 
 
@@ -224,6 +221,8 @@ public class ModBlocks {
     public static final DeferredBlock<Block> POTTED_ECHOBLOOM = BLOCKS.register("potted_echobloom",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ECHOBLOOM, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_WITHER_ROSE)));
 
+    // ---------------------------------------- SCULK WOOD --------------------------------------------- //
+
     public static final DeferredBlock<Block> INFESTED_SCULK_LOG = registerBlock("infested_sculk_log",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG).sound(SoundType.SCULK)));
     public static final DeferredBlock<Block> INFESTED_SCULK_WOOD = registerBlock("infested_sculk_wood",
@@ -271,6 +270,8 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> INFESTED_SCULK_SAPLING = registerBlock("infested_sculk_sapling",
             () -> new ModSaplingBlock(ModTreeGrowers.INFESTED_SCULK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING).sound(SoundType.SCULK)));
+
+    // ------------------------------------------ SCULK JUNGLE SET ------------------------------------------------------- //
 
     public static final DeferredBlock<Block> SCULK_JUNGLE_LOG = registerBlock("sculk_jungle_log",
             () -> new ModJungleFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.JUNGLE_LOG).sound(SoundType.SCULK)));
@@ -320,6 +321,62 @@ public class ModBlocks {
     public static final DeferredBlock<Block> SCULK_JUNGLE_SAPLING = registerBlock("sculk_jungle_sapling",
             () -> new ModSaplingBlock(ModTreeGrowers.SCULK_JUNGLE, BlockBehaviour.Properties.ofFullCopy(Blocks.JUNGLE_SAPLING).sound(SoundType.SCULK)));
 
+
+    // ------------------------------------- SCULK KING / CROWNLANDS BLOCKS ------------------------------------ //
+
+    public static final DeferredBlock<Block> ROYAL_SCULK_GRASS_BLOCK = registerBlock("royal_sculk_grass_block",
+            () -> new SculkSanctumGrassBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK)
+                    .sound(SoundType.SCULK)));
+
+    public static final DeferredBlock<Block> ROYAL_SCULK_SOIL = registerBlock("royal_sculk_soil",
+            () -> new SculkBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT)
+                    .sound(SoundType.SCULK)));
+
+    public static final DeferredBlock<Block> ROYAL_SCULK_STONE = registerBlock("royal_sculk_stone",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)
+                    .strength(3.5F, 6.0F)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.SCULK)));
+
+    public static final DeferredBlock<Block> ROYAL_SCULK_CROWNSTONE = registerBlock("royal_sculk_crownstone",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.CHISELED_DEEPSLATE)
+                    .strength(4.0F, 7.0F)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.SCULK)
+                    .lightLevel(state -> 4)));
+
+    public static final DeferredBlock<Block> CROWNWOOD_LOG = registerBlock("crownwood_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_STEM)
+                    .strength(2.0F)
+                    .sound(SoundType.STEM)));
+
+    public static final DeferredBlock<Block> DARK_ROYAL_SCULK = registerBlock("dark_royal_sculk",
+            () -> new SculkBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SCULK_CATALYST)
+                    .sound(SoundType.SCULK_CATALYST)));
+
+    public static final DeferredBlock<Block> CROWNWOOD_LEAVES = registerBlock("crownwood_leaves",
+            () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)
+                    .sound(SoundType.SCULK)) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 45;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 20;
+                }
+            });
+
+    public static final DeferredBlock<Block> CROWNWOOD_SAPLING = registerBlock("crownwood_sapling",
+            () -> new ModSaplingBlock(ModTreeGrowers.CROWNWOOD,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)
+                            .sound(SoundType.SCULK)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

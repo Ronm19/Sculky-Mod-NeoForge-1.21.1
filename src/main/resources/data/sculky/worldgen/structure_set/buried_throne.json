@@ -1,0 +1,15 @@
+{
+  "structures": [
+    {
+      "structure": "sculky:buried_throne",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 44,
+    "separation": 18,
+    "salt": 110109,
+    "spread_type": "linear"
+  }
+}

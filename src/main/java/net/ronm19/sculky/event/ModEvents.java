@@ -102,6 +102,11 @@ public class ModEvents {
         event.registerLayerDefinition(ModModelLayers.SCULK_BURROWER, SculkBurrowerModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SCULK_HERALD, SculkHeraldModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SCULK_SNAPPER, SculkSnapperModel :: createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.SCULK_EXECUTIONER, SculkExecutionerModel :: createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.SCULK_BULWARK, SculkBulwarkModel :: createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.SCULK_ORACLE, SculkOracleModel :: createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.THRONEBOUND_WRAITH, ThroneboundWraithModel :: createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.SCULK_KING, SculkKingModel :: createBodyLayer);
 
         event.registerLayerDefinition(ModModelLayers.SCULK_WOLF, SculkWolfModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SCULK_FOX, SculkFoxModel :: createBodyLayer);
@@ -114,6 +119,7 @@ public class ModEvents {
         event.registerLayerDefinition(ModModelLayers.SCULK_HUNTER, SculkHunterModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SHADOW_PANTHER, ShadowPantherModel :: createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SCULK_GOLEM, SculkGolemModel :: createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.SCULK_BEAR, SculkBearModel :: createBodyLayer);
     }
 
     @SubscribeEvent
@@ -147,6 +153,11 @@ public class ModEvents {
         event.put(ModEntities.SCULK_SENTRY.get(), SculkSentryEntity.createSculkSentryAttributes().build());
         event.put(ModEntities.SCULK_SPIRIT.get(), SculkSpiritEntity.createSculkSpiritAttributes().build());
         event.put(ModEntities.SCULK_EVOKER.get(), SculkEvokerEntity.createSculkEvokerAttributes().build());
+        event.put(ModEntities.SCULK_EXECUTIONER.get(), SculkExecutionerEntity.createSculkExecutionerAttributes().build());
+        event.put(ModEntities.SCULK_BULWARK.get(), SculkBulwarkEntity.createSculkBulwarkAttributes().build());
+        event.put(ModEntities.SCULK_ORACLE.get(), SculkOracleEntity.createSculkOracleAttributes().build());
+        event.put(ModEntities.THRONEBOUND_WRAITH.get(), ThroneboundWraithEntity.createThroneboundWraithAttributes().build());
+        event.put(ModEntities.SCULK_KING.get(), SculkKingEntity.createSculkKingAttributes().build());
 
         event.put(ModEntities.SCULK_WOLF.get(), SculkWolfEntity.createsSculkWolfAttributes().build());
         event.put(ModEntities.SCULK_WOLF_ALPHA.get(), SculkWolfAlphaEntity.createSculkWolfAlphaAttributes().build());
@@ -161,6 +172,7 @@ public class ModEvents {
         event.put(ModEntities.SHADOW_PANTHER.get(), ShadowPantherEntity.createShadowPantherAttributes().build());
         event.put(ModEntities.SCULK_GOLEM.get(), SculkGolemEntity.createSculkGolemAttributes().build());
         event.put(ModEntities.SCULK_DOLPHIN.get(), SculkDolphinEntity.createSculkDolphinAttributes().build());
+        event.put(ModEntities.SCULK_BEAR.get(), SculkBearEntity.createSculkBearAttributes().build());
 
     }
 

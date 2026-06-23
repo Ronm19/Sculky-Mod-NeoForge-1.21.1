@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "I": {
+      "item": "sculky:infested_sculk_block"
+    },
+    "S": {
+      "item": "sculky:sculk_shard"
+    }
+  },
+  "pattern": [
+    "ISI",
+    "III",
+    " I "
+  ],
+  "result": {
+    "count": 1,
+    "id": "sculky:sculk_shield"
+  }
+}

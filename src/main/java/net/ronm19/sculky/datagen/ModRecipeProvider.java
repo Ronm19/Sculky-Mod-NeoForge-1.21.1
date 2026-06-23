@@ -306,7 +306,23 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("echo_dust", has(ModItems.ECHO_DUST.get()))
                 .save(pRecipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.SCULK_SHIELD.get())
+                .pattern("ISI")
+                .pattern("III")
+                .pattern(" I ")
+                .define('S', ModItems.SCULK_SHARD.get())
+                .define('I', ModBlocks.INFESTED_SCULK_BLOCK.get())
+                .unlockedBy(getHasName(ModItems.SCULK_SHARD.get()), has(ModItems.SCULK_SHARD.get()))
+                .save(pRecipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.SCULK_BOW.get())
+                .pattern(" ST")
+                .pattern("S T")
+                .pattern(" ST")
+                .define('S', ModItems.SCULK_SHARD.get())
+                .define('T', Items.STRING)
+                .unlockedBy(getHasName(ModItems.SCULK_SHARD.get()), has(ModItems.SCULK_SHARD.get()))
+                .save(pRecipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.SCULK_BOOTS.get())
                 .pattern("   ")
@@ -384,14 +400,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('T', ModItems.ANCIENT_SCULK_TABLET.get())
                 .unlockedBy(getHasName(ModItems.ANCIENT_SCULK_TABLET.get()), has(ModItems.ANCIENT_SCULK_TABLET.get()))
                 .save(pRecipeOutput);
-
-
-
-
-
-
-
-
 
         // ------------------------------ SHAPELESS RECIPES ------------------------------- //
 

@@ -35,23 +35,29 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.ROYAL_SCULK_BLOCK.get())
                 .add(ModBlocks.ROYAL_SCULK_LANTERN.get())
                 .add(ModBlocks.CHISELED_ROYAL_SCULK.get())
+                .add(ModBlocks.ROYAL_SCULK_CROWNSTONE.get())
+                .add(ModBlocks.ROYAL_SCULK_STONE.get())
+                .add(ModBlocks.DARK_ROYAL_SCULK.get())
                 .add(ModBlocks.DEEPSLATE_SCULK_ORE.get());
 
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.INFESTED_SCULK_BLOCK.get())
                 .add(ModBlocks.RAW_INFESTED_SCULK_BLOCK.get())
-                .add(ModBlocks.INFESTED_SCULK_WALL.get())
-                .add(ModBlocks.INFESTED_SCULK_BRICKS.get())
                 .add(ModBlocks.SCULK_ORE.get())
-                .add(ModBlocks.CHISELED_ROYAL_SCULK.get())
-                .add(ModBlocks.ROYAL_SCULK_TOTEM.get())
+                .add(ModBlocks.INFESTED_SCULK_BRICKS.get())
+                .add(ModBlocks.INFESTED_SCULK_WALL.get())
                 .add(ModBlocks.CHISELED_ANCIENT_SCULK_BRICKS.get())
                 .add(ModBlocks.ANCIENT_SCULK_BRICKS.get())
-                .add(ModBlocks.ROYAL_SCULK_BLOCK.get())
-                .add(ModBlocks.ROYAL_SCULK_LANTERN.get())
                 .add(ModBlocks.CRACKED_ANCIENT_SCULK_BRICKS.get())
                 .add(ModBlocks.KINGS_PEDESTAL.get())
                 .add(ModBlocks.THRONE_BLOCK.get())
+                .add(ModBlocks.ROYAL_SCULK_TOTEM.get())
+                .add(ModBlocks.ROYAL_SCULK_BLOCK.get())
+                .add(ModBlocks.ROYAL_SCULK_LANTERN.get())
+                .add(ModBlocks.CHISELED_ROYAL_SCULK.get())
+                .add(ModBlocks.ROYAL_SCULK_CROWNSTONE.get())
+                .add(ModBlocks.ROYAL_SCULK_STONE.get())
+                .add(ModBlocks.DARK_ROYAL_SCULK.get())
                 .add(ModBlocks.DEEPSLATE_SCULK_ORE.get());
 
         this.tag(BlockTags.SCULK_REPLACEABLE)
@@ -72,7 +78,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.SCULK_JUNGLE_LOG.get())
                 .add(ModBlocks.SCULK_JUNGLE_WOOD.get())
                 .add(ModBlocks.STRIPPED_SCULK_JUNGLE_LOG.get())
-                .add(ModBlocks.STRIPPED_SCULK_JUNGLE_WOOD.get());
+                .add(ModBlocks.STRIPPED_SCULK_JUNGLE_WOOD.get())
+                .add(ModBlocks.CROWNWOOD_LOG.get());
 
         this.tag(BlockTags.DIRT)
                         .add(ModBlocks.INFESTED_SCULK_GRASS_BLOCK.get())
@@ -80,6 +87,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                         .add(ModBlocks.SCULK_SANCTUM_GRASS_BLOCK.get())
                         .add(ModBlocks.SCULK_SANCTUM_DIRT_BLOCK.get())
                         .add(ModBlocks.INFESTED_SCULK_ROOTED_DIRT_BLOCK.get())
+                        .add(ModBlocks.ROYAL_SCULK_GRASS_BLOCK.get())
+                        .add(ModBlocks.ROYAL_SCULK_SOIL.get())
                         .add(ModBlocks.INFESTED_SCULK_PODZOL_BLOCK.get());
 
         tag(BlockTags.FENCES)
@@ -99,6 +108,11 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
         tag(BlockTags.SAND)
                 .add(ModBlocks.INFESTED_SCULK_SAND.get());
+
+        tag(BlockTags.LEAVES)
+                .add(ModBlocks.INFESTED_SCULK_LEAVES.get())
+                .add(ModBlocks.SCULK_JUNGLE_LEAVES.get())
+                .add(ModBlocks.CROWNWOOD_LEAVES.get());
 
         this.tag(ModTags.Blocks.SCULK_SPREADABLE)
                 // Dirt-like blocks

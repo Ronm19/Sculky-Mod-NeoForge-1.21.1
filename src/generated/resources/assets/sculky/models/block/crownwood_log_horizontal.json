@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "sculky:block/crownwood_log_top",
+    "side": "sculky:block/crownwood_log"
+  }
+}

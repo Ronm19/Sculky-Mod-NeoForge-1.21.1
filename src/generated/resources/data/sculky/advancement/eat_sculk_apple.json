@@ -1,0 +1,36 @@
+{
+  "parent": "sculky:find_shrine",
+  "criteria": {
+    "eat_apple": {
+      "conditions": {
+        "item": {
+          "items": [
+            "sculky:sculk_apple"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.sculky.eat_apple.desc"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "id": "sculky:sculk_apple"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.sculky.eat_apple.title"
+    }
+  },
+  "requirements": [
+    [
+      "eat_apple"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

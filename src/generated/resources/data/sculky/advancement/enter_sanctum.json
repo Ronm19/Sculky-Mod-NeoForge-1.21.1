@@ -1,0 +1,33 @@
+{
+  "criteria": {
+    "entered_sanctum": {
+      "conditions": {
+        "to": "sculky:sculk_sanctum"
+      },
+      "trigger": "minecraft:changed_dimension"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/block/sculk.png",
+    "description": {
+      "translate": "advancement.sculky.enter_sanctum.desc"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "count": 1,
+      "id": "sculky:sculk_sanctum_grass_block"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.sculky.enter_sanctum.title"
+    }
+  },
+  "requirements": [
+    [
+      "entered_sanctum"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

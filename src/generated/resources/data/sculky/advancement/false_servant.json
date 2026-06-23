@@ -1,0 +1,38 @@
+{
+  "parent": "sculky:royal_ritual",
+  "criteria": {
+    "kill_sculk_evoker": {
+      "conditions": {
+        "entity": {
+          "type": "sculky:sculk_evoker"
+        }
+      },
+      "trigger": "minecraft:player_killed_entity"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.sculky.false_servant.desc"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "count": 1,
+      "id": "minecraft:sculk_catalyst"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.sculky.false_servant.title"
+    }
+  },
+  "requirements": [
+    [
+      "kill_sculk_evoker"
+    ]
+  ],
+  "rewards": {
+    "experience": 50
+  },
+  "sends_telemetry_event": false
+}

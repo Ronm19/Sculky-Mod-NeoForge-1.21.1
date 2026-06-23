@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "sculky:block/royal_sculk_soil",
+    "side": "sculky:block/royal_sculk_grass_block_side",
+    "top": "sculky:block/royal_sculk_grass_block_top"
+  }
+}

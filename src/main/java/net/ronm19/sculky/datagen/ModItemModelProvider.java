@@ -87,6 +87,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.SCULK_RAT_STAFF);
         handheldItem(ModItems.SCULK_FANG_SCEPTER);
         bowItem(ModItems.SCULK_BOW.get());
+        shieldItem(ModItems.SCULK_SHIELD);
 
         handheldItem(ModItems.TOTEM_ECHO_RECALL);
         handheldItem(ModItems.TOTEM_SWARM);
@@ -114,6 +115,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         wallItem(ModBlocks.SCULK_JUNGLE_WALL, ModBlocks.SCULK_JUNGLE_PLANKS);
         basicItem(ModBlocks.SCULK_JUNGLE_DOOR.asItem());
         saplingItem(ModBlocks.SCULK_JUNGLE_SAPLING);
+
+        saplingItem(ModBlocks.CROWNWOOD_SAPLING);
 
         trimmedArmorItem(ModItems.INFESTED_SCULK_HELMET);
         trimmedArmorItem(ModItems.INFESTED_SCULK_CHESTPLATE);
@@ -154,6 +157,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent(ModItems.SCULK_SENTRY_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCULK_SPIRIT_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCULK_EVOKER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.SCULK_EXECUTIONER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.SCULK_BULWARK_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.SCULK_ORACLE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.THRONEBOUND_WRAITH_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.SCULK_KING_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 
         withExistingParent(ModItems.SCULK_WOLF_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCULK_WOLF_ALPHA_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
@@ -169,6 +177,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent(ModItems.SHADOW_PANTHER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCULK_GOLEM_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCULK_DOLPHIN_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.SCULK_BEAR_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
     }
 
     private ItemModelBuilder saplingItem(DeferredBlock<Block> item) {
@@ -205,6 +214,18 @@ public class ModItemModelProvider extends ItemModelProvider {
                 .predicate(mcLoc("pulling"), 1.0F)
                 .predicate(mcLoc("pull"), 0.9F)
                 .model(pulling2)
+                .end();
+    }
+
+    private void shieldItem(DeferredItem<? extends Item> item) {
+        String name = item.getId().getPath();
+
+        ItemModelBuilder blockingModel = withExistingParent(name + "_blocking", mcLoc("item/shield_blocking"));
+
+        withExistingParent(name, mcLoc("item/shield"))
+                .override()
+                .predicate(ResourceLocation.withDefaultNamespace("blocking"), 1.0F)
+                .model(blockingModel)
                 .end();
     }
 

@@ -1,0 +1,43 @@
+{
+  "parent": "sculky:find_sculk_forest",
+  "criteria": {
+    "find_sculk_wastes": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "sculky:sculk_wastes"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.sculky.find_sculk_wastes.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "count": 1,
+      "id": "sculky:infested_sculk_sand"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.sculky.find_sculk_wastes.title"
+    }
+  },
+  "requirements": [
+    [
+      "find_sculk_wastes"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

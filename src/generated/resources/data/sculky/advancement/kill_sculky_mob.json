@@ -1,0 +1,35 @@
+{
+  "parent": "sculky:find_sculk_forest",
+  "criteria": {
+    "kill_sculky": {
+      "conditions": {
+        "entity": {
+          "type": "#sculky:sculk_mobs"
+        }
+      },
+      "trigger": "minecraft:player_killed_entity"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.sculky.kill_sculky_mob.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "count": 1,
+      "id": "minecraft:sculk_catalyst"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.sculky.kill_sculky_mob.title"
+    }
+  },
+  "requirements": [
+    [
+      "kill_sculky"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

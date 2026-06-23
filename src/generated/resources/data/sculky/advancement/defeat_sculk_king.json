@@ -1,0 +1,40 @@
+{
+  "parent": "sculky:summon_sculk_king",
+  "criteria": {
+    "defeat_sculk_king": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "sculky:sculk_king"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "text": "Defeat the Sculk King."
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "id": "sculky:royal_sculk_fragment"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "Regicide of the Deep"
+    }
+  },
+  "requirements": [
+    [
+      "defeat_sculk_king"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

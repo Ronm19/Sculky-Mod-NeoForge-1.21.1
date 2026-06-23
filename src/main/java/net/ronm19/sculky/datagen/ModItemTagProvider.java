@@ -23,10 +23,27 @@ public class ModItemTagProvider extends ItemTagsProvider {
     protected void addTags( HolderLookup.Provider provider ) {
 
         this.tag(ItemTags.SWORDS)
-                .add(ModItems.INFESTED_SCULK_SWORD.asItem())
-                .add(ModItems.ECHO_DAGGER.asItem())
-                .add(ModItems.INFESTED_SCULK_HAMMER.asItem())
-                .add(ModItems.SCULK_EDGE.asItem());
+                .add(ModItems.INFESTED_SCULK_SWORD.get())
+                .add(ModItems.ECHO_DAGGER.get())
+                .add(ModItems.INFESTED_SCULK_HAMMER.get())
+                .add(ModItems.KINGS_AXE.get())
+                .add(ModItems.SCULK_CLEAVER.get())
+                .add(ModItems.SCULK_EDGE.get());
+
+        this.tag(ItemTags.AXES)
+                .add(ModItems.KINGS_AXE.get())
+                .add(ModItems.SCULK_CLEAVER.get())
+                .add(ModItems.INFESTED_SCULK_AXE.get());
+
+        this.tag(ItemTags.PICKAXES)
+                .add(ModItems.INFESTED_SCULK_HAMMER.get())
+                .add(ModItems.INFESTED_SCULK_PICKAXE.get());
+
+        this.tag(ItemTags.SHOVELS)
+                .add(ModItems.INFESTED_SCULK_SHOVEL.get());
+
+        this.tag(ItemTags.HOES)
+                .add(ModItems.INFESTED_SCULK_HOE.get());
 
         this.tag(ItemTags.TRIMMABLE_ARMOR)
                 .add(ModItems.INFESTED_SCULK_HELMET.get())

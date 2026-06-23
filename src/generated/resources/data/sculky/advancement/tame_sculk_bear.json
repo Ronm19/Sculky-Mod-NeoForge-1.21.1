@@ -1,0 +1,40 @@
+{
+  "parent": "sculky:the_buried_throne",
+  "criteria": {
+    "tame_sculk_bear": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "sculky:sculk_bear"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:tame_animal"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "text": "Tame a Sculk Bear."
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "id": "sculky:sculk_bear_spawn_egg"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "A Beast of the Deep"
+    }
+  },
+  "requirements": [
+    [
+      "tame_sculk_bear"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

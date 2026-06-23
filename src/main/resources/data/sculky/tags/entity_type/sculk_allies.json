@@ -23,7 +23,13 @@
     "sculky:royal_sculk_knight",
     "sculky:crowned_sculkmite",
     "sculky:sculk_vindicator",
+    "sculky:sculk_evoker",
     "sculky:sculk_sentry",
-    "sculky:sculk_phantom"
+    "sculky:sculk_phantom",
+    "sculky:sculk_executioner",
+    "sculky:sculk_bulwark",
+    "sculky:sculk_oracle",
+    "sculky:thronebound_wraith",
+    "sculky:sculk_king"
   ]
 }

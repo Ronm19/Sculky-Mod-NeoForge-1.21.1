@@ -1,0 +1,38 @@
+{
+  "parent": "sculky:defeat_sculk_king",
+  "criteria": {
+    "obtain_kings_axe": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "sculky:kings_axe"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "text": "Claim the weapon of the fallen Sculk King."
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "id": "sculky:kings_axe"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "The Crown's Last Command"
+    }
+  },
+  "requirements": [
+    [
+      "obtain_kings_axe"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

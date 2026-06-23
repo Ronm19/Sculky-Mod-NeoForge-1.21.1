@@ -5,6 +5,8 @@
     "sculky:sculk_sanctum_grass_block",
     "sculky:sculk_sanctum_dirt_block",
     "sculky:infested_sculk_rooted_dirt_block",
+    "sculky:royal_sculk_grass_block",
+    "sculky:royal_sculk_soil",
     "sculky:infested_sculk_podzol_block"
   ]
 }

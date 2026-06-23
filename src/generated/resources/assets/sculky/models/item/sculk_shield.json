@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:item/shield",
+  "overrides": [
+    {
+      "model": "sculky:item/sculk_shield_blocking",
+      "predicate": {
+        "minecraft:blocking": 1.0
+      }
+    }
+  ]
+}

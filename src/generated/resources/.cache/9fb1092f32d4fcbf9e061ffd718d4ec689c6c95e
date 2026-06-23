@@ -1,4 +1,4 @@
-// 1.21.1	2026-05-17T21:57:55.5084738	Recipes
+// 1.21.1	2026-06-21T23:01:00.0977989	Recipes
 1b7d38c805fc25064eef31b27ac8dab59bd9a57d data/minecraft/advancement/recipes/building_blocks/chiseled_royal_sculk_from_royal_sculk_block_stonecutting.json
 32795b090e8c28bcad43b511c07d52588d301844 data/minecraft/advancement/recipes/redstone/sculk_shrieker.json
 995a5512bb26729c9e62eda9e811659289701708 data/minecraft/recipe/chiseled_royal_sculk_from_royal_sculk_block_stonecutting.json
@@ -42,6 +42,8 @@ dc65edc7a3cc1b85b5bdebdc07a842f5ec1b7f42 data/sculky/advancement/recipes/combat/
 a080ef489a84ec3c9f5c40b94d079de886a14764 data/sculky/advancement/recipes/combat/infested_sculk_shovel.json
 567914718c4ab63ef6c14c8f42073236846569df data/sculky/advancement/recipes/combat/infested_sculk_sword.json
 30ff3a7a07073d90aab3d4b11688a0bd9b12c521 data/sculky/advancement/recipes/combat/sculk_boots.json
+38a9f4a3e302f0074399862cf59058defb47c86d data/sculky/advancement/recipes/combat/sculk_bow.json
+d69993a0525b05c5bc8ddd6e378a275ce93d22e2 data/sculky/advancement/recipes/combat/sculk_shield.json
 cf1c6f4711ccda67f27656977f51381278a56fd3 data/sculky/advancement/recipes/decorations/infested_sculk_brick_fence.json
 8222378d957ddf96d31885c326fb0bd6d81a56a0 data/sculky/advancement/recipes/decorations/infested_sculk_fence.json
 a4a933a1c6be6df0081032b8ea019543ffb23bee data/sculky/advancement/recipes/decorations/royal_sculk_lantern.json
@@ -132,6 +134,7 @@ f209effb573bf2908691876f64f4488723264993 data/sculky/recipe/kings_pedestal.json
 e8dd02d21aba07b8df96fd8702f618a24a9fc66d data/sculky/recipe/sculk_bomb.json
 eb6f5f7cbd11212f51e929ba83c4e4c60464972f data/sculky/recipe/sculk_bone.json
 2ab8ff2ded9eed5a35658e6364166a929d3d2b8f data/sculky/recipe/sculk_boots.json
+cc9901a879ed0d9f41d91394621057fed82c2e4e data/sculky/recipe/sculk_bow.json
 aaa8dbc7ef518cec047895eced603247489bff9a data/sculky/recipe/sculk_heartfruit.json
 e7402ab3dabe7b4d3c8beb4f54e4b9fe80a8b51a data/sculky/recipe/sculk_jar.json
 cce79cabf46401c66fddc5f2e1e907abdf5b0b6b data/sculky/recipe/sculk_jungle_button.json
@@ -156,6 +159,7 @@ aedac3c109109a14d5e34e7f0539f7e36d2ee731 data/sculky/recipe/sculk_shard_from_bla
 3b6a66be7bd8106f1f4a4234a1e6c32d4e586f46 data/sculky/recipe/sculk_shard_from_smelting_deepslate_sculk_ore.json
 0c4d534808088c3a76d2fc53ef43dd109998a892 data/sculky/recipe/sculk_shard_from_smelting_raw_sculk_shard.json
 6a57a06c8eff8f6d81628e2e2ad34587a87edb16 data/sculky/recipe/sculk_shard_from_smelting_sculk_ore.json
+7691905b588b76ae4a98f36e0115012791359875 data/sculky/recipe/sculk_shield.json
 d8649cc6028284c14cdc34bfdb71eeb240d299af data/sculky/recipe/soulbite_cookie.json
 798d6132ac4767cffa5a19400084673d00b68ebb data/sculky/recipe/stripped_infested_sculk_wood.json
 14881e62e8aee162aa55967c0780a7e3ec843302 data/sculky/recipe/stripped_sculk_jungle_wood.json
